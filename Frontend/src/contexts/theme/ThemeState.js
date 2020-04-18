@@ -73,7 +73,7 @@ const ThemeState = (props) => {
     borderRadius: 12,
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
-    codeBackgroundColor: "#AD9FD9",
+    codeBackgroundColor: "#930035",
   };
 
   //  Calculate hexadecimal value of the color

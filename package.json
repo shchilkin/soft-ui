@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CrazyRedKitten/soft-ui#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-force-https": "^1.0.0"
   }
 }

@@ -9,8 +9,10 @@
     "bootstrap": "^4.4.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
+    "react-color": "^2.18.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "reactcss": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

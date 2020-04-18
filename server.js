@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 
 //  Force HTTPS Middleware
-app.use(secure);
+// app.use(secure);
 
 app.use(express.static(path.join(__dirname, "Frontend/build")));
 

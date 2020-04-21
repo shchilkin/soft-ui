@@ -289,7 +289,7 @@ const Generator = () => {
                     props={componentProps}
                   />
                 </div>
-                <div className={"col-md-6"}>
+                <div className={"col-sm-6"}>
                   <h6>Dark Shadow</h6>
                   <SoftUIGenInput
                     type={"number"}
@@ -299,7 +299,7 @@ const Generator = () => {
                     props={componentProps}
                   />
                 </div>
-                <div className={"col-md-6"}>
+                <div className={"col-sm-6"}>
                   <h6>Light Shadow</h6>
                   <SoftUIGenInput
                     type={"number"}

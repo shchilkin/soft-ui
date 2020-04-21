@@ -95,6 +95,7 @@ class ColorPickerSketch extends React.Component {
                 "#121212",
                 "#60f8d3",
                 "#8760f8",
+                "#445a41",
               ]}
             />
           </div>

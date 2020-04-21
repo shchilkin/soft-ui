@@ -83,7 +83,6 @@ export function calculateShadowFactor(number) {
 export function getRandomInt(maximumNumber) {
     return Math.floor(Math.random() * Math.floor(maximumNumber+1));
 }
-
 export function invertFont(font) {
     if (font === '#000' || font === '#000000'){
         return '#FFF'

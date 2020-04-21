@@ -22,7 +22,6 @@ class ColorPickerSketch extends React.Component {
   };
 
   handleChange = (color) => {
-    console.log("color picker on change", { color: color });
     this.context.changeColor("Hex", color.hex);
     this.setState({ color: color.hex });
   };

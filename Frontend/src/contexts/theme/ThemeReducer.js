@@ -7,7 +7,8 @@ import {
     CHANGE_DARK_SHADOW_FACTOR,
     CHANGE_LIGHT_SHADOW_FACTOR,
     INVERSE_FONT,
-    THEME_RESET
+    THEME_RESET,
+    CHANGE_BADGE_COLORS
 } from '../types';
 import {invertFont} from "../../Components/Generator/Functions.SoftUIGenerator";
 
@@ -356,6 +357,12 @@ export default (state, action) => {
                 codeFontColor: fontColor(173, 0, 62),
                 shadows: calculateShadows(173,0,62,1.05,0.85),
                 codeBackgroundColor: "#930035",
+            }
+        case CHANGE_BADGE_COLORS:
+            console.log('badgeColors',action.payload)
+            return {
+                ...state,
+                badgeColors: action.payload
             }
     }
 };

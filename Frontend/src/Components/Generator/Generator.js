@@ -4,7 +4,8 @@ import SoftUIGenInput from "./Generator.components/SoftUIGenInput";
 import Badge from "../Badge/Badge.component";
 import ColorPickerSketch from "./Generator.components/colorPickerSketch";
 import ThemeContext from "../../contexts/theme/ThemeContext";
-import { toHex, getRandomInt } from "./Functions.SoftUIGenerator";
+import {toHex, getRandomInt, fontColor} from "./Functions.SoftUIGenerator";
+import BuyMeACoffee from "../Links/BuyMeACoffee";
 
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
@@ -17,6 +18,7 @@ const Generator = () => {
     colorHEX,
     shadows,
     shadowBlur,
+    badgeColors,
     shadowLength,
     borderRadius,
     darkShadowFactor,
@@ -26,6 +28,7 @@ const Generator = () => {
     inverseFont,
     codeFontColor,
     changeShadowBlur,
+    changeBadgeColors,
     changeBorderRadius,
     changeShadowLength,
     codeBackgroundColor,
@@ -79,6 +82,27 @@ const Generator = () => {
     border: `1px solid ${mainColor}`,
     borderRadius: `${borderRadius}px`,
   };
+
+  async function getColorsFromColorMind(){
+    const url = "http://colormind.io/api/";
+    const data = {
+      model: "default",
+      input: ["N", "N",[colorRGB.Red, colorRGB.Green, colorRGB.Blue], "N", "N"]
+    };
+
+    const http = new XMLHttpRequest();
+
+    http.onreadystatechange = function() {
+      if(http.readyState === 4 && http.status === 200) {
+        let palette = JSON.parse(http.responseText).result;
+        console.log('color array', palette)
+        changeBadgeColors(palette)
+      }
+    }
+
+    http.open("POST", url, true);
+    http.send(JSON.stringify(data));
+  }
 
   const hexInput = (
     <div className={"row pt-1"}>
@@ -147,12 +171,10 @@ const Generator = () => {
     </div>
   );
 
-  console.log(viewPortHeight - 58)
   return (
     <div
       className={"container-fluid"}
-      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: font }}
-    >
+      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: font }}>
       <div className={"container pt-3"}>
         <h3>Soft-UI generator</h3>
         <div
@@ -214,6 +236,76 @@ const Generator = () => {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className={'row mb-3'}>
+              <div className={'col-9'}>
+                <SoftUIGenButton props={componentProps}
+                                 onClick={getColorsFromColorMind}
+                children={'Get badge colors from ColorMind.io API'}/>
+              </div>
+              <div className={'col-3'}>
+                <a href={'http://colormind.io'}><SoftUIGenButton
+                    props={componentProps}>
+                  Link
+                </SoftUIGenButton>
+                </a>
+              </div>
+            </div>
+            <div className={'row'}>
+              <div className={'col-sm-8 text-center'}>
+                <Badge
+                    style={{padding:'0.375rem 0.75rem',
+                      backgroundColor:`rgb(${badgeColors[0][0]},${badgeColors[0][1]},${badgeColors[0][2]})`,
+                      color:fontColor(badgeColors[0][0],badgeColors[0][1],badgeColors[0][2])
+                    }}
+                >Badge</Badge>
+                <Badge style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
+                  color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
+                }}
+                >Badge</Badge>
+                <Badge style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,
+                  color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}
+                >Badge
+                </Badge>
+                <Badge style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,
+                  color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])
+                }}
+                >Badge</Badge>
+              </div>
+              <div className={'col-sm-4 text-center'}>
+                <Badge
+                    type={'small'}
+                    style={{padding:'0.375rem 0.75rem',
+                      backgroundColor:`rgb(${badgeColors[0][0]},${badgeColors[0][1]},${badgeColors[0][2]})`,
+                      color:fontColor(badgeColors[0][0],badgeColors[0][1],badgeColors[0][2])
+                    }}
+
+                >Badge</Badge>
+                <Badge
+                    type={'small'}
+                    style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
+                  color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
+                }}
+                >Badge</Badge>
+                <Badge
+                    type={'small'}
+                    style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,
+                  color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}
+                >Badge
+                </Badge>
+                <Badge
+                    type={'small'}
+                    style={{padding:'0.375rem 0.75rem',
+                  backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,
+                  color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])
+                }}
+                >Badge</Badge>
               </div>
             </div>
           </div>
@@ -372,6 +464,7 @@ const Generator = () => {
           </div>
         </div>
       </div>
+      <BuyMeACoffee/>
     </div>
   );
 };

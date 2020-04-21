@@ -10,7 +10,8 @@ import {
   CHANGE_DARK_SHADOW_FACTOR,
   CHANGE_LIGHT_SHADOW_FACTOR,
   INVERSE_FONT,
-  THEME_RESET
+  THEME_RESET,
+  CHANGE_BADGE_COLORS
 } from "../types";
 import {
   calculateShadows,
@@ -76,6 +77,7 @@ const ThemeState = (props) => {
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
     codeBackgroundColor: "#930035",
+    badgeColors:[[144, 75, 82], [168, 45, 57], [178, 15, 61], [176, 38, 38], [119, 162, 80]]
   };
 
   //  Calculate hexadecimal value of the color
@@ -149,6 +151,13 @@ const ThemeState = (props) => {
     });
   };
 
+  const changeBadgeColors = (badgeColors) => {
+    dispatch({
+      type: CHANGE_BADGE_COLORS,
+      payload: badgeColors
+    });
+  };
+
   const changeShadowLength = (shadowLength) => {
     dispatch({
       type: CHANGE_SHADOW_LENGTH,
@@ -179,11 +188,13 @@ const ThemeState = (props) => {
         changeColor,
         changeBackground,
         changeShadowBlur,
+        changeBadgeColors,
         changeBorderRadius,
         changeShadowLength,
         changeDarkShadowFactor,
         changeLightShadowFactor,
         font: state.font,
+        badgeColors: state.badgeColors,
         shadows: state.shadows,
         colorRGB: {
           Red: state.Red,

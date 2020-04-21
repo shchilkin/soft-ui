@@ -16,7 +16,6 @@ const SoftUIGenButton = ({props, children, onClick, state='', type = 'default'})
         shadowLength = props.shadowLength;
     }
 
-    console.log('shadow', lighterShadow);
     const buttonStyle = {
         default:{
             initial:{

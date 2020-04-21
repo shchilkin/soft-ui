@@ -5,8 +5,10 @@ import {
     CHANGE_BORDER_RADIUS,
     CHANGE_SHADOW_LENGTH,
     CHANGE_DARK_SHADOW_FACTOR,
-    CHANGE_LIGHT_SHADOW_FACTOR
+    CHANGE_LIGHT_SHADOW_FACTOR,
+    INVERSE_FONT
 } from '../types';
+import {invertFont} from "../../Components/Generator/Functions.SoftUIGenerator";
 
 import {
     calculateShadows,
@@ -329,6 +331,13 @@ export default (state, action) => {
                     state.Blue,
                     calculateShadowFactor(action.payload),
                     state.darkShadowFactor)
+            }
+        case INVERSE_FONT:
+            console.log('font before', state.font)
+            console.log('font After',invertFont(state.font))
+            return {
+                ...state,
+                font: invertFont(state.font)
             }
     }
 };

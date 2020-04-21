@@ -22,6 +22,7 @@ const Generator = () => {
     darkShadowFactor,
     lightShadowFactor,
     changeColor,
+    inverseFont,
     codeFontColor,
     changeShadowBlur,
     changeBorderRadius,
@@ -47,14 +48,6 @@ const Generator = () => {
   const onChangeShadowLength = (event) => changeShadowLength(event.target.value);
   const onChangeLightShadowFactor = (event) => changeLightShadowFactor(event.target.value);
   const onChangeDarkShadowFactor = (event) => changeDarkShadowFactor(event.target.value);
-  // const changeFontColor = () => {
-  //   if (font === "#000") {
-  //     setFONT("#FFF");
-  //   } else if (font === "#FFF") {
-  //     setFONT("#000");
-  //   }
-  // };
-
   const generateRandom = () => {
     let rgbObject = {
       Red:getRandomInt(255),
@@ -264,7 +257,7 @@ const Generator = () => {
                 <div className={"col-8"}>
                   <SoftUIGenButton
                       props={componentProps}
-                      // onClick={() => changeFontColor()}
+                      onClick={() => inverseFont()}
                       children={'Change font color'}
                   />
                 </div>

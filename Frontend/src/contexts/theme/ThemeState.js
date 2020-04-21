@@ -9,6 +9,7 @@ import {
   CHANGE_SHADOW_LENGTH,
   CHANGE_DARK_SHADOW_FACTOR,
   CHANGE_LIGHT_SHADOW_FACTOR,
+  INVERSE_FONT
 } from "../types";
 import {
   calculateShadows,
@@ -121,6 +122,12 @@ const ThemeState = (props) => {
     });
   };
 
+  const inverseFont = () => {
+    dispatch({
+      type: INVERSE_FONT
+    });
+  };
+
   const changeShadowBlur = (blurValue) => {
     dispatch({
       type: CHANGE_SHADOW_BLUR,
@@ -159,6 +166,7 @@ const ThemeState = (props) => {
   return (
     <ThemeContext.Provider
       value={{
+        inverseFont,
         changeTheme,
         changeColor,
         changeBackground,

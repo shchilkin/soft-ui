@@ -8,7 +8,7 @@ const SoftUIGenInput = ({props, type = 'text', onChange, placeholder, value, sta
 
     const [inputFocus, setInputFocus] = useState(false);
     let mainColor, font, darkerShadow, lighterShadow = '#121212';
-    let Blur, shadowLength = 1;
+    let Blur = 1;
 
     if (typeof(props) != 'undefined'){
         mainColor = props.mainColor;
@@ -16,7 +16,6 @@ const SoftUIGenInput = ({props, type = 'text', onChange, placeholder, value, sta
         darkerShadow = props.darkerShadow;
         lighterShadow = props.lighterShadow;
         Blur = props.Blur;
-        shadowLength = props.shadowLength;
     }
 
     const inputStyle = {
@@ -24,13 +23,13 @@ const SoftUIGenInput = ({props, type = 'text', onChange, placeholder, value, sta
             borderColor: mainColor,
             backgroundColor: mainColor,
             color: font,
-            boxShadow: `inset 2px 2px 10px 0 ${darkerShadow}, inset -2px -2px 10px 0 ${lighterShadow}`
+            boxShadow: `inset 2px 2px ${Blur}px 0 ${darkerShadow}, inset -2px -2px ${Blur}px 0 ${lighterShadow}`
         },
         focus: {
             borderColor: mainColor,
             backgroundColor: mainColor,
             color: font,
-            boxShadow: `2px 2px 10px 0 ${darkerShadow}, -2px -2px 10px 0 ${lighterShadow}`
+            boxShadow: `2px 2px ${Blur}px 0 ${darkerShadow}, -2px -2px ${Blur}px 0 ${lighterShadow}`
         }
     }
 

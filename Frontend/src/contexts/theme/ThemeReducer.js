@@ -6,7 +6,8 @@ import {
     CHANGE_SHADOW_LENGTH,
     CHANGE_DARK_SHADOW_FACTOR,
     CHANGE_LIGHT_SHADOW_FACTOR,
-    INVERSE_FONT
+    INVERSE_FONT,
+    THEME_RESET
 } from '../types';
 import {invertFont} from "../../Components/Generator/Functions.SoftUIGenerator";
 
@@ -338,6 +339,23 @@ export default (state, action) => {
             return {
                 ...state,
                 font: invertFont(state.font)
+            }
+        case THEME_RESET:
+            return {
+                ...state,
+                Red: 173,
+                Green: 0,
+                Blue: 62,
+                shadowBlur: 30,
+                shadowLength: 5,
+                borderRadius: 12,
+                darkShadowFactor: 0.85,
+                lightShadowFactor: 1.05,
+                hexColor: (toHex(173) + toHex(0) + toHex(62)),
+                font: fontColor(173, 0, 62),
+                codeFontColor: fontColor(173, 0, 62),
+                shadows: calculateShadows(173,0,62,0.85,1.05),
+                codeBackgroundColor: "#930035",
             }
     }
 };

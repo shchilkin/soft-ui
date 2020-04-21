@@ -22,6 +22,7 @@ const Generator = () => {
     darkShadowFactor,
     lightShadowFactor,
     changeColor,
+    resetTheme,
     inverseFont,
     codeFontColor,
     changeShadowBlur,
@@ -83,7 +84,7 @@ const Generator = () => {
     <div className={"row pt-1"}>
       <div className={"col-12"}>
         <h6>
-          <Badge style={{ backgroundColor: darkerShadow }}>
+          <Badge style={{ backgroundColor: darkerShadow, color: font }}>
             #<span style={{ color: "#ed2939", fontWeight: "bold" }}>FF</span>
             <span style={{ color: "#0B6623", fontWeight: "bold" }}>FF</span>
             <span style={{ color: "#0f52Ba", fontWeight: "bold" }}>FF</span>
@@ -239,10 +240,16 @@ const Generator = () => {
                 <div className={'col-2'}>
                     <ColorPickerSketch />
                 </div>
-                <div className={'col-10'}>
+                <div className={'col-7'}>
                   <SoftUIGenButton props={componentProps}
                                    onClick={generateRandom}
                                    children={'Random color'}
+                  />
+                </div>
+                <div className={'col-3'}>
+                  <SoftUIGenButton props={componentProps}
+                                   onClick={resetTheme}
+                                   children={'Reset'}
                   />
                 </div>
               </div>
@@ -265,7 +272,7 @@ const Generator = () => {
               {colorInputMode ? hexInput : rgbInput}
               <div className={"row"}>
                 <div className={"col-md-4"}>
-                  <h6>Blur</h6>
+                  <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
                   <SoftUIGenInput
                     type={"number"}
                     onChange={onChangeBlur}
@@ -275,7 +282,7 @@ const Generator = () => {
                   />
                 </div>
                 <div className={"col-md-4"}>
-                  <h6>Radius</h6>
+                  <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
                   <SoftUIGenInput
                     type={"number"}
                     onChange={onChangeRadius}
@@ -285,7 +292,7 @@ const Generator = () => {
                   />
                 </div>
                 <div className={"col-md-4"}>
-                  <h6>Shadow Length</h6>
+                  <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Shadow Length</Badge></h6>
                   <SoftUIGenInput
                     type={"number"}
                     onChange={onChangeShadowLength}
@@ -295,7 +302,7 @@ const Generator = () => {
                   />
                 </div>
                 <div className={"col-sm-6"}>
-                  <h6>Dark Shadow</h6>
+                  <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Dark Shadow</Badge></h6>
                   <SoftUIGenInput
                     type={"number"}
                     onChange={onChangeDarkShadowFactor}
@@ -305,7 +312,7 @@ const Generator = () => {
                   />
                 </div>
                 <div className={"col-sm-6"}>
-                  <h6>Light Shadow</h6>
+                  <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Light Shadow</Badge></h6>
                   <SoftUIGenInput
                     type={"number"}
                     onChange={onChangeLightShadowFactor}

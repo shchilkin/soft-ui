@@ -16,6 +16,7 @@ const SoftUIGenButton = ({props, children, onClick, state='', type = 'default'})
         shadowLength = props.shadowLength;
     }
 
+    console.log('shadow', lighterShadow);
     const buttonStyle = {
         default:{
             initial:{
@@ -24,8 +25,8 @@ const SoftUIGenButton = ({props, children, onClick, state='', type = 'default'})
                 transition: 'background-color .5s, color .5s',
                 border:`1px solid ${mainColor}`,
                 color:font,
-                boxShadow: `${shadowLength}px ${shadowLength}px ${Blur}px 0 ${darkerShadow},
-                       -${shadowLength}px -${shadowLength}px ${Blur}px 0 ${lighterShadow}`,
+                boxShadow: `${shadowLength}px ${shadowLength}px ${Math.round(Blur/2)}px 0 ${darkerShadow},
+                       -${shadowLength}px -${shadowLength}px ${Math.round(Blur/2)}px 0 ${lighterShadow}`,
                 borderRadius: '12px',
                 padding: '.375rem .75rem',
                 fontWeight:'bold'
@@ -36,8 +37,8 @@ const SoftUIGenButton = ({props, children, onClick, state='', type = 'default'})
                 transition: 'background-color .5s, color .5s',
                 border:`1px solid ${mainColor}`,
                 color:font,
-                boxShadow: `inset ${shadowLength}px ${shadowLength}px ${Blur}px 0 ${darkerShadow},
-                       inset -${shadowLength}px -${shadowLength}px ${Blur}px 0 ${lighterShadow}`,
+                boxShadow: `inset ${shadowLength}px ${shadowLength}px ${Math.round(Blur/2)}px 0 ${darkerShadow},
+                       inset -${shadowLength}px -${shadowLength}px ${Math.round(Blur/2)}px 0 ${lighterShadow}`,
                 borderRadius: '12px',
                 padding: '.375rem .75rem',
                 fontWeight:'bold'

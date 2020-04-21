@@ -80,3 +80,6 @@ export function calculateShadowFactor(number) {
         return factor
     }
 }
+export function getRandomInt(maximumNumber) {
+    return Math.floor(Math.random() * Math.floor(maximumNumber+1));
+}

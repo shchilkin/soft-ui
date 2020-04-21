@@ -4,7 +4,7 @@ import SoftUIGenInput from "./Generator.components/SoftUIGenInput";
 import Badge from "../Badge/Badge.component";
 import ColorPickerSketch from "./Generator.components/colorPickerSketch";
 import ThemeContext from "../../contexts/theme/ThemeContext";
-import { toHex } from "./Functions.SoftUIGenerator";
+import { toHex, getRandomInt } from "./Functions.SoftUIGenerator";
 
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
@@ -18,7 +18,7 @@ const Generator = () => {
     shadows,
     shadowBlur,
     shadowLength,
-    borderRadius: borderRadius,
+    borderRadius,
     darkShadowFactor,
     lightShadowFactor,
     changeColor,
@@ -31,7 +31,6 @@ const Generator = () => {
     changeLightShadowFactor,
   } = themeContext;
 
-  const [FONT, setFONT] = useState(font);
   const viewPortHeight = window.innerHeight
 
   const lighterShadows = shadows.ligherShadowArray;
@@ -44,25 +43,30 @@ const Generator = () => {
   const [colorInputMode, setColorInputMode] = useState(true);
   const onChangeBlur = (event) => changeShadowBlur(event.target.value);
   const onChangeRadius = (event) => changeBorderRadius(event.target.value);
-  const onChangeColor = (event, hexOrRGBColorName) =>
-    changeColor(hexOrRGBColorName, event.target.value);
-  const onChangeShadowLength = (event) =>
-    changeShadowLength(event.target.value);
-  const onChangeLightShadowFactor = (event) =>
-    changeLightShadowFactor(event.target.value);
-  const onChangeDarkShadowFactor = (event) =>
-    changeDarkShadowFactor(event.target.value);
-  const changeFontColor = () => {
-    if (FONT === "#000") {
-      setFONT("#FFF");
-    } else if (FONT === "#FFF") {
-      setFONT("#000");
+  const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
+  const onChangeShadowLength = (event) => changeShadowLength(event.target.value);
+  const onChangeLightShadowFactor = (event) => changeLightShadowFactor(event.target.value);
+  const onChangeDarkShadowFactor = (event) => changeDarkShadowFactor(event.target.value);
+  // const changeFontColor = () => {
+  //   if (font === "#000") {
+  //     setFONT("#FFF");
+  //   } else if (font === "#FFF") {
+  //     setFONT("#000");
+  //   }
+  // };
+
+  const generateRandom = () => {
+    let rgbObject = {
+      Red:getRandomInt(255),
+      Green:getRandomInt(255),
+      Blue:getRandomInt(255)
     }
-  };
+    changeColor('RGB', rgbObject);
+  }
 
   const componentProps = {
     mainColor: mainColor,
-    font: FONT,
+    font: font,
     Blur: shadowBlur,
     shadowLength: shadowLength,
     darkerShadow: darkerShadow,
@@ -74,7 +78,7 @@ const Generator = () => {
     height: "300px",
     minHeight: "100px",
     backgroundColor: mainColor,
-    color: FONT,
+    color: font,
     mixBlendMode: "normal",
     boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
                    -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
@@ -107,7 +111,7 @@ const Generator = () => {
       <div className={"col-4"}>
         <h6>
           <Badge style={{ backgroundColor: darkerShadow }}>
-            <span style={{ color: "#ed2939" }}>Red</span>
+            <span style={{ color: "#ed2939" }}>R</span>
           </Badge>
         </h6>
         <SoftUIGenInput
@@ -121,7 +125,7 @@ const Generator = () => {
       <div className={"col-4"}>
         <h6>
           <Badge style={{ backgroundColor: darkerShadow }}>
-            <span style={{ color: "#0B6623" }}>Green</span>
+            <span style={{ color: "#0B6623" }}>G</span>
           </Badge>
         </h6>
         <SoftUIGenInput
@@ -135,7 +139,7 @@ const Generator = () => {
       <div className={"col-4"}>
         <h6>
           <Badge style={{ backgroundColor: darkerShadow }}>
-            <span style={{ color: "#0f52Ba" }}>Blue</span>
+            <span style={{ color: "#0f52Ba" }}>B</span>
           </Badge>
         </h6>
         <SoftUIGenInput
@@ -153,7 +157,7 @@ const Generator = () => {
   return (
     <div
       className={"container-fluid"}
-      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: FONT }}
+      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: font }}
     >
       <div className={"container pt-3"}>
         <h3>Soft-UI generator</h3>
@@ -224,7 +228,7 @@ const Generator = () => {
               style={{
                 minHeight: "100px",
                 backgroundColor: mainColor,
-                color: FONT,
+                color: font,
                 mixBlendMode: "normal",
                 boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
                                  -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
@@ -238,10 +242,18 @@ const Generator = () => {
                   <h5>Pick a color:</h5>
                 </div>
               </div>
-              <div className={"row"}>
-                <div className={"col-2"}>
-                  <ColorPickerSketch />
+              <div className={'row mb-3'}>
+                <div className={'col-2'}>
+                    <ColorPickerSketch />
                 </div>
+                <div className={'col-10'}>
+                  <SoftUIGenButton props={componentProps}
+                                   onClick={generateRandom}
+                                   children={'Random color'}
+                  />
+                </div>
+              </div>
+              <div className={"row mb-3"}>
                 <div className={"col-4"}>
                   <SoftUIGenButton
                       props={componentProps}
@@ -249,11 +261,11 @@ const Generator = () => {
                       onClick={() => setColorInputMode(!colorInputMode)}
                   />
                 </div>
-                <div className={"col-6"}>
+                <div className={"col-8"}>
                   <SoftUIGenButton
                       props={componentProps}
-                      onClick={() => changeFontColor()}
-                      children={<span><span className={'d-block d-sm-none'}>Font color</span><span className={'d-none d-sm-block'}>Change font color</span></span>}
+                      // onClick={() => changeFontColor()}
+                      children={'Change font color'}
                   />
                 </div>
               </div>

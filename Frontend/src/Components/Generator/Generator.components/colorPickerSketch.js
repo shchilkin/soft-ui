@@ -78,7 +78,6 @@ class ColorPickerSketch extends React.Component {
       <div style={{ display: "inline-block", verticalAlign: "-50%" }}>
         <div style={styles.swatch} onClick={this.handleClick}>
           <div style={colorStyle.color} />
-          {/*<div style={ styles.color } />*/}
         </div>
         {this.state.displayColorPicker ? (
           <div style={styles.popover}>

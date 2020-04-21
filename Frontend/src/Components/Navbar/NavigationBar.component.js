@@ -9,10 +9,9 @@ const NavigationBar = () => {
         colorRGB,
         shadows
     } = themeContext;
-    console.log(font)
     return (
         <Navbar style={{backgroundColor:`rgb(${colorRGB.Red},${colorRGB.Green},${colorRGB.Blue}`,
-            boxShadow:'0 2px 4px rgba(0, 0, 0, 0.2)'}} expand="lg"
+            boxShadow:`0 2px 4px rgba(${shadows.darkerShadowArray[0]}, ${shadows.darkerShadowArray[1]}, ${shadows.darkerShadowArray[2]}, 1)`}} expand="lg"
                 className={`navbar-light Navbar-"Light`}
         >
             <Navbar.Brand>

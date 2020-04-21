@@ -32,6 +32,7 @@ const Generator = () => {
   } = themeContext;
 
   const [FONT, setFONT] = useState(font);
+  const viewPortHeight = window.innerHeight
 
   const lighterShadows = shadows.ligherShadowArray;
   const darkerShadows = shadows.darkerShadowArray;
@@ -148,10 +149,11 @@ const Generator = () => {
     </div>
   );
 
+  console.log(viewPortHeight - 58)
   return (
     <div
-      className={"container-fluid pb-5"}
-      style={{ minHeight: "100vh", backgroundColor: mainColor, color: FONT }}
+      className={"container-fluid"}
+      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: FONT }}
     >
       <div className={"container pt-3"}>
         <h3>Soft-UI generator</h3>
@@ -236,29 +238,23 @@ const Generator = () => {
                   <h5>Pick a color:</h5>
                 </div>
               </div>
-              <div className={"row mb-2"}>
-                <div className={"col-12"}>
+              <div className={"row"}>
+                <div className={"col-2"}>
                   <ColorPickerSketch />
-                  <div
-                    className={"ml-3"}
-                    style={{ width: "30%", display: "inline-block" }}
-                  >
-                    <SoftUIGenButton
+                </div>
+                <div className={"col-4"}>
+                  <SoftUIGenButton
                       props={componentProps}
                       children={colorInputMode ? "Hex" : "RGB"}
                       onClick={() => setColorInputMode(!colorInputMode)}
-                    />
-                  </div>
-                  <div
-                    className={"ml-3"}
-                    style={{ width: "45%", display: "inline-block" }}
-                  >
-                    <SoftUIGenButton
+                  />
+                </div>
+                <div className={"col-6"}>
+                  <SoftUIGenButton
                       props={componentProps}
                       onClick={() => changeFontColor()}
-                      children={"Change font color"}
-                    />
-                  </div>
+                      children={<span><span className={'d-block d-sm-none'}>Font color</span><span className={'d-none d-sm-block'}>Change font color</span></span>}
+                  />
                 </div>
               </div>
               {colorInputMode ? hexInput : rgbInput}

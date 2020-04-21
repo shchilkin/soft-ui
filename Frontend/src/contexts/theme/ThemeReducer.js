@@ -354,7 +354,7 @@ export default (state, action) => {
                 hexColor: (toHex(173) + toHex(0) + toHex(62)),
                 font: fontColor(173, 0, 62),
                 codeFontColor: fontColor(173, 0, 62),
-                shadows: calculateShadows(173,0,62,0.85,1.05),
+                shadows: calculateShadows(173,0,62,1.05,0.85),
                 codeBackgroundColor: "#930035",
             }
     }

@@ -359,7 +359,6 @@ export default (state, action) => {
                 codeBackgroundColor: "#930035",
             }
         case CHANGE_BADGE_COLORS:
-            console.log('badgeColors',action.payload)
             return {
                 ...state,
                 badgeColors: action.payload

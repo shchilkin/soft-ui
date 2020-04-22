@@ -28,7 +28,6 @@ async function getColorsFromColorMind(red, green, blue){
 
 router.post('/', (request, response) => {
     // request.body.HotLoads
-    console.log('body',request.body.Red)
     getColorsFromColorMind(request.body.Red, request.body.Green, request.body.Blue)
         .then(response => { return response.json() }).then( color => response.send(color))
 });

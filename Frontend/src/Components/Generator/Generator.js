@@ -84,24 +84,25 @@ const Generator = () => {
   };
 
   async function getColorsFromColorMind(){
-    const url = "http://colormind.io/api/";
+    //TODO TEST
+    const url = "/api/colors";
     const data = {
       model: "default",
       input: [[colorRGB.Red, colorRGB.Green, colorRGB.Blue], "N", "N", "N", "N"]
     };
 
-    const http = new XMLHttpRequest();
-
-    http.onreadystatechange = function() {
-      if(http.readyState === 4 && http.status === 200) {
-        let palette = JSON.parse(http.responseText).result;
-        console.log('color array', palette)
-        changeBadgeColors(palette)
-      }
+    try {
+      const response =  await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+      console.log('response', response)
+      return response;
     }
-
-    http.open("POST", url, true);
-    http.send(JSON.stringify(data));
+    catch (error) {
+      console.warn('error', error);
+    }
   }
 
   const hexInput = (

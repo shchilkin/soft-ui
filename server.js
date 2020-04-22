@@ -1,6 +1,7 @@
 const express = require("express");
 const secure = require("express-force-https");
 const path = require("path");
+const colorsRouter = require('./routes/Colors')
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.json({extended:false}));
 //  Force HTTPS Middleware
 app.use(secure);
 
-app.use("/api/colors", require("./routes/colors"));
+app.use("/api/colors", colorsRouter);
 
 app.use(express.static(path.join(__dirname, "Frontend/build")));
 

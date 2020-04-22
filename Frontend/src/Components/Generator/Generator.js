@@ -87,7 +87,7 @@ const Generator = () => {
     const url = "http://colormind.io/api/";
     const data = {
       model: "default",
-      input: ["N", "N",[colorRGB.Red, colorRGB.Green, colorRGB.Blue], "N", "N"]
+      input: [[colorRGB.Red, colorRGB.Green, colorRGB.Blue], "N", "N", "N", "N"]
     };
 
     const http = new XMLHttpRequest();
@@ -256,13 +256,13 @@ const Generator = () => {
               <div className={'col-sm-8 text-center'}>
                 <Badge
                     style={{padding:'0.375rem 0.75rem',
-                      backgroundColor:`rgb(${badgeColors[0][0]},${badgeColors[0][1]},${badgeColors[0][2]})`,
-                      color:fontColor(badgeColors[0][0],badgeColors[0][1],badgeColors[0][2])
+                      backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
+                      color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
                     }}
                 >Badge</Badge>
                 <Badge style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
-                  color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
+                  backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,
+                  color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])
                 }}
                 >Badge</Badge>
                 <Badge style={{padding:'0.375rem 0.75rem',
@@ -280,16 +280,16 @@ const Generator = () => {
                 <Badge
                     type={'small'}
                     style={{padding:'0.375rem 0.75rem',
-                      backgroundColor:`rgb(${badgeColors[0][0]},${badgeColors[0][1]},${badgeColors[0][2]})`,
-                      color:fontColor(badgeColors[0][0],badgeColors[0][1],badgeColors[0][2])
+                      backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
+                      color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
                     }}
 
                 >Badge</Badge>
                 <Badge
                     type={'small'}
                     style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
-                  color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
+                  backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,
+                  color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])
                 }}
                 >Badge</Badge>
                 <Badge
@@ -464,7 +464,7 @@ const Generator = () => {
           </div>
         </div>
       </div>
-      <BuyMeACoffee/>
+      {/*<BuyMeACoffee/>*/}
     </div>
   );
 };

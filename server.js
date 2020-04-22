@@ -4,8 +4,13 @@ const path = require("path");
 
 const app = express();
 
+//  JSON parser middleware
+app.use(express.json({extended:false}));
+
 //  Force HTTPS Middleware
 app.use(secure);
+
+app.use("/api/colors", require("./routes/colors"));
 
 app.use(express.static(path.join(__dirname, "Frontend/build")));
 

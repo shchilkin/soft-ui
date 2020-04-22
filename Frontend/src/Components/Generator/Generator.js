@@ -239,76 +239,76 @@ const Generator = () => {
                 </div>
               </div>
             </div>
-            <div className={'row mb-3'}>
-              <div className={'col-9'}>
-                <SoftUIGenButton props={componentProps}
-                                 onClick={getColorsFromColorMind}
-                children={'Get badge colors from ColorMind.io API'}/>
-              </div>
-              <div className={'col-3'}>
-                <a href={'http://colormind.io'}><SoftUIGenButton
-                    props={componentProps}>
-                  Link
-                </SoftUIGenButton>
-                </a>
-              </div>
-            </div>
-            <div className={'row'}>
-              <div className={'col-sm-8 text-center'}>
-                <Badge
-                    style={{padding:'0.375rem 0.75rem',
-                      backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
-                      color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
-                    }}
-                >Badge</Badge>
-                <Badge style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,
-                  color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])
-                }}
-                >Badge</Badge>
-                <Badge style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,
-                  color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}
-                >Badge
-                </Badge>
-                <Badge style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,
-                  color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])
-                }}
-                >Badge</Badge>
-              </div>
-              <div className={'col-sm-4 text-center'}>
-                <Badge
-                    type={'small'}
-                    style={{padding:'0.375rem 0.75rem',
-                      backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,
-                      color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])
-                    }}
+            {/*<div className={'row mb-3'}>*/}
+            {/*  <div className={'col-9'}>*/}
+            {/*    <SoftUIGenButton props={componentProps}*/}
+            {/*                     onClick={getColorsFromColorMind}*/}
+            {/*    children={'Get badge colors from ColorMind.io API'}/>*/}
+            {/*  </div>*/}
+            {/*  <div className={'col-3'}>*/}
+            {/*    <a href={'http://colormind.io'}><SoftUIGenButton*/}
+            {/*        props={componentProps}>*/}
+            {/*      Link*/}
+            {/*    </SoftUIGenButton>*/}
+            {/*    </a>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            {/*<div className={'row'}>*/}
+            {/*  <div className={'col-sm-8 text-center'}>*/}
+            {/*    <Badge*/}
+            {/*        style={{padding:'0.375rem 0.75rem',*/}
+            {/*          backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,*/}
+            {/*          color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])*/}
+            {/*        }}*/}
+            {/*    >Badge</Badge>*/}
+            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,*/}
+            {/*      color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])*/}
+            {/*    }}*/}
+            {/*    >Badge</Badge>*/}
+            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,*/}
+            {/*      color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}*/}
+            {/*    >Badge*/}
+            {/*    </Badge>*/}
+            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,*/}
+            {/*      color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])*/}
+            {/*    }}*/}
+            {/*    >Badge</Badge>*/}
+            {/*  </div>*/}
+            {/*  <div className={'col-sm-4 text-center'}>*/}
+            {/*    <Badge*/}
+            {/*        type={'small'}*/}
+            {/*        style={{padding:'0.375rem 0.75rem',*/}
+            {/*          backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,*/}
+            {/*          color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])*/}
+            {/*        }}*/}
 
-                >Badge</Badge>
-                <Badge
-                    type={'small'}
-                    style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,
-                  color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])
-                }}
-                >Badge</Badge>
-                <Badge
-                    type={'small'}
-                    style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,
-                  color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}
-                >Badge
-                </Badge>
-                <Badge
-                    type={'small'}
-                    style={{padding:'0.375rem 0.75rem',
-                  backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,
-                  color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])
-                }}
-                >Badge</Badge>
-              </div>
-            </div>
+            {/*    >Badge</Badge>*/}
+            {/*    <Badge*/}
+            {/*        type={'small'}*/}
+            {/*        style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,*/}
+            {/*      color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])*/}
+            {/*    }}*/}
+            {/*    >Badge</Badge>*/}
+            {/*    <Badge*/}
+            {/*        type={'small'}*/}
+            {/*        style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,*/}
+            {/*      color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}*/}
+            {/*    >Badge*/}
+            {/*    </Badge>*/}
+            {/*    <Badge*/}
+            {/*        type={'small'}*/}
+            {/*        style={{padding:'0.375rem 0.75rem',*/}
+            {/*      backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,*/}
+            {/*      color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])*/}
+            {/*    }}*/}
+            {/*    >Badge</Badge>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
           </div>
           <div className={"col-md-6"}>
             <div

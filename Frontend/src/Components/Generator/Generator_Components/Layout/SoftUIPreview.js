@@ -49,7 +49,7 @@ const SoftUIPreview = () => {
                     <div className={"align-self-center"} style={containerStyle} />
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Button</h6>
                     <div className={"row"}>
@@ -77,7 +77,7 @@ const SoftUIPreview = () => {
                     </div>
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Input</h6>
                     <div className={"row"}>

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
-import ThemeContext from "../../contexts/theme/ThemeContext";
-import SoftUIPreview from "./Generator.components/Layout/SoftUIPreview";
-import SoftUIControl from "./Generator.components/Layout/SoftUIControl";
+import SoftUIPreview from "./Generator_Components/Layout/SoftUIPreview";
+import SoftUIControlDesktop from "./Generator_Components/Layout/SoftUIControlDesktop";
 
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
+
+// #8BD173 green
+// #33D2D0 blue
 
 const Generator = () => {
   return (
@@ -17,7 +19,7 @@ const Generator = () => {
             <SoftUIPreview/>
           </div>
           <div className={"col-md-6"}>
-            <SoftUIControl/>
+            <SoftUIControlDesktop/>
           </div>
         </div>
       </div>

@@ -179,6 +179,11 @@ const ThemeState = (props) => {
     });
   };
 
+  const lighterShadows = initialState.shadows.ligherShadowArray;
+  const darkerShadows = initialState.shadows.darkerShadowArray;
+  const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
+  const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+
   return (
     <ThemeContext.Provider
       value={{

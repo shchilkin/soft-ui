@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import SoftUIGenButton from "./SoftUIGenButton";
-import SoftUIGenInput from "./SoftUIGenInput";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import SoftUIGenButton from "../SoftUIGenButton";
+import SoftUIGenInput from "../SoftUIGenInput";
+import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const SoftUIPreview = () => {
 
@@ -20,9 +20,16 @@ const SoftUIPreview = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
+    const viewportWidth = window.innerWidth
+    function getContainerHeight(viewportWidth) {
+        if(viewportWidth < 500){
+            return 175
+        } else return 300
+    }
+
     const containerStyle = {
         width: "100%",
-        height: "300px",
+        height: `${getContainerHeight(viewportWidth)}px`,
         minHeight: "100px",
         backgroundColor: mainColor,
         color: font,
@@ -49,7 +56,7 @@ const SoftUIPreview = () => {
                     <div className={"align-self-center"} style={containerStyle} />
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Button</h6>
                     <div className={"row"}>
@@ -77,7 +84,7 @@ const SoftUIPreview = () => {
                     </div>
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Input</h6>
                     <div className={"row"}>

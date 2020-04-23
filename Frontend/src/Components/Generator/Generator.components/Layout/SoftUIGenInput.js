@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Input from "../../Inputs/Input.component";
+import Input from "../../../Inputs/Input.component";
 
 
 const SoftUIGenInput = ({props, type = 'text', onChange, placeholder, value, state=''}) => {

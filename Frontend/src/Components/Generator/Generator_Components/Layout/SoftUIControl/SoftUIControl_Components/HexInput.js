@@ -1,7 +1,7 @@
-import Badge from "../../../../Badge/Badge.component";
-import SoftUIGenInput from "../SoftUIGenInput";
+import Badge from "../../../../../Badge/Badge.component";
+import SoftUIGenInput from "../../SoftUIGenInput";
 import React, {useContext} from "react";
-import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 
 
 const HexInput = (onChange) => {

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import SoftUIGenButton from "./Generator.components/SoftUIGenButton";
-import SoftUIGenInput from "./Generator.components/SoftUIGenInput";
+import SoftUIPreview from "./Generator.components/Layout/SoftUIPreview";
+import SoftUIGenButton from "./Generator.components/Layout/SoftUIGenButton";
+import SoftUIGenInput from "./Generator.components/Layout/SoftUIGenInput";
 import Badge from "../Badge/Badge.component";
 import ColorPickerSketch from "./Generator.components/colorPickerSketch";
 import ThemeContext from "../../contexts/theme/ThemeContext";
@@ -18,7 +19,6 @@ const Generator = () => {
     colorHEX,
     shadows,
     shadowBlur,
-    badgeColors,
     shadowLength,
     borderRadius,
     darkShadowFactor,
@@ -28,15 +28,12 @@ const Generator = () => {
     inverseFont,
     codeFontColor,
     changeShadowBlur,
-    changeBadgeColors,
     changeBorderRadius,
     changeShadowLength,
     codeBackgroundColor,
     changeDarkShadowFactor,
     changeLightShadowFactor,
   } = themeContext;
-
-  const viewPortHeight = window.innerHeight
 
   const lighterShadows = shadows.ligherShadowArray;
   const darkerShadows = shadows.darkerShadowArray;
@@ -68,19 +65,6 @@ const Generator = () => {
     shadowLength: shadowLength,
     darkerShadow: darkerShadow,
     lighterShadow: lighterShadow,
-  };
-
-  const containerStyle = {
-    width: "100%",
-    height: "300px",
-    minHeight: "100px",
-    backgroundColor: mainColor,
-    color: font,
-    mixBlendMode: "normal",
-    boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-    border: `1px solid ${mainColor}`,
-    borderRadius: `${borderRadius}px`,
   };
 
   async function getColorsFromColorMind(){
@@ -173,143 +157,14 @@ const Generator = () => {
   );
 
   return (
-    <div
-      className={"container-fluid"}
-      style={{ minHeight:`${viewPortHeight - 59}px`, height:'100%', backgroundColor: mainColor, color: font }}>
+    <div style={{backgroundColor: mainColor, color: font }}>
       <div className={"container pt-3"}>
         <h3>Soft-UI generator</h3>
         <div
-          className='row mt-4 mb-4'
-          style={{ marginRight: "0px", marginLeft: "0px" }}
-        >
-          <div className={"col-md-6 mb-5"}>
-            <div className={"row mb-3"}>
-              <div className={"col-12"}>
-                <div className={"align-self-center"} style={containerStyle} />
-              </div>
-            </div>
-            {/*Button showcase*/}
-            <div className={"row"}>
-              <div className={"col-12"}>
-                <h6 style={{ fontWeight: "bold" }}>Button</h6>
-                <div className={"row"}>
-                  <div className={"col-md-4 mb-3"}>
-                    <SoftUIGenButton
-                      props={componentProps}
-                      state={"initial"}
-                      children={"Button"}
-                    />
-                  </div>
-                  <div className={"col-md-4 mb-3"}>
-                    <SoftUIGenButton
-                      state={"active"}
-                      props={componentProps}
-                      children={"Active"}
-                    />
-                  </div>
-                  <div className={"col-md-4 mb-3"}>
-                    <SoftUIGenButton
-                      state={"hover"}
-                      props={componentProps}
-                      children={"hover"}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/*Input showcase*/}
-            <div className={"row"}>
-              <div className={"col-12"}>
-                <h6 style={{ fontWeight: "bold" }}>Input</h6>
-                <div className={"row"}>
-                  <div className={"col-md-6 mb-3"}>
-                    <SoftUIGenInput
-                      props={componentProps}
-                      state={"blur"}
-                      placeholder={"Input on Blur"}
-                    />
-                  </div>
-                  <div className={"col-md-6 mb-3"}>
-                    <SoftUIGenInput
-                      props={componentProps}
-                      state={"focus"}
-                      placeholder={"Input on Focus"}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/*<div className={'row mb-3'}>*/}
-            {/*  <div className={'col-9'}>*/}
-            {/*    <SoftUIGenButton props={componentProps}*/}
-            {/*                     onClick={getColorsFromColorMind}*/}
-            {/*    children={'Get badge colors from ColorMind.io API'}/>*/}
-            {/*  </div>*/}
-            {/*  <div className={'col-3'}>*/}
-            {/*    <a href={'http://colormind.io'}><SoftUIGenButton*/}
-            {/*        props={componentProps}>*/}
-            {/*      Link*/}
-            {/*    </SoftUIGenButton>*/}
-            {/*    </a>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            {/*<div className={'row'}>*/}
-            {/*  <div className={'col-sm-8 text-center'}>*/}
-            {/*    <Badge*/}
-            {/*        style={{padding:'0.375rem 0.75rem',*/}
-            {/*          backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,*/}
-            {/*          color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])*/}
-            {/*        }}*/}
-            {/*    >Badge</Badge>*/}
-            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,*/}
-            {/*      color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])*/}
-            {/*    }}*/}
-            {/*    >Badge</Badge>*/}
-            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,*/}
-            {/*      color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}*/}
-            {/*    >Badge*/}
-            {/*    </Badge>*/}
-            {/*    <Badge style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,*/}
-            {/*      color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])*/}
-            {/*    }}*/}
-            {/*    >Badge</Badge>*/}
-            {/*  </div>*/}
-            {/*  <div className={'col-sm-4 text-center'}>*/}
-            {/*    <Badge*/}
-            {/*        type={'small'}*/}
-            {/*        style={{padding:'0.375rem 0.75rem',*/}
-            {/*          backgroundColor:`rgb(${badgeColors[1][0]},${badgeColors[1][1]},${badgeColors[1][2]})`,*/}
-            {/*          color:fontColor(badgeColors[1][0],badgeColors[1][1],badgeColors[1][2])*/}
-            {/*        }}*/}
-
-            {/*    >Badge</Badge>*/}
-            {/*    <Badge*/}
-            {/*        type={'small'}*/}
-            {/*        style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[2][0]},${badgeColors[2][1]},${badgeColors[2][2]})`,*/}
-            {/*      color:fontColor(badgeColors[2][0],badgeColors[2][1],badgeColors[2][2])*/}
-            {/*    }}*/}
-            {/*    >Badge</Badge>*/}
-            {/*    <Badge*/}
-            {/*        type={'small'}*/}
-            {/*        style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[3][0]},${badgeColors[3][1]},${badgeColors[3][2]})`,*/}
-            {/*      color:fontColor(badgeColors[3][0],badgeColors[3][1],badgeColors[3][2])}}*/}
-            {/*    >Badge*/}
-            {/*    </Badge>*/}
-            {/*    <Badge*/}
-            {/*        type={'small'}*/}
-            {/*        style={{padding:'0.375rem 0.75rem',*/}
-            {/*      backgroundColor:`rgb(${badgeColors[4][0]},${badgeColors[4][1]},${badgeColors[4][2]})`,*/}
-            {/*      color:fontColor(badgeColors[4][0],badgeColors[4][1],badgeColors[4][2])*/}
-            {/*    }}*/}
-            {/*    >Badge</Badge>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-          </div>
+          className='row mt-4 mb-4' style={{ marginRight: "0px", marginLeft: "0px" }}>
+          {/*<div className={"col-md-6 mb-5"}>*/}
+            <SoftUIPreview/>
+          {/*</div>*/}
           <div className={"col-md-6"}>
             <div
               style={{
@@ -465,7 +320,6 @@ const Generator = () => {
           </div>
         </div>
       </div>
-      {/*<BuyMeACoffee/>*/}
     </div>
   );
 };

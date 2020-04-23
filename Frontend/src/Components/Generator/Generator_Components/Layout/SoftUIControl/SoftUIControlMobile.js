@@ -161,16 +161,6 @@ const SoftUIControlMobile = () => {
             </div>
             <div className={"row"}>
                 <div className={"col-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
-                        onChange={onChangeBlur}
-                        value={shadowBlur}
-                        placeholder={"30"}
-                        props={componentProps}
-                    />
-                </div>
-                <div className={"col-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
                     <SoftUIGenInput
                         type={"number"}
@@ -181,7 +171,17 @@ const SoftUIControlMobile = () => {
                     />
                 </div>
                 <div className={"col-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Shadow Length</Badge></h6>
+                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
+                    <SoftUIGenInput
+                        type={"number"}
+                        onChange={onChangeBlur}
+                        value={shadowBlur}
+                        placeholder={"30"}
+                        props={componentProps}
+                    />
+                </div>
+                <div className={"col-4"}>
+                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Length</Badge></h6>
                     <SoftUIGenInput
                         type={"number"}
                         onChange={onChangeShadowLength}

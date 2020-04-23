@@ -6,8 +6,11 @@ import SoftUIControlMobile from "./Generator_Components/Layout/SoftUIControl/Sof
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
 
+//#DCFE4B yellow
 // #8BD173 green
 // #33D2D0 blue
+// #04A883 green
+//#ADC009 green
 
 const Generator = () => {
 
@@ -15,12 +18,14 @@ const Generator = () => {
     function getContainerHeight(viewportWidth) {
         if(viewportWidth < 500){
             return <SoftUIControlMobile/>
-        } else return <SoftUIControlDesktop/>
+        } else {
+            return <SoftUIControlDesktop/>
+        }
     }
 
     return (
       <div className={"container mb-5"}>
-        <h3 className={'mb-3 mt-3'}>Soft-UI generator</h3>
+        <h3 className={'mb-3 mt-3 text-center text-sm-left'}>Soft-UI generator</h3>
         <div className='row'
              style={{ marginRight: "0px", marginLeft: "0px" }}
         >

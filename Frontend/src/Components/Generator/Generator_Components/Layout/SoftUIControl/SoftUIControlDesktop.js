@@ -64,10 +64,10 @@ const SoftUIControlDesktop = () => {
 
     const hexInput = (
         <div className={"row"}>
-            <div className={'col-3'}>
+            <div className={'col-3 text-center'}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow }}>
-                        <span>Mode</span>
+                        <span style={{color:font}}>Mode</span>
                     </Badge>
                 </h6>
                 <SoftUIGenButton
@@ -96,11 +96,11 @@ const SoftUIControlDesktop = () => {
     );
 
     const rgbInput = (
-        <div className={"row"}>
+        <div className={"row text-center"}>
             <div className={'col-lg-3'}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow }}>
-                        <span>Mode</span>
+                        <span style={{color:font}}>Mode</span>
                     </Badge>
                 </h6>
                 <SoftUIGenButton
@@ -200,11 +200,7 @@ const SoftUIControlDesktop = () => {
                     />
                 </div>
             </div>
-            <div className={'row-mb-3'}>
-                <div className={"col-12"}>
-                    {colorInputMode ? hexInput : rgbInput}
-                </div>
-            </div>
+            {colorInputMode ? hexInput : rgbInput}
             <div className={"row"}>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>

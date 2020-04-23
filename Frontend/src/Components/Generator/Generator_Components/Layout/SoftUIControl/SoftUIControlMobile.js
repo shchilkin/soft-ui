@@ -151,14 +151,7 @@ const SoftUIControlMobile = () => {
                 </div>
             </div>
             <div className={"row mb-3"}>
-                <div className={'col-3'}>
-                    <SoftUIGenButton
-                        props={componentProps}
-                        children={colorInputMode ? "Hex" : "RGB"}
-                        onClick={() => setColorInputMode(!colorInputMode)}
-                    />
-                </div>
-                <div className={"col-9"}>
+                <div className={"col-12"}>
                     <SoftUIGenButton
                         props={componentProps}
                         onClick={() => inverseFont()}
@@ -166,7 +159,6 @@ const SoftUIControlMobile = () => {
                     />
                 </div>
             </div>
-            {colorInputMode ? hexInput : rgbInput}
             <div className={"row"}>
                 <div className={"col-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>

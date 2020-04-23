@@ -14,8 +14,8 @@ const Generator = () => {
     const viewportWidth = window.innerWidth
     function getContainerHeight(viewportWidth) {
         if(viewportWidth < 500){
-            return true
-        } else return false
+            return <SoftUIControlMobile/>
+        } else return <SoftUIControlDesktop/>
     }
 
     return (
@@ -28,7 +28,7 @@ const Generator = () => {
             <SoftUIPreview/>
           </div>
           <div className={"col-md-6"}>
-              {  getContainerHeight(viewportWidth) ? <SoftUIControlMobile/> : <SoftUIControlDesktop/>}
+              {getContainerHeight(viewportWidth)}
           </div>
         </div>
       </div>

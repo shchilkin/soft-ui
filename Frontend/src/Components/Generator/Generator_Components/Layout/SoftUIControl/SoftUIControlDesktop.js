@@ -1,7 +1,7 @@
 import ColorPickerSketch from "../../colorPickerSketch";
-import SoftUIGenButton from "../SoftUIGenButton";
+import Button from "../Button";
 import Badge from "../../../../Badge/Badge.component";
-import SoftUIGenInput from "../SoftUIGenInput";
+import Input from "../Input";
 import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
 import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
@@ -70,7 +70,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{color:font}}>Mode</span>
                     </Badge>
                 </h6>
-                <SoftUIGenButton
+                <Button
                     props={componentProps}
                     children={colorInputMode ? "Hex" : "RGB"}
                     style={{height:'50px'}}
@@ -85,7 +85,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{ color: "#0f52Ba", fontWeight: "bold" }}>FF</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     onChange={(event) => onChangeColor(event, "Hex")}
                     value={colorHEX}
                     placeholder={"#000000"}
@@ -103,7 +103,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{color:font}}>Mode</span>
                     </Badge>
                 </h6>
-                <SoftUIGenButton
+                <Button
                     props={componentProps}
                     style={{height:'50px'}}
                     children={colorInputMode ? "Hex" : "RGB"}
@@ -116,7 +116,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{ color: "#ed2939" }}>R</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Red")}
                     value={colorRGB.Red}
@@ -130,7 +130,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{ color: "#0B6623" }}>G</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Green")}
                     value={colorRGB.Green}
@@ -144,7 +144,7 @@ const SoftUIControlDesktop = () => {
                         <span style={{ color: "#0f52Ba" }}>B</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Blue")}
                     value={colorRGB.Blue}
@@ -179,21 +179,21 @@ const SoftUIControlDesktop = () => {
                     <ColorPickerSketch />
                 </div>
                 <div className={'col-6'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={generateRandom}
-                                     children={'Random color'}
+                    <Button props={componentProps}
+                            onClick={generateRandom}
+                            children={'Random color'}
                     />
                 </div>
                 <div className={'col-4'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={resetTheme}
-                                     children={'Reset'}
+                    <Button props={componentProps}
+                            onClick={resetTheme}
+                            children={'Reset'}
                     />
                 </div>
             </div>
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
-                    <SoftUIGenButton
+                    <Button
                         props={componentProps}
                         onClick={() => inverseFont()}
                         children={'Change font color'}
@@ -204,7 +204,7 @@ const SoftUIControlDesktop = () => {
             <div className={"row"}>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeBlur}
                         value={shadowBlur}
@@ -214,7 +214,7 @@ const SoftUIControlDesktop = () => {
                 </div>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeRadius}
                         value={borderRadius}
@@ -224,7 +224,7 @@ const SoftUIControlDesktop = () => {
                 </div>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Shadow Length</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeShadowLength}
                         value={shadowLength}
@@ -234,7 +234,7 @@ const SoftUIControlDesktop = () => {
                 </div>
                 <div className={"col-sm-6"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Dark Shadow</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeDarkShadowFactor}
                         value={Math.round(darkShadowFactor * 100)}
@@ -244,7 +244,7 @@ const SoftUIControlDesktop = () => {
                 </div>
                 <div className={"col-sm-6"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Light Shadow</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeLightShadowFactor}
                         value={Math.round(lightShadowFactor * 100)}

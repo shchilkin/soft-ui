@@ -8,6 +8,7 @@ const thumbHeight = 12;
 
 const thumbHoverColor = "#FFF"; //FONT
 const upperBackground =  "#930035";
+const thumbColor = '#FF006C'
 
 
 const StyledTextInput = styled.input`
@@ -61,10 +62,10 @@ const StyledRangeInput = styled.input`
     height: ${thumbHeight}px;
     width: ${thumbHeight}px;
     // make slider-thumb 174% from main color
-    background: #FF006C;
+    background: ${props => props.font || thumbColor};
     padding: 3px;
     border-radius: 100%;
-    border: 0;
+    border: #FFF;
     top: 50%;
     transform: translateY(-50%);
     transition: background-color 150ms;
@@ -86,7 +87,7 @@ const StyledRangeInput = styled.input`
     margin: 0;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: #FF006C;
+    background: ${props => props.font || thumbColor};
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -113,7 +114,7 @@ const StyledRangeInput = styled.input`
     appearance: none;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: #FF006C;
+    background: ${props=> props.font || thumbColor};
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -177,13 +178,13 @@ const Input = ({
         changeLightShadowFactor,
     } = themeContext;
 
-    console.log('hex',colorHEX)
     switch (type) {
         case 'range':
             return (
                     <StyledRangeInput type="range"
                            className={'rangeInput'}
                            background={colorHEX}
+                           font={font}
                            Blur = {shadowBlur}
                            darkerShadow={props.darkerShadow}
                            lighterShadow={props.lighterShadow}

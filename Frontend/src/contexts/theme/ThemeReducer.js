@@ -344,19 +344,19 @@ export default (state, action) => {
         case THEME_RESET:
             return {
                 ...state,
-                Red: 173,
-                Green: 0,
-                Blue: 62,
+                Red: 233,
+                Green: 233,
+                Blue: 233,
                 shadowBlur: 30,
                 shadowLength: 5,
                 borderRadius: 12,
                 darkShadowFactor: 0.85,
                 lightShadowFactor: 1.05,
-                hexColor: (toHex(173) + toHex(0) + toHex(62)),
-                font: fontColor(173, 0, 62),
-                codeFontColor: fontColor(173, 0, 62),
-                shadows: calculateShadows(173,0,62,1.05,0.85),
-                codeBackgroundColor: "#930035",
+                hexColor: (toHex(233) + toHex(233) + toHex(233)),
+                font: fontColor(233, 233, 233),
+                codeFontColor: fontColor(233, 233, 233),
+                shadows: calculateShadows(233,233,233,1.05,0.85),
+                codeBackgroundColor: "#C6C6C6",
             }
         case CHANGE_BADGE_COLORS:
             return {

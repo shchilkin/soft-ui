@@ -68,15 +68,14 @@ const ThemeState = (props) => {
 
   const initialState = {
     darkMode: getThemeStateFromLocalStorage(),
-    Red: 173,
-    Green: 0,
-    Blue: 62,
+    Red: 233,
+    Green: 233,
+    Blue: 233,
     shadowBlur: 30,
     shadowLength: 5,
     borderRadius: 12,
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
-    codeBackgroundColor: "#930035",
     badgeColors:[[144, 75, 82], [168, 45, 57], [178, 15, 61], [176, 38, 38], [119, 162, 80]]
   };
 
@@ -107,6 +106,9 @@ const ThemeState = (props) => {
     initialState.lightShadowFactor,
     initialState.darkShadowFactor
   );
+
+  initialState.codeBackgroundColor = `rgb(${initialState.shadows.darkerShadowArray[0]},
+   ${initialState.shadows.darkerShadowArray[1]}, ${initialState.shadows.darkerShadowArray[2]})`
 
   const [state, dispatch] = useReducer(ThemeReducer, initialState);
 

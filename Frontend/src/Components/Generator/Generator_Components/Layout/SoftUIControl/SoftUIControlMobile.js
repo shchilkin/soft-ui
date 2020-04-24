@@ -155,6 +155,13 @@ const SoftUIControlMobile = () => {
                         onClick={() => inverseFont()}
                         children={'Change font color'}
                     />
+                    <div className={'text-center'}>
+                    <span style={{fontSize: 'x-small'}}>R. {borderRadius}px</span> |{' '}
+                    <span style={{fontSize: 'x-small'}}>B. {shadowBlur}px</span> |{' '}
+                    <span style={{fontSize: 'x-small'}}>Le. {shadowLength}px</span> |{' '}
+                    <span style={{fontSize: 'x-small'}}>D. {Math.round(darkShadowFactor*100)}%</span> |{' '}
+                    <span style={{fontSize: 'x-small'}}>Li. {Math.round(lightShadowFactor*100)}%</span>
+                    </div>
                 </div>
             </div>
             <div className={"row mb-3"}>

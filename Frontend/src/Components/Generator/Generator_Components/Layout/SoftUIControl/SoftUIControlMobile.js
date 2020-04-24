@@ -1,7 +1,7 @@
 import ColorPickerSketch from "../../colorPickerSketch";
-import SoftUIGenButton from "../SoftUIGenButton";
+import Button from "../Button";
 import Badge from "../../../../Badge/Badge.component";
-import SoftUIGenInput from "../SoftUIGenInput";
+import Input from "../Input";
 import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
 import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
@@ -36,8 +36,6 @@ const SoftUIControlMobile = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
-    // True for Hex and False for RGB
-    const [colorInputMode, setColorInputMode] = useState(true);
     const onChangeBlur = (event) => changeShadowBlur(event.target.value);
     const onChangeRadius = (event) => changeBorderRadius(event.target.value);
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
@@ -65,7 +63,7 @@ const SoftUIControlMobile = () => {
     const hexInput = (
         <div className={'row'}>
             <div className={"col-12"}>
-                <SoftUIGenInput
+                <Input
                     onChange={(event) => onChangeColor(event, "Hex")}
                     value={colorHEX}
                     placeholder={"#000000"}
@@ -78,7 +76,7 @@ const SoftUIControlMobile = () => {
     const rgbInput = (
         <div className={'row'}>
             <div className={"col-4"}>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Red")}
                     value={colorRGB.Red}
@@ -87,7 +85,7 @@ const SoftUIControlMobile = () => {
                 />
             </div>
             <div className={"col-4"}>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Green")}
                     value={colorRGB.Green}
@@ -96,7 +94,7 @@ const SoftUIControlMobile = () => {
                 />
             </div>
             <div className={"col-4"}>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Blue")}
                     value={colorRGB.Blue}
@@ -121,14 +119,14 @@ const SoftUIControlMobile = () => {
                     <ColorPickerSketch />
                 </div>
                 <div className={'col-7'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={generateRandom}
-                                     children={'Random color'}
+                    <Button props={componentProps}
+                            onClick={generateRandom}
+                            children={'Random color'}
                     />
                 </div>
                 <div className={'col-3'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={resetTheme}
+                    <Button props={componentProps}
+                            onClick={resetTheme}
                     >
                         <svg width="20px" height="20px" viewBox="0 0 659 726" style={{
                             fillRule:"evenodd",
@@ -147,63 +145,80 @@ const SoftUIControlMobile = () => {
                                 -230.286 -230.286,-230.286c-30.493,0 -59.61,5.939 -86.257,16.725l48.623,102.218l-254.755,
                                 -53.229l119.444,-231.228l44.101,92.713Z"/>
                         </svg>
-                    </SoftUIGenButton>
+                    </Button>
                 </div>
             </div>
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
-                    <SoftUIGenButton
+                    <Button
                         props={componentProps}
                         onClick={() => inverseFont()}
                         children={'Change font color'}
                     />
                 </div>
             </div>
-            <div className={"row"}>
-                <div className={"col-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
+            <div className={"row mb-3"}>
+                <div className={'col-3'}>
+                    <span style={{fontWeight:'bold'}}>Radius</span>
+                </div>
+                <div className={"col-9"}>
+                    <Input
+                        min={0}
+                        max={100}
+                        type={"range"}
                         onChange={onChangeRadius}
                         value={borderRadius}
-                        placeholder={"12"}
                         props={componentProps}
                     />
                 </div>
-                <div className={"col-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
+                <div className={'col-3'}>
+                    <span style={{fontWeight:'bold'}}>Blur</span>
+                </div>
+                <div className={"col-9"}>
+                    <Input
+                        type={"range"}
+                        min={0}
+                        max={100}
                         onChange={onChangeBlur}
                         value={shadowBlur}
-                        placeholder={"30"}
                         props={componentProps}
                     />
                 </div>
-                <div className={"col-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Length</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
+                <div className={'col-3'}>
+                    <span style={{fontWeight:'bold'}}>Length</span>
+                </div>
+                <div className={"col-9"}>
+                    <Input
+                        type={"range"}
+                        max={50}
+                        min={0}
                         onChange={onChangeShadowLength}
                         value={shadowLength}
                         placeholder={"5px"}
                         props={componentProps}
                     />
                 </div>
-                <div className={"col-6"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Dark Shadow</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
+                <div className={'col-3'}>
+                    <span style={{fontWeight:'bold'}}>Dark</span>
+                </div>
+                <div className={"col-9"}>
+                    <Input
+                        min={0}
+                        max={200}
+                        type={"range"}
                         onChange={onChangeDarkShadowFactor}
                         value={Math.round(darkShadowFactor * 100)}
-                        placeholder={"dark shadow factor"}
                         props={componentProps}
                     />
                 </div>
-                <div className={"col-6"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Light Shadow</Badge></h6>
-                    <SoftUIGenInput
-                        type={"number"}
+                <div className={'col-3'}>
+                    <span style={{fontWeight:'bold'}}>Light</span>
+                </div>
+                <div className={"col-9"}>
+                    <Input
+                        min={0}
+                        max={200}
+                        type={"range"}
                         onChange={onChangeLightShadowFactor}
                         value={Math.round(lightShadowFactor * 100)}
                         placeholder={"light shadow factor"}
@@ -222,10 +237,7 @@ const SoftUIControlMobile = () => {
                 >
                   <code style={{ fontSize: "10px", color: codeFontColor }}>
                     <span style={{ color: "#ed2939" }}>background:</span>{" "}
-                      <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${colorHEX}`
-                          : `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`}
+                      <span style={{ fontWeight: "bold" }}>#{colorHEX}
                     </span>
                     ;<br />
                     <span style={{ color: "#ed2939" }}>
@@ -236,22 +248,14 @@ const SoftUIControlMobile = () => {
                     <span style={{ color: "#ed2939" }}>box-shadow:</span>{" "}
                       {shadowLength}px {shadowLength}px {shadowBlur}px 0{" "}
                       <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${toHex(darkerShadows[0])}${toHex(
-                              darkerShadows[1]
-                          )}${toHex(darkerShadows[2])}`
-                          : `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`}
+                        #{toHex(darkerShadows[0])}{toHex(darkerShadows[1])}{toHex(darkerShadows[2])}
                     </span>
                     ,
                     <br />
                       {"            "}-{shadowLength}px -{shadowLength}px{" "}
                       {shadowBlur}px 0{" "}
                       <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${toHex(lighterShadows[0])}${toHex(
-                              lighterShadows[1]
-                          )}${toHex(lighterShadows[2])}`
-                          : `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`}
+                            #{toHex(lighterShadows[0])}{toHex(lighterShadows[1])}{toHex(lighterShadows[2])}
                     </span>
                     ;
                   </code>

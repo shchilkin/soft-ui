@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import SoftUIGenButton from "../SoftUIGenButton";
-import SoftUIGenInput from "../SoftUIGenInput";
+import Button from "../Button";
+import Input from "../Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const SoftUIPreview = () => {
@@ -61,21 +61,21 @@ const SoftUIPreview = () => {
                     <h6 style={{ fontWeight: "bold" }}>Button</h6>
                     <div className={"row"}>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 props={componentProps}
                                 state={"initial"}
                                 children={"Button"}
                             />
                         </div>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 state={"active"}
                                 props={componentProps}
                                 children={"Active"}
                             />
                         </div>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 state={"hover"}
                                 props={componentProps}
                                 children={"hover"}
@@ -89,14 +89,14 @@ const SoftUIPreview = () => {
                     <h6 style={{ fontWeight: "bold" }}>Input</h6>
                     <div className={"row"}>
                         <div className={"col-md-6 mb-3"}>
-                            <SoftUIGenInput
+                            <Input
                                 props={componentProps}
                                 state={"blur"}
                                 placeholder={"Input on Blur"}
                             />
                         </div>
                         <div className={"col-md-6 mb-3"}>
-                            <SoftUIGenInput
+                            <Input
                                 props={componentProps}
                                 state={"focus"}
                                 placeholder={"Input on Focus"}

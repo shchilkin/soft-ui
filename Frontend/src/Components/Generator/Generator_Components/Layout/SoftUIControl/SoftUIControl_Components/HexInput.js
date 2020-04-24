@@ -1,5 +1,5 @@
 import Badge from "../../../../../Badge/Badge.component";
-import SoftUIGenInput from "../../SoftUIGenInput";
+import Input from "../../Input";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 
@@ -40,7 +40,7 @@ const HexInput = (onChange) => {
                     <span style={{ color: "#00F", fontWeight: "bold" }}>FF</span>
                 </Badge>
             </h6>
-            <SoftUIGenInput
+            <Input
                 onChange={() => onChange}
                 value={colorHEX}
                 placeholder={"#000000"}

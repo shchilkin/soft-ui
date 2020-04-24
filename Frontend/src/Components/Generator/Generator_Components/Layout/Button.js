@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-const SoftUIGenButton = ({props, children, onClick, state='', style, type = 'default'}) => {
+const Button = ({props, children, onClick, state='', style, type = 'default'}) => {
 
     let mainColor, font, darkerShadow, lighterShadow = '#000';
     let Blur, shadowLength = 0;
@@ -89,4 +89,4 @@ const SoftUIGenButton = ({props, children, onClick, state='', style, type = 'def
         </button>)
 }
 
-export default SoftUIGenButton;
+export default Button;

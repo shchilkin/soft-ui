@@ -1,5 +1,14 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
 import styled from 'styled-components'
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
+
+// excess height to improve interactive area / accessibility
+const height = "18px";
+const thumbHeight = 12;
+
+const thumbHoverColor = "#FFF"; //FONT
+const upperBackground =  "#930035";
+
 
 const StyledTextInput = styled.input`
         width: 100%;
@@ -23,19 +32,8 @@ const StyledTextInput = styled.input`
         }
     `;
 const StyledRangeInput = styled.input`
-
-`;
-
-// excess height to improve interactive area / accessibility
-const height = "18px";
-const thumbHeight = 12;
-
-const thumbHoverColor = "#FFF"; //FONT
-const upperBackground =  "#930035";
-
-const Range = styled.input`
   overflow: hidden;
-  display: block;
+  display: inline-block;
   appearance: none;
   max-width: 700px;
   width: 100%;
@@ -43,6 +41,7 @@ const Range = styled.input`
   margin: 0;
   height: ${height};
   cursor: pointer;
+  vertical-align: text-bottom;
 
   &:focus {
     outline: none;
@@ -51,7 +50,9 @@ const Range = styled.input`
   &::-webkit-slider-runnable-track {
     width: 100%;
     height: ${height};
-    background: ${props => props.darkerShadow || upperBackground};
+    background: #${props => props.background};
+    box-shadow: inset 10px 10px ${props => props.Blur}px 0 ${props => props.darkerShadow},
+         inset -10px -10px ${props => props.Blur}px 0 ${props => props.lighterShadow};
   }
 
   &::-webkit-slider-thumb {
@@ -59,7 +60,8 @@ const Range = styled.input`
     appearance: none;
     height: ${thumbHeight}px;
     width: ${thumbHeight}px;
-    background: ${"#FFF"};
+    // make slider-thumb 174% from main color
+    background: #FF006C;
     padding: 3px;
     border-radius: 100%;
     border: 0;
@@ -84,7 +86,7 @@ const Range = styled.input`
     margin: 0;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: ${props => props.font};
+    background: #FF006C;
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -111,7 +113,7 @@ const Range = styled.input`
     appearance: none;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: ${props => props.font};
+    background: #FF006C;
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -152,12 +154,37 @@ const Input = ({
                    value,
                    state=''}) => {
 
+    const themeContext = useContext(ThemeContext);
+    const {
+        font,
+        colorRGB,
+        colorHEX,
+        shadows,
+        shadowBlur,
+        shadowLength,
+        borderRadius,
+        darkShadowFactor,
+        lightShadowFactor,
+        changeColor,
+        resetTheme,
+        inverseFont,
+        codeFontColor,
+        changeShadowBlur,
+        changeBorderRadius,
+        changeShadowLength,
+        codeBackgroundColor,
+        changeDarkShadowFactor,
+        changeLightShadowFactor,
+    } = themeContext;
 
+    console.log('hex',colorHEX)
     switch (type) {
         case 'range':
             return (
-                    <Range type="range"
+                    <StyledRangeInput type="range"
                            className={'rangeInput'}
+                           background={colorHEX}
+                           Blur = {shadowBlur}
                            darkerShadow={props.darkerShadow}
                            lighterShadow={props.lighterShadow}
                            onChange={onChange}

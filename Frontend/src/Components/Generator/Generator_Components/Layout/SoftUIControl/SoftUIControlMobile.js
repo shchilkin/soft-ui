@@ -236,16 +236,16 @@ const SoftUIControlMobile = () => {
                     }}
                 >
                   <code style={{ fontSize: "10px", color: codeFontColor }}>
-                    <span style={{ color: "#ed2939" }}>background:</span>{" "}
+                    <span style={{ color: "#FF006C" }}>background:</span>{" "}
                       <span style={{ fontWeight: "bold" }}>#{colorHEX}
                     </span>
                     ;<br />
-                    <span style={{ color: "#ed2939" }}>
+                    <span style={{ color: "#FF006C" }}>
                       border-radius:
                     </span>{" "}
                       {borderRadius}px;
                     <br />
-                    <span style={{ color: "#ed2939" }}>box-shadow:</span>{" "}
+                    <span style={{ color: "#FF006C" }}>box-shadow:</span>{" "}
                       {shadowLength}px {shadowLength}px {shadowBlur}px 0{" "}
                       <span style={{ fontWeight: "bold" }}>
                         #{toHex(darkerShadows[0])}{toHex(darkerShadows[1])}{toHex(darkerShadows[2])}

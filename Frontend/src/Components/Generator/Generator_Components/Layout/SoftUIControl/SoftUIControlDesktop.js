@@ -253,7 +253,9 @@ const SoftUIControlDesktop = () => {
                     />
                 </div>
             </div>
-            <div>
+            <div className={'row'}>
+                <div className={'col-9'}>
+                    <div>
                 <pre
                     className={"pt-3 pb-3 pr-1 pl-3"}
                     style={{
@@ -298,6 +300,17 @@ const SoftUIControlDesktop = () => {
                     ;
                   </code>
                 </pre>
+                    </div>
+                </div>
+                <div className={'col-3'}>
+                    <p style={{fontSize:'smaller'}}><input type={'checkbox'}/> Use css variables</p>
+                    <br/>
+                    <span>Hex </span>
+                    <input type={'radio'}/>
+                    <br/>
+                    <span>RGB </span>
+                    <input type={'radio'}/>
+                </div>
             </div>
         </div>
     )

@@ -1,9 +1,8 @@
 import ColorPickerSketch from "../../colorPickerSketch";
 import Button from "../Button";
-import Badge from "../../../../Badge/Badge.component";
 import Input from "../Input";
 import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const SoftUIControlMobile = () => {

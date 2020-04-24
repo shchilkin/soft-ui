@@ -59,7 +59,7 @@ const Range = styled.input`
     appearance: none;
     height: ${thumbHeight}px;
     width: ${thumbHeight}px;
-    background: ${props => props.lighterShadow};
+    background: ${"#FFF"};
     padding: 3px;
     border-radius: 100%;
     border: 0;
@@ -84,7 +84,7 @@ const Range = styled.input`
     margin: 0;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: ${props => props.lighterShadow};
+    background: ${props => props.font};
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -111,7 +111,7 @@ const Range = styled.input`
     appearance: none;
     height: ${thumbHeight};
     width: ${thumbHeight};
-    background: ${props => props.lighterShadow};
+    background: ${props => props.font};
     border-radius: 100%;
     border: 0;
     transition: background-color 150ms;
@@ -175,6 +175,7 @@ const Input = ({
                     value={value}
                     placeholder={placeholder}
                     color={props.font}
+                    font={props.font}
                     background={props.mainColor}
                     Blur={props.Blur}
                     darkerShadow={props.darkerShadow}

@@ -1,26 +1,7 @@
 import React, {useContext} from "react";
 import styled from 'styled-components'
-import {calculateColor,toHex} from "../../../../Functions.SoftUIGenerator";
+import {calculateTintAndShades} from "../../../../Functions.SoftUIGenerator";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-
-function calculateTintAndShades(red, green, blue, factor = 85,outputMode = 'hex') {
-    let _factor = factor / 100;
-
-    console.log('factor',_factor)
-    switch (outputMode) {
-        case "rgb":
-            break
-        case "hex":
-            let hexRed = toHex(calculateColor(red, _factor));
-            let hexGreen = toHex(calculateColor(green, _factor));
-            let hexBlue = toHex(calculateColor(blue, _factor))
-            return `#${hexRed}${hexGreen}${hexBlue}`
-        default:
-            break
-    }
-}
-
-console.log()
 
 const OptionBar = () => {
     const themeContext = useContext(ThemeContext);
@@ -53,12 +34,9 @@ const OptionBar = () => {
 
     return(
         <Bar className={'d-none d-sm-block'}>
-            <Badge_chosen>Start</Badge_chosen>{" "}
-            =><Badge>choose Color</Badge>{" "}
-            => <Badge>customize Card</Badge>{" "}
-            => <Badge>customize Button</Badge>{" "}
-            => <Badge>customize Input</Badge>{" "}
-            => <Badge>customize Badge</Badge>{" "}
+            <Badge>Start</Badge>{" "}
+            =><Badge_chosen>choose Color</Badge_chosen>{" "}
+            => <Badge>customize components</Badge>{" "}
             => <Badge>Generate CSS</Badge>
         </Bar>
     )

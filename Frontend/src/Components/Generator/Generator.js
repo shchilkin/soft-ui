@@ -15,6 +15,7 @@ import GenerationContext from "../../contexts/generation(Desktop)/GenerationCont
 // #33D2D0 blue
 // #04A883 green
 //#ADC009 green
+//#FBA50E light orange
 
 const Generator = () => {
 
@@ -22,6 +23,7 @@ const Generator = () => {
     const { stage } = generationContext;
 
     const viewportWidth = window.innerWidth
+    //TODO rename Function, make no sense now
     function getContainerHeight(viewportWidth) {
         if(viewportWidth < 500){
             return <Generator_mobile />

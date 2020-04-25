@@ -24,7 +24,7 @@ const OptionBar = () => {
                 <Badge_OB
                     activeOnStage={0}
                 >
-                    Start
+                    About
                 </Badge_OB>{" "}
                 <Badge_OB
                     activeOnStage={1}>

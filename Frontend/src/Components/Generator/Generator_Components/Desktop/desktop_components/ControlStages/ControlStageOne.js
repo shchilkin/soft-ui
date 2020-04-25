@@ -191,12 +191,28 @@ const ControlStageOne = () => {
                     />
                 </div>
             </div>
+            {/*<div className={"row mb-3"}>*/}
+            {/*    <div className={"col-6"}>*/}
+            {/*        <Button*/}
+            {/*            props={componentProps}*/}
+            {/*            onClick={() => inverseFont()}*/}
+            {/*            children={'Tint/Shade font'}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*    <div className={"col-6"}>*/}
+            {/*        <Button*/}
+            {/*            props={componentProps}*/}
+            {/*            onClick={() => inverseFont()}*/}
+            {/*            children={'Black/White Font'}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
                     <Button
                         props={componentProps}
                         onClick={() => inverseFont()}
-                        children={'Change font color'}
+                        children={'Inverse font color'}
                     />
                 </div>
             </div>

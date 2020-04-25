@@ -3,7 +3,7 @@ import Button from "../Button";
 import Input from "../Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
-const SoftUIPreview = () => {
+const SoftUIPreviewMobile = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -109,4 +109,4 @@ const SoftUIPreview = () => {
     )
 }
 
-export default SoftUIPreview;
+export default SoftUIPreviewMobile;

@@ -1,7 +1,10 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
+import Button from "../../../Layout/Button";
+import Input from "../../../Layout/Input";
+import {generateTintAndShades} from "../../../../../../Functions";
 
-const PreviewStageZero = () => {
+const PreviewStageOne = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -16,15 +19,23 @@ const PreviewStageZero = () => {
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
+    console.log('colors',generateTintAndShades(Red,Green,Blue))
     const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
+    const viewportWidth = window.innerWidth
+    function getContainerHeight(viewportWidth) {
+        if(viewportWidth < 500){
+            return 175
+        } else return 300
+    }
+
     const containerStyle = {
         width: "100%",
+        height: `${getContainerHeight(viewportWidth)}px`,
         minHeight: "100px",
         backgroundColor: mainColor,
-        padding:'1rem',
         color: font,
         mixBlendMode: "normal",
         boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
@@ -33,19 +44,36 @@ const PreviewStageZero = () => {
         borderRadius: `${borderRadius}px`,
     };
 
+    const componentProps = {
+        mainColor: mainColor,
+        font: font,
+        Blur: shadowBlur,
+        shadowLength: shadowLength,
+        darkerShadow: darkerShadow,
+        lighterShadow: lighterShadow,
+    };
+
     return (
         <div>
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
                     <div className={"align-self-center"} style={containerStyle}>
-                        <p>
-                            <h5>Create design elements: badges, inputs, cards.</h5>
-                            <ul>
-                                <li>Calculate shadows in percentages, find your perfect option!</li>
-                                <li>Use for your projects for free</li>
-                            </ul>
-                            <h6>Most advanced open-source CSS code generator for neumorphism / Soft UI design</h6>
-                        </p>
+                    </div>
+                    <div className={'row mt-3'}>
+                        <div className={'col-4'}>
+                            <Button
+                                style={{verticalAlign:'-50%'}}
+                                props={componentProps}
+                                children={"Button"}
+                            />
+                        </div>
+                       <div className={'col-8'}>
+                           <Input
+                               props={componentProps}
+                               state={"blur"}
+                               placeholder={"Input"}
+                           />
+                       </div>
                     </div>
                 </div>
             </div>
@@ -53,4 +81,4 @@ const PreviewStageZero = () => {
     )
 }
 
-export default PreviewStageZero;
+export default PreviewStageOne;

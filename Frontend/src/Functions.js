@@ -7,7 +7,6 @@ export function calculateColor(color, factor){
         return Math.round(_color)
     }
 }
-
 export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadowFactor) {
     return {
         ligherShadowArray: [
@@ -27,14 +26,45 @@ export function calculateTintAndShades(red, green, blue, factor = 85,outputMode 
     let _factor = factor / 100;
     switch (outputMode) {
         case "rgb":
-            break
+            return `rgb(${calculateColor(red, _factor)},
+            ${calculateColor(green, _factor)},
+            ${calculateColor(blue, _factor)}`
+        default:
         case "hex":
             let hexRed = toHex(calculateColor(red, _factor));
             let hexGreen = toHex(calculateColor(green, _factor));
             let hexBlue = toHex(calculateColor(blue, _factor))
             return `#${hexRed}${hexGreen}${hexBlue}`
-        default:
-            break
+    }
+}
+export function generateTintAndShades(red, green, blue) {
+    return {
+        tints: {
+            '110': `rgb(${calculateColor(red, 1.10)},${calculateColor(green, 1.10)}, ${calculateColor(blue, 1.10)})`,
+            '120': `rgb(${calculateColor(red, 1.20)},${calculateColor(green, 1.20)}, ${calculateColor(blue, 1.20)})`,
+            '130': `rgb(${calculateColor(red, 1.30)},${calculateColor(green, 1.30)}, ${calculateColor(blue, 1.30)})`,
+            '140': `rgb(${calculateColor(red, 1.40)},${calculateColor(green, 1.40)}, ${calculateColor(blue, 1.40)})`,
+            '150': `rgb(${calculateColor(red, 1.50)},${calculateColor(green, 1.50)}, ${calculateColor(blue, 1.50)})`,
+            '160': `rgb(${calculateColor(red, 1.60)},${calculateColor(green, 1.60)}, ${calculateColor(blue, 1.60)})`,
+            '170': `rgb(${calculateColor(red, 1.70)},${calculateColor(green, 1.70)}, ${calculateColor(blue, 1.70)})`,
+            '180': `rgb(${calculateColor(red, 1.80)},${calculateColor(green, 1.80)}, ${calculateColor(blue, 1.80)})`,
+            '190': `rgb(${calculateColor(red, 1.90)},${calculateColor(green, 1.90)}, ${calculateColor(blue, 1.90)})`,
+            '200': `rgb(${calculateColor(red, 2.00)},${calculateColor(green, 2.00)}, ${calculateColor(blue, 2.00)})`,
+        },
+        baseColor:{
+            '100':`rgb(${red},${green},${blue})`},
+        shades: {
+            '0':  `rgb(${calculateColor(red, 0)},${calculateColor(green, 0)}, ${calculateColor(blue, 0)})`,
+            '10': `rgb(${calculateColor(red, .10)},${calculateColor(green, .10)}, ${calculateColor(blue, .10)})`,
+            '20': `rgb(${calculateColor(red, .20)},${calculateColor(green, .20)}, ${calculateColor(blue, .20)})`,
+            '30': `rgb(${calculateColor(red, .30)},${calculateColor(green, .30)}, ${calculateColor(blue, .30)})`,
+            '40': `rgb(${calculateColor(red, .40)},${calculateColor(green, .40)}, ${calculateColor(blue, .40)})`,
+            '50': `rgb(${calculateColor(red, .50)},${calculateColor(green, .50)}, ${calculateColor(blue, .50)})`,
+            '60': `rgb(${calculateColor(red, .60)},${calculateColor(green, .60)}, ${calculateColor(blue, .60)})`,
+            '70':  `rgb(${calculateColor(red, .70)},${calculateColor(green, .70)}, ${calculateColor(blue, .70)})`,
+            '80':  `rgb(${calculateColor(red, .80)},${calculateColor(green, .80)}, ${calculateColor(blue, .80)})`,
+            '90':  `rgb(${calculateColor(red, .90)},${calculateColor(green, .90)}, ${calculateColor(blue, .90)})`,
+        }
     }
 }
 export function fontColor(red, green, blue) {

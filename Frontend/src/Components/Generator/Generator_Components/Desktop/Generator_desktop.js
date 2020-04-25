@@ -7,9 +7,7 @@ import Button from "../Layout/Button";
 
 const Generator_desktop = () => {
     const generationContext = useContext(GenerationContext);
-    const {
-        stage,
-        changeStage } = generationContext;
+    const { changeStage } = generationContext;
 
     return(
             <div>
@@ -21,6 +19,8 @@ const Generator_desktop = () => {
                         <SoftUIControlDesktop/>
                     </div>
                 </div>
+
+                {/*Debug*/}
                 <div className={'row'}>
                     <div className={'col-6'}>
                         <div className={'row'}>
@@ -37,6 +37,7 @@ const Generator_desktop = () => {
                         </div>
                     </div>
                 </div>
+                {/*Debug*/}
             </div>
     )
 }

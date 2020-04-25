@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import SoftUIPreviewDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIPreviewDesktop";
 import SoftUIControlDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIControlDesktop";
 import SoftUIControlMobile from "./Generator_Components/Layout/SoftUIControl/SoftUIControlMobile";
-import OptionBar from "./Generator_Components/Desktop/desktop_components/OptionBar";
+import OptionBar from "./Generator_Components/Desktop/desktop_components/OptionBar/OptionBar";
 import Generator_mobile from "./Generator_Components/Mobile/Generator_mobile";
 import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
 import GenerationContext from "../../contexts/generation(Desktop)/GenerationContext";
@@ -32,7 +32,7 @@ const Generator = () => {
 
     return (
       <div className={"container mb-5"}>
-        <h3 className={'mb-3 mt-3 text-center text-sm-left'}>Soft-UI generator <span>stage {stage}</span></h3>
+        <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator <span>stage {stage}</span></h1>
           <div className={'row'}>
               <div className={'col-12'}>
                   <OptionBar/>

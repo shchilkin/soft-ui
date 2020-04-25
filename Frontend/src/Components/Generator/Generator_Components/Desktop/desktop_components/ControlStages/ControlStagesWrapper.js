@@ -7,6 +7,7 @@ import ControlStageTwo from "./ControlStageTwo";
 import ControlStageThree from "./ControlStageThree";
 import ControlStageFive from "./ControlStageFive";
 import ControlStageFour from "./ControlStageFour";
+import ControlStageSix from "./ControlStageSix";
 
 
 const ControlStagesWrapper = () => {
@@ -26,6 +27,8 @@ const ControlStagesWrapper = () => {
             return <ControlStageFour />
         case 5:
             return <ControlStageFive />
+        case 6:
+            return <ControlStageSix/>
         default:
             return <ControlStageDefault />
     }

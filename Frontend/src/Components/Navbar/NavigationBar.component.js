@@ -18,7 +18,7 @@ const NavigationBar = () => {
     // TODO move badge to the separate file and import if needed (Usage of the same badge in multiple files)
     const Badge = styled.span`
      padding: 5px 4px;
-     background-color: ${calculateTintAndShades(Red, Green, Blue, 95,"hex")};
+     background-color: ${calculateTintAndShades(Red, Green, Blue, 85,"hex")};
      border-radius:${Math.round(borderRadius/2)}px;
      vertical-align: bottom;
      color: ${font};

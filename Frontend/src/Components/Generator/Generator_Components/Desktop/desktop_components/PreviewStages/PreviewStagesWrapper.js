@@ -7,6 +7,7 @@ import PreviewStageTwo from "./PreviewStageTwo";
 import PreviewStageThree from "./PreviewStageThree";
 import PreviewStageFive from "./PreviewStageFive";
 import PreviewStageFour from "./PreviewStageFour";
+import PreviewStageSix from "./PreviewStageSix";
 
 
 const PreviewStagesWrapper = () => {
@@ -15,19 +16,21 @@ const PreviewStagesWrapper = () => {
 
     switch (stage) {
         case 0:
-            return <PreviewStageZero />
+            return <PreviewStageZero/>
         case 1:
-            return <PreviewStageOne />
+            return <PreviewStageOne/>
         case 2:
-            return <PreviewStageTwo />
+            return <PreviewStageTwo/>
         case 3:
-            return <PreviewStageThree />
+            return <PreviewStageThree/>
         case 4:
-            return <PreviewStageFour />
+            return <PreviewStageFour/>
         case 5:
-            return <PreviewStageFive />
+            return <PreviewStageFive/>
+        case 6:
+            return <PreviewStageSix/>
         default:
-            return <PreviewStageDefault />
+            return <PreviewStageDefault/>
     }
 };
 

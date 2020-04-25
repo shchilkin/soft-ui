@@ -1,7 +1,5 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../Layout/Button";
-import Input from "../../../Layout/Input";
 import {generateTintAndShades} from "../../../../../../Functions";
 
 const PreviewStageTwo = () => {
@@ -42,15 +40,6 @@ const PreviewStageTwo = () => {
                    -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
         border: `1px solid ${mainColor}`,
         borderRadius: `${borderRadius}px`,
-    };
-
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
     };
 
     return (

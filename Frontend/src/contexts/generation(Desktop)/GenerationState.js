@@ -25,7 +25,7 @@ const GenerationState = (props) => {
     return (
         <GenerationContext.Provider
             value={{
-                stage: initialState.stage,
+                stage: state.stage,
                 changeStage
             }}
         >

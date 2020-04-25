@@ -1,14 +1,13 @@
-export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadowFactor) {
-    function calculateColor(color, factor){
-        let _color = color * factor;
-        if(_color > 255) {
-            return 255
-        }
-        else {
-            return Math.round(_color)
-        }
+export function calculateColor(color, factor){
+    let _color = color * factor;
+    if(_color > 255) {
+        return 255
     }
-
+    else {
+        return Math.round(_color)
+    }
+}
+export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadowFactor) {
     return {
         ligherShadowArray: [
             calculateColor(Red, LightShadowFactor),
@@ -20,9 +19,7 @@ export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadow
             calculateColor(Green, DarkShadowFactor),
             calculateColor(Blue, DarkShadowFactor)
         ]
-
     }
-
 }
 export function fontColor(red, green, blue) {
     let luminance = ((0.299 * red) + (0.587 * green) + (0.114 * blue))/255;

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styled from 'styled-components'
-import {calculateTintAndShades} from "../../../../Functions.SoftUIGenerator";
-import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
+import {calculateTintAndShades} from "../../../Functions.SoftUIGenerator";
+import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const OptionBar = () => {
     const themeContext = useContext(ThemeContext);

@@ -7,6 +7,7 @@ export function calculateColor(color, factor){
         return Math.round(_color)
     }
 }
+
 export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadowFactor) {
     return {
         ligherShadowArray: [
@@ -19,6 +20,21 @@ export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadow
             calculateColor(Green, DarkShadowFactor),
             calculateColor(Blue, DarkShadowFactor)
         ]
+    }
+}
+// TODO refactor calculateShadows because calculateShadows and calculateTintAndShades have similar functionality
+export function calculateTintAndShades(red, green, blue, factor = 85,outputMode = 'hex') {
+    let _factor = factor / 100;
+    switch (outputMode) {
+        case "rgb":
+            break
+        case "hex":
+            let hexRed = toHex(calculateColor(red, _factor));
+            let hexGreen = toHex(calculateColor(green, _factor));
+            let hexBlue = toHex(calculateColor(blue, _factor))
+            return `#${hexRed}${hexGreen}${hexBlue}`
+        default:
+            break
     }
 }
 export function fontColor(red, green, blue) {

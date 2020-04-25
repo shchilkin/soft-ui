@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import Button from "../Button";
-import Input from "../Input";
+import Button from "../../Layout/Button";
+import Input from "../../Layout/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
-const SoftUIPreview = () => {
+const SoftUIPreviewDesktop = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -109,4 +109,4 @@ const SoftUIPreview = () => {
     )
 }
 
-export default SoftUIPreview;
+export default SoftUIPreviewDesktop;

@@ -17,7 +17,7 @@ import {
   calculateShadows,
   fontColor,
   toHex,
-} from "../../Components/Generator/Functions.SoftUIGenerator";
+} from "../../Functions";
 
 const ThemeState = (props) => {
   //Darkmode related code

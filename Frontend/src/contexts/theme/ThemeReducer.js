@@ -10,7 +10,7 @@ import {
     THEME_RESET,
     CHANGE_BADGE_COLORS
 } from '../types';
-import {invertFont} from "../../Components/Generator/Functions.SoftUIGenerator";
+import {invertFont} from "../../Functions";
 
 import {
     calculateShadows,
@@ -20,7 +20,7 @@ import {
     hexToRGB,
     numberRangeCheck,
     calculateShadowFactor
-}from '../../Components/Generator/Functions.SoftUIGenerator';
+}from '../../Functions';
 export default (state, action) => {
     switch (action.type){
         case CHANGE_THEME:

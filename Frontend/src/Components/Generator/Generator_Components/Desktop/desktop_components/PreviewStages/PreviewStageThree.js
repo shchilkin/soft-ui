@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
-import Button from "../Button";
-import Input from "../Input";
-import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
+import Button from "../../../Layout/Button";
 
-const SoftUIPreview = () => {
+const PreviewStageThree = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -14,9 +13,11 @@ const SoftUIPreview = () => {
         shadowLength,
         borderRadius,} = themeContext;
 
+    const {Red, Green, Blue} = colorRGB;
+
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
+    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
@@ -51,11 +52,6 @@ const SoftUIPreview = () => {
 
     return (
         <div>
-            <div className={"row mb-3"}>
-                <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle} />
-                </div>
-            </div>
             <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Button</h6>
@@ -84,29 +80,8 @@ const SoftUIPreview = () => {
                     </div>
                 </div>
             </div>
-            <div className={"row d-none d-sm-block"}>
-                <div className={"col-12"}>
-                    <h6 style={{ fontWeight: "bold" }}>Input</h6>
-                    <div className={"row"}>
-                        <div className={"col-md-6 mb-3"}>
-                            <Input
-                                props={componentProps}
-                                state={"blur"}
-                                placeholder={"Input on Blur"}
-                            />
-                        </div>
-                        <div className={"col-md-6 mb-3"}>
-                            <Input
-                                props={componentProps}
-                                state={"focus"}
-                                placeholder={"Input on Focus"}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
 
-export default SoftUIPreview;
+export default PreviewStageThree;

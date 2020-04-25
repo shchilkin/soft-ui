@@ -1,12 +1,12 @@
-import ColorPickerSketch from "../../colorPickerSketch";
-import Button from "../Button";
-import Badge from "../../../../Badge/Badge.component";
-import Input from "../Input";
-import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
 import React, {useContext, useState} from "react";
-import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
+import {getRandomInt, toHex} from "../../../../../../Functions";
+import Badge from "../../../../../Badge/Badge.component";
+import Button from "../../../Layout/Button";
+import Input from "../../../Layout/Input";
+import ColorPickerSketch from "../../../colorPickerSketch";
 
-const SoftUIControlDesktop = () => {
+const ControlStageOne = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -16,16 +16,12 @@ const SoftUIControlDesktop = () => {
         shadowBlur,
         shadowLength,
         borderRadius,
-        darkShadowFactor,
-        lightShadowFactor,
         changeColor,
         resetTheme,
         inverseFont,
-        codeFontColor,
         changeShadowBlur,
         changeBorderRadius,
         changeShadowLength,
-        codeBackgroundColor,
         changeDarkShadowFactor,
         changeLightShadowFactor,
     } = themeContext;
@@ -38,12 +34,7 @@ const SoftUIControlDesktop = () => {
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-    const onChangeBlur = (event) => changeShadowBlur(event.target.value);
-    const onChangeRadius = (event) => changeBorderRadius(event.target.value);
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
-    const onChangeShadowLength = (event) => changeShadowLength(event.target.value);
-    const onChangeLightShadowFactor = (event) => changeLightShadowFactor(event.target.value);
-    const onChangeDarkShadowFactor = (event) => changeDarkShadowFactor(event.target.value);
     const generateRandom = () => {
         let rgbObject = {
             Red:getRandomInt(255),
@@ -191,116 +182,34 @@ const SoftUIControlDesktop = () => {
                     />
                 </div>
             </div>
+            {/*<div className={"row mb-3"}>*/}
+            {/*    <div className={"col-6"}>*/}
+            {/*        <Button*/}
+            {/*            props={componentProps}*/}
+            {/*            onClick={() => inverseFont()}*/}
+            {/*            children={'Tint/Shade font'}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*    <div className={"col-6"}>*/}
+            {/*        <Button*/}
+            {/*            props={componentProps}*/}
+            {/*            onClick={() => inverseFont()}*/}
+            {/*            children={'Black/White Font'}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*</div>*/}
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
                     <Button
                         props={componentProps}
                         onClick={() => inverseFont()}
-                        children={'Change font color'}
+                        children={'Inverse font color'}
                     />
                 </div>
             </div>
             {colorInputMode ? hexInput : rgbInput}
-            <div className={"row"}>
-                <div className={"col-md-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
-                    <Input
-                        type={"number"}
-                        onChange={onChangeBlur}
-                        value={shadowBlur}
-                        placeholder={"30"}
-                        props={componentProps}
-                    />
-                </div>
-                <div className={"col-md-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
-                    <Input
-                        type={"number"}
-                        onChange={onChangeRadius}
-                        value={borderRadius}
-                        placeholder={"12"}
-                        props={componentProps}
-                    />
-                </div>
-                <div className={"col-md-4"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Shadow Length</Badge></h6>
-                    <Input
-                        type={"number"}
-                        onChange={onChangeShadowLength}
-                        value={shadowLength}
-                        placeholder={"5px"}
-                        props={componentProps}
-                    />
-                </div>
-                <div className={"col-sm-6"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Dark Shadow</Badge></h6>
-                    <Input
-                        type={"number"}
-                        onChange={onChangeDarkShadowFactor}
-                        value={Math.round(darkShadowFactor * 100)}
-                        placeholder={"dark shadow factor"}
-                        props={componentProps}
-                    />
-                </div>
-                <div className={"col-sm-6"}>
-                    <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Light Shadow</Badge></h6>
-                    <Input
-                        type={"number"}
-                        onChange={onChangeLightShadowFactor}
-                        value={Math.round(lightShadowFactor * 100)}
-                        placeholder={"light shadow factor"}
-                        props={componentProps}
-                    />
-                </div>
-            </div>
-            <div>
-                <pre
-                    className={"pt-3 pb-3 pr-1 pl-3"}
-                    style={{
-                        backgroundColor: codeBackgroundColor,
-                        borderRadius: "12px",
-                        boxShadow: `${codeBackgroundColor} 2px 2px 10px 0px inset, ${codeBackgroundColor} -2px -2px 10px 0px inset`,
-                    }}
-                >
-                  <code style={{ fontSize: "10px", color: codeFontColor }}>
-                    <span style={{ color: "#ed2939" }}>background:</span>{" "}
-                      <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${colorHEX}`
-                          : `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`}
-                    </span>
-                    ;<br />
-                    <span style={{ color: "#ed2939" }}>
-                      border-radius:
-                    </span>{" "}
-                      {borderRadius}px;
-                    <br />
-                    <span style={{ color: "#ed2939" }}>box-shadow:</span>{" "}
-                      {shadowLength}px {shadowLength}px {shadowBlur}px 0{" "}
-                      <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${toHex(darkerShadows[0])}${toHex(
-                              darkerShadows[1]
-                          )}${toHex(darkerShadows[2])}`
-                          : `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`}
-                    </span>
-                    ,
-                    <br />
-                      {"            "}-{shadowLength}px -{shadowLength}px{" "}
-                      {shadowBlur}px 0{" "}
-                      <span style={{ fontWeight: "bold" }}>
-                      {colorInputMode
-                          ? `#${toHex(lighterShadows[0])}${toHex(
-                              lighterShadows[1]
-                          )}${toHex(lighterShadows[2])}`
-                          : `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`}
-                    </span>
-                    ;
-                  </code>
-                </pre>
-            </div>
         </div>
     )
 }
 
-export default SoftUIControlDesktop
+export default ControlStageOne;

@@ -11,7 +11,8 @@ const PageCover = ({children}) => {
     const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
 
     return(
-        <div style={{backgroundColor: mainColor,
+        <div style={{
+            backgroundImage:`linear-gradient(145deg, ${mainColor}, ${mainColor})`,
             color: font,
             minHeight:'100vh'
             ,height:'100%'}}

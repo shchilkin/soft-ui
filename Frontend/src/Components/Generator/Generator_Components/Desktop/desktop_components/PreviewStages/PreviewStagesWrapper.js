@@ -3,6 +3,7 @@ import GenerationContext from "../../../../../../contexts/generation(Desktop)/Ge
 import PreviewStageDefault from "./PreviewStageDefault";
 import PreviewStageZero from "./PreviewStageZero";
 import PreviewStageOne from "./PreviewStageOne";
+import PreviewStageTwo from "./PreviewStageTwo";
 
 
 const PreviewStagesWrapper = () => {
@@ -14,6 +15,8 @@ const PreviewStagesWrapper = () => {
             return <PreviewStageZero />
         case 1:
             return <PreviewStageOne />
+        case 2:
+            return <PreviewStageTwo />
         default:
             return <PreviewStageDefault />
     }

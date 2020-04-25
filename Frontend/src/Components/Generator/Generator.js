@@ -19,9 +19,6 @@ import GenerationContext from "../../contexts/generation(Desktop)/GenerationCont
 
 const Generator = () => {
 
-    const generationContext = useContext(GenerationContext);
-    const { stage } = generationContext;
-
     const viewportWidth = window.innerWidth
     //TODO rename Function, make no sense now
     function getContainerHeight(viewportWidth) {
@@ -34,7 +31,7 @@ const Generator = () => {
 
     return (
       <div className={"container mb-5"}>
-        <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator <span>stage {stage}</span></h1>
+        <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator</h1>
           <div className={'row'}>
               <div className={'col-12'}>
                   <OptionBar/>

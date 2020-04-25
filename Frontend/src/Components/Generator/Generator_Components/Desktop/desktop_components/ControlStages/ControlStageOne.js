@@ -16,16 +16,12 @@ const ControlStageOne = () => {
         shadowBlur,
         shadowLength,
         borderRadius,
-        darkShadowFactor,
-        lightShadowFactor,
         changeColor,
         resetTheme,
         inverseFont,
-        codeFontColor,
         changeShadowBlur,
         changeBorderRadius,
         changeShadowLength,
-        codeBackgroundColor,
         changeDarkShadowFactor,
         changeLightShadowFactor,
     } = themeContext;
@@ -38,12 +34,7 @@ const ControlStageOne = () => {
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-    const onChangeBlur = (event) => changeShadowBlur(event.target.value);
-    const onChangeRadius = (event) => changeBorderRadius(event.target.value);
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
-    const onChangeShadowLength = (event) => changeShadowLength(event.target.value);
-    const onChangeLightShadowFactor = (event) => changeLightShadowFactor(event.target.value);
-    const onChangeDarkShadowFactor = (event) => changeDarkShadowFactor(event.target.value);
     const generateRandom = () => {
         let rgbObject = {
             Red:getRandomInt(255),

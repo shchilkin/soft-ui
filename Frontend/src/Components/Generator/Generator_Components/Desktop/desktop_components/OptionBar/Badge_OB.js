@@ -26,7 +26,6 @@ const Badge_OB = ({children, activeOnStage}) => {
             {children}
         </Badge_chosen>
     )
-
     const inactiveBadge = (
         <Badge
             background={calculateTintAndShades(Red, Green, Blue, 95,"hex")}
@@ -36,6 +35,10 @@ const Badge_OB = ({children, activeOnStage}) => {
         </Badge>
     )
     const shouldBeActive = (activeOnStage, stage) => {
+        if (activeOnStage instanceof Array){
+            console.log('Active on stage | number,stage, isTrue?',activeOnStage[1],stage,(activeOnStage[1] < stage))
+            return activeOnStage[0] === stage || ((stage > activeOnStage[0]) && ( activeOnStage[1] >= stage))
+        } else
         return activeOnStage === stage;
     }
 

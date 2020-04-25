@@ -3,6 +3,7 @@ import GenerationContext from "../../../../../../contexts/generation(Desktop)/Ge
 import ControlStageDefault from "./ControlStageDefault";
 import ControlStageZero from "./ControlStageZero";
 import ControlStageOne from "./ControlStageOne";
+import ControlStageTwo from "./ControlStageTwo";
 
 
 const ControlStagesWrapper = () => {
@@ -14,6 +15,8 @@ const ControlStagesWrapper = () => {
             return <ControlStageZero />
         case 1:
             return <ControlStageOne />
+        case 2:
+            return <ControlStageTwo />
         default:
             return <ControlStageDefault />
     }

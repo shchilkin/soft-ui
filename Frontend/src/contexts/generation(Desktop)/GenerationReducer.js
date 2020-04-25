@@ -2,11 +2,11 @@ import {
     CHANGE_STAGE,
 } from "../types";
 
-function validateStage(currentStage,increment) {
+function validateStage(currentStage,increment,maximum = 6) {
     if (increment === "+"){
-        if (currentStage >= 4){
+        if (currentStage >= maximum){
             console.log('+ | case greater or equal 4')
-            return 4
+            return maximum
         }
         else {
             console.log('+ | case between 0 and 4')

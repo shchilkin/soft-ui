@@ -4,6 +4,9 @@ import PreviewStageDefault from "./PreviewStageDefault";
 import PreviewStageZero from "./PreviewStageZero";
 import PreviewStageOne from "./PreviewStageOne";
 import PreviewStageTwo from "./PreviewStageTwo";
+import PreviewStageThree from "./PreviewStageThree";
+import PreviewStageFive from "./PreviewStageFive";
+import PreviewStageFour from "./PreviewStageFour";
 
 
 const PreviewStagesWrapper = () => {
@@ -17,6 +20,12 @@ const PreviewStagesWrapper = () => {
             return <PreviewStageOne />
         case 2:
             return <PreviewStageTwo />
+        case 3:
+            return <PreviewStageThree />
+        case 4:
+            return <PreviewStageFour />
+        case 5:
+            return <PreviewStageFive />
         default:
             return <PreviewStageDefault />
     }

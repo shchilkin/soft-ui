@@ -4,6 +4,9 @@ import ControlStageDefault from "./ControlStageDefault";
 import ControlStageZero from "./ControlStageZero";
 import ControlStageOne from "./ControlStageOne";
 import ControlStageTwo from "./ControlStageTwo";
+import ControlStageThree from "./ControlStageThree";
+import ControlStageFive from "./ControlStageFive";
+import ControlStageFour from "./ControlStageFour";
 
 
 const ControlStagesWrapper = () => {
@@ -17,6 +20,12 @@ const ControlStagesWrapper = () => {
             return <ControlStageOne />
         case 2:
             return <ControlStageTwo />
+        case 3:
+            return <ControlStageThree />
+        case 4:
+            return <ControlStageFour />
+        case 5:
+            return <ControlStageFive />
         default:
             return <ControlStageDefault />
     }

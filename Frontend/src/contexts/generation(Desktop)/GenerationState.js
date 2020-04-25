@@ -15,10 +15,10 @@ const GenerationState = (props) => {
 
     const [state, dispatch] = useReducer(GenerationReducer, initialState);
 
-    const changeStage = (stage, increaseOrDecrease) => {
+    const changeStage = (increaseOrDecrease) => {
         dispatch({
             type: CHANGE_STAGE,
-            payload: { stage, increaseOrDecrease },
+            payload: { increaseOrDecrease },
         });
     };
 

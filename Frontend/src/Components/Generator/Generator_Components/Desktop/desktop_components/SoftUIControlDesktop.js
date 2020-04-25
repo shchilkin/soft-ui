@@ -2,7 +2,7 @@ import ColorPickerSketch from "../../colorPickerSketch";
 import Button from "../../Layout/Button";
 import Badge from "../../../../Badge/Badge.component";
 import Input from "../../Layout/Input";
-import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
+import {getRandomInt, toHex} from "../../../../../Functions";
 import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 

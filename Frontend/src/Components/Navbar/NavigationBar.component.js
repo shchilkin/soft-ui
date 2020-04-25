@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Navbar from "react-bootstrap/cjs/Navbar";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import styled from "styled-components";
-import {calculateTintAndShades} from "../Generator/Functions.SoftUIGenerator";
+import {calculateTintAndShades} from "../../Functions";
 
 const NavigationBar = () => {
     const themeContext =  useContext(ThemeContext);

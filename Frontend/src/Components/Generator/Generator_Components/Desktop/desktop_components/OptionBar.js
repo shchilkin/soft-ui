@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from 'styled-components'
-import {calculateTintAndShades} from "../../../Functions.SoftUIGenerator";
+import {calculateTintAndShades} from "../../../../../Functions";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const OptionBar = () => {
@@ -18,7 +18,10 @@ const OptionBar = () => {
             background={calculateTintAndShades(Red, Green, Blue, 75,"hex")}
             border={borderRadius}
         >
-            <Badge>Start</Badge>{" "}
+            <Badge
+                background={calculateTintAndShades(Red, Green, Blue, 95,"hex")}
+                border={Math.round(borderRadius/2)}
+            >Start</Badge>{" "}
             =><Badge_chosen
                 background={calculateTintAndShades(Red, Green, Blue, 115,"hex")}
                 border={Math.round(borderRadius/2)}

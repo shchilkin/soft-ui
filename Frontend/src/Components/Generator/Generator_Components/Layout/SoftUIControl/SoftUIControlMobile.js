@@ -1,7 +1,7 @@
 import ColorPickerSketch from "../../colorPickerSketch";
 import Button from "../Button";
 import Input from "../Input";
-import {getRandomInt, toHex} from "../../../Functions.SoftUIGenerator";
+import {getRandomInt, toHex} from "../../../../../Functions";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 

@@ -49,7 +49,7 @@ export const DefaultButton = styled.button`
     }     
     `;
 
-export const Card = styled.div`
+export const StyledCard = styled.div`
     width: 100%;
     min-height: 50px;
     background-color: ${props => props.background};
@@ -65,5 +65,5 @@ export const Card = styled.div`
     border-bottom-left-radius: ${props => props.borderRadiusBottomLeft}px;
     border-bottom-right-radius: ${props => props.borderRadiusBottomRight}px;
     box-shadow: ${props => props.shadowLengthBottomX}px ${props => props.shadowLengthBottomY}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
-    -${props => props.shadowLengthTopX}px -${props => props.shadowLengthTopY}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow}
-`;
+    -${props => props.shadowLengthTopX}px -${props => props.shadowLengthTopY}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
+    `;

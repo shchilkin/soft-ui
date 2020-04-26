@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import {Card} from "../../../../../../StyledComponents";
+import {StyledCard} from "../../../../../../StyledComponents";
 import {calculateTintAndShades,toHex} from "../../../../../../Functions";
+import Card from "../../../Layout/Card";
 
 const PreviewStageAbout = () => {
 
@@ -38,23 +39,7 @@ const PreviewStageAbout = () => {
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
                     <Card
-                        background={mainColor}
-                        color={font}
-                        paddingTop={'1rem'}
-                        paddingBottom={'0.5rem'}
-                        paddingLeft={'1rem'}
-                        paddingRight={'1rem'}
-                        borderRadiusTopLeft={borderRadius}
-                        borderRadiusTopRight={borderRadius}
-                        borderRadiusBottomRight={0}
-                        borderRadiusBottomLeft={0}
-                        shadowLengthBottomX={shadowLength}
-                        shadowLengthBottomY={0}
-                        shadowLengthTopX={shadowLength}
-                        shadowLengthTopY={shadowLength}
-                        shadowBlur={shadowBlur}
-                        lighterShadow={lighterShadow}
-                        darkerShadow={darkerShadow}
+                        type={'top'}
                     >
                         <svg width="25%" height="25%" viewBox="0 0 222 222" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
                             <path id="Main" d="M221.978,55.495c0,-30.629 -24.866,-55.495 -55.494,-55.495l-110.989,0c-30.629,0 -55.495,24.866 -55.495,55.495l0,110.989c0,30.628 24.866,55.494 55.495,55.494l110.989,0c30.628,0 55.494,-24.866 55.494,-55.494l0,-110.989Z"
@@ -66,23 +51,7 @@ const PreviewStageAbout = () => {
                         </svg>
                     </Card>
                     <Card
-                        background={mainColor}
-                        color={font}
-                        paddingTop={'1rem'}
-                        paddingBottom={'1rem'}
-                        paddingLeft={'1rem'}
-                        paddingRight={'1rem'}
-                        borderRadiusTopLeft={0}
-                        borderRadiusTopRight={0}
-                        borderRadiusBottomRight={borderRadius}
-                        borderRadiusBottomLeft={borderRadius}
-                        shadowLengthBottomX={shadowLength}
-                        shadowLengthBottomY={shadowLength}
-                        shadowLengthTopX={shadowLength}
-                        shadowLengthTopY={0}
-                        shadowBlur={shadowBlur}
-                        lighterShadow={lighterShadow}
-                        darkerShadow={darkerShadow}
+                        type={'bottom'}
                     >
                         <h5>Create design elements: badges, inputs, cards.</h5>
                         <h6 style={{fontSize:'0.9rem',marginBottom:'1.2rem'}}>Most advanced open-source CSS code generator for neumorphism / Soft UI design</h6>

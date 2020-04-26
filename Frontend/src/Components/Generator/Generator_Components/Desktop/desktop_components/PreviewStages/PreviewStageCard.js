@@ -1,10 +1,8 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../Layout/Button";
-import Input from "../../../Layout/Input";
 import {generateTintAndShades} from "../../../../../../Functions";
 
-const PreviewStageOne = () => {
+const PreviewStageCard = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -44,41 +42,15 @@ const PreviewStageOne = () => {
         borderRadius: `${borderRadius}px`,
     };
 
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
-    };
-
     return (
         <div>
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}>
-                    </div>
-                    <div className={'row mt-3'}>
-                        <div className={'col-4'}>
-                            <Button
-                                style={{verticalAlign:'-50%'}}
-                                props={componentProps}
-                                children={"Button"}
-                            />
-                        </div>
-                       <div className={'col-8'}>
-                           <Input
-                               props={componentProps}
-                               state={"blur"}
-                               placeholder={"Input"}
-                           />
-                       </div>
-                    </div>
+                    <div className={"align-self-center"} style={containerStyle}/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default PreviewStageOne;
+export default PreviewStageCard;

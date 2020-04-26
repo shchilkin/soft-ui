@@ -3,7 +3,7 @@ import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import Badge from "../../../../../Badge/Badge.component";
 import Input from "../../../Layout/Input";
 
-const ControlStageFour = () => {
+const ControlStageInput = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -113,4 +113,4 @@ const ControlStageFour = () => {
     )
 }
 
-export default ControlStageFour;
+export default ControlStageInput;

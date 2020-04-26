@@ -3,7 +3,7 @@ import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import {generateTintAndShades} from "../../../../../../Functions";
 import {Badge} from "../../../../../../StyledComponents";
 
-const PreviewStageFive = () => {
+const PreviewStageBadge = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -56,4 +56,4 @@ const PreviewStageFive = () => {
     )
 }
 
-export default PreviewStageFive;
+export default PreviewStageBadge;

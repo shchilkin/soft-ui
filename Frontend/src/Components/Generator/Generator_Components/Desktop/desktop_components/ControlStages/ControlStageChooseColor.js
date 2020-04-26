@@ -6,7 +6,7 @@ import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
 import ColorPickerSketch from "../../../colorPickerSketch";
 
-const ControlStageOne = () => {
+const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -212,4 +212,4 @@ const ControlStageOne = () => {
     )
 }
 
-export default ControlStageOne;
+export default ControlStageChooseColor;

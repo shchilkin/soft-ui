@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import Input from "../../../Layout/Input";
 
-const PreviewStageFour = () => {
+const PreviewStageInput = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -67,4 +67,4 @@ const PreviewStageFour = () => {
     )
 }
 
-export default PreviewStageFour;
+export default PreviewStageInput;

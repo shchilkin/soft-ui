@@ -1,13 +1,13 @@
 import React, {useContext} from "react";
 import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
 import PreviewStageDefault from "./PreviewStageDefault";
-import PreviewStageZero from "./PreviewStageZero";
-import PreviewStageOne from "./PreviewStageOne";
-import PreviewStageTwo from "./PreviewStageTwo";
-import PreviewStageThree from "./PreviewStageThree";
-import PreviewStageFive from "./PreviewStageFive";
-import PreviewStageFour from "./PreviewStageFour";
-import PreviewStageSix from "./PreviewStageSix";
+import PreviewStageAbout from "./PreviewStageAbout";
+import PreviewStageChooseColor from "./PreviewStageChooseColor";
+import PreviewStageCard from "./PreviewStageCard";
+import PreviewStageButton from "./PreviewStageButton";
+import PreviewStageBadge from "./PreviewStageBadge";
+import PreviewStageInput from "./PreviewStageInput";
+import PreviewStageGenerateCSS from "./PreviewStageGenerateCSS";
 
 
 const PreviewStagesWrapper = () => {
@@ -16,19 +16,19 @@ const PreviewStagesWrapper = () => {
 
     switch (stage) {
         case 0:
-            return <PreviewStageZero/>
+            return <PreviewStageAbout/>
         case 1:
-            return <PreviewStageOne/>
+            return <PreviewStageChooseColor/>
         case 2:
-            return <PreviewStageTwo/>
+            return <PreviewStageCard/>
         case 3:
-            return <PreviewStageThree/>
+            return <PreviewStageButton/>
         case 4:
-            return <PreviewStageFour/>
+            return <PreviewStageInput/>
         case 5:
-            return <PreviewStageFive/>
+            return <PreviewStageBadge/>
         case 6:
-            return <PreviewStageSix/>
+            return <PreviewStageGenerateCSS/>
         default:
             return <PreviewStageDefault/>
     }

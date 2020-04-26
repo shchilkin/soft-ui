@@ -1,10 +1,8 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import Button from "../../../Layout/Button";
-import Input from "../../../Layout/Input";
-import {generateTintAndShades} from "../../../../../../Functions";
 
-const PreviewStageSix = () => {
+const PreviewStageButton = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -19,7 +17,6 @@ const PreviewStageSix = () => {
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
     const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
@@ -55,13 +52,36 @@ const PreviewStageSix = () => {
 
     return (
         <div>
-            <div className={"row mb-3"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}/>
+                    <h6 style={{ fontWeight: "bold" }}>Button</h6>
+                    <div className={"row"}>
+                        <div className={"col-md-4 mb-3"}>
+                            <Button
+                                props={componentProps}
+                                state={"initial"}
+                                children={"Button"}
+                            />
+                        </div>
+                        <div className={"col-md-4 mb-3"}>
+                            <Button
+                                state={"active"}
+                                props={componentProps}
+                                children={"Active"}
+                            />
+                        </div>
+                        <div className={"col-md-4 mb-3"}>
+                            <Button
+                                state={"hover"}
+                                props={componentProps}
+                                children={"hover"}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default PreviewStageSix;
+export default PreviewStageButton;

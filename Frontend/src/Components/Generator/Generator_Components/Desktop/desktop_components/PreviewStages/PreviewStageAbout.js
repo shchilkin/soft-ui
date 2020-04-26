@@ -1,8 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import {generateTintAndShades} from "../../../../../../Functions";
 
-const PreviewStageTwo = () => {
+const PreviewStageAbout = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -17,23 +16,15 @@ const PreviewStageTwo = () => {
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
     const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
-    const viewportWidth = window.innerWidth
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return 175
-        } else return 300
-    }
-
     const containerStyle = {
         width: "100%",
-        height: `${getContainerHeight(viewportWidth)}px`,
         minHeight: "100px",
         backgroundColor: mainColor,
+        padding:'1rem',
         color: font,
         mixBlendMode: "normal",
         boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
@@ -46,11 +37,20 @@ const PreviewStageTwo = () => {
         <div>
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}/>
+                    <div className={"align-self-center"} style={containerStyle}>
+                        <p>
+                            <h5>Create design elements: badges, inputs, cards.</h5>
+                            <ul>
+                                <li>Calculate shadows in percentages, find your perfect option!</li>
+                                <li>Use for your projects for free</li>
+                            </ul>
+                            <h6>Most advanced open-source CSS code generator for neumorphism / Soft UI design</h6>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default PreviewStageTwo;
+export default PreviewStageAbout;

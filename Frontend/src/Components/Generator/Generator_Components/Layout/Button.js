@@ -5,7 +5,6 @@ import ThemeContext from '../../../../contexts/theme/ThemeContext'
 
 const Button = ({children, onClick, state='', style}) => {
 
-
     const themeContext = useContext(ThemeContext);
     const {
         font,

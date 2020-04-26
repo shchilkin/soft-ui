@@ -10,8 +10,7 @@ const PreviewStageFour = () => {
         colorRGB,
         shadows,
         shadowBlur,
-        shadowLength,
-        borderRadius,} = themeContext;
+        shadowLength} = themeContext;
 
     const {Red, Green, Blue} = colorRGB;
 
@@ -21,25 +20,6 @@ const PreviewStageFour = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
-    const viewportWidth = window.innerWidth
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return 175
-        } else return 300
-    }
-
-    const containerStyle = {
-        width: "100%",
-        height: `${getContainerHeight(viewportWidth)}px`,
-        minHeight: "100px",
-        backgroundColor: mainColor,
-        color: font,
-        mixBlendMode: "normal",
-        boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-        border: `1px solid ${mainColor}`,
-        borderRadius: `${borderRadius}px`,
-    };
 
     const componentProps = {
         mainColor: mainColor,
@@ -52,22 +32,32 @@ const PreviewStageFour = () => {
 
     return (
         <div>
-            <div className={"row d-none d-sm-block"}>
+            <div className={"row"}>
                 <div className={"col-12"}>
-                    <h6 style={{ fontWeight: "bold" }}>Input</h6>
+                    <h6 style={{ fontWeight: "bold" }}>Input (Text)</h6>
                     <div className={"row"}>
-                        <div className={"col-md-6 mb-3"}>
+                        <div className={"col-6"}>
                             <Input
                                 props={componentProps}
                                 state={"blur"}
                                 placeholder={"Input on Blur"}
                             />
                         </div>
-                        <div className={"col-md-6 mb-3"}>
+                        <div className={"col-6"}>
                             <Input
                                 props={componentProps}
                                 state={"focus"}
                                 placeholder={"Input on Focus"}
+                            />
+                        </div>
+                    </div>
+                    <h6 style={{ fontWeight: "bold" }}>Range</h6>
+                    <div className={"row"}>
+                        <div className={"col-12 mb-3"}>
+                            <Input
+                                type={'range'}
+                                props={componentProps}
+                                state={"blur"}
                             />
                         </div>
                     </div>

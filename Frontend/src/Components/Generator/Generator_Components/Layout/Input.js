@@ -158,24 +158,8 @@ const Input = ({
     const themeContext = useContext(ThemeContext);
     const {
         font,
-        colorRGB,
         colorHEX,
-        shadows,
         shadowBlur,
-        shadowLength,
-        borderRadius,
-        darkShadowFactor,
-        lightShadowFactor,
-        changeColor,
-        resetTheme,
-        inverseFont,
-        codeFontColor,
-        changeShadowBlur,
-        changeBorderRadius,
-        changeShadowLength,
-        codeBackgroundColor,
-        changeDarkShadowFactor,
-        changeLightShadowFactor,
     } = themeContext;
 
     switch (type) {

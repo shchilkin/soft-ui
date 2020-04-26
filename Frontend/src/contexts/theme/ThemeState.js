@@ -68,9 +68,9 @@ const ThemeState = (props) => {
 
   const initialState = {
     darkMode: getThemeStateFromLocalStorage(),
-    Red: 233,
-    Green: 233,
-    Blue: 233,
+    Red: 21,
+    Green: 107,
+    Blue: 65,
     shadowBlur: 30,
     shadowLength: 5,
     borderRadius: 12,

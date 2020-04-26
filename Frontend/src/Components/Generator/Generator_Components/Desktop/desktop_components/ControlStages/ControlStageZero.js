@@ -16,7 +16,6 @@ const ControlStageZero = () => {
         shadowBlur,
         shadowLength,
         borderRadius,
-        changeColor,
     } = themeContext;
 
     const generationContext = useContext(GenerationContext);
@@ -27,25 +26,6 @@ const ControlStageZero = () => {
     const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
-
-
-    const generateRandom = () => {
-        let rgbObject = {
-            Red:getRandomInt(255),
-            Green:getRandomInt(255),
-            Blue:getRandomInt(255)
-        }
-        changeColor('RGB', rgbObject);
-    }
-
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
-    };
 
     return (
         <div
@@ -65,7 +45,6 @@ const ControlStageZero = () => {
         >
             <Button
                 style={{width:'90%'}}
-                props={componentProps}
                 onClick={() => changeStage("+")}
                 children={'Generate!'}
             />

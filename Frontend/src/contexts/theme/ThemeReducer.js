@@ -342,9 +342,9 @@ export default (state, action) => {
                 font: invertFont(state.font)
             }
         case THEME_RESET:
-            let Red = 21;
-            let Green = 107;
-            let Blue = 65;
+            let Red = 255;
+            let Green = 255;
+            let Blue = 255;
             return {
                 ...state,
                 Red: Red,

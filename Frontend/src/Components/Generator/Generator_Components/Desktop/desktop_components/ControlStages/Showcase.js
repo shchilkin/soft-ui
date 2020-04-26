@@ -7,7 +7,7 @@ import Input from "../../../Layout/Input";
 import ColorPickerSketch from "../../../colorPickerSketch";
 import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
 
-const ControlStageAbout = () => {
+const Showcase = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -52,4 +52,4 @@ const ControlStageAbout = () => {
     )
 }
 
-export default ControlStageAbout;
+export default Showcase;

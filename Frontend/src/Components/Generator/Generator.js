@@ -31,14 +31,7 @@ const Generator = () => {
       <div className={"container mb-5"}>
         <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator</h1>
           <div className={'row'}>
-              <div className={'col-1'}>
-                  <Button
-                      children={'back'}/>
-              </div>
-              <div className={'col-1'}>
-                  <Button children={'back'}/>
-              </div>
-              <div className={'col-10'}>
+              <div className={'col-12'}>
                   <OptionBar/>
               </div>
           </div>

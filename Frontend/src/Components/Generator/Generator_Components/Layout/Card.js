@@ -3,7 +3,15 @@ import {StyledCard} from "../../../../StyledComponents";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 
-const Card = ({children, style,type='default'}) => {
+const Card = ({
+                  children,
+                  style,
+                  type='default',
+                  background,
+                  color,
+                  lightShadow,
+                  darkShadow
+              }) => {
 
     const setCardType = (type) => {
         switch (type) {
@@ -58,8 +66,10 @@ const Card = ({children, style,type='default'}) => {
 
     return (
         <StyledCard
-            background={mainColor}
-            color={font}
+            background={background || mainColor}
+            lighterShadow={lightShadow || lighterShadow}
+            darkerShadow={darkShadow || darkerShadow}
+            color={color || font}
             paddingTop={'1rem'}
             paddingBottom={'1rem'}
             paddingLeft={'1rem'}
@@ -73,8 +83,6 @@ const Card = ({children, style,type='default'}) => {
             shadowLengthTopX={shadowLength}
             shadowLengthTopY={shadowLength}
             shadowBlur={shadowBlur}
-            lighterShadow={lighterShadow}
-            darkerShadow={darkerShadow}
             style={{...style}}
         >
             {children}

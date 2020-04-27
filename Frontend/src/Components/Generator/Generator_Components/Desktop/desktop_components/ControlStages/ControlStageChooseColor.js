@@ -4,7 +4,7 @@ import {getRandomInt, toHex} from "../../../../../../Functions";
 import Badge from "../../../../../Badge/Badge.component";
 import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
-import ColorPickerSketch from "../../../colorPickerSketch";
+import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);

@@ -1,9 +1,15 @@
 import React, {useContext} from "react";
-import {DefaultButton} from "../../../../StyledComponents";
+import {DefaultButton, StyledCard} from "../../../../StyledComponents";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
 
 
-const Button = ({children, onClick, state='', style}) => {
+const Button = ({children,
+                    onClick,
+                    style,
+                    background,
+                    color,
+                    lightShadow,
+                    darkShadow}) => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -26,13 +32,13 @@ const Button = ({children, onClick, state='', style}) => {
 
     return (
         <DefaultButton
+            background={background || mainColor}
+            lighterShadow={lightShadow || lighterShadow}
+            darkerShadow={darkShadow || darkerShadow}
+            color={color || font}
             radius={borderRadius}
             shadowLength={shadowLength}
             Blur={shadowBlur}
-            lighterShadow={lighterShadow}
-            darkerShadow={darkerShadow}
-            background={mainColor}
-            color={font}
             style={{...style}}
             onClick={onClick}
         >

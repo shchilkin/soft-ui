@@ -21,14 +21,15 @@ const Showcase = () => {
     const [darkModeFactor ,setFactor] = useState(75);
     const [activeWindow, setActiveWindow] = useState(0)
 
-    const darkmodeDarkShadowFactor = 75;
-    const darkmodeLightShadowFactor = 90;
+    const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
+    const darkmodeLightShadowFactor = Math.round(darkModeFactor * .9);
     const darkModeBackground = calculateTintAndShades(Red, Green, Blue, darkModeFactor);
     const darkModeDarkShadow = calculateTintAndShades(
         hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Red,
         hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Green,
         hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Blue,
         Math.round(darkShadowFactor * 100))
+    console.log('darkModeFactor',darkModeFactor)
     const darkModeLightShadow = calculateTintAndShades(
         hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Red,
         hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Green,
@@ -69,8 +70,12 @@ const Showcase = () => {
                 color={darkModeFont}
                 style={{marginRight:'2rem',marginLeft:'2rem'}}
             >
-                <h6 style={{fontSize:'1.05rem'}}>Automatic {isDarkModeMoreThan100(darkModeFactor) ? 'darkmode' : 'lightmode'} generation.</h6>
+                <h6 style={{fontSize:'1.05rem'}}>Automatic{" "}
+                    {isDarkModeMoreThan100(darkModeFactor) ? 'darkmode' : 'lightmode'} generation.
+                </h6>
                 Hi! 👋 I am a {isDarkModeMoreThan100(darkModeFactor) ? 'dark' : 'light'} mode card!
+
+                {/*TODO if 100% return "Hi I am darkmode card but currently my color is the same as the main color 😜"*/}
                 <div className={'row mt-3'}>
                     <div className={'col-5'}>
                         <Button

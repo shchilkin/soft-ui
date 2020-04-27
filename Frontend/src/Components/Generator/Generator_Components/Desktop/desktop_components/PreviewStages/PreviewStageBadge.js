@@ -1,8 +1,9 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import {generateTintAndShades} from "../../../../../../Functions";
+import {Badge} from "../../../../../../StyledComponents";
 
-const PreviewStageTwo = () => {
+const PreviewStageBadge = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -17,7 +18,6 @@ const PreviewStageTwo = () => {
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
     const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
@@ -29,28 +29,31 @@ const PreviewStageTwo = () => {
         } else return 300
     }
 
-    const containerStyle = {
-        width: "100%",
-        height: `${getContainerHeight(viewportWidth)}px`,
-        minHeight: "100px",
-        backgroundColor: mainColor,
-        color: font,
-        mixBlendMode: "normal",
-        boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-        border: `1px solid ${mainColor}`,
-        borderRadius: `${borderRadius}px`,
-    };
+    const colors = generateTintAndShades(Red,Green,Blue)
+    console.log('COLORS', colors.tints["130"])
+
+    // 130,140,150,160
 
     return (
         <div>
-            <div className={"row mb-3"}>
-                <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}/>
-                </div>
-            </div>
+            <Badge
+                background={colors.tints["130"]}
+                border={borderRadius}
+            >Badge</Badge>
+            <Badge
+                background={colors.tints["140"]}
+                border={borderRadius}
+            >Badge</Badge>
+            <Badge
+                background={colors.tints["150"]}
+                border={borderRadius}
+            >Badge</Badge>
+            <Badge
+                background={colors.tints["160"]}
+                border={borderRadius}
+            >Badge</Badge>
         </div>
     )
 }
 
-export default PreviewStageTwo;
+export default PreviewStageBadge;

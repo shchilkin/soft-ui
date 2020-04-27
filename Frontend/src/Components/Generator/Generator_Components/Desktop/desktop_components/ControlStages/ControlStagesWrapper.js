@@ -1,13 +1,13 @@
 import React, {useContext} from "react";
 import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
 import ControlStageDefault from "./ControlStageDefault";
-import ControlStageZero from "./ControlStageZero";
-import ControlStageOne from "./ControlStageOne";
-import ControlStageTwo from "./ControlStageTwo";
-import ControlStageThree from "./ControlStageThree";
-import ControlStageFive from "./ControlStageFive";
-import ControlStageFour from "./ControlStageFour";
-import ControlStageSix from "./ControlStageSix";
+import Showcase from "./Showcase";
+import ControlStageChooseColor from "./ControlStageChooseColor";
+import ControlStageCard from "./ControlStageCard";
+import ControlStageButton from "./ControlStageButton";
+import ControlStageBadge from "./ControlStageBadge";
+import ControlStageInput from "./ControlStageInput";
+import ControlStageGenerateCSS from "./ControlStageGenerateCSS";
 
 
 const ControlStagesWrapper = () => {
@@ -16,19 +16,19 @@ const ControlStagesWrapper = () => {
 
     switch (stage) {
         case 0:
-            return <ControlStageZero />
+            return <Showcase />
         case 1:
-            return <ControlStageOne />
+            return <ControlStageChooseColor />
         case 2:
-            return <ControlStageTwo />
+            return <ControlStageCard />
         case 3:
-            return <ControlStageThree />
+            return <ControlStageButton />
         case 4:
-            return <ControlStageFour />
+            return <ControlStageInput />
         case 5:
-            return <ControlStageFive />
+            return <ControlStageBadge />
         case 6:
-            return <ControlStageSix/>
+            return <ControlStageGenerateCSS/>
         default:
             return <ControlStageDefault />
     }

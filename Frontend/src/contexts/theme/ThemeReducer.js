@@ -342,21 +342,24 @@ export default (state, action) => {
                 font: invertFont(state.font)
             }
         case THEME_RESET:
+            let Red = 255;
+            let Green = 255;
+            let Blue = 255;
             return {
                 ...state,
-                Red: 233,
-                Green: 233,
-                Blue: 233,
+                Red: Red,
+                Green: Green,
+                Blue: Blue,
                 shadowBlur: 30,
                 shadowLength: 5,
                 borderRadius: 12,
                 darkShadowFactor: 0.85,
                 lightShadowFactor: 1.05,
-                hexColor: (toHex(233) + toHex(233) + toHex(233)),
-                font: fontColor(233, 233, 233),
-                codeFontColor: fontColor(233, 233, 233),
-                shadows: calculateShadows(233,233,233,1.05,0.85),
-                codeBackgroundColor: "#C6C6C6",
+                hexColor: (toHex(Red) + toHex(Green) + toHex(Blue)),
+                font: fontColor(Red, Green, Blue),
+                codeFontColor: fontColor(Red, Green,Blue ),
+                shadows: calculateShadows(Red,Green,Blue,1.05,0.85),
+                codeBackgroundColor: "#125B37",
             }
         case CHANGE_BADGE_COLORS:
             return {

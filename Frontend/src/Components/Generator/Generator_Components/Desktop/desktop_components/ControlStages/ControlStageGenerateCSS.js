@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import {toHex} from "../../../../../../Functions";
 
-const ControlStageSix = () => {
+const ControlStageGenerateCSS = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -102,4 +102,4 @@ const ControlStageSix = () => {
     )
 }
 
-export default ControlStageSix;
+export default ControlStageGenerateCSS;

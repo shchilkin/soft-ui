@@ -1,4 +1,4 @@
-import ColorPickerSketch from "../../colorPickerSketch";
+import ColorPickerSketch from "../../ColorPickers/colorPickerSketch";
 import Button from "../Button";
 import Input from "../Input";
 import {getRandomInt, toHex} from "../../../../../Functions";

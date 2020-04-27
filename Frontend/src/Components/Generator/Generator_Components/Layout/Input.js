@@ -153,7 +153,12 @@ const Input = ({
                    autoComplete='on',
                    style,
                    value,
-                   state=''}) => {
+                   state='',
+                   background,
+                   darkShadow,
+                   lightShadow,
+                   color
+               }) => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -164,19 +169,15 @@ const Input = ({
         shadowBlur,
         shadowLength,
         borderRadius,
-        darkShadowFactor,
-        lightShadowFactor,
-        changeColor,
-        resetTheme,
-        inverseFont,
-        codeFontColor,
-        changeShadowBlur,
-        changeBorderRadius,
-        changeShadowLength,
-        codeBackgroundColor,
-        changeDarkShadowFactor,
-        changeLightShadowFactor,
     } = themeContext;
+
+    const {Red, Green, Blue} = colorRGB;
+
+    const lighterShadows = shadows.ligherShadowArray;
+    const darkerShadows = shadows.darkerShadowArray;
+    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
+    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
+    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
     switch (type) {
         case 'range':
@@ -198,16 +199,18 @@ const Input = ({
         default:
             return (
                 <StyledTextInput
+                    background={background || mainColor}
+                    lighterShadow={lightShadow || lighterShadow}
+                    darkerShadow={darkShadow || darkerShadow}
+                    color={color || font}
+                    radius={borderRadius}
+                    shadowLength={shadowLength}
+                    Blur={shadowBlur}
+                    style={{...style}}
                     type={type}
                     onChange={onChange}
                     value={value}
                     placeholder={placeholder}
-                    color={props.font}
-                    font={props.font}
-                    background={props.mainColor}
-                    Blur={props.Blur}
-                    darkerShadow={props.darkerShadow}
-                    lighterShadow={props.lighterShadow}
                 />
             )
     }

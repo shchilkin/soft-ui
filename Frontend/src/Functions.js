@@ -100,6 +100,14 @@ export function hexToRGB(hexColor) {
             Blue: parseInt(`${hexColor.slice(4, 6)}`, 16)
         }
     }
+
+    if (hexColor.length === 7){
+        return {
+            Red: parseInt(`${hexColor.slice(1, 3)}`, 16),
+            Green: parseInt(`${hexColor.slice(3, 5)}`, 16),
+            Blue: parseInt(`${hexColor.slice(5, 7)}`, 16)
+        }
+    }
 }
 export function isHexValid(hex) {
     return hex.length === 3 || hex.length === 6;

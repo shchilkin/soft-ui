@@ -1,7 +1,7 @@
 import React from "react";
 import reactCSS from "reactcss";
 import { SketchPicker } from "react-color";
-import ThemeContext from "../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 class ColorPickerSketch extends React.Component {
   static contextType = ThemeContext;

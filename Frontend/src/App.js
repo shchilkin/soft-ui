@@ -4,6 +4,7 @@ import PageCover from "./Components/Generator/Generator_Components/Layout/PageCo
 import ThemeState from "./contexts/theme/ThemeState";
 import NavigationBar from "./Components/Navbar/NavigationBar.component";
 import GenerationState from "./contexts/generation(Desktop)/GenerationState";
+import ColorShowcaseState from "./contexts/colorShowcase/ColorShowcaseState";
 import './custom-styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,10 +12,12 @@ function App() {
   return (
       <ThemeState>
           <GenerationState>
-              <PageCover>
-                 <NavigationBar />
-                 <Generator />
-              </PageCover>
+              <ColorShowcaseState>
+                  <PageCover>
+                     <NavigationBar />
+                     <Generator />
+                  </PageCover>
+              </ColorShowcaseState>
           </GenerationState>
       </ThemeState>
   );

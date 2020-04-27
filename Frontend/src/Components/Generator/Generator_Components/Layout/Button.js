@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {DefaultButton, StyledCard} from "../../../../StyledComponents";
+import {DefaultButton} from "../../../../StyledComponents";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
 
 

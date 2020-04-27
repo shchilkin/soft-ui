@@ -1,11 +1,12 @@
 import React, {Fragment, useContext, useState} from "react";
-import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../Layout/Button";
-import Card from "../../../Layout/Card";
-import Badge from "../../../../../Badge/Badge.component";
-import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../../Functions";
-import Input from "../../../Layout/Input";
-import { CirclePicker } from 'react-color';
+import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
+import Button from "../../../../Layout/Button";
+import Card from "../../../../Layout/Card";
+import Badge from "../../../../../../Badge/Badge.component";
+import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../../../Functions";
+import Input from "../../../../Layout/Input";
+import ColorShowcaseCard from "./ColorShowcaseCard";
+
 
 const Showcase = () => {
     const themeContext = useContext(ThemeContext);
@@ -13,13 +14,9 @@ const Showcase = () => {
     const {colorRGB, darkShadowFactor, shadows, lightShadowFactor, shadowBlur} = themeContext;
     const {Red, Green, Blue} = colorRGB
 
-    const lighterShadows = shadows.ligherShadowArray;
-    const darkerShadows = shadows.darkerShadowArray;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
     const [darkModeFactor ,setFactor] = useState(75);
-    const [activeWindow, setActiveWindow] = useState(0)
+    const [activeWindow, setActiveWindow] = useState(1)
 
     const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
     const darkmodeLightShadowFactor = Math.round(darkModeFactor * .9);
@@ -104,36 +101,13 @@ const Showcase = () => {
         </Card>
     )
 
-    const ColorShowcaseCard = (
-        <Card
-            style={{
-                height:'300px',
-                //TODO FIX box shadow
-                boxShadow: `${darkerShadow} 5px 5px ${shadowBlur}px 0px inset,
-                ${lighterShadow} -5px -5px ${shadowBlur}px 0px inset`,
-                display:'flex',justifyContent:'center', alignItems:'center'
-            }}
-        >
-            <Card
-                style={{marginRight:'2rem',marginLeft:'2rem'}}
-            >
-                <h6 style={{fontSize:'1.05rem'}}>Works with every color!</h6>
-                <div className={'row mt-3'}>
-                    <div className={'col-12'}>
-                        <CirclePicker />
-                    </div>
-                </div>
-            </Card>
-        </Card>
-    )
-
     const showCaseWindowWrapper = (activeWindow) => {
         console.log('active window',activeWindow)
         switch (activeWindow) {
             case 0:
                 return DarkModeCard;
             case 1:
-                return ColorShowcaseCard;
+                return <ColorShowcaseCard />
             default:
                 return null
         }

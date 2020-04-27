@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
 import ControlStageDefault from "./ControlStageDefault";
-import Showcase from "./Showcase";
+import Showcase from "./Showcase(StageZero)/Showcase";
 import ControlStageChooseColor from "./ControlStageChooseColor";
 import ControlStageCard from "./ControlStageCard";
 import ControlStageButton from "./ControlStageButton";

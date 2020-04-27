@@ -7,29 +7,12 @@ import Button from "../../../Layout/Button";
 const PreviewStageCard = () => {
 
     const themeContext = useContext(ThemeContext);
-    const {
-        font,
-        colorRGB,
-        shadows,
-        shadowBlur,
-        shadowLength,
-        borderRadius,} = themeContext;
+    const {colorRGB, shadows} = themeContext;
 
     const {Red, Green, Blue} = colorRGB;
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
-    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
-
-    const viewportWidth = window.innerWidth
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return 175
-        } else return 300
-    }
 
     const HEX = `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`;
 
@@ -45,12 +28,12 @@ const PreviewStageCard = () => {
 
     return (
         <div className={'row'}>
-            <div className={'col-8'}>
+            <div className={'col-12'}>
                 <Card
                     type={'top'}
                     style={{display:'flex',justifyContent:'center', alignItems:'center'}}
                 >
-                    <svg width="75%" height="75%" viewBox="0 0 222 222" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
+                    <svg width="25%" height="25%" viewBox="0 0 222 222" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
                         <path id="Main" d="M221.978,55.495c0,-30.629 -24.866,-55.495 -55.494,-55.495l-110.989,0c-30.629,0 -55.495,24.866 -55.495,55.495l0,110.989c0,30.628 24.866,55.494 55.495,55.494l110.989,0c30.628,0 55.494,-24.866 55.494,-55.494l0,-110.989Z"
                               style={{fill:`#${toHex(Red)}${toHex(Green)}${toHex(Blue)}`}}/>
                         <path id="BottomShadow" d="M180.615,53.184c10.358,6.677 17.222,18.316 17.222,31.547l0,75.016c0,20.702 -16.806,37.509 -37.508,37.509l-75.017,0c-13.216,0 -24.844,-6.85 -31.525,-17.189c5.851,3.772 12.815,5.961 20.286,5.961l75.017,0c20.701,0 37.508,-16.807 37.508,-37.508l0,-75.017c0,-7.486 -2.198,-14.462 -5.983,-20.319Z"
@@ -62,10 +45,10 @@ const PreviewStageCard = () => {
                 <Card
                     type={'bottom'}
                 >
-                    <h5>Card Title</h5>
+                    <h5 style={{marginLeft:'1rem'}}>Card Title</h5>
                     {/*TODO Make subtitle font color more bright compare to title color */}
-                    <h6 style={{fontSize:'0.9rem',marginBottom:'1.2rem'}}>Card Subtitle</h6>
-                    <div style={{fontSize:'.875rem', marginBottom:'1.2rem'}}>
+                    <h6 style={{fontSize:'0.9rem',marginBottom:'1.2rem', marginLeft:'1rem'}}>Card Subtitle</h6>
+                    <div style={{fontSize:'.875rem', marginBottom:'1.2rem',marginLeft:'1rem'}}>
                         Supporting text
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis enim, sollicitudin eget pulvinar et, interdum a eros.
                     </div>

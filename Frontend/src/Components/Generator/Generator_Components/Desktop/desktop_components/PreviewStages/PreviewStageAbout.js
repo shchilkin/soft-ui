@@ -24,7 +24,6 @@ const PreviewStageAbout = () => {
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
     const HEX = `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`;
-    console.log('hex',  calculateTintAndShades(Red,Green,Blue,95))
     const lightShadowForSVG =() => {
         if (HEX === "FFFFFF"){
             return calculateTintAndShades(Red,Green,Blue,95)

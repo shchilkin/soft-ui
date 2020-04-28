@@ -66,4 +66,15 @@ export const StyledCard = styled.div`
     border-bottom-right-radius: ${props => props.borderRadiusBottomRight}px;
     box-shadow: ${props => props.shadowLengthBottomX}px ${props => props.shadowLengthBottomY}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
     -${props => props.shadowLengthTopX}px -${props => props.shadowLengthTopY}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
-    `;
+`;
+
+// box-shadow: ${props => props.shadowLengthBottomX}px 0px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
+//     0px ${props => props.shadowLengthBottomY}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
+// -${props => props.shadowLengthTopX}px -0px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow},
+//     -0px -${props => props.shadowLengthTopY}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
+
+
+// box-shadow: ${props => props.shadowLengthBottomX}px 0px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow};
+// box-shadow: 0px ${props => props.shadowLengthBottomY}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow};
+// box-shadow: -${props => props.shadowLengthTopX}px -0px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
+// box-shadow: -0px -${props => props.shadowLengthTopY}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};

@@ -63,19 +63,17 @@ const ColorShowcaseCard = () => {
                 <span style={{
                     fontSize: '0.9rem',
                     marginBottom:'1.2rem'}}
-                >
-                    Use preset colors <br/>
-                    or type your favorite one in the input field below!
-                    <Input type={'text'}
-                           onChange={onChangeColor}
-                           placeholder={'#F0F0F0'}
-                           background={backgroundColor}
-                           darkShadow={darkShadow}
-                           value={inputValue}
-                           lightShadow={lightShadow}
-                           style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',width:'31%'}}
-                    />
-                </span>
+                >Use preset colors or type your favorite one in the input field below!</span><br/>
+                <Input type={'text'}
+                       color={font}
+                       onChange={onChangeColor}
+                       placeholder={'#F0F0F0'}
+                       background={backgroundColor}
+                       darkShadow={darkShadow}
+                       value={inputValue}
+                       lightShadow={lightShadow}
+                       style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',width:'31%'}}
+                />
             </Card>
             <Card
                 background={backgroundColor}

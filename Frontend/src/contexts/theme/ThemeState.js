@@ -76,7 +76,7 @@ const ThemeState = (props) => {
     borderRadius: 12,
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
-    badgeColors:[[144, 75, 82], [168, 45, 57], [178, 15, 61], [176, 38, 38], [119, 162, 80]]
+    darkModeFactor: 40,
   };
 
   //  Calculate hexadecimal value of the color
@@ -201,7 +201,6 @@ const ThemeState = (props) => {
         changeDarkShadowFactor,
         changeLightShadowFactor,
         font: state.font,
-        badgeColors: state.badgeColors,
         shadows: state.shadows,
         colorRGB: {
           Red: state.Red,
@@ -214,6 +213,7 @@ const ThemeState = (props) => {
         codeFontColor: state.codeFontColor,
         shadowLength: state.shadowLength,
         borderRadius: state.borderRadius,
+        darkModeFactor: state.darkModeFactor,
         darkShadowFactor: state.darkShadowFactor,
         lightShadowFactor: state.lightShadowFactor,
         codeBackgroundColor: state.codeBackgroundColor,

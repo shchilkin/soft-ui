@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../Layout/Button";
-import Input from "../../../Layout/Input";
-import {generateTintAndShades} from "../../../../../../Functions";
+import {calculateTintAndShades, fontColor, generateTintAndShades, hexToRGB} from "../../../../../../Functions";
+import Card from "../../../Layout/Card";
+import Badge from "../../../../../Badge/Badge.component";
 
 const PreviewStageChooseColor = () => {
 
@@ -10,71 +10,59 @@ const PreviewStageChooseColor = () => {
     const {
         font,
         colorRGB,
+        darkShadowFactor,
+        lightShadowFactor,
         shadows,
         shadowBlur,
         shadowLength,
-        borderRadius,} = themeContext;
+        borderRadius,
+        darkModeFactor} = themeContext;
 
     const {Red, Green, Blue} = colorRGB;
 
-    const lighterShadows = shadows.ligherShadowArray;
-    const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
-    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+    const darkModeBackground = calculateTintAndShades(Red, Green, Blue, darkModeFactor)
+    const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
+    const darkmodeLightShadowFactor = Math.round(darkModeFactor * .9);
 
-    const viewportWidth = window.innerWidth
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return 175
-        } else return 300
-    }
+    const darkModeDarkShadow = calculateTintAndShades(
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Red,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Green,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Blue,
+        Math.round(darkShadowFactor * 100))
+    const darkModeLightShadow = calculateTintAndShades(
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Red,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Green,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Blue,
+        Math.round(lightShadowFactor * 100)
+    )
+    const darkModeFont = fontColor(
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Red,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Green,
+        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Blue
+    )
 
-    const containerStyle = {
-        width: "100%",
-        height: `${getContainerHeight(viewportWidth)}px`,
-        minHeight: "100px",
-        backgroundColor: mainColor,
-        color: font,
-        mixBlendMode: "normal",
-        boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-        border: `1px solid ${mainColor}`,
-        borderRadius: `${borderRadius}px`,
-    };
-
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
-    };
 
     return (
         <div>
             <div className={"row mb-3"}>
-                <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}>
-                    </div>
-                    <div className={'row mt-3'}>
-                        <div className={'col-4'}>
-                            <Button
-                                style={{verticalAlign:'-50%'}}
-                                props={componentProps}
-                                children={"Button"}
-                            />
-                        </div>
-                       <div className={'col-8'}>
-                           <Input
-                               props={componentProps}
-                               state={"blur"}
-                               placeholder={"Input"}
-                           />
-                       </div>
-                    </div>
+                <div className={"col-md-6"}>
+                    <Card>
+                        <Card style={{height:'254px'}}>
+                            <Badge>Preview</Badge>
+                        </Card>
+                    </Card>
+                </div>
+                <div className={"col-md-6"}>
+                    <Card background={darkModeBackground}>
+                        <Card
+                            background={darkModeBackground}
+                            lightShadow={darkModeLightShadow}
+                            darkShadow={darkModeDarkShadow}
+                            color={darkModeFont}
+                            style={{height:'254px'}}>
+                            <Badge>Dark mode</Badge>
+                        </Card>
+                    </Card>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ const Showcase = () => {
     const {Red, Green, Blue} = colorRGB
 
 
-    const [darkModeFactor ,setFactor] = useState(75);
+    const [darkModeFactor ,setFactor] = useState(40);
     const [activeWindow, setActiveWindow] = useState(1)
 
     const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
@@ -53,7 +53,7 @@ const Showcase = () => {
         <Card
             background={darkModeBackground}
             style={{
-                height:'300px',
+                height:'400px',
                 //TODO FIX box shadow
                 boxShadow: `${darkModeDarkShadow} 5px 5px ${shadowBlur}px 0px inset,
                 ${darkModeLightShadow} -5px -5px ${shadowBlur}px 0px inset`,
@@ -116,7 +116,6 @@ const Showcase = () => {
     return (
         <Fragment>
             <Card type={"top"}>
-                <Badge>Showcase</Badge>
                 {showCaseWindowWrapper(activeWindow)}
             </Card>
             <Card

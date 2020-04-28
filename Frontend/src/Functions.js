@@ -86,26 +86,21 @@ export function toHex(colorValue){
     return color;
 }
 export function hexToRGB(hexColor) {
-    if (hexColor.length === 3) {
-        return {
-            Red: parseInt(`${hexColor.slice(0, 1)}${hexColor.slice(0, 1)}`, 16),
-            Green: parseInt(`${hexColor.slice(1, 2)}${hexColor.slice(1, 2)}`, 16),
-            Blue: parseInt(`${hexColor.slice(2, 3)}${hexColor.slice(2, 3)}`, 16)
-        }
-    }
-    if (hexColor.length === 6){
-        return {
-            Red: parseInt(`${hexColor.slice(0, 2)}`, 16),
-            Green: parseInt(`${hexColor.slice(2, 4)}`, 16),
-            Blue: parseInt(`${hexColor.slice(4, 6)}`, 16)
-        }
-    }
+    let hexWithoutHash = hexColor.replace('#','')
+    console.log('Function hexToRgb', hexWithoutHash)
 
-    if (hexColor.length === 7){
+    if (hexWithoutHash.length === 3) {
         return {
-            Red: parseInt(`${hexColor.slice(1, 3)}`, 16),
-            Green: parseInt(`${hexColor.slice(3, 5)}`, 16),
-            Blue: parseInt(`${hexColor.slice(5, 7)}`, 16)
+            Red: parseInt(`${hexWithoutHash.slice(0, 1)}${hexWithoutHash.slice(0, 1)}`, 16),
+            Green: parseInt(`${hexWithoutHash.slice(1, 2)}${hexWithoutHash.slice(1, 2)}`, 16),
+            Blue: parseInt(`${hexWithoutHash.slice(2, 3)}${hexWithoutHash.slice(2, 3)}`, 16)
+        }
+    }
+    if (hexWithoutHash.length === 6){
+        return {
+            Red: parseInt(`${hexWithoutHash.slice(0, 2)}`, 16),
+            Green: parseInt(`${hexWithoutHash.slice(2, 4)}`, 16),
+            Blue: parseInt(`${hexWithoutHash.slice(4, 6)}`, 16)
         }
     }
 }

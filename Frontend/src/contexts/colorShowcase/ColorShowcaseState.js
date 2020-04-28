@@ -11,8 +11,10 @@ import {
 const ColorShowcaseState = (props) => {
 
     const initialState ={
-        backgroundColor: '#ED2939'
+        backgroundColor: '#ED2939',
     }
+
+    initialState.inputValue = initialState.backgroundColor;
 
     const [state, dispatch] = useReducer(GenerationReducer, initialState);
 
@@ -27,6 +29,7 @@ const ColorShowcaseState = (props) => {
         <ColorShowcaseContext.Provider
             value={{
                 backgroundColor: state.backgroundColor,
+                inputValue: state.inputValue,
                 changeShowcaseColor
             }}
         >

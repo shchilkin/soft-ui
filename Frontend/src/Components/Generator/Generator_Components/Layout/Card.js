@@ -36,6 +36,20 @@ const Card = ({
                     bottomLeft:borderRadius,
                     bottomRight:borderRadius,
                 }
+            case "left":
+                return {
+                    topLeft:borderRadius,
+                    topRight:0,
+                    bottomLeft:borderRadius,
+                    bottomRight:0,
+                }
+            case "right":
+                return {
+                    topLeft:0,
+                    topRight:borderRadius,
+                    bottomLeft:0,
+                    bottomRight:borderRadius,
+                }
             case "default":
                 return {
                     topLeft:borderRadius,

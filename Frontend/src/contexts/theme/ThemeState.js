@@ -11,7 +11,10 @@ import {
   CHANGE_LIGHT_SHADOW_FACTOR,
   INVERSE_FONT,
   THEME_RESET,
-  CHANGE_BADGE_COLORS
+  CHANGE_BADGE_COLORS,
+  CHANGE_DARK_MODE_FACTOR,
+  CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+  CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from "../types";
 import {
   calculateShadows,
@@ -76,7 +79,9 @@ const ThemeState = (props) => {
     borderRadius: 12,
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
-    darkModeFactor: 40,
+    darkModeDarkShadowFactor: 0.75,
+    darkModeLightShadowFactor: 0.9,
+    darkModeFactor: 0.4,
   };
 
   //  Calculate hexadecimal value of the color
@@ -100,11 +105,20 @@ const ThemeState = (props) => {
 
   // Calculate shadows
   initialState.shadows = calculateShadows(
-    initialState.Red,
-    initialState.Green,
-    initialState.Blue,
-    initialState.lightShadowFactor,
-    initialState.darkShadowFactor
+      initialState.Red,
+      initialState.Green,
+      initialState.Blue,
+      initialState.lightShadowFactor,
+      initialState.darkShadowFactor
+  );
+
+  // Dark mode shadows
+  initialState.darkModeShadows = calculateShadows(
+      (initialState.Red * initialState.darkModeFactor),
+      (initialState.Green * initialState.darkModeFactor),
+      (initialState.Blue * initialState.darkModeFactor),
+      initialState.darkModeLightShadowFactor,
+      initialState.darkModeDarkShadowFactor
   );
 
   initialState.codeBackgroundColor = `rgb(${initialState.shadows.darkerShadowArray[0]},
@@ -181,10 +195,27 @@ const ThemeState = (props) => {
     });
   };
 
-  const lighterShadows = initialState.shadows.ligherShadowArray;
-  const darkerShadows = initialState.shadows.darkerShadowArray;
-  const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-  const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+  const changeDarkModeFactor = (darkModeFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_FACTOR,
+      payload: darkModeFactor,
+    });
+  }
+
+  const changeDarkModeDarkShadowFactor = (darkModeDarkShadowFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+      payload: darkModeDarkShadowFactor,
+    });
+  }
+
+  const changeDarkModeLightShadowFactor = (darkModeLightShadowFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR,
+      payload: darkModeLightShadowFactor,
+    });
+  }
+
 
   return (
     <ThemeContext.Provider
@@ -198,8 +229,11 @@ const ThemeState = (props) => {
         changeBadgeColors,
         changeBorderRadius,
         changeShadowLength,
+        changeDarkModeFactor,
         changeDarkShadowFactor,
         changeLightShadowFactor,
+        changeDarkModeDarkShadowFactor,
+        changeDarkModeLightShadowFactor,
         font: state.font,
         shadows: state.shadows,
         colorRGB: {
@@ -214,9 +248,12 @@ const ThemeState = (props) => {
         shadowLength: state.shadowLength,
         borderRadius: state.borderRadius,
         darkModeFactor: state.darkModeFactor,
+        darkModeShadows: state.darkModeShadows,
         darkShadowFactor: state.darkShadowFactor,
         lightShadowFactor: state.lightShadowFactor,
         codeBackgroundColor: state.codeBackgroundColor,
+        darkModeDarkShadowFactor: state. darkModeDarkShadowFactor,
+        darkModeLightShadowFactor: state.darkModeLightShadowFactor,
       }}
     >
       {props.children}

@@ -4,7 +4,6 @@ import {calculateTintAndShades, fontColor, hexToRGB} from "../../../../../../Fun
 import Card from "../../../Layout/Card";
 import Badge from "../../../../../Badge/Badge.component";
 import StagesContext from "../../../../../../contexts/Stages/StagesContext";
-import ColorButton from "../../../Layout/ColorButton";
 
 const PreviewStageChooseColor = () => {
 
@@ -55,111 +54,11 @@ const PreviewStageChooseColor = () => {
         </div>
     )
 
-    const secondaryPreviewContainer = (
+    const secondaryColorPreviewContainer = (
         <div className={"row"}>
             <div className={'col-12'}>
                 <Badge>Secondary colors</Badge>
-                    <Card>
-                        <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                            <ColorButton
-                                shadowLength={5}
-                                blur={5}
-                                background={"#FFF"}
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                        </div>
-                        <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                        </div>
-                        <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                            <ColorButton
-                                width={60}
-                                height={60}
-                                mainColor={"#45667D"}
-                                borderRadius={12}/>
-                        </div>
-                    </Card>
+                    <Card/>
             </div>
         </div>
     )
@@ -177,7 +76,7 @@ const PreviewStageChooseColor = () => {
                 </div>
                 {generateDarkMode && darkModePreviewContainer}
             </div>
-            {generateSecondaryColor && secondaryPreviewContainer}
+            {generateSecondaryColor && secondaryColorPreviewContainer}
         </div>
     )
 }
@@ -212,3 +111,43 @@ export default PreviewStageChooseColor;
 //         </Card>
 //     </Card>
 // </div>
+
+
+
+// <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["120"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["130"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["140"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["150"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["160"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["170"]}
+//         borderRadius={12}/>
+//     <ColorButton
+//         width={60}
+//         height={60}
+//         mainColor={mainColorTints["180"]}
+{/*        borderRadius={12}/>*/}
+{/*</div>*/}

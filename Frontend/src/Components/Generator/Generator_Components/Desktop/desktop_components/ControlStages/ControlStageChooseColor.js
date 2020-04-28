@@ -6,6 +6,7 @@ import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import Badge from "../../../../../Badge/Badge.component";
 import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
+import SecondaryColorsPanel from "../SecondaryColorsPanel";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -205,6 +206,14 @@ const ControlStageChooseColor = () => {
         </div>
     );
 
+    const secondaryColorSettings = (
+        <div className={"row"}>
+            <div className={'col-12'}>
+                <SecondaryColorsPanel />
+            </div>
+        </div>
+    );
+
     return (
         <div
             style={{
@@ -267,6 +276,7 @@ const ControlStageChooseColor = () => {
                 </div>
             </div>
             {generateDarkMode && darkModeSettings}
+            {generateSecondaryColor && secondaryColorSettings}
         </div>
     )
 }

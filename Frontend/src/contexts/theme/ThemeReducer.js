@@ -8,7 +8,10 @@ import {
     CHANGE_LIGHT_SHADOW_FACTOR,
     INVERSE_FONT,
     THEME_RESET,
-    CHANGE_BADGE_COLORS
+    CHANGE_BADGE_COLORS,
+    CHANGE_DARK_MODE_FACTOR,
+    CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+    CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from '../types';
 import {invertFont} from "../../Functions";
 
@@ -365,6 +368,23 @@ export default (state, action) => {
             return {
                 ...state,
                 badgeColors: action.payload
+            }
+        case CHANGE_DARK_MODE_FACTOR:
+            return {
+                ...state,
+                darkModeFactor: calculateShadowFactor(action.payload)
+            }
+        case CHANGE_DARK_MODE_DARK_SHADOW_FACTOR:
+            console.log('Dark shadow', action.payload)
+            return {
+                ...state,
+                darkModeDarkShadowFactor: calculateShadowFactor(action.payload),
+            }
+        case CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR:
+            console.log('Light shadow', action.payload)
+            return {
+                ...state,
+                darkModeLightShadowFactor: calculateShadowFactor(action.payload),
             }
     }
 };

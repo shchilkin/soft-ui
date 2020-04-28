@@ -87,8 +87,6 @@ export function toHex(colorValue){
 }
 export function hexToRGB(hexColor) {
     let hexWithoutHash = hexColor.replace('#','')
-    console.log('Function hexToRgb', hexWithoutHash)
-
     if (hexWithoutHash.length === 3) {
         return {
             Red: parseInt(`${hexWithoutHash.slice(0, 1)}${hexWithoutHash.slice(0, 1)}`, 16),

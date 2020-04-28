@@ -1,11 +1,11 @@
 import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import {getRandomInt, toHex} from "../../../../../../Functions";
+import {getRandomInt} from "../../../../../../Functions";
+import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import Badge from "../../../../../Badge/Badge.component";
 import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
-import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
-import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -19,7 +19,11 @@ const ControlStageChooseColor = () => {
         borderRadius,
         changeColor,
         resetTheme,
-        inverseFont,} = themeContext;
+        inverseFont,
+        darkModeFactor,
+        changeDarkModeFactor,
+        darkModeDarkShadowFactor, darkModeLightShadowFactor,
+        changeDarkModeDarkShadowFactor, changeDarkModeLightShadowFactor,} = themeContext;
 
     const stagesContext = useContext(StagesContext);
     const {
@@ -39,6 +43,15 @@ const ControlStageChooseColor = () => {
 
     const onChangeDarkMode = () => changeGenerateDarkMode();
     const onChangeSecondaryColor = () => changeGenerateSecondaryColor();
+
+    const onChangeDarkModeFactor = (event) => changeDarkModeFactor(event.target.value);
+
+    const onChangeDarkModeDarkShadowFactor = (event) => changeDarkModeDarkShadowFactor(event.target.value);
+
+    const onChangeDarkModeLightShadowFactor = (event) => {
+        console.log('OnchangeDarkModeLightShadow',event.target.value)
+        changeDarkModeLightShadowFactor(event.target.value);
+    }
 
     const generateRandom = () => {
         let rgbObject = {
@@ -151,6 +164,47 @@ const ControlStageChooseColor = () => {
         </div>
     );
 
+    const darkModeSettings = (
+        <div className={"row"}>
+            <div className={"col-4"}>
+                <h6>
+                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Dark mode, %</Badge>
+                </h6>
+                <Input
+                    type={'number'}
+                    onChange={(event) => onChangeDarkModeFactor(event)}
+                    value={Math.round(darkModeFactor * 100)}
+                    placeholder={"#000000"}
+                    props={componentProps}
+                />
+            </div>
+            <div className={"col-4"}>
+                <h6>
+                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Dark Shadow, %</Badge>
+                </h6>
+                <Input
+                    type={'number'}
+                    onChange={(event) => onChangeDarkModeDarkShadowFactor(event)}
+                    value={Math.round(darkModeDarkShadowFactor * 100)}
+                    placeholder={"#000000"}
+                    props={componentProps}
+                />
+            </div>
+            <div className={"col-4"}>
+                <h6>
+                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Light shadow, %</Badge>
+                </h6>
+                <Input
+                    type={'number'}
+                    onChange={(event) => onChangeDarkModeLightShadowFactor(event)}
+                    value={Math.round(darkModeLightShadowFactor * 100)}
+                    placeholder={"#000000"}
+                    props={componentProps}
+                />
+            </div>
+        </div>
+    );
+
     return (
         <div
             style={{
@@ -212,6 +266,7 @@ const ControlStageChooseColor = () => {
                         checked={generateSecondaryColor}/>
                 </div>
             </div>
+            {generateDarkMode && darkModeSettings}
         </div>
     )
 }

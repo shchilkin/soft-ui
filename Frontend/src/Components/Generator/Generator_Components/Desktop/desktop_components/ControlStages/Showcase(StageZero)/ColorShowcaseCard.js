@@ -14,7 +14,6 @@ const ColorShowcaseCard = () => {
     const {backgroundColor, inputValue,changeShowcaseColor} = colorShowcaseContext;
 
     const primaryBackgroundRGB = hexToRGB(backgroundColor)
-    console.log('hexToRGB(backgroundColor)',hexToRGB(backgroundColor))
     const Red = primaryBackgroundRGB.Red || 0;
     const Green = primaryBackgroundRGB.Green || 0;
     const Blue = primaryBackgroundRGB.Blue || 0;

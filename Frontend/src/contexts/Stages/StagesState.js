@@ -1,16 +1,18 @@
 import React, { useReducer } from "react";
-import GenerationContext from "./GenerationContext";
-import GenerationReducer from "./GenerationReducer";
+import StagesContext from "./StagesContext";
+import GenerationReducer from "./StagesReducer";
 import {
     CHANGE_STAGE,
 
 } from "../types";
 
 
-const GenerationState = (props) => {
+const StagesState = (props) => {
 
     const initialState ={
-        stage:0
+        stage:0,
+        generateDarkMode: false,
+        generateSecondaryColor: false,
     }
 
     const [state, dispatch] = useReducer(GenerationReducer, initialState);
@@ -23,15 +25,17 @@ const GenerationState = (props) => {
     };
 
     return (
-        <GenerationContext.Provider
+        <StagesContext.Provider
             value={{
                 stage: state.stage,
+                generateDarkMode: state.generateDarkMode,
+                generateSecondaryColor: state.generateSecondaryColor,
                 changeStage
             }}
         >
             {props.children}
-        </GenerationContext.Provider>
+        </StagesContext.Provider>
     );
 };
 
-export default GenerationState;
+export default StagesState;

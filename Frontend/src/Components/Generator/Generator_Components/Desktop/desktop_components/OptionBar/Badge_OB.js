@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Badge, Badge_chosen} from '../../../../../../StyledComponents'
-import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import {calculateTintAndShades} from "../../../../../../Functions";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 
@@ -13,7 +13,7 @@ const Badge_OB = ({children, activeOnStage}) => {
         borderRadius,
     } = themeContext;
 
-    const generationContext = useContext(GenerationContext);
+    const generationContext = useContext(StagesContext);
     const { stage } = generationContext;
 
     const {Red, Green, Blue} = colorRGB;

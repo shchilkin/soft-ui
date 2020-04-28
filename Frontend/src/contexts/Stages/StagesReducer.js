@@ -29,17 +29,13 @@ export default (state, action) => {
 
     switch (action.type){
         case CHANGE_STAGE:
-            console.log('Payload', action.payload)
-            console.log('increment',action.payload.increaseOrDecrease)
             switch (action.payload.increaseOrDecrease) {
                 case '+':
-                    console.log('stage current/updated', state.stage ,validateStage(state.stage, "+"))
                     return {
                         ...state,
                         stage: validateStage(state.stage, "+")
                     }
                 case '-':
-                    console.log('stage current/updated', state.stage ,validateStage(state.stage, "-"))
                     return {
                         ...state,
                         stage: validateStage(state.stage, "-"),

@@ -5,6 +5,7 @@ import Badge from "../../../../../Badge/Badge.component";
 import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
 import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
+import Checkbox from "../../../Layout/Checkbox";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -19,13 +20,9 @@ const ControlStageChooseColor = () => {
         changeColor,
         resetTheme,
         inverseFont,
-        changeShadowBlur,
-        changeBorderRadius,
-        changeShadowLength,
-        changeDarkShadowFactor,
-        changeLightShadowFactor,
     } = themeContext;
 
+    const [darkModeValue, setDarkModeValue] = useState(true)
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
     const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
@@ -34,7 +31,9 @@ const ControlStageChooseColor = () => {
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
+    const [generateDarkmode, setGenerateDarkmode] = useState(false);
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
+    const onChangeDarkmode = () => setGenerateDarkmode(!generateDarkmode)
     const generateRandom = () => {
         let rgbObject = {
             Red:getRandomInt(255),
@@ -208,6 +207,18 @@ const ControlStageChooseColor = () => {
                 </div>
             </div>
             {colorInputMode ? hexInput : rgbInput}
+            <div className={"row mb-3"}>
+                <div className={'col-12'}>
+                    <label>Generate darkmode</label>
+                    <input
+                        type={'checkbox'}
+                        onChange={onChangeDarkmode}
+                        checked={generateDarkmode}
+                    />{" "}
+                    <label>Generate secondary color</label>
+                    <Checkbox checked={darkModeValue}/>
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import ControlStageDefault from "./ControlStageDefault";
 import Showcase from "./Showcase(StageZero)/Showcase";
 import ControlStageChooseColor from "./ControlStageChooseColor";
@@ -11,7 +11,7 @@ import ControlStageGenerateCSS from "./ControlStageGenerateCSS";
 
 
 const ControlStagesWrapper = () => {
-    const generationContext = useContext(GenerationContext);
+    const generationContext = useContext(StagesContext);
     const { stage } = generationContext;
 
     switch (stage) {

@@ -3,7 +3,8 @@ import StagesContext from "./StagesContext";
 import GenerationReducer from "./StagesReducer";
 import {
     CHANGE_STAGE,
-
+    CHANGE_GENERATE_DARKMODE,
+    CHANGE_GENERATE_SECONDARY_COLOR,
 } from "../types";
 
 
@@ -24,13 +25,27 @@ const StagesState = (props) => {
         });
     };
 
+    const changeGenerateDarkMode = () => {
+        dispatch({
+            type: CHANGE_GENERATE_DARKMODE,
+        });
+    }
+
+    const changeGenerateSecondaryColor = () => {
+        dispatch({
+            type: CHANGE_GENERATE_SECONDARY_COLOR,
+        });
+    }
+
     return (
         <StagesContext.Provider
             value={{
                 stage: state.stage,
                 generateDarkMode: state.generateDarkMode,
                 generateSecondaryColor: state.generateSecondaryColor,
-                changeStage
+                changeStage,
+                changeGenerateDarkMode,
+                changeGenerateSecondaryColor,
             }}
         >
             {props.children}

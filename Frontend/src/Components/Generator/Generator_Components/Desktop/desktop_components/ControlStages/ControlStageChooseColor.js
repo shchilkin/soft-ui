@@ -5,7 +5,7 @@ import Badge from "../../../../../Badge/Badge.component";
 import Button from "../../../Layout/Button";
 import Input from "../../../Layout/Input";
 import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
-import Checkbox from "../../../Layout/Checkbox";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -19,10 +19,13 @@ const ControlStageChooseColor = () => {
         borderRadius,
         changeColor,
         resetTheme,
-        inverseFont,
-    } = themeContext;
+        inverseFont,} = themeContext;
 
-    const [darkModeValue, setDarkModeValue] = useState(true)
+    const stagesContext = useContext(StagesContext);
+    const {
+        generateDarkMode, generateSecondaryColor,
+        changeGenerateDarkMode,changeGenerateSecondaryColor} = stagesContext;
+
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
     const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
@@ -31,9 +34,12 @@ const ControlStageChooseColor = () => {
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-    const [generateDarkmode, setGenerateDarkmode] = useState(false);
+
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
-    const onChangeDarkmode = () => setGenerateDarkmode(!generateDarkmode)
+
+    const onChangeDarkMode = () => changeGenerateDarkMode();
+    const onChangeSecondaryColor = () => changeGenerateSecondaryColor();
+
     const generateRandom = () => {
         let rgbObject = {
             Red:getRandomInt(255),
@@ -181,22 +187,6 @@ const ControlStageChooseColor = () => {
                     />
                 </div>
             </div>
-            {/*<div className={"row mb-3"}>*/}
-            {/*    <div className={"col-6"}>*/}
-            {/*        <Button*/}
-            {/*            props={componentProps}*/}
-            {/*            onClick={() => inverseFont()}*/}
-            {/*            children={'Tint/Shade font'}*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*    <div className={"col-6"}>*/}
-            {/*        <Button*/}
-            {/*            props={componentProps}*/}
-            {/*            onClick={() => inverseFont()}*/}
-            {/*            children={'Black/White Font'}*/}
-            {/*        />*/}
-            {/*    </div>*/}
-            {/*</div>*/}
             <div className={"row mb-3"}>
                 <div className={"col-12"}>
                     <Button
@@ -212,11 +202,14 @@ const ControlStageChooseColor = () => {
                     <label>Generate darkmode</label>
                     <input
                         type={'checkbox'}
-                        onChange={onChangeDarkmode}
-                        checked={generateDarkmode}
+                        onChange={() => onChangeDarkMode()}
+                        checked={generateDarkMode}
                     />{" "}
                     <label>Generate secondary color</label>
-                    <Checkbox checked={darkModeValue}/>
+                    <input
+                        type={'checkbox'}
+                        onChange={() => onChangeSecondaryColor()}
+                        checked={generateSecondaryColor}/>
                 </div>
             </div>
         </div>

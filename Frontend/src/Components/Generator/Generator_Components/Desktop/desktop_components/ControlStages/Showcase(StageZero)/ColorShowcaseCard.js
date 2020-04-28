@@ -4,19 +4,22 @@ import React, {useContext} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../../../../../../Functions";
 import ColorShowcaseContext from "../../../../../../../contexts/colorShowcase/ColorShowcaseContext";
+import Input from "../../../../Layout/Input";
 
 const ColorShowcaseCard = () => {
     const themeContext = useContext(ThemeContext);
     const { shadowBlur,shadowLength} = themeContext;
 
     const colorShowcaseContext = useContext(ColorShowcaseContext)
-    const {backgroundColor} = colorShowcaseContext;
+    const {backgroundColor, inputValue,changeShowcaseColor} = colorShowcaseContext;
 
     const primaryBackgroundRGB = hexToRGB(backgroundColor)
+    console.log('hexToRGB(backgroundColor)',hexToRGB(backgroundColor))
+    const Red = primaryBackgroundRGB.Red || 0;
+    const Green = primaryBackgroundRGB.Green || 0;
+    const Blue = primaryBackgroundRGB.Blue || 0;
 
-    const font = fontColor(primaryBackgroundRGB.Red,
-        primaryBackgroundRGB.Green,
-        primaryBackgroundRGB.Blue)
+    const font = fontColor(Red, Green, Blue)
 
     const darkShadow = calculateTintAndShades(
         primaryBackgroundRGB.Red,
@@ -30,6 +33,8 @@ const ColorShowcaseCard = () => {
         primaryBackgroundRGB.Blue,
         105)
 
+    const onChangeColor = (event) => changeShowcaseColor(event.target.value)
+
     return(
         <Card
             background={backgroundColor}
@@ -38,7 +43,7 @@ const ColorShowcaseCard = () => {
                 boxShadow: `${darkShadow} 5px 5px ${shadowBlur}px 0px inset,
                 ${lightShadow} -5px -5px ${shadowBlur}px 0px inset`,
                 border:'none',
-                height:'300px',
+                height:'400px',
                 display:'flex', justifyContent:'center', alignItems:'center',flexWrap: 'wrap'
             }}
         >
@@ -47,16 +52,29 @@ const ColorShowcaseCard = () => {
                 color={font}
                 lightShadow={lightShadow}
                 darkShadow={darkShadow}
-                style={{marginRight:'3rem',marginLeft:'3rem'}}
+                style={{marginRight:'3rem',marginLeft:'3rem',flexWrap:"wrap"}}
             >
                 <h6 style={{fontSize:'1.05rem'}}>
                     Works with every color!
+                </h6>
+                <h6 style={{fontSize: '0.8rem', marginBottom:'1.2rem'}}>
+                    current color: {backgroundColor}
                 </h6>
                 <span style={{
                     fontSize: '0.9rem',
                     marginBottom:'1.2rem'}}
                 >
-                    Use preset colors or use your favorite one(TODO)
+                    Use preset colors <br/>
+                    or type your favorite one in the input field below!
+                    <Input type={'text'}
+                           onChange={onChangeColor}
+                           placeholder={'#F0F0F0'}
+                           background={backgroundColor}
+                           darkShadow={darkShadow}
+                           value={inputValue}
+                           lightShadow={lightShadow}
+                           style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',width:'31%'}}
+                    />
                 </span>
             </Card>
             <Card

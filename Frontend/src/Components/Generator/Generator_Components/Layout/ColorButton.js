@@ -40,13 +40,19 @@ export default ColorButton;
 const StyledColorButton = styled.button`
     ${props => props.active ? 
     css`
+      :focus {
+        outline: none;  
+        transform: scale(1.2);  
+      }
+      
         cursor: not-allowed;
         background-color: ${props => props.Background};
         width: ${props => props.width}px;
         height:  ${props => props.height}px;
         border-radius: ${props => props.radius}px;
         display: inline-block;
-        margin-right: .7rem; 
+        margin-right: .35rem;
+        margin-left: .35rem; 
         transition:all 1s ease;
         transition: transform 100ms ease;
         border: 0px solid ${props => props.Background};
@@ -62,8 +68,9 @@ const StyledColorButton = styled.button`
     width: ${props => props.width}px;
     height:  ${props => props.height}px;
     border-radius: ${props => props.radius}px;
-    display: inline-block;
-    margin-right: .7rem; 
+    display: inline-block; 
+    margin-right: .35rem;
+    margin-left: .35rem; 
     transition:all 1s ease;
     transform: scale(1); 
     transition: transform 100ms ease;
@@ -77,6 +84,10 @@ const StyledColorButton = styled.button`
         background-color: ${props => props.color};
         color: ${props => props.background};
     }   
+    :focus {
+      outline: none;  
+      transform: scale(1.2);  
+      }
     :active {
         transform: scale(1); 
         border: 0px solid ${props => props.background};

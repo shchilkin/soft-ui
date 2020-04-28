@@ -3,7 +3,7 @@ import { Bar } from '../../../../../../StyledComponents'
 import {calculateTintAndShades, calculateShadows, calculateColor, toHex} from "../../../../../../Functions";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
 import Badge_OB from "./Badge_OB";
-import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import Button from "../../../Layout/Button";
 
 const OptionBar = () => {
@@ -17,7 +17,7 @@ const OptionBar = () => {
 
     const {Red, Green, Blue} = colorRGB;
 
-    const generationContext = useContext(GenerationContext);
+    const generationContext = useContext(StagesContext);
     const { stage, changeStage } = generationContext;
 
     function checkStageComponentBar(stage) {

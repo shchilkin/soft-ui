@@ -1,5 +1,7 @@
 import {
     CHANGE_STAGE,
+    CHANGE_GENERATE_DARKMODE,
+    CHANGE_GENERATE_SECONDARY_COLOR,
 } from "../types";
 
 function validateStage(currentStage,increment,maximum = 6) {
@@ -29,17 +31,13 @@ export default (state, action) => {
 
     switch (action.type){
         case CHANGE_STAGE:
-            console.log('Payload', action.payload)
-            console.log('increment',action.payload.increaseOrDecrease)
             switch (action.payload.increaseOrDecrease) {
                 case '+':
-                    console.log('stage current/updated', state.stage ,validateStage(state.stage, "+"))
                     return {
                         ...state,
                         stage: validateStage(state.stage, "+")
                     }
                 case '-':
-                    console.log('stage current/updated', state.stage ,validateStage(state.stage, "-"))
                     return {
                         ...state,
                         stage: validateStage(state.stage, "-"),
@@ -50,6 +48,19 @@ export default (state, action) => {
             return {
                 ...state,
             };
+        case CHANGE_GENERATE_DARKMODE:
+            // let darkModeState = state.generateDarkMode
+            return {
+                ...state,
+                generateDarkMode: !state.generateDarkMode
+            }
+        case CHANGE_GENERATE_SECONDARY_COLOR:
+            // let secondaryColorState = state.generateSecondaryColor
+            return {
+                ...state,
+                generateSecondaryColor: !state.generateSecondaryColor
+            }
+
         default:
             return state
     }

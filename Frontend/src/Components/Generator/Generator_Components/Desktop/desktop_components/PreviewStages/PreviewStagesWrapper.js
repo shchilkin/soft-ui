@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import GenerationContext from "../../../../../../contexts/generation(Desktop)/GenerationContext";
+import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import PreviewStageDefault from "./PreviewStageDefault";
 import PreviewStageAbout from "./PreviewStageAbout";
 import PreviewStageChooseColor from "./PreviewStageChooseColor";
@@ -11,7 +11,7 @@ import PreviewStageGenerateCSS from "./PreviewStageGenerateCSS";
 
 
 const PreviewStagesWrapper = () => {
-    const generationContext = useContext(GenerationContext);
+    const generationContext = useContext(StagesContext);
     const { stage } = generationContext;
 
     switch (stage) {

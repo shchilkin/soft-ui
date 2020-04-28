@@ -2,7 +2,6 @@ import React, {Fragment, useContext, useState} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
 import Button from "../../../../Layout/Button";
 import Card from "../../../../Layout/Card";
-import Badge from "../../../../../../Badge/Badge.component";
 import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../../../Functions";
 import Input from "../../../../Layout/Input";
 import ColorShowcaseCard from "./ColorShowcaseCard";
@@ -71,31 +70,23 @@ const Showcase = () => {
                     {isDarkModeMoreThan100(darkModeFactor) ? 'darkmode' : 'lightmode'} generation.
                 </h6>
                 Hi! 👋 I am a {isDarkModeMoreThan100(darkModeFactor) ? 'dark' : 'light'} mode card!
+                <br/>
+                {darkModeFactor}% of the background color
 
                 {/*TODO if 100% return "Hi I am darkmode card but currently my color is the same as the main color 😜"*/}
-                <div className={'row mt-3'}>
-                    <div className={'col-5'}>
-                        <Button
-                            background={darkModeBackground}
-                            darkShadow={darkModeDarkShadow}
-                            lightShadow={darkModeLightShadow}
-                            color={darkModeFont}
-                        >
-                            Click me!
-                        </Button>
-                    </div>
-                    <div className={'col-7'}>
-                        <Input
-                            type={'number'}
-                            background={darkModeBackground}
-                            darkShadow={darkModeDarkShadow}
-                            lightShadow={darkModeLightShadow}
-                            color={darkModeFont}
-                            value={darkModeFactor}
-                            onChange={event => onChangeFactor(event)}
-                            placeholder={'Enter value'}
-                        />
-                    </div>
+                <div>
+                <label>Change %</label>
+                <Input
+                    style={{marginLeft:'10px',marginTop:'1.2rem',height:'35px',borderRadius:'6px',width:'50%'}}
+                    type={'number'}
+                    background={darkModeBackground}
+                    darkShadow={darkModeDarkShadow}
+                    lightShadow={darkModeLightShadow}
+                    color={darkModeFont}
+                    value={darkModeFactor}
+                    onChange={event => onChangeFactor(event)}
+                    placeholder={'Enter value'}
+                />
                 </div>
             </Card>
         </Card>

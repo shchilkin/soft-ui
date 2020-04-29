@@ -9,7 +9,7 @@ const PreviewStageChooseColor = () => {
 
     const themeContext = useContext(ThemeContext);
     const {colorRGB, darkShadowFactor, lightShadowFactor, darkModeFactor,
-        darkModeDarkShadowFactor, darkModeLightShadowFactor,
+        darkModeDarkShadowFactor, darkModeLightShadowFactor, secondaryColor
         } = themeContext;
 
     // darkModeDarkShadow, darkModeLightShadow
@@ -58,7 +58,9 @@ const PreviewStageChooseColor = () => {
         <div className={"row"}>
             <div className={'col-12'}>
                 <Badge>Secondary colors</Badge>
-                    <Card/>
+                <Card>
+                    <div style={{height:'254px', borderRadius:'12px', backgroundColor:secondaryColor}}/>
+                </Card>
             </div>
         </div>
     )
@@ -82,72 +84,3 @@ const PreviewStageChooseColor = () => {
 }
 
 export default PreviewStageChooseColor;
-
-
-// <div className={'row mb-3'}>
-//     <Card
-//         type={'left'}
-//         style={{width:'50%',
-//             paddingRight:0}}>
-//         <Card
-//             type={'left'}
-//             style={{height:'254px'}}>
-//             <Badge>Preview</Badge>
-//         </Card>
-//     </Card>
-//     <Card
-//         type={'right'}
-//         background={darkModeBackground}
-//         style={{width:'50%',paddingLeft:0}}
-//     >
-//         <Card
-//             type={'right'}
-//             background={darkModeBackground}
-//             lightShadow={darkModeLightShadow}
-//             darkShadow={darkModeDarkShadow}
-//             color={darkModeFont}
-//             style={{height:'254px'}}>
-//             <Badge>Dark mode</Badge>
-//         </Card>
-//     </Card>
-// </div>
-
-
-
-// <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["120"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["130"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["140"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["150"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["160"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["170"]}
-//         borderRadius={12}/>
-//     <ColorButton
-//         width={60}
-//         height={60}
-//         mainColor={mainColorTints["180"]}
-{/*        borderRadius={12}/>*/}
-{/*</div>*/}

@@ -9,6 +9,7 @@ import {
     INVERSE_FONT,
     THEME_RESET,
     CHANGE_BADGE_COLORS,
+    CHANGE_SECONDARY_COLOR,
     CHANGE_DARK_MODE_FACTOR,
     CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
     CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
@@ -36,11 +37,6 @@ export default (state, action) => {
             switch (action.payload.colorName) {
                 //TODO Red Green and Blue return seems similar => Create function
                 case "Red":
-                    console.log('font color',fontColor(
-                    numberRangeCheck(action.payload.colorValue),
-                    state.Green,
-                    state.Blue
-                ),)
                     return {
                         ...state,
                         Red: numberRangeCheck(action.payload.colorValue),
@@ -385,6 +381,11 @@ export default (state, action) => {
             return {
                 ...state,
                 darkModeLightShadowFactor: calculateShadowFactor(action.payload),
+            }
+        case CHANGE_SECONDARY_COLOR:
+            return {
+                ...state,
+                secondaryColor: action.payload
             }
     }
 };

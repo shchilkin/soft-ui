@@ -71,10 +71,10 @@ const OptionBar = () => {
                     lightShadow={lightShadow}
                 >
                     <Badge_OB activeOnStage={0}>About</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={1}>choose Color</Badge_OB>{" "}
+                    <Badge_OB activeOnStage={1}>Choose color</Badge_OB>{" "}
                     {/*<Badge_OB activeOnStage={[2,5]}>Customize components</Badge_OB>{" "}*/}
-                    <Badge_OB activeOnStage={2}>Card</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={3}>Button</Badge_OB>{" "}
+                    <Badge_OB activeOnStage={2}>Button</Badge_OB>{" "}
+                    <Badge_OB activeOnStage={3}>Card</Badge_OB>{" "}
                     <Badge_OB activeOnStage={4}>Input</Badge_OB>{" "}
                     <Badge_OB activeOnStage={5}>Badge</Badge_OB>{" "}
                     <Badge_OB activeOnStage={6}>Generate CSS</Badge_OB>{" "}

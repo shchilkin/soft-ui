@@ -20,9 +20,9 @@ const ControlStagesWrapper = () => {
         case 1:
             return <ControlStageChooseColor />
         case 2:
-            return <ControlStageCard />
-        case 3:
             return <ControlStageButton />
+        case 3:
+            return <ControlStageCard />
         case 4:
             return <ControlStageInput />
         case 5:

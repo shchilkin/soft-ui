@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/cjs/Navbar";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import styled from "styled-components";
 import {calculateTintAndShades} from "../../Functions";
+import {Nav, NavDropdown, NavLink} from "react-bootstrap";
 
 const NavigationBar = () => {
     const themeContext =  useContext(ThemeContext);
@@ -47,6 +48,12 @@ const NavigationBar = () => {
                 <span style={{color: font, verticalAlign:'bottom'}}>Soft UI</span>{" "}
                 <Badge>{getVersion(viewportWidth)}</Badge>
             </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link href="https://github.com/CrazyRedKitten/soft-ui">Project on Github</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
     )
 }

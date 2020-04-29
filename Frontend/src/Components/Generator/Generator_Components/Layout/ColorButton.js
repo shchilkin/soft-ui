@@ -11,15 +11,15 @@ const ColorButton = ({
                          blur,
                          shadowLength,
                          darkerShadow,
-                         lighterShadow
+                         lighterShadow,
+                         onClick
                      }) => {
 
     const colorShowcaseContext = useContext(ColorShowcaseContext)
-    const { backgroundColor , changeShowcaseColor } = colorShowcaseContext;
-
+    const { backgroundColor } = colorShowcaseContext;
     return (
         <StyledColorButton
-            onClick={() => changeShowcaseColor(mainColor)}
+            onClick={onClick}
             active={ backgroundColor === mainColor }
             Background={mainColor}
             background={mainColor}

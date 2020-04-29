@@ -1,6 +1,5 @@
-import Card from "../../Layout/Card";
 import ColorButton from "../../Layout/ColorButton";
-import React, {useContext} from "react";
+import React, {Fragment, useContext} from "react";
 import {calculateTintAndShades} from "../../../../../Functions";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 import Badge from "../../../../Badge/Badge.component";
@@ -8,7 +7,7 @@ import Badge from "../../../../Badge/Badge.component";
 
 const SecondaryColorsPanel = () => {
     const themeContext = useContext(ThemeContext);
-    const {colorRGB, font, shadows } = themeContext;
+    const {colorRGB, font, shadows,changeSecondaryColor } = themeContext;
 
     const darkerShadows = shadows.darkerShadowArray;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
@@ -31,38 +30,18 @@ const SecondaryColorsPanel = () => {
         120: calculateTintAndShades(red,green,blue,120),
         130: calculateTintAndShades(red,green,blue,130),
         140: calculateTintAndShades(red,green,blue,140),}
-    const complementaryColor = [
-        complementaryColorTintsAndShades["60"],
-        complementaryColorTintsAndShades["70"],
-        complementaryColorTintsAndShades["80"],
-        complementaryColorTintsAndShades["90"],
-        complementaryColorTintsAndShades["100"],
-        complementaryColorTintsAndShades["110"],
-        complementaryColorTintsAndShades["120"],
-        complementaryColorTintsAndShades["130"],
-        complementaryColorTintsAndShades["140"],
-    ]
 
     const mainColorShades = {
+        10: calculateTintAndShades(Red,Green,Blue,10),
         20: calculateTintAndShades(Red,Green,Blue,20),
         30: calculateTintAndShades(Red,Green,Blue,30),
-        40:calculateTintAndShades(Red,Green,Blue,40),
+        40: calculateTintAndShades(Red,Green,Blue,40),
         50: calculateTintAndShades(Red,Green,Blue,50),
         60: calculateTintAndShades(Red,Green,Blue,60),
         70: calculateTintAndShades(Red,Green,Blue,70),
         80: calculateTintAndShades(Red,Green,Blue,80),
         90: calculateTintAndShades(Red,Green,Blue,90)
     }
-    const mainColorShadesArray = [
-        mainColorShades["20"],
-        mainColorShades["30"],
-        mainColorShades["40"],
-        mainColorShades["50"],
-        mainColorShades["60"],
-        mainColorShades["70"],
-        mainColorShades["80"],
-        mainColorShades["90"],
-    ]
 
     const mainColorTints = {
         110: calculateTintAndShades(Red,Green,Blue,110),
@@ -72,62 +51,200 @@ const SecondaryColorsPanel = () => {
         150: calculateTintAndShades(Red,Green,Blue,150),
         160: calculateTintAndShades(Red,Green,Blue,160),
         170: calculateTintAndShades(Red,Green,Blue,170),
-        180: calculateTintAndShades(Red,Green,Blue,180)
+        180: calculateTintAndShades(Red,Green,Blue,180),
+        190: calculateTintAndShades(Red,Green,Blue,190)
     }
-    const mainColorTintsArray = [
-        mainColorTints["110"],
-        mainColorTints["120"],
-        mainColorTints["130"],
-        mainColorTints["140"],
-        mainColorTints["150"],
-        mainColorTints["160"],
-        mainColorTints["170"],
-        mainColorTints["180"],
-    ]
 
+    // TODO !!! Remove map and return hardcoded ColorButtons
+    // Array.map greatly reduces performance
 
     return(
-        <div>
+        <Fragment>
             <Badge style={{ backgroundColor: darkerShadow }}>
                 <span style={{color:font}}>Secondary colors</span>
             </Badge>
-            <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                <Badge style={{ backgroundColor: darkerShadow }}>
-                    <span style={{color:font}}>Complementary</span>
-                </Badge>
-                {complementaryColor.map(
-                    color =>  <ColorButton
+            <div>
+                <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
+                    <Badge style={{ backgroundColor: darkerShadow, fontSize: '0.875rem', padding:'.15em .3em}'}}>
+                        <span style={{color:font}}>Complementary</span>
+                    </Badge>
+                    <ColorButton
                         width={28}
                         height={28}
-                        mainColor={color}
+                        mainColor={complementaryColorTintsAndShades["60"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["60"])}
                         borderRadius={6}/>
-                )}
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["70"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["70"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["80"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["80"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["90"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["90"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["100"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["100"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["110"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["110"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["120"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["120"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["130"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["130"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={complementaryColorTintsAndShades["140"]}
+                        onClick={() => changeSecondaryColor(complementaryColorTintsAndShades["140"])}
+                        borderRadius={6}/>
+                </div>
+                <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
+                    <Badge style={{ backgroundColor: darkerShadow, fontSize: '0.675rem', padding:'.15em .3em}'}}>
+                        <span style={{color:font}}>Primary color shades</span>
+                    </Badge>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["10"]}
+                        value={mainColorShades["10"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["10"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["20"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["20"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["30"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["30"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["40"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["40"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["50"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["50"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["60"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["60"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["70"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["70"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["80"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["80"])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorShades["90"]}
+                        onClick={() => changeSecondaryColor(mainColorShades["90"])}
+                        borderRadius={6}/>
+                </div>
+                <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
+                    <Badge style={{ backgroundColor: darkerShadow, fontSize: '0.675rem', padding:'.15em .3em}'}}>
+                        <span style={{color:font}}>Primary color tints</span>
+                    </Badge>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['110']}
+                        onClick={() => changeSecondaryColor(mainColorTints['110'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['120']}
+                        onClick={() => changeSecondaryColor(mainColorTints['120'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['130']}
+                        onClick={() => changeSecondaryColor(mainColorTints['130'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['140']}
+                        onClick={() => changeSecondaryColor(mainColorTints['140'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['150']}
+                        onClick={() => changeSecondaryColor(mainColorTints['150'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['160']}
+                        onClick={() => changeSecondaryColor(mainColorTints['160'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['170']}
+                        onClick={() => changeSecondaryColor(mainColorTints['170'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['180']}
+                        onClick={() => changeSecondaryColor(mainColorTints['180'])}
+                        borderRadius={6}/>
+                    <ColorButton
+                        width={28}
+                        height={28}
+                        mainColor={mainColorTints['190']}
+                        onClick={() => changeSecondaryColor(mainColorTints['190'])}
+                        borderRadius={6}/>
+
+                </div>
             </div>
-            <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                <Badge style={{ backgroundColor: darkerShadow }}>
-                    <span style={{color:font}}>Shades</span>
-                </Badge>
-                {mainColorShadesArray.map(
-                    color =>  <ColorButton
-                        width={43}
-                        height={43}
-                        mainColor={color}
-                        borderRadius={12}/>
-                )}
-            </div>
-            <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
-                <Badge style={{ backgroundColor: darkerShadow }}>
-                    <span style={{color:font}}>Tints</span>
-                </Badge>
-                {mainColorTintsArray.map(
-                    color =>  <ColorButton
-                        width={43}
-                        height={43}
-                        mainColor={color}
-                        borderRadius={12}/>
-                )}
-            </div>
-        </div>
+        </Fragment>
     )
 }
 

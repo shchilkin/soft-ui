@@ -13,6 +13,7 @@ import {
   THEME_RESET,
   CHANGE_BADGE_COLORS,
   CHANGE_DARK_MODE_FACTOR,
+  CHANGE_SECONDARY_COLOR,
   CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
   CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from "../types";
@@ -81,6 +82,7 @@ const ThemeState = (props) => {
     lightShadowFactor: 1.05,
     darkModeDarkShadowFactor: 0.75,
     darkModeLightShadowFactor: 0.9,
+    secondaryColor: '#000000',
     darkModeFactor: 0.4,
   };
 
@@ -216,6 +218,13 @@ const ThemeState = (props) => {
     });
   }
 
+  const changeSecondaryColor = (colorValue) => {
+    dispatch({
+      type: CHANGE_SECONDARY_COLOR,
+      payload: colorValue,
+    });
+  }
+
 
   return (
     <ThemeContext.Provider
@@ -232,6 +241,7 @@ const ThemeState = (props) => {
         changeDarkModeFactor,
         changeDarkShadowFactor,
         changeLightShadowFactor,
+        changeSecondaryColor,
         changeDarkModeDarkShadowFactor,
         changeDarkModeLightShadowFactor,
         font: state.font,
@@ -241,12 +251,19 @@ const ThemeState = (props) => {
           Green: state.Green,
           Blue: state.Blue,
         },
+        secondaryRGB:{
+          Red: state.secondaryRed,
+          Green: state.secondaryGreen,
+          Blue: state.secondaryBlue,
+        },
         colorHEX: state.hexColor,
         darkMode: state.darkMode,
         shadowBlur: state.shadowBlur,
-        codeFontColor: state.codeFontColor,
+        secondaryHex: state.secondaryHex,
         shadowLength: state.shadowLength,
         borderRadius: state.borderRadius,
+        codeFontColor: state.codeFontColor,
+        secondaryColor: state.secondaryColor,
         darkModeFactor: state.darkModeFactor,
         darkModeShadows: state.darkModeShadows,
         darkShadowFactor: state.darkShadowFactor,

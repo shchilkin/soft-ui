@@ -88,70 +88,82 @@ const ColorShowcaseCard = () => {
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#ED2939'}/>
+                        mainColor={'#ED2939'}
+                        onClick={() => changeShowcaseColor('#ED2939')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#F46036'}/>
+                        mainColor={'#F46036'}
+                        onClick={() => changeShowcaseColor('#F46036')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#F3FFB6'}/>
+                        mainColor={'#F3FFB6'}
+                        onClick={() => changeShowcaseColor('#F3FFB6')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#6FD08C'}/>
+                        mainColor={'#6FD08C'}
+                        onClick={() => changeShowcaseColor('#6FD08C')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#5CA173'}/>
+                        mainColor={'#5CA173'}
+                        onClick={() => changeShowcaseColor('#5CA173')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#26CBD8'}/>
+                        mainColor={'#26CBD8'}
+                        onClick={() => changeShowcaseColor('#26CBD8')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#07BEB8'}/>
+                        mainColor={'#07BEB8'}
+                        onClick={() => changeShowcaseColor('#07BEB8')}
+                    />
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#F5D3C8'}/>
+                        mainColor={'#F5D3C8'}
+                        onClick={() => changeShowcaseColor('#F5D3C8')}/>
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#8F3985'}/>
+                        mainColor={'#8F3985'}
+                        onClick={() => changeShowcaseColor('#8F3985')}
+                    />
                     <ColorButton
                         lighterShadow={lightShadow}
                         darkerShadow={darkShadow}
                         shadowLength={shadowLength}
                         blur={shadowBlur}
                         background={"#FFF"}
-                        mainColor={'#DF2687'}/>
+                        mainColor={'#DF2687'}
+                        onClick={() => changeShowcaseColor('#DF2687')}/>
                 </div>
             </Card>
         </Card>

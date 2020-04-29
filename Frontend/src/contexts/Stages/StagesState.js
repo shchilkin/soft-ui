@@ -12,8 +12,8 @@ const StagesState = (props) => {
 
     const initialState ={
         stage:0,
-        generateDarkMode: true,
-        generateSecondaryColor: true,
+        generateDarkMode: false,
+        generateSecondaryColor: false,
     }
 
     const [state, dispatch] = useReducer(GenerationReducer, initialState);

@@ -89,7 +89,9 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-9"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>
+                    <Badge
+                        background={darkerShadow}
+                        style={{color: font }}>
                         #<span style={{ color: "#ed2939", fontWeight: "bold" }}>FF</span>
                         <span style={{ color: "#0B6623", fontWeight: "bold" }}>FF</span>
                         <span style={{ color: "#0f52Ba", fontWeight: "bold" }}>FF</span>
@@ -109,7 +111,7 @@ const ControlStageChooseColor = () => {
         <div className={"row text-center"}>
             <div className={'col-lg-3'}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow }}>
+                    <Badge background={darkerShadow}>
                         <span style={{color:font}}>Mode</span>
                     </Badge>
                 </h6>
@@ -122,7 +124,7 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-lg-3"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow }}>
+                    <Badge background={darkerShadow}>
                         <span style={{ color: "#ed2939" }}>R</span>
                     </Badge>
                 </h6>
@@ -136,7 +138,7 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-lg-3"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow }}>
+                    <Badge background={darkerShadow}>
                         <span style={{ color: "#0B6623" }}>G</span>
                     </Badge>
                 </h6>
@@ -150,7 +152,7 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-lg-3"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow }}>
+                    <Badge background={darkerShadow}>
                         <span style={{ color: "#0f52Ba" }}>B</span>
                     </Badge>
                 </h6>
@@ -169,7 +171,9 @@ const ControlStageChooseColor = () => {
         <div className={"row"}>
             <div className={"col-4"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Dark mode, %</Badge>
+                    <Badge background={darkerShadow}>
+                        Dark mode, %
+                    </Badge>
                 </h6>
                 <Input
                     type={'number'}
@@ -181,7 +185,9 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-4"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Dark Shadow, %</Badge>
+                    <Badge background={darkerShadow}>
+                        Dark Shadow, %
+                    </Badge>
                 </h6>
                 <Input
                     type={'number'}
@@ -193,7 +199,9 @@ const ControlStageChooseColor = () => {
             </div>
             <div className={"col-4"}>
                 <h6>
-                    <Badge style={{ backgroundColor: darkerShadow, color: font }}>Light shadow, %</Badge>
+                    <Badge background={darkerShadow}>
+                        Light shadow, %
+                    </Badge>
                 </h6>
                 <Input
                     type={'number'}
@@ -224,10 +232,8 @@ const ControlStageChooseColor = () => {
                 boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
                                  -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
                 border: `1px solid ${mainColor}`,
-                borderRadius: `${borderRadius}px`,
-            }}
-            className={"pt-3 pb-3 pl-3 pr-3"}
-        >
+                borderRadius: `${borderRadius}px`,}}
+            className={"pt-3 pb-3 pl-3 pr-3 ColorCard"}>
             <div className={"row"}>
                 <div className={"col-6 mr-3"}>
                     <h5>Pick a color:</h5>

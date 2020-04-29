@@ -76,6 +76,19 @@ export function fontColor(red, green, blue) {
         return "#FFF"
     }
 }
+
+export function fontColorHex(Hex) {
+    const {Red, Green, Blue} = hexToRGB(Hex);
+
+    let luminance = ((0.299 * Red) + (0.587 * Green) + (0.114 * Blue))/255;
+
+    if (luminance > 0.5) {
+        return "#000"
+    } else {
+        return "#FFF"
+    }
+}
+
 export function toHex(colorValue){
     let color
     if (colorValue <= 15) {

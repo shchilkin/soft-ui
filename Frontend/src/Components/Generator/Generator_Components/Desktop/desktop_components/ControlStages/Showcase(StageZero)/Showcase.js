@@ -5,17 +5,22 @@ import Card from "../../../../Layout/Card";
 import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../../../Functions";
 import Input from "../../../../Layout/Input";
 import ColorShowcaseCard from "./ColorShowcaseCard";
+import ReactCard from "./ReactCard";
+import ColorButton from "../../../../Layout/ColorButton";
 
 
 const Showcase = () => {
     const themeContext = useContext(ThemeContext);
 
-    const {colorRGB, darkShadowFactor, shadows, lightShadowFactor, shadowBlur} = themeContext;
+    const {colorRGB, darkShadowFactor, shadows,shadowLength, lightShadowFactor, shadowBlur} = themeContext;
     const {Red, Green, Blue} = colorRGB
 
 
     const [darkModeFactor ,setFactor] = useState(40);
     const [activeWindow, setActiveWindow] = useState(1)
+
+    const darkShadow = `rgb(${shadows.darkerShadowArray[0]},${shadows.darkerShadowArray[1]},${shadows.darkerShadowArray[2]})`
+    const lightShadow = `rgb(${shadows.ligherShadowArray[0]},${shadows.ligherShadowArray[1]},${shadows.ligherShadowArray[2]})`
 
     const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
     const darkmodeLightShadowFactor = Math.round(darkModeFactor * .9);
@@ -93,16 +98,19 @@ const Showcase = () => {
     )
 
     const showCaseWindowWrapper = (activeWindow) => {
-        console.log('active window',activeWindow)
         switch (activeWindow) {
             case 0:
                 return DarkModeCard;
             case 1:
                 return <ColorShowcaseCard />
+            case 2:
+                return <ReactCard />
             default:
                 return null
         }
     }
+
+    let multiplier = 0.65
 
     return (
         <Fragment>
@@ -113,15 +121,35 @@ const Showcase = () => {
                 type={'bottom'}
                 style={{display:'flex',justifyContent:'center', alignItems:'center',}}
             >
-                <Button
-                    style={{marginRight:'1rem'}}
+                <ColorButton
+                    active={activeWindow === 0}
+                    borderRadius={'50'}
+                    mainColor={`rgb(${Math.round(Red* multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
+                    lighterShadow={lightShadow}
+                    darkerShadow={darkShadow}
+                    shadowLength={shadowLength}
+                    blur={shadowBlur}
                     onClick={() => setActiveWindow(0)}
-                    children={'Darkmode'}
                 />
-                <Button
-                    // style={{width:'90%'}}
+                <ColorButton
+                    active={activeWindow === 1}
+                    borderRadius={'50'}
+                    mainColor={`rgb(${Math.round(Red* multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
+                    lighterShadow={lightShadow}
+                    darkerShadow={darkShadow}
+                    shadowLength={shadowLength}
+                    blur={shadowBlur}
                     onClick={() => setActiveWindow(1)}
-                    children={'Works with every color!'}
+                />
+                <ColorButton
+                    active={activeWindow === 2}
+                    borderRadius={'50'}
+                    mainColor={`rgb(${Math.round(Red * multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
+                    lighterShadow={lightShadow}
+                    darkerShadow={darkShadow}
+                    shadowLength={shadowLength}
+                    blur={shadowBlur}
+                    onClick={() => setActiveWindow(2)}
                 />
             </Card>
         </Fragment>

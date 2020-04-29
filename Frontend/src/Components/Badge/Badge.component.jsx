@@ -1,34 +1,25 @@
 import React, {useContext} from "react";
 import ThemeContext from '../../contexts/theme/ThemeContext';
+import styled from "styled-components";
 
-const Badge = ({children, type = 'normal', className,  color, style}) => {
+const Badge = ({children, border = 6, background, className, style}) => {
     const themeContext = useContext(ThemeContext);
     const {darkMode} = themeContext;
 
-    const badgeNormal = (
-        <span className={
-            `Badge-${darkMode ? "Dark" : 'Light'} 
-            ${color && color}${darkMode ? "-Dark" : ""} 
-            ${className && className}`}
-              style={style}
-        >{children}
-        </span>
-    );
-    const badgeSmall = (
-        <span
-            style={style}
-            className={
-            `Badge-Small-${darkMode ? "Dark" : 'Light'} 
-            ${color && color}${darkMode ? "-Dark" : ""} 
-            ${className && className}`}>{children}
-        </span>
-    );
-
-    if (type === 'normal'){
-        return badgeNormal
-    } else if (type === 'small') {
-        return badgeSmall
-    } else return null
+    return (
+        <StyledBadge
+            border={border}
+            background={background}
+            style={{...style}}>
+            {children}
+        </StyledBadge>
+    )
 };
 
 export default Badge;
+
+const StyledBadge = styled.span`
+     padding: 5px 4px;
+     background-color: ${props => props.background};
+     border-radius:${props => props.border}px;
+    `;

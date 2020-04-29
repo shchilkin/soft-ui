@@ -82,7 +82,7 @@ const ThemeState = (props) => {
     lightShadowFactor: 1.05,
     darkModeDarkShadowFactor: 0.75,
     darkModeLightShadowFactor: 0.9,
-    secondaryColor: '#000000',
+    secondaryColor: 'complementary-100',
     darkModeFactor: 0.4,
   };
 

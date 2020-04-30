@@ -112,7 +112,7 @@ const PreviewStageButton = () => {
         <div>
             <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
-                    <h6 style={{ fontWeight: "bold" }}>Regular button states | Font color</h6>
+                    <h6 style={{ fontWeight: "bold" }}>Regular button states</h6>
                     <div className={"row mt-3 mb-1"}>
                         <div className={"col-md-4 mb-3"}>
                             <PreviewButtonRegular
@@ -132,84 +132,6 @@ const PreviewStageButton = () => {
                             <PreviewButtonRegular
                                 state={"active"}
                                 props={componentPropsFontColor}
-                                children={"Active"}
-                            />
-                        </div>
-                    </div>
-                    <h6 style={{ fontWeight: "bold" }}>Flat button states | Font color</h6>
-                    <div className={"row mt-3 mb-1"}>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                props={componentPropsFontColor}
-                                state={"initial"}
-                                children={"Button"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                state="hover"
-                                props={componentPropsFontColor}
-                                children={"hover"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                state={"active"}
-                                props={componentPropsFontColor}
-                                children={"Active"}
-                            />
-                        </div>
-                    </div>
-                    <h6 style={{ fontWeight: "bold" }}>Regular button states | Secondary color</h6>
-                    <div className={"row mt-3 mb-1"}>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonRegular
-                                props={componentPropsSecondary }
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                state={"initial"}
-                                children={"Button"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonRegular
-                                state="hover"
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                props={componentPropsSecondary }
-                                children={"hover"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonRegular
-                                state={"active"}
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                props={componentPropsSecondary }
-                                children={"Active"}
-                            />
-                        </div>
-                    </div>
-                    <h6 style={{ fontWeight: "bold" }}>Flat button states | Secondary color</h6>
-                    <div className={"row mt-3 mb-1"}>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                props={componentPropsSecondary }
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                state={"initial"}
-                                children={"Button"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                state="hover"
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                props={componentPropsSecondary }
-                                children={"hover"}
-                            />
-                        </div>
-                        <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonFlat
-                                state={"active"}
-                                accent={secondaryColorSwitch(secondaryColor)}
-                                props={componentPropsSecondary }
                                 children={"Active"}
                             />
                         </div>

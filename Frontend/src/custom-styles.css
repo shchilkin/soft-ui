@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji+2&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
-
 :root{
     --bg-color-light: #f0f0f0;
     --bg-color-light-darker-shadow: rgba(0, 0, 0, 0.15);
@@ -867,3 +864,16 @@ select:-webkit-autofill:focus {
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

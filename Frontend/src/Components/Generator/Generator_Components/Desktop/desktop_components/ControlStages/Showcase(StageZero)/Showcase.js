@@ -1,6 +1,5 @@
 import React, {Fragment, useContext, useState} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../../Layout/Button";
 import Card from "../../../../Layout/Card";
 import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../../../Functions";
 import Input from "../../../../Layout/Input";
@@ -124,6 +123,8 @@ const Showcase = () => {
                 <ColorButton
                     active={activeWindow === 0}
                     borderRadius={'50'}
+                    width={20}
+                    height={20}
                     mainColor={`rgb(${Math.round(Red* multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
                     lighterShadow={lightShadow}
                     darkerShadow={darkShadow}
@@ -134,7 +135,10 @@ const Showcase = () => {
                 <ColorButton
                     active={activeWindow === 1}
                     borderRadius={'50'}
-                    mainColor={`rgb(${Math.round(Red* multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
+                    width={20}
+                    height={20}
+                    mainColor={'#ed2939'}
+                    // mainColor={`rgb(${Math.round(Red* multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
                     lighterShadow={lightShadow}
                     darkerShadow={darkShadow}
                     shadowLength={shadowLength}
@@ -144,7 +148,10 @@ const Showcase = () => {
                 <ColorButton
                     active={activeWindow === 2}
                     borderRadius={'50'}
-                    mainColor={`rgb(${Math.round(Red * multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
+                    width={20}
+                    height={20}
+                    mainColor={'#61DAFB'}
+                    // mainColor={`rgb(${Math.round(Red * multiplier)},${Math.round(Green* multiplier)},${Math.round(Blue* multiplier)})`}
                     lighterShadow={lightShadow}
                     darkerShadow={darkShadow}
                     shadowLength={shadowLength}

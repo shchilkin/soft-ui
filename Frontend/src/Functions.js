@@ -147,3 +147,10 @@ export function invertFont(font) {
         return '#000'
     }
 }
+
+export function calculateColors(color, mode='complimentary') {
+    //Complimentary color case
+    return {red: (255 - color.Red || 255 - color.red), green: (255 - color.Green || 255 - color.green), blue: (255 - color.Blue || 255 - color.blue)}
+
+    //TODO add other cases | generate tones, shades and maybe more...
+}

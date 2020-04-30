@@ -82,7 +82,9 @@ const ThemeState = (props) => {
     lightShadowFactor: 1.05,
     darkModeDarkShadowFactor: 0.75,
     darkModeLightShadowFactor: 0.9,
+    //TODO Rename secondaryColor to secondaryColorCode
     secondaryColor: 'complementary-100',
+    secondaryColorValue:'#000000',
     darkModeFactor: 0.4,
   };
 
@@ -218,10 +220,10 @@ const ThemeState = (props) => {
     });
   }
 
-  const changeSecondaryColor = (colorValue) => {
+  const changeSecondaryColor = (colorCode, colorValue) => {
     dispatch({
       type: CHANGE_SECONDARY_COLOR,
-      payload: colorValue,
+      payload: {colorValue: colorValue, colorCode: colorCode}
     });
   }
 
@@ -269,6 +271,7 @@ const ThemeState = (props) => {
         darkShadowFactor: state.darkShadowFactor,
         lightShadowFactor: state.lightShadowFactor,
         codeBackgroundColor: state.codeBackgroundColor,
+        secondaryColorValue: state.secondaryColorValue,
         darkModeDarkShadowFactor: state. darkModeDarkShadowFactor,
         darkModeLightShadowFactor: state.darkModeLightShadowFactor,
       }}

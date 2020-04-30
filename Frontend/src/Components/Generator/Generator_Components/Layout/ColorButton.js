@@ -3,24 +3,16 @@ import styled, {css} from "styled-components";
 import ColorShowcaseContext from "../../../../contexts/colorShowcase/ColorShowcaseContext";
 
 
-const ColorButton = ({
-                         mainColor,
-                         width = 28,
-                         height = 28,
-                         borderRadius = 6,
-                         blur,
-                         shadowLength,
-                         darkerShadow,
-                         lighterShadow,
-                         onClick
-                     }) => {
+const ColorButton = ({active, mainColor, width = 28, height = 28, borderRadius = 6, blur, shadowLength,
+                         darkerShadow, lighterShadow, onClick
+}) => {
 
     const colorShowcaseContext = useContext(ColorShowcaseContext)
     const { backgroundColor } = colorShowcaseContext;
     return (
         <StyledColorButton
             onClick={onClick}
-            active={ backgroundColor === mainColor }
+            active={  active ||backgroundColor === mainColor }
             Background={mainColor}
             background={mainColor}
             width={width}

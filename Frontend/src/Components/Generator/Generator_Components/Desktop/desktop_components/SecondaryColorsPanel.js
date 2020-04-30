@@ -1,26 +1,20 @@
 import ColorButton from "../../Layout/ColorButton";
 import React, {Fragment, useContext} from "react";
-import {calculateTintAndShades} from "../../../../../Functions";
+import {calculateTintAndShades, calculateColors} from "../../../../../Functions";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 import Badge from "../../../../Badge/Badge.component";
 
 
 const SecondaryColorsPanel = () => {
     const themeContext = useContext(ThemeContext);
-    const {colorRGB, font, shadows,changeSecondaryColor } = themeContext;
+    const {colorRGB, font, shadows, changeSecondaryColor } = themeContext;
 
     const darkerShadows = shadows.darkerShadowArray;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
     const {Red, Green, Blue} = colorRGB;
 
-    function calculateColors(color, mode='complimentary') {
-        return {red: (255 - color.Red), green: (255 - color.Green), blue: (255 - color.Blue)}
-    }
-
+    //TODO refactor  | Get calculated colors from context
     const {red, green, blue} = calculateColors(colorRGB)
-    console.log('complimentary color', calculateColors(colorRGB) )
-
-
     const colors = {
         'complementary-60': calculateTintAndShades(red,green,blue,60),
         'complementary-70': calculateTintAndShades(red,green,blue,70),
@@ -66,55 +60,55 @@ const SecondaryColorsPanel = () => {
                         width={28}
                         height={28}
                         mainColor={colors["complementary-60"]}
-                        onClick={() => changeSecondaryColor('complementary-60')}
+                        onClick={() => changeSecondaryColor('complementary-60',colors["complementary-60"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-70"]}
-                        onClick={() => changeSecondaryColor('complementary-70')}
+                        onClick={() => changeSecondaryColor('complementary-70',colors["complementary-70"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-80"]}
-                        onClick={() => changeSecondaryColor('complementary-80')}
+                        onClick={() => changeSecondaryColor('complementary-80',colors["complementary-80"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-90"]}
-                        onClick={() => changeSecondaryColor('complementary-90')}
+                        onClick={() => changeSecondaryColor('complementary-90',colors["complementary-90"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-100"]}
-                        onClick={() => changeSecondaryColor('complementary-100')}
+                        onClick={() => changeSecondaryColor('complementary-100',colors["complementary-100"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-110"]}
-                        onClick={() => changeSecondaryColor('complementary-110')}
+                        onClick={() => changeSecondaryColor('complementary-110',colors["complementary-110"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-120"]}
-                        onClick={() => changeSecondaryColor('complementary-120')}
+                        onClick={() => changeSecondaryColor('complementary-120',colors["complementary-120"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-130"]}
-                        onClick={() => changeSecondaryColor('complementary-130')}
+                        onClick={() => changeSecondaryColor('complementary-130',colors["complementary-130"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["complementary-140"]}
-                        onClick={() => changeSecondaryColor('complementary-140')}
+                        onClick={() => changeSecondaryColor('complementary-140',colors["complementary-140"])}
                         borderRadius={6}/>
                 </div>
                 <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
@@ -125,55 +119,55 @@ const SecondaryColorsPanel = () => {
                         width={28}
                         height={28}
                         mainColor={colors["main-10"]}
-                        onClick={() => changeSecondaryColor('main-10')}
+                        onClick={() => changeSecondaryColor('main-10',colors["main-10"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-20"]}
-                        onClick={() => changeSecondaryColor('main-20')}
+                        onClick={() => changeSecondaryColor('main-20',colors["main-20"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-30"]}
-                        onClick={() => changeSecondaryColor('main-30')}
+                        onClick={() => changeSecondaryColor('main-30',colors["main-30"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-40"]}
-                        onClick={() => changeSecondaryColor('main-40')}
+                        onClick={() => changeSecondaryColor('main-40',colors["main-50"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-50"]}
-                        onClick={() => changeSecondaryColor('main-50')}
+                        onClick={() => changeSecondaryColor('main-50',colors["main-50"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-60"]}
-                        onClick={() => changeSecondaryColor('main-60')}
+                        onClick={() => changeSecondaryColor('main-60',colors["main-60"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-70"]}
-                        onClick={() => changeSecondaryColor('main-70')}
+                        onClick={() => changeSecondaryColor('main-70',colors["main-70"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-80"]}
-                        onClick={() => changeSecondaryColor('main-80')}
+                        onClick={() => changeSecondaryColor('main-80',colors["main-80"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-90"]}
-                        onClick={() => changeSecondaryColor('main-90')}
+                        onClick={() => changeSecondaryColor('main-90',colors["main-90"])}
                         borderRadius={6}/>
                 </div>
                 <div style={{display:'flex',justifyContent:'center', alignItems:'center',marginBottom:'1rem',marginTop:'1rem'}}>
@@ -186,57 +180,56 @@ const SecondaryColorsPanel = () => {
                         width={28}
                         height={28}
                         mainColor={colors["main-110"]}
-                        onClick={() => changeSecondaryColor('main-110')}
+                        onClick={() => changeSecondaryColor('main-110',colors["main-110"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-120"]}
-                        onClick={() => changeSecondaryColor('main-120')}
+                        onClick={() => changeSecondaryColor('main-120',colors["main-120"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-130"]}
-                        onClick={() => changeSecondaryColor('main-130')}
+                        onClick={() => changeSecondaryColor('main-130',colors["main-130"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-140"]}
-                        onClick={() => changeSecondaryColor('main-140')}
+                        onClick={() => changeSecondaryColor('main-140',colors["main-140"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-150"]}
-                        onClick={() => changeSecondaryColor('main-150')}
+                        onClick={() => changeSecondaryColor('main-150',colors["main-150"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-160"]}
-                        onClick={() => changeSecondaryColor('main-160')}
+                        onClick={() => changeSecondaryColor('main-160',colors["main-160"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-170"]}
-                        onClick={() => changeSecondaryColor('main-170')}
+                        onClick={() => changeSecondaryColor('main-170',colors["main-170"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-180"]}
-                        onClick={() => changeSecondaryColor('main-180')}
+                        onClick={() => changeSecondaryColor('main-180',colors["main-180"])}
                         borderRadius={6}/>
                     <ColorButton
                         width={28}
                         height={28}
                         mainColor={colors["main-190"]}
-                        onClick={() => changeSecondaryColor('main-190')}
+                        onClick={() => changeSecondaryColor('main-190',colors["main-190"])}
                         borderRadius={6}/>
-
                 </div>
             </div>
         </Fragment>

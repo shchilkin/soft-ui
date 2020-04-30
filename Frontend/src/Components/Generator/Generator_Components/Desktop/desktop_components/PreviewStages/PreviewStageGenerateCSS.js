@@ -1,8 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
-import Button from "../../../Layout/Button";
-import Input from "../../../Layout/Input";
-import {generateTintAndShades} from "../../../../../../Functions";
+import {calculateTintAndShades, toHex} from "../../../../../../Functions";
+import Card from "../../../Layout/Card";
 
 const PreviewStageGenerateCSS = () => {
 
@@ -11,56 +10,46 @@ const PreviewStageGenerateCSS = () => {
         font,
         colorRGB,
         shadows,
-        shadowBlur,
-        shadowLength,
-        borderRadius,} = themeContext;
-
-    const {Red, Green, Blue} = colorRGB;
+        colorHEX,
+        codeBackgroundColor,
+        secondaryColorValue,
+        darkModeFactor,
+        codeFontColor,} = themeContext;
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-    console.log('colors',generateTintAndShades(Red,Green,Blue))
-    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
-    const viewportWidth = window.innerWidth
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return 175
-        } else return 300
-    }
+    const {Red,Green, Blue} = colorRGB;
 
-    const containerStyle = {
-        width: "100%",
-        height: `${getContainerHeight(viewportWidth)}px`,
-        minHeight: "100px",
-        backgroundColor: mainColor,
-        color: font,
-        mixBlendMode: "normal",
-        boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-        border: `1px solid ${mainColor}`,
-        borderRadius: `${borderRadius}px`,
-    };
+    const bgDarkmode = calculateTintAndShades(Red,Green,Blue,Math.round(darkModeFactor*100));
 
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
-    };
+    console.log('darkModeFactor',darkModeFactor)
 
     return (
-        <div>
-            <div className={"row mb-3"}>
-                <div className={"col-12"}>
-                    <div className={"align-self-center"} style={containerStyle}/>
-                </div>
-            </div>
-        </div>
+        <Card>
+            <pre
+                className={"pt-3 pb-3 pr-1 pl-3"}
+                style={{backgroundColor: codeBackgroundColor, borderRadius: "12px",
+                    boxShadow: `${codeBackgroundColor} 2px 2px 10px 0px inset,${codeBackgroundColor} -2px -2px 10px 0px inset`,}}
+            >
+                <code style={{ fontSize: "10px", color: codeFontColor }}>
+                :root{'{'}<br/>
+                    <span style={{color:'#ed2939'}}>--bg-light:</span> #{colorHEX};<br/>
+                    <span style={{color:'#ed2939'}}>--bg-light-shadow:</span> #{toHex(lighterShadows[0])+toHex(lighterShadows[1])+toHex(lighterShadows[2])};<br/>
+                    <span style={{color:'#ed2939'}}>--bg-dark-shadow:</span> #{toHex(darkerShadows[0])+toHex(darkerShadows[1])+toHex(darkerShadows[2])};<br/>
+                    <br/>
+                    <span style={{color:'#ed2939'}}>--bg--dark:</span> {bgDarkmode};<br/>
+                    <span style={{color:'#ed2939'}}>--dark-bg-light-shadow:</span>;<br/>
+                    <span style={{color:'#ed2939'}}>--dark-bg-dark-shadow:</span>;<br/>
+                    <br/>
+                    <span style={{color:'#ed2939'}}>--secondary-color:</span> {secondaryColorValue};
+                    <br/>
+                    <span style={{color:'#ed2939'}}>--font-color:</span> {font}; <br/>
+                {'}'}
+                  </code>
+                </pre>
+        </Card>
+
     )
 }
 

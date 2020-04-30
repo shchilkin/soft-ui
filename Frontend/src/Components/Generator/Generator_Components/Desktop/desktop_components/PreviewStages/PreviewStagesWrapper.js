@@ -20,9 +20,9 @@ const PreviewStagesWrapper = () => {
         case 1:
             return <PreviewStageChooseColor/>
         case 2:
-            return <PreviewStageCard/>
-        case 3:
             return <PreviewStageButton/>
+        case 3:
+            return <PreviewStageCard/>
         case 4:
             return <PreviewStageInput/>
         case 5:

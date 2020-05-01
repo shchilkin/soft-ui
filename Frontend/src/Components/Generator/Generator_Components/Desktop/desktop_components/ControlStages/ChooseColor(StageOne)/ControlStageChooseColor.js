@@ -268,92 +268,13 @@ const ControlStageChooseColor = () => {
                         type={'checkbox'}
                         onChange={() => onChangeDarkMode()}
                         checked={generateDarkMode}
-                    />{" "}
-                    <label>Generate secondary color</label>
-                    <input
-                        type={'checkbox'}
-                        onChange={() => onChangeSecondaryColor()}
-                        checked={generateSecondaryColor}/>
+                    />
                 </div>
             </div>
             {generateDarkMode && darkModeSettings}
-            {generateSecondaryColor && secondaryColorSettings}
         </Card>
         </Fragment>
     )
 }
 
 export default ControlStageChooseColor;
-
-
-
-// style={{
-//     minHeight: "100px",
-//         backgroundColor: mainColor,
-//         color: font,
-//         mixBlendMode: "normal",
-//         boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-//                                  -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-//         border: `1px solid ${mainColor}`,
-//         borderRadius: `${borderRadius}px`,}}
-// className={"pt-3 pb-3 pl-3 pr-3 ColorCard"}>
-
-// const rgbInput = (
-//     <div className={"row text-center"}>
-//         <div className={'col-lg-3'}>
-//             <h6>
-//                 <Badge background={darkerShadow}>
-//                     <span style={{color:font}}>Mode</span>
-//                 </Badge>
-//             </h6>
-//             <Button
-//                 props={componentProps}
-//                 style={{height:'50px'}}
-//                 children={colorInputMode ? "Hex" : "RGB"}
-//                 onClick={() => setColorInputMode(!colorInputMode)}
-//             />
-//         </div>
-//         <div className={"col-lg-3"}>
-//             <h6>
-//                 <Badge background={darkerShadow}>
-//                     <span style={{ color: "#ed2939" }}>R</span>
-//                 </Badge>
-//             </h6>
-//             <Input
-//                 type={"number"}
-//                 onChange={(event) => onChangeColor(event, "Red")}
-//                 value={colorRGB.Red}
-//                 placeholder={255}
-//                 props={componentProps}
-//             />
-//         </div>
-//         <div className={"col-lg-3"}>
-//             <h6>
-//                 <Badge background={darkerShadow}>
-//                     <span style={{ color: "#0B6623" }}>G</span>
-//                 </Badge>
-//             </h6>
-//             <Input
-//                 type={"number"}
-//                 onChange={(event) => onChangeColor(event, "Green")}
-//                 value={colorRGB.Green}
-//                 placeholder={255}
-//                 props={componentProps}
-//             />
-//         </div>
-//         <div className={"col-lg-3"}>
-//             <h6>
-//                 <Badge background={darkerShadow}>
-//                     <span style={{ color: "#0f52Ba" }}>B</span>
-//                 </Badge>
-//             </h6>
-//             <Input
-//                 type={"number"}
-//                 onChange={(event) => onChangeColor(event, "Blue")}
-//                 value={colorRGB.Blue}
-//                 placeholder={255}
-//                 props={componentProps}
-//             />
-//         </div>
-//     </div>
-// );

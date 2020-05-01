@@ -29,26 +29,16 @@ const HEXinput = () => {
     };
 
     return(
-        <div style={{display:'inline-block',
-            borderRadius:'12px',
-            boxShadow:`5px 5px 30px 0 ${darkerShadow}, -5px -5px 30px 0 ${lighterShadow}`,
-        }}>
-            <div style={{display:'inline-block', padding:'13px',paddingRight:'0',borderRadius:'12px',
-                borderTopRightRadius:'0',borderBottomRightRadius:'0',fontWeight:'bold'
-            }}>#</div>
-            <div style={{display:'inline-block', padding:'9px',borderRadius:'12px',
-                borderTopLeftRadius:'0',borderBottomLeftRadius:'0'
-            }}>
-                <Input
-                    onChange={(event) => onChangeColor(event, "Hex")}
-                    value={colorHEX}
-                    style={{width:'100px', height:'32px', border: "0px",marginBottom:'0',textAlign:'center',
-                        borderRadius:'6px'}}
-                    placeholder={"#000000"}
-                    props={componentProps}
-                />
-            </div>
-        </div>
+        <Fragment>
+            <Input
+                onChange={(event) => onChangeColor(event, "Hex")}
+                value={colorHEX}
+                style={{maxHeight:'32px', border: "0px",marginBottom:'0',textAlign:'center',
+                    borderRadius:'6px'}}
+                placeholder={"#000000"}
+                props={componentProps}
+            />
+       </Fragment>
     )
 };
 

@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {Fragment, useContext} from "react";
 import Input from "../../../../Layout/Input";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
 
@@ -29,18 +29,10 @@ const RGBinput = () => {
     };
 
     return(
-       <div style={{display:'inline-block',
-           borderRadius:'12px',
-           boxShadow:`5px 5px 30px 0 ${darkerShadow}, -5px -5px 30px 0 ${lighterShadow}`,}}>
-           <div style={{display:'inline-block', padding:'13px',paddingRight:'0',borderRadius:'12px',
-               borderTopRightRadius:'0',borderBottomRightRadius:'0',fontWeight:'bold'
-           }}>RGB</div>
-           <div style={{display:'inline-block', padding:'9px',borderRadius:'12px',
-               borderTopLeftRadius:'0',borderBottomLeftRadius:'0'
-           }}>
+        <Fragment>
                    <Input
                        type={"number"}
-                       style={{width:'55px', height:'32px', border: "0px", borderRadius:'6px',
+                       style={{width:"33%", maxHeight:'32px', border: "0px", borderRadius:'6px',
                            borderTopRightRadius:'0', borderBottomRightRadius:'0',textAlign:'center',marginBottom:'0'}}
                        onChange={(event) => onChangeColor(event, "Red")}
                        value={colorRGB.Red}
@@ -48,7 +40,7 @@ const RGBinput = () => {
                    />
                    <Input
                        type={"number"}
-                       style={{width:'55px', height:'32px',border: "0px",borderRadius:'0',
+                       style={{width:"33%", maxHeight:'32px',border: "0px",borderRadius:'0',
                            marginBottom:'0',textAlign:'center'}}
                        onChange={(event) => onChangeColor(event, "Green")}
                        value={colorRGB.Green}
@@ -56,14 +48,13 @@ const RGBinput = () => {
                    />
                    <Input
                        type={"number"}
-                       style={{width:'55px', height:'32px', border: "0px",marginBottom:'0',textAlign:'center',
+                       style={{width:"33%", maxHeight:'32px', border: "0px",marginBottom:'0',textAlign:'center',
                            borderRadius:'6px',borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}}
                        onChange={(event) => onChangeColor(event, "Blue")}
                        value={colorRGB.Blue}
                        props={componentProps}
                    />
-           </div>
-    </div>
+        </Fragment>
    )
 };
 

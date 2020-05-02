@@ -1,13 +1,17 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useContext} from "react";
 import Button from "../Components/Generator/Generator_Components/Layout/Button";
 import {Link} from "react-router-dom";
-import Showcase
-    from "../Components/Generator/Generator_Components/Desktop/desktop_components/ControlStages/Showcase(StageZero)/Showcase";
-import ColorShowcaseCard
-    from "../Components/Generator/Generator_Components/Desktop/desktop_components/ControlStages/Showcase(StageZero)/ColorShowcaseCard";
+import Card from "../Components/Generator/Generator_Components/Layout/Card";
+import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFragment";
+import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
+import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
+import ReactShowcaseFragment from "../Components/FeatureShowcase/ReactShowcaseFragment";
 
 
 const Home = () => {
+    const colorShowcaseContext = useContext(ShowcaseContext)
+    const {backgroundColor, darkModeBackground} = colorShowcaseContext;
+
     return (
         <Fragment>
             <div className="jumbotron jumbotron-fluid text-center" style={{background:'#E70343',color:'white'}}>
@@ -34,15 +38,28 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-            <div className={'row mb-5 container'}>
-                <div className={'col-md-6'}>
-                    <Showcase/>
-                </div>
-                <div className={'col-md-6'}>
-                    <ColorShowcaseCard/>
+            <div className={'container'}>
+                <div className={'row mb-5'}>
+                    <div className={'col-md-4 mb-3'}>
+                        <Card background={backgroundColor}>
+                            <ColorShowcaseFragment  />
+                        </Card>
+                    </div>
+                    <div className={'col-md-4  mb-3'}>
+                        <Card
+                            background={darkModeBackground}
+                            style={{height:'100%', display:'flex'}}>
+                            <DarkModeShowcaseFragment />
+                        </Card>
+                    </div>
+                    <div className={'col-md-4'}>
+                        <Card style={{maxHeight:'358px', height:'100%', display:'flex'}}>
+                            <ReactShowcaseFragment/>
+                        </Card>
+                    </div>
                 </div>
             </div>
-            <footer style={{backgroundColor:'#ed2939',height:'70px'}}></footer>
+            <footer style={{backgroundColor:'#ed2939',height:'70px'}}/>
         </Fragment>
     )
 }

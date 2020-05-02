@@ -1,5 +1,6 @@
 import {
     CHANGE_SHOWCASE_COLOR,
+    CHANGE_DARK_MODE_SHOWCASE_COLOR
 } from "../types";
 import {isHexValid} from "../../Functions";
 
@@ -21,6 +22,11 @@ export default (state, action) => {
                     ...state,
                     inputValue: action.payload.newColor,
                 }
+            }
+        case     CHANGE_DARK_MODE_SHOWCASE_COLOR:
+            return {
+                ...state,
+                darkModeBackground: action.payload.newColor
             }
         default:
             return state

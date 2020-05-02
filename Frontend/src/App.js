@@ -5,7 +5,7 @@ import PageCover from "./Components/Generator/Generator_Components/Layout/PageCo
 import ThemeState from "./contexts/theme/ThemeState";
 import NavigationBar from "./Components/Navbar/NavigationBar.component";
 import StagesState from "./contexts/Stages/StagesState";
-import ColorShowcaseState from "./contexts/colorShowcase/ColorShowcaseState";
+import ShowcaseState from "./contexts/showcase/ShowcaseState";
 import './custom-styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Pages/Home";
@@ -14,7 +14,7 @@ function App() {
   return (
       <ThemeState>
           <StagesState>
-              <ColorShowcaseState>
+              <ShowcaseState>
                   <Router>
                       <PageCover>
                          <NavigationBar />
@@ -24,7 +24,7 @@ function App() {
                          </switch>
                       </PageCover>
                   </Router>
-              </ColorShowcaseState>
+              </ShowcaseState>
           </StagesState>
       </ThemeState>
   );

@@ -1,13 +1,13 @@
 import React, {useContext, useState} from "react";
 import styled, {css} from "styled-components";
-import ColorShowcaseContext from "../../../../contexts/colorShowcase/ColorShowcaseContext";
+import ShowcaseContext from "../../../../contexts/showcase/ShowcaseContext";
 
 
 const ColorButton = ({active, mainColor, width = 28, height = 28, borderRadius = 6, blur, shadowLength,
                          darkerShadow, lighterShadow, onClick
 }) => {
 
-    const colorShowcaseContext = useContext(ColorShowcaseContext)
+    const colorShowcaseContext = useContext(ShowcaseContext)
     const { backgroundColor } = colorShowcaseContext;
     return (
         <StyledColorButton

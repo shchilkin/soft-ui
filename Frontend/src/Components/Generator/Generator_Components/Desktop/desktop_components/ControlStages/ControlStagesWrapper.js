@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import ControlStageDefault from "./ControlStageDefault";
-import Showcase from "./Showcase(StageZero)/Showcase";
+import Showcase from "./Showcase(StageZero)(OLD)/Showcase";
 import ControlStageChooseColor from "./ChooseColor(StageOne)/ControlStageChooseColor";
 import ControlStageCard from "./ControlStageCard";
 import ControlStageButton from "./ControlStageButton";

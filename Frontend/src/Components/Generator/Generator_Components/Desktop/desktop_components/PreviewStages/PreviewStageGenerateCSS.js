@@ -33,7 +33,7 @@ const PreviewStageGenerateCSS = () => {
         <Card>
             <pre
                 className={"pt-3 pb-3 pr-1 pl-3"}
-                style={{backgroundColor: codeBackgroundColor, borderRadius: "12px",
+                style={{showcaseColor: codeBackgroundColor, borderRadius: "12px",
                     boxShadow: `${codeBackgroundColor} 2px 2px 10px 0px inset,${codeBackgroundColor} -2px -2px 10px 0px inset`,}}
             >
                 <code style={{ fontSize: "10px", color: codeFontColor }}>

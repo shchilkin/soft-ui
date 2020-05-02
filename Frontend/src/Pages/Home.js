@@ -1,4 +1,4 @@
-import React, {Fragment, useContext} from "react";
+import React, {useContext} from "react";
 import Button from "../Components/Generator/Generator_Components/Layout/Button";
 import {Link} from "react-router-dom";
 import Card from "../Components/Generator/Generator_Components/Layout/Card";
@@ -11,11 +11,14 @@ import IconButton from "../Components/Buttons/IconButton";
 
 const Home = () => {
     const colorShowcaseContext = useContext(ShowcaseContext)
-    const {backgroundColor, darkModeBackground} = colorShowcaseContext;
+    const { darkModeBackground,  backgroundColor, showcaseDarkShadow,
+        showcaseLightShadow} = colorShowcaseContext;
 
     let darkShadow = '#C40339'
     let mainColor = '#E70343'
     let lightShadow = '#F30346'
+
+    console.log('shadows',showcaseDarkShadow, showcaseLightShadow)
 
     return (
         <div>
@@ -46,34 +49,38 @@ const Home = () => {
                 </div>
             </div>
             <div className="jumbotron jumbotron-fluid"
-                 style={{backgroundColor:'#ec3569',
+                 style={{backgroundColor: backgroundColor,
                      boxShadow: '#C40339 0px 2px 4px inset', marginBottom:0,}}>
                 <div className={'container'}>
                     <div className={'row'}>
-                        <div className={'col-md-4 mb-3'}>
-                            <Card background={backgroundColor}>
+                        <div className={'col-md-6 mb-3'}>
                                 <ColorShowcaseFragment  />
-                            </Card>
                         </div>
-                        <div className={'col-md-4  mb-3'}>
+                        <div className={'col-md-6 mb-3'}>
                             <Card
                                 background={darkModeBackground}
+                                lightShadow={showcaseLightShadow}
+                                darkShadow={showcaseDarkShadow}
                                 style={{height:'100%', display:'flex'}}>
                                 <DarkModeShowcaseFragment />
                             </Card>
                         </div>
-                        <div className={'col-md-4'}>
-                            <Card style={{maxHeight:'358px', height:'100%', display:'flex'}}>
-                                <ReactShowcaseFragment/>
-                            </Card>
-                        </div>
+                        {/*<div className={'col-md-4'}>*/}
+                        {/*    <Card*/}
+                        {/*        background={backgroundColor}*/}
+                        {/*        lightShadow={showcaseLightShadow}*/}
+                        {/*        darkShadow={showcaseDarkShadow}*/}
+                        {/*        style={{maxHeight:'358px', height:'100%', display:'flex'}}>*/}
+                        {/*        <ReactShowcaseFragment/>*/}
+                        {/*    </Card>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>
             <footer style={{backgroundColor:mainColor}}>
                 <div className={'container'}>
                     <div className={'row pt-5 pb-5'}>
-                        <div className={'col-md-4'}>
+                        <div className={'col-md-'}>
                             <a href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
                                 <IconButton
                                     svgColor={'#FFF'}

@@ -1,43 +1,15 @@
-import React, {Fragment, useContext, useState} from "react";
-import ThemeContext from "../../contexts/theme/ThemeContext";
-import {calculateTintAndShades, fontColor, hexToRGB} from "../../Functions";
+import React, {Fragment, useContext} from "react";
 import Card from "../Generator/Generator_Components/Layout/Card";
 import Input from "../Generator/Generator_Components/Layout/Input";
 import ShowcaseContext from "../../contexts/showcase/ShowcaseContext";
 
 
 const DarkModeShowcaseFragment = () => {
-    const themeContext = useContext(ThemeContext);
-    const {colorRGB, darkShadowFactor,lightShadowFactor} = themeContext;
-    const {Red, Green, Blue} = colorRGB
 
     const showcaseContext = useContext(ShowcaseContext);
-    const { changeDarkModeColor } = showcaseContext;
+    const { darkModeFactor, darkModeBackground,darkModeFont,changeDarkModeFactor,
+        darkModeBackgroundDarkShadow, darkModeBackgroundLightShadow} = showcaseContext;
 
-
-    const [darkModeFactor ,setFactor] = useState(40);
-
-
-    const darkmodeDarkShadowFactor = Math.round(darkModeFactor * .75);
-    const darkmodeLightShadowFactor = Math.round(darkModeFactor * .9);
-    const darkModeBackground = calculateTintAndShades(Red, Green, Blue, darkModeFactor);
-    const darkModeDarkShadow = calculateTintAndShades(
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Red,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Green,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor)).Blue,
-        Math.round(darkShadowFactor * 100))
-    console.log('darkModeFactor',darkModeFactor)
-    const darkModeLightShadow = calculateTintAndShades(
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Red,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Green,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Blue,
-        Math.round(lightShadowFactor * 100)
-    )
-    const darkModeFont = fontColor(
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Red,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Green,
-        hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Blue
-    )
 
     const isDarkModeMoreThan100 = (darkModeFactor) => {
         if (darkModeFactor > 100){
@@ -47,16 +19,13 @@ const DarkModeShowcaseFragment = () => {
         }
     }
 
-    const onChangeFactor = (event) => {
-        setFactor(event.target.value)
-        changeDarkModeColor(darkModeBackground)
-    }
+    const onChangeFactor = (event) => {changeDarkModeFactor(event.target.value)}
 
     const DarkModeCard = (
             <Card
                 background={darkModeBackground}
-                darkShadow={darkModeDarkShadow}
-                lightShadow={darkModeLightShadow}
+                darkShadow={darkModeBackgroundDarkShadow}
+                lightShadow={darkModeBackgroundLightShadow}
                 color={darkModeFont}
             >
                 <h6 style={{fontSize:'1.05rem'}}>Automatic{" "}
@@ -78,8 +47,8 @@ const DarkModeShowcaseFragment = () => {
                         style={{marginLeft:'10px',marginTop:'1.2rem',height:'35px',borderRadius:'6px',width:'50%'}}
                         type={'number'}
                         background={darkModeBackground}
-                        darkShadow={darkModeDarkShadow}
-                        lightShadow={darkModeLightShadow}
+                        darkShadow={darkModeBackgroundDarkShadow}
+                        lightShadow={darkModeBackgroundLightShadow}
                         color={darkModeFont}
                         value={darkModeFactor}
                         onChange={event => onChangeFactor(event)}

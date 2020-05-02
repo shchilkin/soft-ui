@@ -32,7 +32,7 @@ const ColorShowcaseFragment = () => {
         primaryBackgroundRGB.Blue,
         105)
 
-    const onChangeColor = (event) => changeShowcaseColor(event.target.value)
+    const onChangeColor = (event) => { changeShowcaseColor(event.target.value, lightShadow, darkShadow) }
 
     return(
         <Fragment>
@@ -77,7 +77,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#ED2939'}
-                            onClick={() => changeShowcaseColor('#ED2939')}/>
+                            onClick={() => changeShowcaseColor('#ED2939',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -85,7 +85,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#F46036'}
-                            onClick={() => changeShowcaseColor('#F46036')}/>
+                            onClick={() => changeShowcaseColor('#F46036',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -93,7 +93,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#F3FFB6'}
-                            onClick={() => changeShowcaseColor('#F3FFB6')}/>
+                            onClick={() => changeShowcaseColor('#F3FFB6',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -101,7 +101,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#6FD08C'}
-                            onClick={() => changeShowcaseColor('#6FD08C')}/>
+                            onClick={() => changeShowcaseColor('#6FD08C',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -109,7 +109,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#5CA173'}
-                            onClick={() => changeShowcaseColor('#5CA173')}/>
+                            onClick={() => changeShowcaseColor('#5CA173',lightShadow,darkShadow)}/>
                     </div>
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center'}}>
                         <ColorButton
@@ -119,7 +119,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#26CBD8'}
-                            onClick={() => changeShowcaseColor('#26CBD8')}/>
+                            onClick={() => changeShowcaseColor('#26CBD8',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -127,7 +127,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#07BEB8'}
-                            onClick={() => changeShowcaseColor('#07BEB8')}
+                            onClick={() => changeShowcaseColor('#07BEB8',lightShadow,darkShadow)}
                         />
                         <ColorButton
                             lighterShadow={lightShadow}
@@ -136,7 +136,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#F5D3C8'}
-                            onClick={() => changeShowcaseColor('#F5D3C8')}/>
+                            onClick={() => changeShowcaseColor('#F5D3C8',lightShadow,darkShadow)}/>
                         <ColorButton
                             lighterShadow={lightShadow}
                             darkerShadow={darkShadow}
@@ -144,7 +144,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#8F3985'}
-                            onClick={() => changeShowcaseColor('#8F3985')}
+                            onClick={() => changeShowcaseColor('#8F3985',lightShadow,darkShadow)}
                         />
                         <ColorButton
                             lighterShadow={lightShadow}
@@ -153,7 +153,7 @@ const ColorShowcaseFragment = () => {
                             blur={shadowBlur}
                             background={"#FFF"}
                             mainColor={'#DF2687'}
-                            onClick={() => changeShowcaseColor('#DF2687')}/>
+                            onClick={() => changeShowcaseColor('#DF2687',lightShadow,darkShadow)}/>
                     </div>
                 </Card>
             </Card>

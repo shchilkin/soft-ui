@@ -47,7 +47,7 @@ const ControlStageBadge = () => {
         <div
             style={{
                 minHeight: "100px",
-                backgroundColor: mainColor,
+                showcaseColor: mainColor,
                 color: font,
                 mixBlendMode: "normal",
                 boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},

@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/cjs/Navbar";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import styled from "styled-components";
 import {calculateTintAndShades, toHex} from "../../Functions";
-import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
 const NavigationBar = () => {
     const themeContext =  useContext(ThemeContext);
     const {
@@ -50,7 +50,8 @@ const NavigationBar = () => {
             boxShadow:`0 2px 4px rgba(${shadows.darkerShadowArray[0]}, ${shadows.darkerShadowArray[1]}, ${shadows.darkerShadowArray[2]}, 1)`}} expand="lg"
                 className={`navbar-light Navbar-"Light`}
         >
-            <Navbar.Brand>
+            <Link to={'/'}>
+                <Navbar.Brand>
                 <svg width="32px" height="32px" viewBox="0 0 222 222" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
                     <path id="Main" d="M221.978,55.495c0,-30.629 -24.866,-55.495 -55.494,-55.495l-110.989,0c-30.629,0 -55.495,24.866 -55.495,55.495l0,110.989c0,30.628 24.866,55.494 55.495,55.494l110.989,0c30.628,0 55.494,-24.866 55.494,-55.494l0,-110.989Z"
                           style={{fill:`#${toHex(Red)}${toHex(Green)}${toHex(Blue)}`}}/>
@@ -63,12 +64,8 @@ const NavigationBar = () => {
                 <span style={{color: font, verticalAlign:'bottom'}}>Soft UI</span>{" "}
                 <Badge>{getVersion(viewportWidth)}</Badge>
             </Navbar.Brand>
+            </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="https://github.com/CrazyRedKitten/soft-ui">Project on Github</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
         </Navbar>
     )
 }

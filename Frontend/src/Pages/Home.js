@@ -6,15 +6,22 @@ import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFr
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
 import ReactShowcaseFragment from "../Components/FeatureShowcase/ReactShowcaseFragment";
+import IconButton from "../Components/Buttons/IconButton";
 
 
 const Home = () => {
     const colorShowcaseContext = useContext(ShowcaseContext)
     const {backgroundColor, darkModeBackground} = colorShowcaseContext;
 
+    let darkShadow = '#C40339'
+    let mainColor = '#E70343'
+    let lightShadow = '#F30346'
+
     return (
-        <Fragment>
-            <div className="jumbotron jumbotron-fluid text-center" style={{background:'#E70343',color:'white'}}>
+        <div>
+            <div className="jumbotron jumbotron-fluid text-center"
+                 style={{background: mainColor,color:'white',marginBottom:0,
+                     boxShadow: '#C40339 0px 2px 4px inset'}}>
                 <div className="container">
                     <svg width="100px" height="100px" viewBox="0 0 173 173" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
                         <path id="BottomShadow" d="M155.311,28.461c10.358,6.678 17.223,18.317 17.223,31.547l0,75.017c0,20.702 -16.807,37.509 -37.509,37.509l-75.017,0c-13.215,0 -24.844,-6.85 -31.525,-17.19c5.851,3.773 12.815,5.962 20.286,5.962l75.017,0c20.701,0 37.508,-16.807 37.508,-37.509l0,-75.016c0,-7.486 -2.197,-14.462 -5.983,-20.32Z"
@@ -38,29 +45,52 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-            <div className={'container'}>
-                <div className={'row mb-5'}>
-                    <div className={'col-md-4 mb-3'}>
-                        <Card background={backgroundColor}>
-                            <ColorShowcaseFragment  />
-                        </Card>
-                    </div>
-                    <div className={'col-md-4  mb-3'}>
-                        <Card
-                            background={darkModeBackground}
-                            style={{height:'100%', display:'flex'}}>
-                            <DarkModeShowcaseFragment />
-                        </Card>
-                    </div>
-                    <div className={'col-md-4'}>
-                        <Card style={{maxHeight:'358px', height:'100%', display:'flex'}}>
-                            <ReactShowcaseFragment/>
-                        </Card>
+            <div className="jumbotron jumbotron-fluid"
+                 style={{backgroundColor:'#ec3569',
+                     boxShadow: '#C40339 0px 2px 4px inset', marginBottom:0,}}>
+                <div className={'container'}>
+                    <div className={'row'}>
+                        <div className={'col-md-4 mb-3'}>
+                            <Card background={backgroundColor}>
+                                <ColorShowcaseFragment  />
+                            </Card>
+                        </div>
+                        <div className={'col-md-4  mb-3'}>
+                            <Card
+                                background={darkModeBackground}
+                                style={{height:'100%', display:'flex'}}>
+                                <DarkModeShowcaseFragment />
+                            </Card>
+                        </div>
+                        <div className={'col-md-4'}>
+                            <Card style={{maxHeight:'358px', height:'100%', display:'flex'}}>
+                                <ReactShowcaseFragment/>
+                            </Card>
+                        </div>
                     </div>
                 </div>
             </div>
-            <footer style={{backgroundColor:'#ed2939',height:'70px'}}/>
-        </Fragment>
+            <footer style={{backgroundColor:mainColor}}>
+                <div className={'container'}>
+                    <div className={'row pt-5 pb-5'}>
+                        <div className={'col-md-4'}>
+                            <a href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
+                                <IconButton
+                                    svgColor={'#FFF'}
+                                    lighterShadow={lightShadow}
+                                    darkerShadow={darkShadow}
+                                    color={'#f381a1'}
+                                    radius={25}
+                                    background={mainColor}
+                                    shadowLength={15}
+                                    Blur={20}
+                                    icon={"Github"}/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     )
 }
 

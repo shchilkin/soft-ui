@@ -8,7 +8,7 @@ import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'
 
 const ColorShowcaseFragment = () => {
     const themeContext = useContext(ThemeContext);
-    const { shadowBlur,shadowLength} = themeContext;
+    const {shadowBlur, shadowLength} = themeContext;
 
     const colorShowcaseContext = useContext(ShowcaseContext)
     const {backgroundColor, inputValue,changeShowcaseColor} = colorShowcaseContext;
@@ -60,13 +60,15 @@ const ColorShowcaseFragment = () => {
                        darkShadow={darkShadow}
                        value={inputValue}
                        lightShadow={lightShadow}
-                       style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',maxWidth:'100px'}}
+                       style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',maxWidth:'110px'}}
                 />
                 <Card
                     background={backgroundColor}
                     color={font}
                     lightShadow={lightShadow}
-                    darkShadow={darkShadow}>
+                    darkShadow={darkShadow}
+                    style={{boxShadow:`${darkShadow} 5px 5px 30px 0px inset, ${lightShadow} -5px -5px 30px 0px inset`}}
+                >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>
                         <ColorButton
                             lighterShadow={lightShadow}

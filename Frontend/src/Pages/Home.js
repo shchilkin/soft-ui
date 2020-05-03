@@ -6,6 +6,7 @@ import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFr
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
 import IconButton from "../Components/Buttons/IconButton";
+import {fontColorHex} from "../Functions";
 
 
 const Home = () => {
@@ -13,20 +14,22 @@ const Home = () => {
     const { darkModeBackground,  backgroundColor, showcaseDarkShadow,
         showcaseLightShadow} = colorShowcaseContext;
 
-    let darkShadow = '#C40339'
-    let mainColor = '#E70343'
-    let lightShadow = '#F30346'
+    // let darkShadow = '#C40339'
+    // let mainColor = '#E70343'
+    // let lightShadow = '#F30346'
 
-    // let darkShadow = '#20ADB8'
-    // let mainColor = '#26CBD8';
-    // let lightShadow = '#28D5E3'
+    let darkShadow = '#D9BD03'
+    let mainColor = '#FFDE03';
+    let lightShadow = '#FFE903'
+
+    let fontColor = fontColorHex(mainColor);
 
     console.log('shadows',showcaseDarkShadow, showcaseLightShadow)
 
     return (
         <div>
             <div className="jumbotron jumbotron-fluid text-center"
-                 style={{background: mainColor,color:'white',marginBottom:0,
+                 style={{background: mainColor,color: fontColor, marginBottom:0,
                      boxShadow: `${darkShadow} 0px 2px 4px inset`}}>
                 <div className="container">
                     <svg width="100px" height="100px" viewBox="0 0 173 173" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
@@ -42,10 +45,10 @@ const Home = () => {
                     <Link to={'/generator'}>
                         <Button
                             style={{width:'200px',height:'65px'}}
-                            background={'#e70343'}
-                            color={'#FFF'}
-                            darkShadow={'#C40339'}
-                            lightShadow={'#F30346'}>
+                            background={mainColor}
+                            color={fontColor}
+                            darkShadow={darkShadow}
+                            lightShadow={lightShadow}>
                             Get started
                         </Button>
                     </Link>
@@ -56,11 +59,10 @@ const Home = () => {
                      boxShadow: `${darkShadow} 0px 2px 4px inset`, marginBottom:0,}}>
                 <div className={'container'}>
                     <div className={'row'}>
-                        <div className={'col-md-1'}/>
-                        <div className={'col-md-5 mb-3'}>
+                        <div className={'col-md-4 mb-3'}>
                                 <ColorShowcaseFragment  />
                         </div>
-                        <div className={'col-md-5 mb-3'}>
+                        <div className={'col-md-4 mb-3'}>
                             <Card
                                 background={darkModeBackground}
                                 lightShadow={showcaseLightShadow}
@@ -69,7 +71,6 @@ const Home = () => {
                                 <DarkModeShowcaseFragment />
                             </Card>
                         </div>
-                        <div className={'col-md-1'}/>
                     </div>
                 </div>
             </div>

@@ -65,7 +65,6 @@ const NavigationBar = () => {
                 <Badge>{getVersion(viewportWidth)}</Badge>
             </Navbar.Brand>
             </Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </Navbar>
     )
 }

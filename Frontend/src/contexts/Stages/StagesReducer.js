@@ -4,7 +4,7 @@ import {
     CHANGE_GENERATE_SECONDARY_COLOR,
 } from "../types";
 
-function validateStage(currentStage,increment,maximum = 6) {
+function validateStage(currentStage,increment,maximum = 5) {
     if (increment === "+"){
         if (currentStage >= maximum){
             console.log('+ | case greater or equal 4')

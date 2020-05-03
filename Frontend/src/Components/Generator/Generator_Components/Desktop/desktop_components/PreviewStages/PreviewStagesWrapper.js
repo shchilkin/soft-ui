@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import StagesContext from "../../../../../../contexts/Stages/StagesContext";
 import PreviewStageDefault from "./PreviewStageDefault";
-import PreviewStageAbout from "./PreviewStageAbout";
 import PreviewStageChooseColor from "./PreviewStageChooseColor";
 import PreviewStageCard from "./PreviewStageCard";
 import PreviewStageButton from "./PreviewStageButton";
@@ -11,23 +10,21 @@ import PreviewStageGenerateCSS from "./PreviewStageGenerateCSS";
 
 
 const PreviewStagesWrapper = () => {
-    const generationContext = useContext(StagesContext);
-    const { stage } = generationContext;
+    const stagesContext = useContext(StagesContext);
+    const { stage } = stagesContext;
 
     switch (stage) {
         case 0:
-            return <PreviewStageAbout/>
-        case 1:
             return <PreviewStageChooseColor/>
-        case 2:
+        case 1:
             return <PreviewStageButton/>
-        case 3:
+        case 2:
             return <PreviewStageCard/>
-        case 4:
+        case 3:
             return <PreviewStageInput/>
-        case 5:
+        case 4:
             return <PreviewStageBadge/>
-        case 6:
+        case 5:
             return <PreviewStageGenerateCSS/>
         default:
             return <PreviewStageDefault/>

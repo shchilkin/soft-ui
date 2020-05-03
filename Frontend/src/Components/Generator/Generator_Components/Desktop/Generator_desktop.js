@@ -2,7 +2,6 @@ import React from "react";
 import SoftUIPreviewDesktop from "./desktop_components/SoftUIPreviewDesktop";
 import SoftUIControlDesktop from "./desktop_components/SoftUIControlDesktop";
 import OptionBar from "./desktop_components/OptionBar/OptionBar";
-import Showcase from "./desktop_components/ControlStages/Showcase(StageZero)(OLD)/Showcase";
 
 
 const Generator_desktop = () => {

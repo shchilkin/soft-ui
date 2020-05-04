@@ -2,14 +2,14 @@ import Card from "../../../../Layout/Card";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../../../../../../Functions";
-import ColorShowcaseContext from "../../../../../../../contexts/colorShowcase/ColorShowcaseContext";
+import ShowcaseContext from "../../../../../../../contexts/showcase/ShowcaseContext";
 import ReactLogo from '../../../../../../../Assets/React-icon.svg'
 
 const ReactCard = () => {
     const themeContext = useContext(ThemeContext);
     const { shadowBlur } = themeContext;
 
-    const colorShowcaseContext = useContext(ColorShowcaseContext)
+    const colorShowcaseContext = useContext(ShowcaseContext)
     const {backgroundColor ,changeShowcaseColor} = colorShowcaseContext;
 
     const primaryBackgroundRGB = hexToRGB(backgroundColor)

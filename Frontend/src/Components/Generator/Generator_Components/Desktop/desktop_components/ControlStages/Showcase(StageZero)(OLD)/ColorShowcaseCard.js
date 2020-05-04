@@ -3,14 +3,14 @@ import ColorButton from "../../../../Layout/ColorButton";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../../../../../../Functions";
-import ColorShowcaseContext from "../../../../../../../contexts/colorShowcase/ColorShowcaseContext";
+import ShowcaseContext from "../../../../../../../contexts/showcase/ShowcaseContext";
 import Input from "../../../../Layout/Input";
 
 const ColorShowcaseCard = () => {
     const themeContext = useContext(ThemeContext);
     const { shadowBlur,shadowLength} = themeContext;
 
-    const colorShowcaseContext = useContext(ColorShowcaseContext)
+    const colorShowcaseContext = useContext(ShowcaseContext)
     const {backgroundColor, inputValue,changeShowcaseColor} = colorShowcaseContext;
 
     const primaryBackgroundRGB = hexToRGB(backgroundColor)

@@ -236,7 +236,7 @@ const SoftUIControlMobile = () => {
                 <pre
                     className={"pt-3 pb-3 pr-1 pl-3"}
                     style={{
-                        backgroundColor: codeBackgroundColor,
+                        showcaseColor: codeBackgroundColor,
                         borderRadius: "12px",
                         boxShadow: `${codeBackgroundColor} 2px 2px 10px 0px inset, ${codeBackgroundColor} -2px -2px 10px 0px inset`,
                     }}

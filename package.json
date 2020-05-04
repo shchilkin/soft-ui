@@ -21,5 +21,9 @@
     "express": "^4.17.1",
     "express-force-https": "^1.0.0",
     "node-fetch": "^2.6.0"
+  },
+  "engines": {
+    "node": "12.9.1",
+    "npm": "6.13.6"
   }
 }

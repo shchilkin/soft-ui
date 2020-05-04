@@ -7,6 +7,7 @@ import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
 import IconButton from "../Components/Buttons/IconButton";
 import {fontColorHex} from "../Functions";
+import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColorFragment";
 
 
 const Home = () => {
@@ -30,7 +31,8 @@ const Home = () => {
         <div>
             <div className="jumbotron jumbotron-fluid text-center"
                  style={{background: mainColor,color: fontColor, marginBottom:0,
-                     boxShadow: `${darkShadow} 0px 2px 4px inset`}}>
+                     boxShadow: `${darkShadow} 0px 2px 4px`
+                 }}>
                 <div className="container">
                     <svg width="100px" height="100px" viewBox="0 0 173 173" style={{fillRule:'evenodd',clipRule:'evenodd',strokeLinejoin:'round',strokeMiterlimit:2}}>
                         <path id="BottomShadow" d="M155.311,28.461c10.358,6.678 17.223,18.317 17.223,31.547l0,75.017c0,20.702 -16.807,37.509 -37.509,37.509l-75.017,0c-13.215,0 -24.844,-6.85 -31.525,-17.19c5.851,3.773 12.815,5.962 20.286,5.962l75.017,0c20.701,0 37.508,-16.807 37.508,-37.509l0,-75.016c0,-7.486 -2.197,-14.462 -5.983,-20.32Z"
@@ -56,7 +58,8 @@ const Home = () => {
             </div>
             <div className="jumbotron jumbotron-fluid"
                  style={{backgroundColor: backgroundColor,
-                     boxShadow: `${darkShadow} 0px 2px 4px inset`, marginBottom:0,}}>
+                     boxShadow: `${darkShadow} 0px 2px 4px`,
+                     marginBottom:0,}}>
                 <div className={'container'}>
                     <div className={'row'}>
                         <div className={'col-md-4 mb-3'}>
@@ -70,6 +73,9 @@ const Home = () => {
                                 style={{height:'100%', display:'flex'}}>
                                 <DarkModeShowcaseFragment />
                             </Card>
+                        </div>
+                        <div className={'col-md-4 mb-3'}>
+                            <SecondaryColorFragment  />
                         </div>
                     </div>
                 </div>

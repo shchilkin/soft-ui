@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import Card from "../Components/Generator/Generator_Components/Layout/Card";
 import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFragment";
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
+import ThemeContext from "../contexts/theme/ThemeContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
 import IconButton from "../Components/Buttons/IconButton";
 import {fontColorHex} from "../Functions";
@@ -11,19 +12,20 @@ import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColor
 
 
 const Home = () => {
+    const {colorHEX, shadows} = useContext(ThemeContext);
     const colorShowcaseContext = useContext(ShowcaseContext)
-    const { darkModeBackground,  backgroundColor, showcaseDarkShadow,
+    const {darkModeBackground,  backgroundColor, showcaseDarkShadow,
         showcaseLightShadow} = colorShowcaseContext;
 
-    // let darkShadow = '#C40339'
-    // let mainColor = '#E70343'
-    // let lightShadow = '#F30346'
+    const lighterShadows = shadows.ligherShadowArray;
+    const darkerShadows = shadows.darkerShadowArray;
 
-    let darkShadow = '#D9BD03'
-    let mainColor = '#FFDE03';
-    let lightShadow = '#FFE903'
+    let darkShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+    let mainColor = `#${colorHEX}`;
+    let lightShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
 
     let fontColor = fontColorHex(mainColor);
+    console.log('COLOR HEX', colorHEX)
 
     console.log('shadows',showcaseDarkShadow, showcaseLightShadow)
 

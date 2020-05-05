@@ -10,12 +10,11 @@ const PreviewStageChooseColor = () => {
 
     const themeContext = useContext(ThemeContext);
     const {colorRGB, darkShadowFactor, lightShadowFactor,shadows, darkModeFactor,
-        darkModeDarkShadowFactor, darkModeLightShadowFactor, secondaryColor
-    } = themeContext;
+        darkModeDarkShadowFactor, darkModeLightShadowFactor} = themeContext;
 
     // darkModeDarkShadow, darkModeLightShadow
     const stagesContext = useContext(StagesContext);
-    const {generateDarkMode, generateSecondaryColor} = stagesContext;
+    const {generateDarkMode} = stagesContext;
 
     const {Red, Green, Blue} = colorRGB;
 
@@ -48,13 +47,16 @@ const PreviewStageChooseColor = () => {
     const darkModePreviewContainer = (
         <div className={'row mb-3'}>
             <div className={"col"}>
-                <Card background={darkModeBackground}>
+                <Card background={darkModeBackground}
+                      style={{height:'248px'}}
+                >
                     <Card
                         background={darkModeBackground}
                         lightShadow={darkModeLightShadow}
                         darkShadow={darkModeDarkShadow}
                         color={darkModeFont}
-                        style={{height:'254px'}}>
+                        style={{height:'100%'}}
+                    >
                         <Badge background={calculateTintAndShades(
                             hexToRGB(calculateTintAndShades(Red, Green, Blue, Math.round(darkModeFactor * 100))).Red,
                             hexToRGB(calculateTintAndShades(Red, Green, Blue, Math.round(darkModeFactor * 100))).Green,
@@ -72,10 +74,8 @@ const PreviewStageChooseColor = () => {
         <div>
             <div className={"row mb-3"}>
                 <div className={"col"}>
-                    <Card>
-                        <Card style={{height:'254px'}}>
-                            <Badge background={darkShadowColor}>Preview</Badge>
-                        </Card>
+                    <Card style={{height:generateDarkMode ? '248px' : '384px'}}>
+                        <Badge background={darkShadowColor}>Preview</Badge>
                     </Card>
                 </div>
             </div>

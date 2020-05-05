@@ -199,6 +199,7 @@ const Input = ({
         default:
             return (
                 <StyledTextInput
+                    className={'Input-SC'}
                     background={background || mainColor}
                     lighterShadow={lightShadow || lighterShadow}
                     darkerShadow={darkShadow || darkerShadow}

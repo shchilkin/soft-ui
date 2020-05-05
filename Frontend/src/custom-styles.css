@@ -866,6 +866,11 @@ select:-webkit-autofill:focus {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
+.Input-SC {
+    -webkit-appearance: none;
+}
+
+
 /*!* Chrome, Safari, Edge, Opera *!*/
 /*input::-webkit-outer-spin-button,*/
 /*input::-webkit-inner-spin-button {*/

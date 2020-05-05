@@ -15,6 +15,7 @@ import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop"
 //#FBA50E light orange
 //#E63387 Pink
 //#F0E3D6 orange-ish white
+//#530522 dark cherry red
 
 const Generator = () => {
     const viewportWidth = window.innerWidth

@@ -12,11 +12,8 @@ import ColorInput from "./ColorInput";
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
     const {
-        font,
         colorRGB,
         shadows,
-        shadowBlur,
-        shadowLength,
         changeColor,
         darkShadowFactor,
         lightShadowFactor,

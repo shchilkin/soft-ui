@@ -4,26 +4,27 @@ import {Link} from "react-router-dom";
 import Card from "../Components/Generator/Generator_Components/Layout/Card";
 import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFragment";
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
+import ThemeContext from "../contexts/theme/ThemeContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
-import IconButton from "../Components/Buttons/IconButton";
 import {fontColorHex} from "../Functions";
 import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColorFragment";
 
 
 const Home = () => {
+    const {colorHEX, shadows} = useContext(ThemeContext);
     const colorShowcaseContext = useContext(ShowcaseContext)
-    const { darkModeBackground,  backgroundColor, showcaseDarkShadow,
+    const {darkModeBackground,  backgroundColor, showcaseDarkShadow,
         showcaseLightShadow} = colorShowcaseContext;
 
-    // let darkShadow = '#C40339'
-    // let mainColor = '#E70343'
-    // let lightShadow = '#F30346'
+    const lighterShadows = shadows.ligherShadowArray;
+    const darkerShadows = shadows.darkerShadowArray;
 
-    let darkShadow = '#D9BD03'
-    let mainColor = '#FFDE03';
-    let lightShadow = '#FFE903'
+    let darkShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+    let mainColor = `#${colorHEX}`;
+    let lightShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
 
     let fontColor = fontColorHex(mainColor);
+    console.log('COLOR HEX', colorHEX)
 
     console.log('shadows',showcaseDarkShadow, showcaseLightShadow)
 
@@ -82,19 +83,11 @@ const Home = () => {
             </div>
             <footer style={{backgroundColor:mainColor}}>
                 <div className={'container'}>
-                    <div className={'row pt-5 pb-5'}>
-                        <div className={'col-md-'}>
-                            <a href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
-                                <IconButton
-                                    svgColor={'#FFF'}
-                                    lighterShadow={lightShadow}
-                                    darkerShadow={darkShadow}
-                                    color={'#f381a1'}
-                                    radius={25}
-                                    background={mainColor}
-                                    shadowLength={15}
-                                    Blur={20}
-                                    icon={"Github"}/>
+                    <div className={'row pt-3 pb-3'}>
+                        <div className={'col-md-6'}>
+                            <a style={{color:fontColor}}
+                                href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
+                            GitHub
                             </a>
                         </div>
                     </div>

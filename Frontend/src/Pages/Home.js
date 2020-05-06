@@ -6,7 +6,6 @@ import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFr
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import ThemeContext from "../contexts/theme/ThemeContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
-import IconButton from "../Components/Buttons/IconButton";
 import {fontColorHex} from "../Functions";
 import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColorFragment";
 
@@ -84,19 +83,11 @@ const Home = () => {
             </div>
             <footer style={{backgroundColor:mainColor}}>
                 <div className={'container'}>
-                    <div className={'row pt-5 pb-5'}>
-                        <div className={'col-md-'}>
-                            <a href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
-                                <IconButton
-                                    svgColor={'#FFF'}
-                                    lighterShadow={lightShadow}
-                                    darkerShadow={darkShadow}
-                                    color={'#f381a1'}
-                                    radius={25}
-                                    background={mainColor}
-                                    shadowLength={15}
-                                    Blur={20}
-                                    icon={"Github"}/>
+                    <div className={'row pt-3 pb-3'}>
+                        <div className={'col-md-6'}>
+                            <a style={{color:fontColor}}
+                                href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>
+                            GitHub
                             </a>
                         </div>
                     </div>

@@ -45,7 +45,7 @@ const Home = () => {
                     </svg>
                     <h1 className="display-4">Soft UI</h1>
                     <p className="lead">Build beautiful products in Neuromorphic stylistic</p>
-                    <p>Currently is under develpment!</p>
+                    <p>Currently is under development!</p>
                     <Link to={'/generator'}>
                         <Button
                             style={{width:'200px',height:'65px'}}

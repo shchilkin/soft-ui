@@ -155,36 +155,39 @@ const ControlStageChooseColor = () => {
         <div className={'container pb-3'} style={{
             borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px',
             backgroundColor:fontColor(Red,Green,Blue)}}>
-            <div className={"row"}>
-                <div className={"col-6 mr-3"}>
-                    <h5>Pick a color:</h5>
-                </div>
-            </div>
-            <div className={'row mb-3'}>
-                <div className={'col-2'}>
-                    <ColorPickerSketch />
+            <div className={'row pt-4 mb-3'}>
+                <div className={'col-6'}>
+                    <Button
+                        background={fontColor(Red,Green,Blue)}
+                        color={mainColor}
+                        onClick={generateRandom} children={'Random color'}/>
                 </div>
                 <div className={'col-6'}>
-                    <Button onClick={generateRandom} children={'Random color'}/>
-                </div>
-                <div className={'col-4'}>
-                    <Button onClick={resetTheme} children={'Reset'}/>
+                    <Button
+                        background={fontColor(Red,Green,Blue)}
+                        color={mainColor}
+                        onClick={resetTheme} children={'Reset'}/>
                 </div>
             </div>
             <div className={'row'}>
                 <div className={'mb-3 col-md-4'}>
                     <Button
+                        background={fontColor(Red,Green,Blue)}
+                        color={mainColor}
                         style={{height:'50px'}}
                         onClick={() =>setColorInputMode(!colorInputMode)}
                         children={ colorInputMode ? "Hex" :'RGB'}/>
                 </div>
                 <div className={'col-md-8'}>
-                    <ColorInput inputMode={colorInputMode}/>
+                    <ColorInput
+                        inputMode={colorInputMode}/>
                 </div>
             </div>
             <div className={"row mb-1"}>
                 <div className={"col-12"}>
                     <Button
+                        background={fontColor(Red,Green,Blue)}
+                        color={mainColor}
                         onClick={() => inverseFont()}
                         children={'Inverse font color'}
                     />

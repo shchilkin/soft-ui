@@ -26,6 +26,7 @@ const ControlStageChooseColor = () => {
 
     const stagesContext = useContext(StagesContext);
     const {generateDarkMode, changeGenerateDarkMode} = stagesContext;
+    const [tabState, setTabState] = useState(1)
 
     const {Red, Green, Blue} = colorRGB;
 
@@ -150,6 +151,48 @@ const ControlStageChooseColor = () => {
         </Card>
     );
 
+    const mainColorSettings = (
+        <div className={'container pb-3'} style={{
+            borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px',
+            backgroundColor:fontColor(Red,Green,Blue)}}>
+            <div className={"row"}>
+                <div className={"col-6 mr-3"}>
+                    <h5>Pick a color:</h5>
+                </div>
+            </div>
+            <div className={'row mb-3'}>
+                <div className={'col-2'}>
+                    <ColorPickerSketch />
+                </div>
+                <div className={'col-6'}>
+                    <Button onClick={generateRandom} children={'Random color'}/>
+                </div>
+                <div className={'col-4'}>
+                    <Button onClick={resetTheme} children={'Reset'}/>
+                </div>
+            </div>
+            <div className={'row'}>
+                <div className={'mb-3 col-md-4'}>
+                    <Button
+                        style={{height:'50px'}}
+                        onClick={() =>setColorInputMode(!colorInputMode)}
+                        children={ colorInputMode ? "Hex" :'RGB'}/>
+                </div>
+                <div className={'col-md-8'}>
+                    <ColorInput inputMode={colorInputMode}/>
+                </div>
+            </div>
+            <div className={"row mb-1"}>
+                <div className={"col-12"}>
+                    <Button
+                        onClick={() => inverseFont()}
+                        children={'Inverse font color'}
+                    />
+                </div>
+            </div>
+        </div>
+    )
+
     return (
         <Fragment>
             <div className={'mb-3'}>
@@ -168,56 +211,43 @@ const ControlStageChooseColor = () => {
                 <Card
                     type={'bottom'}
                 >
-                    <div className={"row"}>
-                        <div className={"col-6 mr-3"}>
-                            <h5>Pick a color:</h5>
+                    <div className={'row text-center'}>
+                        <div style={{paddingRight:0, }}
+                            className={'col-4'}>
+                            <div
+                                onClick={()=> setTabState(1)}
+                                style={{
+                                backgroundColor:fontColor(Red,Green,Blue),
+                                color:mainColor,
+                                paddingTop:'0.25rem', paddingBottom:'0.4rem',
+                                borderTopRightRadius:8,borderTopLeftRadius:8,
+                            }}>Main Color</div>
+                        </div>
+                        <div
+                            onClick={()=> setTabState(2)}
+                            style={{paddingRight:0, paddingLeft:0}}
+                            className={'col-4'}>
+                            <div style={{
+                                backgroundColor:lightShadowForSVG(),
+                                paddingTop:'0.25rem', paddingBottom:'0.4rem',
+                                borderTopRightRadius:16,borderTopLeftRadius:16
+                            }}>Dark mode</div>
+                        </div>
+                        <div
+                            onClick={()=> setTabState(3)}
+                            style={{paddingLeft:0}} className={'col-4'}>
+                            <div style={{
+                                backgroundColor:lightShadowForSVG(),
+                                paddingTop:'0.25rem', paddingBottom:'0.4rem',
+                                borderTopRightRadius:8,borderTopLeftRadius:16
+                            }}>Secondary color</div>
                         </div>
                     </div>
-                    <div className={'row mb-3'}>
-                        <div className={'col-2'}>
-                            <ColorPickerSketch />
-                        </div>
-                        <div className={'col-6'}>
-                            <Button onClick={generateRandom} children={'Random color'}/>
-                        </div>
-                        <div className={'col-4'}>
-                            <Button onClick={resetTheme} children={'Reset'}/>
-                        </div>
-                    </div>
-                    <div className={'row'}>
-                        <div className={'mb-3 col-md-4'}>
-                            <Button
-                                style={{height:'50px'}}
-                                onClick={() =>setColorInputMode(!colorInputMode)}
-                                children={ colorInputMode ? "Hex" :'RGB'}/>
-                        </div>
-                        <div className={'col-md-8'}>
-                            <ColorInput inputMode={colorInputMode}/>
-                        </div>
-                    </div>
-                    <div className={"row mt-3 mb-3"}>
-                        <div className={"col-12"}>
-                            <Button
-                                onClick={() => inverseFont()}
-                                children={'Inverse font color'}
-                            />
-                        </div>
-                    </div>
-                    <div className={"row mb-3"}>
-                        <div className={'col-12'}>
-                            <Badge background={darkerShadow}>
-                                Generate darkmode{" "}
-                                <input
-                                    type={'checkbox'}
-                                    onChange={() => onChangeDarkMode()}
-                                    checked={generateDarkMode}
-                                />
-                            </Badge>
-                        </div>
-                    </div>
+                    <Fragment>
+                        {mainColorSettings}
+                    </Fragment>
                 </Card>
             </div>
-            {generateDarkMode && darkModeSettings}
         </Fragment>
     )
 }

@@ -28,7 +28,7 @@ const Button = ({children,
     const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
-
+    console.log('Background', background)
 
     return (
         <DefaultButton

@@ -1,7 +1,14 @@
 import React, {Fragment, useContext, useState} from "react";
 import ThemeContext from "../../../../../../../contexts/theme/ThemeContext";
-import {calculateTintAndShades, fontColor, getRandomInt, hexToRGB, toHex} from "../../../../../../../Functions";
-import ColorPickerSketch from "../../../../ColorPickers/colorPickerSketch";
+import {
+    calculateColors,
+    calculateTintAndShades,
+    fontColor,
+    fontColorHex,
+    getRandomInt,
+    hexToRGB,
+    toHex
+} from "../../../../../../../Functions";
 import StagesContext from "../../../../../../../contexts/Stages/StagesContext";
 import Badge from "../../../../../../Badge/Badge.component";
 import Button from "../../../../Layout/Button";
@@ -151,29 +158,45 @@ const ControlStageChooseColor = () => {
         </Card>
     );
 
+    // tab colors
+    const secondaryColor = calculateColors(`#${toHex(Red)}${toHex(Green)}${toHex(Red)}`);
+    const darkModeColor = calculateTintAndShades(Red,Green,Blue,(darkModeFactor * 100));
+
+    const tabColorWrapper = (tabState) => {
+        switch (tabState) {
+            case 1:
+                return mainColor
+            case 2:
+                return  darkModeColor
+            case 3:
+                return secondaryColor
+        }
+    }
+
+
     const mainColorSettings = (
         <div className={'container pb-3'} style={{
-            borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px',
-            backgroundColor:fontColor(Red,Green,Blue)}}>
+            backgroundColor:tabColorWrapper(tabState),
+            borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
             <div className={'row pt-4 mb-3'}>
                 <div className={'col-6'}>
                     <Button
-                        background={fontColor(Red,Green,Blue)}
-                        color={mainColor}
+                        background={mainColor}
+                        color={fontColor(Red,Green,Blue)}
                         onClick={generateRandom} children={'Random color'}/>
                 </div>
                 <div className={'col-6'}>
                     <Button
-                        background={fontColor(Red,Green,Blue)}
-                        color={mainColor}
+                        background={mainColor}
+                        color={fontColor(Red,Green,Blue)}
                         onClick={resetTheme} children={'Reset'}/>
                 </div>
             </div>
             <div className={'row'}>
                 <div className={'mb-3 col-md-4'}>
                     <Button
-                        background={fontColor(Red,Green,Blue)}
-                        color={mainColor}
+                        background={mainColor}
+                        color={fontColor(Red,Green,Blue)}
                         style={{height:'50px'}}
                         onClick={() =>setColorInputMode(!colorInputMode)}
                         children={ colorInputMode ? "Hex" :'RGB'}/>
@@ -186,8 +209,8 @@ const ControlStageChooseColor = () => {
             <div className={"row mb-1"}>
                 <div className={"col-12"}>
                     <Button
-                        background={fontColor(Red,Green,Blue)}
-                        color={mainColor}
+                        background={mainColor}
+                        color={fontColor(Red,Green,Blue)}
                         onClick={() => inverseFont()}
                         children={'Inverse font color'}
                     />
@@ -195,6 +218,33 @@ const ControlStageChooseColor = () => {
             </div>
         </div>
     )
+
+    const darkModeSettingsFragment = (
+        <div className={'container pb-3'} style={{
+            minHeight:202,
+            backgroundColor:tabColorWrapper(tabState),
+            borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
+        </div>
+    )
+
+    const secondaryColorSettingsFragment = (
+        <div className={'container pb-3'} style={{
+            minHeight:202,
+            backgroundColor:tabColorWrapper(tabState),
+            borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
+        </div>
+    )
+
+    const controlsWrapper = (tabState) => {
+        switch (tabState) {
+            case 1:
+                return mainColorSettings
+            case 2:
+                return  darkModeSettingsFragment
+            case 3:
+                return secondaryColorSettingsFragment
+        }
+    }
 
     return (
         <Fragment>
@@ -212,6 +262,7 @@ const ControlStageChooseColor = () => {
                     </svg>
                 </Card>
                 <Card
+                    background={calculateTintAndShades(Red,Green,Blue,110)}
                     type={'bottom'}
                 >
                     <div className={'row text-center'}>
@@ -220,34 +271,39 @@ const ControlStageChooseColor = () => {
                             <div
                                 onClick={()=> setTabState(1)}
                                 style={{
-                                backgroundColor:fontColor(Red,Green,Blue),
-                                color:mainColor,
+                                backgroundColor:mainColor,
+                                color:fontColor(Red,Green,Blue),
                                 paddingTop:'0.25rem', paddingBottom:'0.4rem',
                                 borderTopRightRadius:8,borderTopLeftRadius:8,
+                                    borderBottomRightRadius:8,
                             }}>Main Color</div>
                         </div>
                         <div
                             onClick={()=> setTabState(2)}
-                            style={{paddingRight:0, paddingLeft:0}}
+                            style={{paddingRight:0, paddingLeft:0,
+                            }}
                             className={'col-4'}>
                             <div style={{
-                                backgroundColor:lightShadowForSVG(),
+                                color: fontColorHex(darkModeColor),
+                                backgroundColor: darkModeColor,
                                 paddingTop:'0.25rem', paddingBottom:'0.4rem',
-                                borderTopRightRadius:16,borderTopLeftRadius:16
+                                borderTopRightRadius:8,borderTopLeftRadius:8
                             }}>Dark mode</div>
                         </div>
                         <div
                             onClick={()=> setTabState(3)}
-                            style={{paddingLeft:0}} className={'col-4'}>
+                            style={{
+                                paddingLeft:0}} className={'col-4'}>
                             <div style={{
-                                backgroundColor:lightShadowForSVG(),
+                                backgroundColor:secondaryColor,
+                                color:fontColorHex(secondaryColor),
                                 paddingTop:'0.25rem', paddingBottom:'0.4rem',
-                                borderTopRightRadius:8,borderTopLeftRadius:16
+                                borderTopRightRadius:8,borderTopLeftRadius:8
                             }}>Secondary color</div>
                         </div>
                     </div>
                     <Fragment>
-                        {mainColorSettings}
+                        {controlsWrapper(tabState)}
                     </Fragment>
                 </Card>
             </div>

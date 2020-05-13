@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
 import SoftUIPreviewDesktop from "./desktop_components/SoftUIPreviewDesktop";
 import SoftUIControlDesktop from "./desktop_components/SoftUIControlDesktop";
 import OptionBar from "./desktop_components/OptionBar/OptionBar";
-
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 const Generator_desktop = () => {
 
+    const {colorRGB, font} = useContext(ThemeContext);
+
+    const {Red, Green, Blue} = colorRGB;
+
+    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`
+
     return(
-        <div>
+        <div style={{
+            color: font,
+            backgroundColor: mainColor}}>
             <div className={'row'}>
                 <div className={'col-12'}>
                     <OptionBar/>

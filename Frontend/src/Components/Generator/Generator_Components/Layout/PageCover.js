@@ -12,8 +12,8 @@ const PageCover = ({children}) => {
 
     return(
         <div style={{
-            backgroundImage:`linear-gradient(145deg, ${mainColor}, ${mainColor})`,
-            color: font,
+            backgroundColor:font,
+            color: mainColor,
             minHeight:'100vh'
             ,height:'100%'}}
         >

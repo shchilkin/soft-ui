@@ -159,6 +159,7 @@ const ControlStageChooseColor = () => {
     );
 
     // tab colors
+    console.log('COLORS', Red,Green,Blue,colorRGB)
     const secondaryColor = calculateColors(`#${toHex(Red)}${toHex(Green)}${toHex(Red)}`);
     const darkModeColor = calculateTintAndShades(Red,Green,Blue,(darkModeFactor * 100));
 
@@ -275,7 +276,6 @@ const ControlStageChooseColor = () => {
                                 color:fontColor(Red,Green,Blue),
                                 paddingTop:'0.25rem', paddingBottom:'0.4rem',
                                 borderTopRightRadius:8,borderTopLeftRadius:8,
-                                    borderBottomRightRadius:8,
                             }}>Main Color</div>
                         </div>
                         <div

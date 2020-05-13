@@ -1,6 +1,6 @@
-import React from "react";
-import Generator_mobile from "./Generator_Components/Mobile/Generator_mobile";
+import React, {useContext} from "react";
 import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
+import ThemeContext from "../../contexts/theme/ThemeContext";
 
 
 //rgb 0 9 62 night sky color
@@ -18,20 +18,23 @@ import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop"
 //#530522 dark cherry red
 
 const Generator = () => {
-    const viewportWidth = window.innerWidth
-    //TODO rename Function, make no sense now
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return <Generator_mobile />
-        } else {
-            return <Generator_desktop/>
-        }
-    }
+    const {colorRGB, font} = useContext(ThemeContext);
+    const {Red, Green, Blue} = colorRGB;
+    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
 
     return (
-      <div className={"container mb-5"}>
-        <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator</h1>
-          {getContainerHeight(viewportWidth)}
+      <div style={{
+          // minHeight:'70vh',
+          // display:"flex",
+          marginTop:'2rem',
+          alignItems:"center",
+          justifyContent:"center",}}>
+          <div style={{borderRadius:24,
+              paddingBottom:'1rem',
+              paddingTop:'1rem',
+              color: font, backgroundColor: mainColor}} className={"container mb-5"}>
+              <Generator_desktop/>
+          </div>
       </div>
   );
 };

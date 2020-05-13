@@ -19,6 +19,7 @@ import ColorInput from "./ColorInput";
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
     const {
+        font,
         colorRGB,
         shadows,
         changeColor,
@@ -247,12 +248,19 @@ const ControlStageChooseColor = () => {
         }
     }
 
+    console.log('FONT COLOR', fontColor(Red,Green,Blue))
+    const colorValue = (font) => {
+        if(font === '#000') return 0
+        if(font === '#FFF') return 255
+    }
+
     return (
         <Fragment>
             <div className={'mb-3'}>
                 <Card
-                    darkShadow={fontColor(Red,Green,Blue)}
-                    lightShadow={fontColor(Red,Green,Blue)}
+                    background={font}
+                    darkShadow={calculateTintAndShades(colorValue(font),colorValue(font),colorValue(font),85)}
+                    lightShadow={calculateTintAndShades(colorValue(font),colorValue(font),colorValue(font),105)}
                 >
                     <div className={'row text-center'}>
                         <div style={{paddingRight:0, }}

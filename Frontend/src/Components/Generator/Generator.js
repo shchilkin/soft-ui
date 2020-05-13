@@ -29,10 +29,9 @@ const Generator = () => {
           marginTop:'2rem',
           alignItems:"center",
           justifyContent:"center",}}>
-          <div style={{borderRadius:24,
+          <div style={{
               paddingBottom:'1rem',
-              paddingTop:'1rem',
-              color: font, backgroundColor: mainColor}} className={"container mb-5"}>
+              paddingTop:'1rem'}} className={"container mb-5"}>
               <Generator_desktop/>
           </div>
       </div>

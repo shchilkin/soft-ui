@@ -258,9 +258,9 @@ const ControlStageChooseColor = () => {
         <Fragment>
             <div className={'mb-3'}>
                 <Card
-                    background={font}
-                    darkShadow={calculateTintAndShades(colorValue(font),colorValue(font),colorValue(font),85)}
-                    lightShadow={calculateTintAndShades(colorValue(font),colorValue(font),colorValue(font),105)}
+                    background={'#FFF'}
+                    darkShadow={calculateTintAndShades(255,255,255,85)}
+                    lightShadow={calculateTintAndShades(255,255,255,105)}
                 >
                     <div className={'row text-center'}>
                         <div style={{paddingRight:0, }}

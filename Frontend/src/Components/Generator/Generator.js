@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
-import ThemeContext from "../../contexts/theme/ThemeContext";
 
 
 //rgb 0 9 62 night sky color
@@ -18,9 +17,6 @@ import ThemeContext from "../../contexts/theme/ThemeContext";
 //#530522 dark cherry red
 
 const Generator = () => {
-    const {colorRGB, font} = useContext(ThemeContext);
-    const {Red, Green, Blue} = colorRGB;
-    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
 
     return (
       <div style={{

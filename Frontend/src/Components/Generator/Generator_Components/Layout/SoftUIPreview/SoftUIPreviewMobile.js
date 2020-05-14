@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import SoftUIGenButton from "./SoftUIGenButton";
-import SoftUIGenInput from "./SoftUIGenInput";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import Button from "../Button";
+import Input from "../Input";
+import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
-const SoftUIPreview = () => {
+const SoftUIPreviewMobile = () => {
 
     const themeContext = useContext(ThemeContext);
     const {
@@ -20,9 +20,16 @@ const SoftUIPreview = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
 
+    const viewportWidth = window.innerWidth
+    function getContainerHeight(viewportWidth) {
+        if(viewportWidth < 500){
+            return 175
+        } else return 300
+    }
+
     const containerStyle = {
         width: "100%",
-        height: "300px",
+        height: `${getContainerHeight(viewportWidth)}px`,
         minHeight: "100px",
         backgroundColor: mainColor,
         color: font,
@@ -49,26 +56,26 @@ const SoftUIPreview = () => {
                     <div className={"align-self-center"} style={containerStyle} />
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Button</h6>
                     <div className={"row"}>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 props={componentProps}
                                 state={"initial"}
                                 children={"Button"}
                             />
                         </div>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 state={"active"}
                                 props={componentProps}
                                 children={"Active"}
                             />
                         </div>
                         <div className={"col-md-4 mb-3"}>
-                            <SoftUIGenButton
+                            <Button
                                 state={"hover"}
                                 props={componentProps}
                                 children={"hover"}
@@ -77,19 +84,19 @@ const SoftUIPreview = () => {
                     </div>
                 </div>
             </div>
-            <div className={"row"}>
+            <div className={"row d-none d-sm-block"}>
                 <div className={"col-12"}>
                     <h6 style={{ fontWeight: "bold" }}>Input</h6>
                     <div className={"row"}>
                         <div className={"col-md-6 mb-3"}>
-                            <SoftUIGenInput
+                            <Input
                                 props={componentProps}
                                 state={"blur"}
                                 placeholder={"Input on Blur"}
                             />
                         </div>
                         <div className={"col-md-6 mb-3"}>
-                            <SoftUIGenInput
+                            <Input
                                 props={componentProps}
                                 state={"focus"}
                                 placeholder={"Input on Focus"}
@@ -102,4 +109,4 @@ const SoftUIPreview = () => {
     )
 }
 
-export default SoftUIPreview;
+export default SoftUIPreviewMobile;

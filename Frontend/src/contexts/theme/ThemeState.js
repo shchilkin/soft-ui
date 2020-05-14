@@ -11,13 +11,17 @@ import {
   CHANGE_LIGHT_SHADOW_FACTOR,
   INVERSE_FONT,
   THEME_RESET,
-  CHANGE_BADGE_COLORS
+  CHANGE_BADGE_COLORS,
+  CHANGE_DARK_MODE_FACTOR,
+  CHANGE_SECONDARY_COLOR,
+  CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+  CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from "../types";
 import {
   calculateShadows,
   fontColor,
   toHex,
-} from "../../Components/Generator/Functions.SoftUIGenerator";
+} from "../../Functions";
 
 const ThemeState = (props) => {
   //Darkmode related code
@@ -68,16 +72,20 @@ const ThemeState = (props) => {
 
   const initialState = {
     darkMode: getThemeStateFromLocalStorage(),
-    Red: 173,
-    Green: 0,
-    Blue: 62,
+    Red: 255,
+    Green: 222,
+    Blue: 3,
     shadowBlur: 30,
     shadowLength: 5,
     borderRadius: 12,
     darkShadowFactor: 0.85,
     lightShadowFactor: 1.05,
-    codeBackgroundColor: "#930035",
-    badgeColors:[[144, 75, 82], [168, 45, 57], [178, 15, 61], [176, 38, 38], [119, 162, 80]]
+    darkModeDarkShadowFactor: 0.75,
+    darkModeLightShadowFactor: 0.9,
+    //TODO Rename secondaryColor to secondaryColorCode
+    secondaryColor: 'complementary-100',
+    secondaryColorValue:'#000000',
+    darkModeFactor: 0.4,
   };
 
   //  Calculate hexadecimal value of the color
@@ -101,12 +109,24 @@ const ThemeState = (props) => {
 
   // Calculate shadows
   initialState.shadows = calculateShadows(
-    initialState.Red,
-    initialState.Green,
-    initialState.Blue,
-    initialState.lightShadowFactor,
-    initialState.darkShadowFactor
+      initialState.Red,
+      initialState.Green,
+      initialState.Blue,
+      initialState.lightShadowFactor,
+      initialState.darkShadowFactor
   );
+
+  // Dark mode shadows
+  initialState.darkModeShadows = calculateShadows(
+      (initialState.Red * initialState.darkModeFactor),
+      (initialState.Green * initialState.darkModeFactor),
+      (initialState.Blue * initialState.darkModeFactor),
+      initialState.darkModeLightShadowFactor,
+      initialState.darkModeDarkShadowFactor
+  );
+
+  initialState.codeBackgroundColor = `rgb(${initialState.shadows.darkerShadowArray[0]},
+   ${initialState.shadows.darkerShadowArray[1]}, ${initialState.shadows.darkerShadowArray[2]})`
 
   const [state, dispatch] = useReducer(ThemeReducer, initialState);
 
@@ -179,6 +199,35 @@ const ThemeState = (props) => {
     });
   };
 
+  const changeDarkModeFactor = (darkModeFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_FACTOR,
+      payload: darkModeFactor,
+    });
+  }
+
+  const changeDarkModeDarkShadowFactor = (darkModeDarkShadowFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+      payload: darkModeDarkShadowFactor,
+    });
+  }
+
+  const changeDarkModeLightShadowFactor = (darkModeLightShadowFactor) => {
+    dispatch({
+      type: CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR,
+      payload: darkModeLightShadowFactor,
+    });
+  }
+
+  const changeSecondaryColor = (colorCode, colorValue) => {
+    dispatch({
+      type: CHANGE_SECONDARY_COLOR,
+      payload: {colorValue: colorValue, colorCode: colorCode}
+    });
+  }
+
+
   return (
     <ThemeContext.Provider
       value={{
@@ -191,25 +240,40 @@ const ThemeState = (props) => {
         changeBadgeColors,
         changeBorderRadius,
         changeShadowLength,
+        changeDarkModeFactor,
         changeDarkShadowFactor,
         changeLightShadowFactor,
+        changeSecondaryColor,
+        changeDarkModeDarkShadowFactor,
+        changeDarkModeLightShadowFactor,
         font: state.font,
-        badgeColors: state.badgeColors,
         shadows: state.shadows,
         colorRGB: {
           Red: state.Red,
           Green: state.Green,
           Blue: state.Blue,
         },
+        secondaryRGB:{
+          Red: state.secondaryRed,
+          Green: state.secondaryGreen,
+          Blue: state.secondaryBlue,
+        },
         colorHEX: state.hexColor,
         darkMode: state.darkMode,
         shadowBlur: state.shadowBlur,
-        codeFontColor: state.codeFontColor,
+        secondaryHex: state.secondaryHex,
         shadowLength: state.shadowLength,
         borderRadius: state.borderRadius,
+        codeFontColor: state.codeFontColor,
+        secondaryColor: state.secondaryColor,
+        darkModeFactor: state.darkModeFactor,
+        darkModeShadows: state.darkModeShadows,
         darkShadowFactor: state.darkShadowFactor,
         lightShadowFactor: state.lightShadowFactor,
         codeBackgroundColor: state.codeBackgroundColor,
+        secondaryColorValue: state.secondaryColorValue,
+        darkModeDarkShadowFactor: state. darkModeDarkShadowFactor,
+        darkModeLightShadowFactor: state.darkModeLightShadowFactor,
       }}
     >
       {props.children}

@@ -8,9 +8,13 @@ import {
     CHANGE_LIGHT_SHADOW_FACTOR,
     INVERSE_FONT,
     THEME_RESET,
-    CHANGE_BADGE_COLORS
+    CHANGE_BADGE_COLORS,
+    CHANGE_SECONDARY_COLOR,
+    CHANGE_DARK_MODE_FACTOR,
+    CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
+    CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from '../types';
-import {invertFont} from "../../Components/Generator/Functions.SoftUIGenerator";
+import {calculateColors, calculateTintAndShades, invertFont} from "../../Functions";
 
 import {
     calculateShadows,
@@ -20,7 +24,7 @@ import {
     hexToRGB,
     numberRangeCheck,
     calculateShadowFactor
-}from '../../Components/Generator/Functions.SoftUIGenerator';
+}from '../../Functions';
 export default (state, action) => {
     switch (action.type){
         case CHANGE_THEME:
@@ -33,11 +37,6 @@ export default (state, action) => {
             switch (action.payload.colorName) {
                 //TODO Red Green and Blue return seems similar => Create function
                 case "Red":
-                    console.log('font color',fontColor(
-                    numberRangeCheck(action.payload.colorValue),
-                    state.Green,
-                    state.Blue
-                ),)
                     return {
                         ...state,
                         Red: numberRangeCheck(action.payload.colorValue),
@@ -220,8 +219,48 @@ export default (state, action) => {
                         ...state,
                         hexColor: hexString,
                     }
+                    //Case RGB currently used on random color generation
                 case "RGB":
-                    console.log('payload', action.payload)
+                    let rgbArray=  {
+                        red: action.payload.colorValue.Red,
+                        green: action.payload.colorValue.Green,
+                        blue: action.payload.colorValue.Blue,
+                    }
+                    const {red,  green, blue} = rgbArray
+                    const {red: r, green: g, blue: b} = calculateColors(rgbArray)
+                    console.log('RED GREEN BLUE', r, g, b)
+                    const colors = {
+                        'complementary-60': calculateTintAndShades(r,g,b,60),
+                        'complementary-70': calculateTintAndShades(r,g,b,70),
+                        'complementary-80':calculateTintAndShades(r,g,b,80),
+                        'complementary-90': calculateTintAndShades(r,g,b,90),
+                        'complementary-100': calculateTintAndShades(r,g,b,100),
+                        'complementary-110': calculateTintAndShades(r,g,b,110),
+                        'complementary-120': calculateTintAndShades(r,g,b,120),
+                        'complementary-130': calculateTintAndShades(r,g,b,130),
+                        'complementary-140': calculateTintAndShades(r,g,b,140),
+                        'main-10': calculateTintAndShades(red,green,blue,10),
+                        'main-20': calculateTintAndShades(red,green,blue,20),
+                        'main-30': calculateTintAndShades(red,green,blue,30),
+                        'main-40': calculateTintAndShades(red,green,blue,40),
+                        'main-50': calculateTintAndShades(red,green,blue,50),
+                        'main-60': calculateTintAndShades(red,green,blue,60),
+                        'main-70': calculateTintAndShades(red,green,blue,70),
+                        'main-80': calculateTintAndShades(red,green,blue,80),
+                        'main-90': calculateTintAndShades(red,green,blue,90),
+                        'main-110': calculateTintAndShades(red,green,blue,110),
+                        'main-120': calculateTintAndShades(red,green,blue,120),
+                        'main-130': calculateTintAndShades(red,green,blue,130),
+                        'main-140': calculateTintAndShades(red,green,blue,140),
+                        'main-150': calculateTintAndShades(red,green,blue,150),
+                        'main-160': calculateTintAndShades(red,green,blue,160),
+                        'main-170': calculateTintAndShades(red,green,blue,170),
+                        'main-180': calculateTintAndShades(red,green,blue,180),
+                        'main-190': calculateTintAndShades(red,green,blue,190)
+                    }
+
+                    console.log('colors[state.secondaryColor]',colors[state.secondaryColor], state.secondaryColor)
+
                     return {...state,
                         Red: action.payload.colorValue.Red,
                         Green: action.payload.colorValue.Green,
@@ -265,7 +304,8 @@ export default (state, action) => {
                             toHex(numberRangeCheck(action.payload.colorValue.Red))
                             +toHex(action.payload.colorValue.Green)+
                             toHex(action.payload.colorValue.Blue)
-                        )
+                        ),
+                        secondaryColorValue: colors[state.secondaryColor]
                     }
                 default:
                     return state;
@@ -342,26 +382,53 @@ export default (state, action) => {
                 font: invertFont(state.font)
             }
         case THEME_RESET:
+            let red = 255;
+            let green = 255;
+            let blue = 255;
             return {
                 ...state,
-                Red: 173,
-                Green: 0,
-                Blue: 62,
+                Red: red,
+                Green: green,
+                Blue: blue,
                 shadowBlur: 30,
                 shadowLength: 5,
                 borderRadius: 12,
                 darkShadowFactor: 0.85,
                 lightShadowFactor: 1.05,
-                hexColor: (toHex(173) + toHex(0) + toHex(62)),
-                font: fontColor(173, 0, 62),
-                codeFontColor: fontColor(173, 0, 62),
-                shadows: calculateShadows(173,0,62,1.05,0.85),
-                codeBackgroundColor: "#930035",
+                hexColor: (toHex(red) + toHex(green) + toHex(blue)),
+                font: fontColor(red, green, blue),
+                codeFontColor: fontColor(red, green,blue ),
+                shadows: calculateShadows(red,green,blue,1.05,0.85),
+                codeBackgroundColor: "#125B37",
             }
         case CHANGE_BADGE_COLORS:
             return {
                 ...state,
                 badgeColors: action.payload
+            }
+        case CHANGE_DARK_MODE_FACTOR:
+            return {
+                ...state,
+                darkModeFactor: calculateShadowFactor(action.payload)
+            }
+        case CHANGE_DARK_MODE_DARK_SHADOW_FACTOR:
+            console.log('Dark shadow', action.payload)
+            return {
+                ...state,
+                darkModeDarkShadowFactor: calculateShadowFactor(action.payload),
+            }
+        case CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR:
+            console.log('Light shadow', action.payload)
+            return {
+                ...state,
+                darkModeLightShadowFactor: calculateShadowFactor(action.payload),
+            }
+        case CHANGE_SECONDARY_COLOR:
+            console.log('Action payload',action.payload)
+            return {
+                ...state,
+                secondaryColor: action.payload.colorCode,
+                secondaryColorValue: action.payload.colorValue
             }
     }
 };

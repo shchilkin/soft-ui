@@ -1,12 +1,12 @@
-import ColorPickerSketch from "../colorPickerSketch";
-import SoftUIGenButton from "./SoftUIGenButton";
-import Badge from "../../../Badge/Badge.component";
-import SoftUIGenInput from "./SoftUIGenInput";
-import {getRandomInt, toHex} from "../../Functions.SoftUIGenerator";
 import React, {useContext, useState} from "react";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../../../contexts/theme/ThemeContext";
+import {getRandomInt, toHex} from "../../../../../../Functions";
+import Badge from "../../../../../Badge/Badge.component";
+import Button from "../../../Layout/Button";
+import Input from "../../../Layout/Input";
+import ColorPickerSketch from "../../../ColorPickers/colorPickerSketch";
 
-const SoftUIControl = () => {
+const ControlStageDefault = () => {
     const themeContext = useContext(ThemeContext);
     const {
         font,
@@ -62,31 +62,22 @@ const SoftUIControl = () => {
         lighterShadow: lighterShadow,
     };
 
-    async function getColorsFromColorMind(){
-        //TODO TEST
-        const url = "/api/colors";
-        const data = {
-            model: "default",
-            input: [[colorRGB.Red, colorRGB.Green, colorRGB.Blue], "N", "N", "N", "N"]
-        };
-
-        try {
-            const response =  await fetch(url, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data) // body data type must match "Content-Type" header
-            });
-            console.log('response', response)
-            return response;
-        }
-        catch (error) {
-            console.warn('error', error);
-        }
-    }
-
     const hexInput = (
-        <div className={"row pt-1"}>
-            <div className={"col-12"}>
+        <div className={"row"}>
+            <div className={'col-3 text-center'}>
+                <h6>
+                    <Badge style={{ backgroundColor: darkerShadow }}>
+                        <span style={{color:font}}>Mode</span>
+                    </Badge>
+                </h6>
+                <Button
+                    props={componentProps}
+                    children={colorInputMode ? "Hex" : "RGB"}
+                    style={{height:'50px'}}
+                    onClick={() => setColorInputMode(!colorInputMode)}
+                />
+            </div>
+            <div className={"col-9"}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow, color: font }}>
                         #<span style={{ color: "#ed2939", fontWeight: "bold" }}>FF</span>
@@ -94,7 +85,7 @@ const SoftUIControl = () => {
                         <span style={{ color: "#0f52Ba", fontWeight: "bold" }}>FF</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     onChange={(event) => onChangeColor(event, "Hex")}
                     value={colorHEX}
                     placeholder={"#000000"}
@@ -105,14 +96,27 @@ const SoftUIControl = () => {
     );
 
     const rgbInput = (
-        <div className={"row pt-1"}>
-            <div className={"col-4"}>
+        <div className={"row text-center"}>
+            <div className={'col-lg-3'}>
+                <h6>
+                    <Badge style={{ backgroundColor: darkerShadow }}>
+                        <span style={{color:font}}>Mode</span>
+                    </Badge>
+                </h6>
+                <Button
+                    props={componentProps}
+                    style={{height:'50px'}}
+                    children={colorInputMode ? "Hex" : "RGB"}
+                    onClick={() => setColorInputMode(!colorInputMode)}
+                />
+            </div>
+            <div className={"col-lg-3"}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow }}>
                         <span style={{ color: "#ed2939" }}>R</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Red")}
                     value={colorRGB.Red}
@@ -120,13 +124,13 @@ const SoftUIControl = () => {
                     props={componentProps}
                 />
             </div>
-            <div className={"col-4"}>
+            <div className={"col-lg-3"}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow }}>
                         <span style={{ color: "#0B6623" }}>G</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Green")}
                     value={colorRGB.Green}
@@ -134,13 +138,13 @@ const SoftUIControl = () => {
                     props={componentProps}
                 />
             </div>
-            <div className={"col-4"}>
+            <div className={"col-lg-3"}>
                 <h6>
                     <Badge style={{ backgroundColor: darkerShadow }}>
                         <span style={{ color: "#0f52Ba" }}>B</span>
                     </Badge>
                 </h6>
-                <SoftUIGenInput
+                <Input
                     type={"number"}
                     onChange={(event) => onChangeColor(event, "Blue")}
                     value={colorRGB.Blue}
@@ -155,7 +159,7 @@ const SoftUIControl = () => {
         <div
             style={{
                 minHeight: "100px",
-                backgroundColor: mainColor,
+                showcaseColor: mainColor,
                 color: font,
                 mixBlendMode: "normal",
                 boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
@@ -174,29 +178,22 @@ const SoftUIControl = () => {
                 <div className={'col-2'}>
                     <ColorPickerSketch />
                 </div>
-                <div className={'col-7'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={generateRandom}
-                                     children={'Random color'}
+                <div className={'col-6'}>
+                    <Button props={componentProps}
+                            onClick={generateRandom}
+                            children={'Random color'}
                     />
                 </div>
-                <div className={'col-3'}>
-                    <SoftUIGenButton props={componentProps}
-                                     onClick={resetTheme}
-                                     children={'Reset'}
+                <div className={'col-4'}>
+                    <Button props={componentProps}
+                            onClick={resetTheme}
+                            children={'Reset'}
                     />
                 </div>
             </div>
             <div className={"row mb-3"}>
-                <div className={"col-4"}>
-                    <SoftUIGenButton
-                        props={componentProps}
-                        children={colorInputMode ? "Hex" : "RGB"}
-                        onClick={() => setColorInputMode(!colorInputMode)}
-                    />
-                </div>
-                <div className={"col-8"}>
-                    <SoftUIGenButton
+                <div className={"col-12"}>
+                    <Button
                         props={componentProps}
                         onClick={() => inverseFont()}
                         children={'Change font color'}
@@ -207,7 +204,7 @@ const SoftUIControl = () => {
             <div className={"row"}>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeBlur}
                         value={shadowBlur}
@@ -217,7 +214,7 @@ const SoftUIControl = () => {
                 </div>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Radius</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeRadius}
                         value={borderRadius}
@@ -227,7 +224,7 @@ const SoftUIControl = () => {
                 </div>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Shadow Length</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeShadowLength}
                         value={shadowLength}
@@ -237,7 +234,7 @@ const SoftUIControl = () => {
                 </div>
                 <div className={"col-sm-6"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Dark Shadow</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeDarkShadowFactor}
                         value={Math.round(darkShadowFactor * 100)}
@@ -247,7 +244,7 @@ const SoftUIControl = () => {
                 </div>
                 <div className={"col-sm-6"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Light Shadow</Badge></h6>
-                    <SoftUIGenInput
+                    <Input
                         type={"number"}
                         onChange={onChangeLightShadowFactor}
                         value={Math.round(lightShadowFactor * 100)}
@@ -256,11 +253,13 @@ const SoftUIControl = () => {
                     />
                 </div>
             </div>
-            <div>
+            <div className={'row'}>
+                <div className={'col-9'}>
+                    <div>
                 <pre
                     className={"pt-3 pb-3 pr-1 pl-3"}
                     style={{
-                        backgroundColor: codeBackgroundColor,
+                        showcaseColor: codeBackgroundColor,
                         borderRadius: "12px",
                         boxShadow: `${codeBackgroundColor} 2px 2px 10px 0px inset, ${codeBackgroundColor} -2px -2px 10px 0px inset`,
                     }}
@@ -301,9 +300,20 @@ const SoftUIControl = () => {
                     ;
                   </code>
                 </pre>
+                    </div>
+                </div>
+                <div className={'col-3'}>
+                    <p style={{fontSize:'smaller'}}><input type={'checkbox'}/> Use css variables</p>
+                    <br/>
+                    <span>Hex </span>
+                    <input type={'radio'}/>
+                    <br/>
+                    <span>RGB </span>
+                    <input type={'radio'}/>
+                </div>
             </div>
         </div>
     )
 }
 
-export default SoftUIControl
+export default ControlStageDefault;

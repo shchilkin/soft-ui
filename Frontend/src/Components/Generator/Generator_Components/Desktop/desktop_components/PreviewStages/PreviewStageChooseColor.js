@@ -73,8 +73,19 @@ const PreviewStageChooseColor = () => {
     return (
         <div>
             <div className={"row mb-3"}>
-                <div className={"col"}>
-                    <Card style={{height:generateDarkMode ? '248px' : '384px'}}>
+                <div style={{
+                    minHeight:'300px',
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent:'center',
+                    borderRadius:24,
+                    paddingTop:'1rem',
+                    paddingBottom:'1rem',
+                    background:`rgb(${Red},${Green},${Blue})`}}
+                    className={"col"}>
+                    <Card style={{
+                        width:'90%',
+                        height: '90%'}}>
                         <Badge background={darkShadowColor}>Preview</Badge>
                     </Card>
                 </div>

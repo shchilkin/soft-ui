@@ -1,5 +1,4 @@
-import React from "react";
-import Generator_mobile from "./Generator_Components/Mobile/Generator_mobile";
+import React, {useContext} from "react";
 import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
 
 
@@ -18,20 +17,19 @@ import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop"
 //#530522 dark cherry red
 
 const Generator = () => {
-    const viewportWidth = window.innerWidth
-    //TODO rename Function, make no sense now
-    function getContainerHeight(viewportWidth) {
-        if(viewportWidth < 500){
-            return <Generator_mobile />
-        } else {
-            return <Generator_desktop/>
-        }
-    }
 
     return (
-      <div className={"container mb-5"}>
-        <h1 style={{fontSize:'1.75rem'}} className={'mb-3 mt-3 text-center text-sm-left'}>Soft UI generator</h1>
-          {getContainerHeight(viewportWidth)}
+      <div style={{
+          // minHeight:'70vh',
+          // display:"flex",
+          marginTop:'2rem',
+          alignItems:"center",
+          justifyContent:"center",}}>
+          <div style={{
+              paddingBottom:'1rem',
+              paddingTop:'1rem'}} className={"container mb-5"}>
+              <Generator_desktop/>
+          </div>
       </div>
   );
 };

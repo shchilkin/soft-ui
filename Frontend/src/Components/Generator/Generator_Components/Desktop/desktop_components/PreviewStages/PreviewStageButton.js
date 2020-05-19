@@ -115,7 +115,7 @@ const PreviewStageButton = () => {
                     <h6 style={{ fontWeight: "bold" }}>Regular button states</h6>
                     <div className={"row mt-3 mb-1"}>
                         <div className={"col-md-4 mb-3"}>
-                            <PreviewButtonRegular
+                            <Button
                                 props={componentPropsFontColor}
                                 state={"initial"}
                                 children={"Button"}
@@ -123,6 +123,8 @@ const PreviewStageButton = () => {
                         </div>
                         <div className={"col-md-4 mb-3"}>
                             <PreviewButtonRegular
+                                lightShadow={"#FFF"}
+                                darkShadow={"#D9D9D9"}
                                 state="hover"
                                 props={componentPropsFontColor}
                                 children={"hover"}

@@ -53,6 +53,7 @@ const PreviewStageCard = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis enim, sollicitudin eget pulvinar et, interdum a eros.
                     </div>
                     <Button
+                        sameShadowColor={true}
                         children={'Button'}
                     />
                 </Card>

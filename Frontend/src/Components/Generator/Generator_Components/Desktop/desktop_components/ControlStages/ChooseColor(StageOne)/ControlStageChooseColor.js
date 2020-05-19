@@ -183,12 +183,14 @@ const ControlStageChooseColor = () => {
             <div className={'row pt-4 mb-3'}>
                 <div className={'col-6'}>
                     <Button
+                        sameShadowColor={true}
                         background={mainColor}
                         color={fontColor(Red,Green,Blue)}
                         onClick={generateRandom} children={'Random color'}/>
                 </div>
                 <div className={'col-6'}>
                     <Button
+                        sameShadowColor={true}
                         background={mainColor}
                         color={fontColor(Red,Green,Blue)}
                         onClick={resetTheme} children={'Reset'}/>
@@ -197,6 +199,7 @@ const ControlStageChooseColor = () => {
             <div className={'row'}>
                 <div className={'mb-3 col-md-4'}>
                     <Button
+                        sameShadowColor={true}
                         background={mainColor}
                         color={fontColor(Red,Green,Blue)}
                         style={{height:'50px'}}
@@ -211,6 +214,7 @@ const ControlStageChooseColor = () => {
             <div className={"row mb-1"}>
                 <div className={"col-12"}>
                     <Button
+                        sameShadowColor={true}
                         background={mainColor}
                         color={fontColor(Red,Green,Blue)}
                         onClick={() => inverseFont()}

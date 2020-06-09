@@ -114,10 +114,13 @@ export function hexToRGB(hexColor) {
             Blue: parseInt(`${hexWithoutHash.slice(4, 6)}`, 16)
         }
     }
+
+    else return "Invalid Hex code value"
 }
 export function isHexValid(hex) {
     let hexRegExp = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    console.log('REGEX',hex.match(hexRegExp))
+    // let hexRegex = /(^#[0-9A-Fa-f]{6})|(^#[0-9A-Fa-f]{3})/; // with #
+
     return hex.match(hexRegExp) !== null;
     // return hex.length === 3 || hex.length === 6;
 }

@@ -54,11 +54,13 @@ const OptionBar = () => {
         <div className={'row'}>
             <div className={'col-6'}>
                 <Button
+                    background={"#F0F0F0"}
                     onClick={() => changeStage("-")}
                 >Previous stage</Button>
             </div>
             <div className={'col-6'}>
                 <Button
+                    background={"#F0F0F0"}
                     onClick={() => changeStage("+")}
                 >Next stage</Button>
             </div>

@@ -8,7 +8,7 @@ const PageCover = ({children}) => {
         colorRGB,
     } = themeContext;
 
-    const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
+    // const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
 
     return(
         <div style={{

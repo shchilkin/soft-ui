@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import SoftUIPreviewDesktop from "../Generator/Generator_Components/Desktop/desktop_components/SoftUIPreviewDesktop";
-import SoftUIControlDesktop from "../Generator/Generator_Components/Desktop/desktop_components/SoftUIControlDesktop";
+import SoftUIPreviewDesktop from "../Generator/Generator_Components/SoftUIPreviewDesktop";
+import SoftUIControlDesktop from "../Generator/Generator_Components/SoftUIControlDesktop";
 import SoftUIControlMobile from "../Generator/Generator_Components/Layout/SoftUIControl/SoftUIControlMobile";
-import OptionBar from "../Generator/Generator_Components/Desktop/desktop_components/OptionBar/OptionBar";
+import OptionBar from "../Generator/Generator_Components/OptionBar/OptionBar";
 
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue

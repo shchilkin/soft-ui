@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from "react";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import {isHexValid} from "../../Functions";
-import OptionBar from "./Generator_Components/Desktop/desktop_components/OptionBar/OptionBar";
-import SoftUIPreviewDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIPreviewDesktop";
-import SoftUIControlDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIControlDesktop";
+import OptionBar from "./Generator_Components/OptionBar/OptionBar";
+import SoftUIPreviewDesktop from "./Generator_Components/SoftUIPreviewDesktop";
+import SoftUIControlDesktop from "./Generator_Components/SoftUIControlDesktop";
 
 
 //rgb 0 9 62 night sky color
@@ -27,12 +27,12 @@ const Generator = () => {
     let origin = window.location.origin;
     //  Pathname | /generator
     let pathname = window.location.pathname;
-    //  colorFromURL will contain hexadecimal color code
+    //  colorFromURL will contain hexadecimal color code without #
     let colorFromURL = href.replace(origin,"").replace(pathname,"").replace("#","")
 
     const {changeColor} = useContext(ThemeContext);
 
-    //  If hex is valid, change color to one is in the URL
+    //  If hex color code is valid, change color to one is in the URL | only on mount
     useEffect(() => {
         if (isHexValid(colorFromURL)){
             changeColor("Hex", colorFromURL)
@@ -47,11 +47,6 @@ const Generator = () => {
           <div style={{
               paddingBottom:'1rem',
               paddingTop:'1rem'}} className={"container mb-5"}>
-                  <div className={'row'}>
-                      <div className={'col-12'}>
-                          <OptionBar/>
-                      </div>
-                  </div>
                   <div className='row' style={{ marginRight: "0px", marginLeft: "0px" }}>
                       <div className={"col-md-6"}>
                           <SoftUIPreviewDesktop/>

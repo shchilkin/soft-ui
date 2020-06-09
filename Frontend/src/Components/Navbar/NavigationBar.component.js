@@ -47,7 +47,7 @@ const NavigationBar = () => {
 
     return (
         <Navbar style={{backgroundColor:`rgb(${Red},${Green},${Blue}`,
-            boxShadow:`0 2px 4px rgba(${shadows.darkerShadowArray[0]}, ${shadows.darkerShadowArray[1]}, ${shadows.darkerShadowArray[2]}, 1)`}} expand="lg"
+            boxShadow:`0 5px 20px rgba(${shadows.darkerShadowArray[0]}, ${shadows.darkerShadowArray[1]}, ${shadows.darkerShadowArray[2]}, 1)`}} expand="lg"
                 className={`navbar-light Navbar-"Light`}
         >
             <Link to={'/'}>

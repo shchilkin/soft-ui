@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import PreviewStagesWrapper from "./PreviewStages/PreviewStagesWrapper";
 
-const SoftUIPreviewDesktop = () => {
+const SoftUIPreview = () => {
 
     return (
         <Fragment>
@@ -10,4 +10,4 @@ const SoftUIPreviewDesktop = () => {
     )
 }
 
-export default SoftUIPreviewDesktop;
+export default SoftUIPreview;

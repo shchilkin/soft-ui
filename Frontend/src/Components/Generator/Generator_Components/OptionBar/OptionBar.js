@@ -52,32 +52,32 @@ const OptionBar = () => {
 
     return(
         <div className={'row'}>
-            <div className={'col-2'}>
+            <div className={'col-6'}>
                 <Button
                     onClick={() => changeStage("-")}
                 >Previous stage</Button>
             </div>
-            <div className={'col-2'}>
+            <div className={'col-6'}>
                 <Button
                     onClick={() => changeStage("+")}
                 >Next stage</Button>
             </div>
-            <div className={'col-8'}>
-                <Bar
-                    className={'d-none d-sm-block'}
-                    background={calculateTintAndShades(Red, Green, Blue, 75,"hex")}
-                    border={borderRadius}
-                    darkShadow={darkShadow}
-                    lightShadow={lightShadow}
-                >
-                    <Badge_OB activeOnStage={0}>Choose color</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={1}>Button</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={2}>Card</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={3}>Input</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={4}>Badge</Badge_OB>{" "}
-                    <Badge_OB activeOnStage={5}>Generate CSS</Badge_OB>{" "}
-                </Bar>
-            </div>
+            {/*<div className={'col-8'}>*/}
+            {/*    <Bar*/}
+            {/*        className={'d-none d-sm-block'}*/}
+            {/*        background={calculateTintAndShades(Red, Green, Blue, 75,"hex")}*/}
+            {/*        border={borderRadius}*/}
+            {/*        darkShadow={darkShadow}*/}
+            {/*        lightShadow={lightShadow}*/}
+            {/*    >*/}
+            {/*        <Badge_OB activeOnStage={0}>Choose color</Badge_OB>{" "}*/}
+            {/*        <Badge_OB activeOnStage={1}>Button</Badge_OB>{" "}*/}
+            {/*        <Badge_OB activeOnStage={2}>Card</Badge_OB>{" "}*/}
+            {/*        <Badge_OB activeOnStage={3}>Input</Badge_OB>{" "}*/}
+            {/*        <Badge_OB activeOnStage={4}>Badge</Badge_OB>{" "}*/}
+            {/*        <Badge_OB activeOnStage={5}>Generate CSS</Badge_OB>{" "}*/}
+            {/*    </Bar>*/}
+            {/*</div>*/}
             {/*{checkStageComponentBar(stage) && componentsBar}*/}
         </div>
     )

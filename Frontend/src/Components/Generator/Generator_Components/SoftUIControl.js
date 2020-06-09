@@ -1,14 +1,16 @@
  import React, {Fragment} from "react";
 import ControlStagesWrapper from "./ControlStages/ControlStagesWrapper";
+ import OptionBar from "./OptionBar/OptionBar";
 
 
-const SoftUIControlDesktop = () => {
+const SoftUIControl = () => {
 
     return (
         <Fragment>
             <ControlStagesWrapper/>
+            <OptionBar/>
         </Fragment>
     )
 }
 
-export default SoftUIControlDesktop;
+export default SoftUIControl;

@@ -2,8 +2,8 @@ import React, {useContext, useEffect} from "react";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import {isHexValid} from "../../Functions";
 import OptionBar from "./Generator_Components/OptionBar/OptionBar";
-import SoftUIPreviewDesktop from "./Generator_Components/SoftUIPreviewDesktop";
-import SoftUIControlDesktop from "./Generator_Components/SoftUIControlDesktop";
+import SoftUIPreview from "./Generator_Components/SoftUIPreview";
+import SoftUIControl from "./Generator_Components/SoftUIControl";
 
 
 //rgb 0 9 62 night sky color
@@ -49,10 +49,10 @@ const Generator = () => {
               paddingTop:'1rem'}} className={"container mb-5"}>
                   <div className='row' style={{ marginRight: "0px", marginLeft: "0px" }}>
                       <div className={"col-md-6"}>
-                          <SoftUIPreviewDesktop/>
+                          <SoftUIPreview/>
                       </div>
                       <div className={"col-md-6"}>
-                          <SoftUIControlDesktop/>
+                          <SoftUIControl/>
                       </div>
                   </div>
           </div>

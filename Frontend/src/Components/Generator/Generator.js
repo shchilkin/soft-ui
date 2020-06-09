@@ -1,7 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import {isHexValid} from "../../Functions";
-import OptionBar from "./Generator_Components/OptionBar/OptionBar";
 import SoftUIPreview from "./Generator_Components/SoftUIPreview";
 import SoftUIControl from "./Generator_Components/SoftUIControl";
 

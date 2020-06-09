@@ -1,12 +1,15 @@
-import React, {Fragment} from "react";
+import React, {useContext} from "react";
 import PreviewStagesWrapper from "./PreviewStages/PreviewStagesWrapper";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const SoftUIPreview = () => {
 
+    const {colorHEX} = useContext(ThemeContext);
+
     return (
-        <Fragment>
+        <div style={{backgroundColor: `#${colorHEX}`}}>
             <PreviewStagesWrapper/>
-        </Fragment>
+        </div>
     )
 }
 

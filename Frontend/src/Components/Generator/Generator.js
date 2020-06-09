@@ -1,5 +1,7 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
+import ThemeContext from "../../contexts/theme/ThemeContext";
+import {isHexValid} from "../../Functions";
 
 
 //rgb 0 9 62 night sky color
@@ -17,6 +19,20 @@ import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop"
 //#530522 dark cherry red
 
 const Generator = () => {
+    let href = window.location.href;
+    let origin = window.location.origin;
+    let pathname = window.location.pathname;
+
+    // colorFromURL will contain hexadecimal color code
+    let colorFromURL = href.replace(origin,"").replace(pathname,"").replace("#","")
+
+    const {colorHEX, changeColor} = useContext(ThemeContext);
+
+    useEffect(() => {
+        if (isHexValid(colorFromURL)){
+            changeColor("Hex",colorFromURL)
+        }
+    }, [colorFromURL]);
 
     return (
       <div style={{

@@ -138,6 +138,8 @@ const ThemeState = (props) => {
     });
   };
 
+  // colorName - Hex / Red / Green / Blue | colorValue - hex or rgb value
+  // for example #ED2939(hex), 244(Red/Green/Blue)
   const changeColor = (colorName, colorValue) => {
     dispatch({
       type: CHANGE_COLOR,

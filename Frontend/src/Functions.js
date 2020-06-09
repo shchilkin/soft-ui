@@ -116,7 +116,10 @@ export function hexToRGB(hexColor) {
     }
 }
 export function isHexValid(hex) {
-    return hex.length === 3 || hex.length === 6;
+    let hexRegExp = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    console.log('REGEX',hex.match(hexRegExp))
+    return hex.match(hexRegExp) !== null;
+    // return hex.length === 3 || hex.length === 6;
 }
 export function numberRangeCheck(colorValue) {
     if (parseInt(colorValue) > 255) {

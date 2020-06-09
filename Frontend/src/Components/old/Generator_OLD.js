@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import SoftUIPreviewDesktop from "../Generator/Generator_Components/Desktop/desktop_components/SoftUIPreviewDesktop";
-import SoftUIControlDesktop from "../Generator/Generator_Components/Desktop/desktop_components/SoftUIControlDesktop";
+import SoftUIPreview from "../Generator/Generator_Components/SoftUIPreview";
+import SoftUIControl from "../Generator/Generator_Components/SoftUIControl";
 import SoftUIControlMobile from "../Generator/Generator_Components/Layout/SoftUIControl/SoftUIControlMobile";
-import OptionBar from "../Generator/Generator_Components/Desktop/desktop_components/OptionBar/OptionBar";
+import OptionBar from "../Generator/Generator_Components/OptionBar/OptionBar";
 
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
@@ -20,7 +20,7 @@ const Generator = () => {
         if(viewportWidth < 500){
             return <SoftUIControlMobile/>
         } else {
-            return <SoftUIControlDesktop/>
+            return <SoftUIControl/>
         }
     }
 
@@ -36,7 +36,7 @@ const Generator = () => {
              style={{ marginRight: "0px", marginLeft: "0px" }}
           >
               <div className={"col-md-6"}>
-                  <SoftUIPreviewDesktop/>
+                  <SoftUIPreview/>
               </div>
               <div className={"col-md-6"}>
                   {getContainerHeight(viewportWidth)}

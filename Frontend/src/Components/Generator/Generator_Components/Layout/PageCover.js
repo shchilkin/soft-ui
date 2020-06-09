@@ -12,7 +12,7 @@ const PageCover = ({children}) => {
 
     return(
         <div style={{
-            backgroundColor:"#FFF",
+            backgroundColor:"#F0F0F0",
             minHeight:'100vh'
             ,height:'100%'}}
         >

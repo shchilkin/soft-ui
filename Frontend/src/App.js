@@ -9,6 +9,7 @@ import ShowcaseState from "./contexts/showcase/ShowcaseState";
 import './custom-styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Pages/Home";
+import Test from "./Pages/Test"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                          <NavigationBar />
                          <switch>
                              <Route exact path={'/generator'} component={Generator}/>
+                             <Route exact path={'/test'} component={Test}/>
                              <Route exact path={'/'} component={Home}/>
                          </switch>
                       </PageCover>

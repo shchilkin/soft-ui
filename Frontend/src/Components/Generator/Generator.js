@@ -1,7 +1,9 @@
 import React, {useContext, useEffect} from "react";
-import Generator_desktop from "./Generator_Components/Desktop/Generator_desktop";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import {isHexValid} from "../../Functions";
+import OptionBar from "./Generator_Components/Desktop/desktop_components/OptionBar/OptionBar";
+import SoftUIPreviewDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIPreviewDesktop";
+import SoftUIControlDesktop from "./Generator_Components/Desktop/desktop_components/SoftUIControlDesktop";
 
 
 //rgb 0 9 62 night sky color
@@ -19,32 +21,45 @@ import {isHexValid} from "../../Functions";
 //#530522 dark cherry red
 
 const Generator = () => {
+    //  Full link | https://www.softui.io/generator
     let href = window.location.href;
+    //  Link without pathname | https://www.softui.io
     let origin = window.location.origin;
+    //  Pathname | /generator
     let pathname = window.location.pathname;
-
-    // colorFromURL will contain hexadecimal color code
+    //  colorFromURL will contain hexadecimal color code
     let colorFromURL = href.replace(origin,"").replace(pathname,"").replace("#","")
 
-    const {colorHEX, changeColor} = useContext(ThemeContext);
+    const {changeColor} = useContext(ThemeContext);
 
+    //  If hex is valid, change color to one is in the URL
     useEffect(() => {
         if (isHexValid(colorFromURL)){
-            changeColor("Hex",colorFromURL)
+            changeColor("Hex", colorFromURL)
         }
     }, [colorFromURL]);
 
     return (
       <div style={{
-          // minHeight:'70vh',
-          // display:"flex",
           marginTop:'2rem',
           alignItems:"center",
           justifyContent:"center",}}>
           <div style={{
               paddingBottom:'1rem',
               paddingTop:'1rem'}} className={"container mb-5"}>
-              <Generator_desktop/>
+                  <div className={'row'}>
+                      <div className={'col-12'}>
+                          <OptionBar/>
+                      </div>
+                  </div>
+                  <div className='row' style={{ marginRight: "0px", marginLeft: "0px" }}>
+                      <div className={"col-md-6"}>
+                          <SoftUIPreviewDesktop/>
+                      </div>
+                      <div className={"col-md-6"}>
+                          <SoftUIControlDesktop/>
+                      </div>
+                  </div>
           </div>
       </div>
   );

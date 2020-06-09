@@ -84,7 +84,7 @@ const Home = () => {
             </div>
             <footer style={{backgroundColor:mainColor}}>
                 <div className={'container'}>
-                    <div className={'row pt-3 pb-3'}>
+                    <div className={'row pt-5 pb-5'}>
                         <div className={'col-md-6'}>
                             <a style={{color:fontColor}}
                                 href={'https://github.com/CrazyRedKitten/soft-ui'} target={'blank'}>

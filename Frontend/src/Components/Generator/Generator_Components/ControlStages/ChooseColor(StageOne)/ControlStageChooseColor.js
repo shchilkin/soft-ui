@@ -106,15 +106,18 @@ const ControlStageChooseColor = () => {
                         borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
                         <div style={{display:'inline-block', marginBottom:".5rem"}}>
                             <button
+                                title="Inverse text color"
                                 onClick={() => inverseFont()}
                                 style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
                                     // border:`1px solid ${controlCardBG}`,
                                     marginRight:'10px', borderRadius:'8px'}}>{inverseSVG}</button>
                             <button
+                                title="Generate random color"
                                 onClick={generateRandom}
                                 style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
                                     marginRight:'10px', borderRadius:'8px'}}>{dicesSVG}</button>
                             <button
+                                title="Reset to default color"
                                 onClick={resetTheme}
                                 style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
                                     marginRight:'10px', borderRadius:'8px'}}>{resetSVG}</button>

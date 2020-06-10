@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { Bar } from '../../../../StyledComponents'
-import {calculateTintAndShades, calculateShadows, calculateColor, toHex} from "../../../../Functions";
+import {calculateTintAndShades, calculateShadows, calculateColor, toHex, fontColorHex} from "../../../../Functions";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import Badge_OB from "./Badge_OB";
 import StagesContext from "../../../../contexts/Stages/StagesContext";
@@ -54,12 +54,14 @@ const OptionBar = () => {
         <div className={'row'}>
             <div className={'col-6'}>
                 <Button
+                    color={fontColorHex("#F0F0F0")}
                     background={"#F0F0F0"}
                     onClick={() => changeStage("-")}
                 >Previous stage</Button>
             </div>
             <div className={'col-6'}>
                 <Button
+                    color={fontColorHex("#F0F0F0")}
                     background={"#F0F0F0"}
                     onClick={() => changeStage("+")}
                 >Next stage</Button>

@@ -7,7 +7,7 @@ import Button from "../Layout/Button";
 const PreviewStageCard = () => {
 
     const themeContext = useContext(ThemeContext);
-    const {colorRGB, shadows} = themeContext;
+    const {colorRGB, colorHEX, font,shadows} = themeContext;
 
     const {Red, Green, Blue} = colorRGB;
 
@@ -53,6 +53,7 @@ const PreviewStageCard = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis enim, sollicitudin eget pulvinar et, interdum a eros.
                     </div>
                     <Button
+                        background={`#${colorHEX}`}
                         sameShadowColor={true}
                         children={'Button'}
                     />

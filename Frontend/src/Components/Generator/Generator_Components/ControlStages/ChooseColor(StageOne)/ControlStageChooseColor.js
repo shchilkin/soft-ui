@@ -10,6 +10,7 @@ import Card from "../../Layout/Card";
 import RGBinput from "./RGBinput";
 import Input from "../../Layout/Input";
 import Badge from "../../../../Badge/Badge.component";
+import IconButton from "./IconButton";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -50,25 +51,16 @@ const ControlStageChooseColor = () => {
     />
     )
 
-    const dicesSVG = (
-        <svg width="100%"
-             height="100%"
-             viewBox="0 0 239 255"
-             style={{fillRule:"evenodd",clipRule:"evenodd",strokeLinejoin:"round",strokeMiterlimit:2}}>
-            <path d="M73.375,107.105c2.59,5.317 6.526,10.072 11.708,13.708l58.64,41.141l8.289,31.143c4.889,18.369 -6.056,37.252 -24.425,42.141l-66.565,17.716c-18.369,4.889 -37.252,-6.056 -42.141,-24.425l-17.716,-66.565c-4.889,-18.369 6.056,-37.252 24.425,-42.141l47.785,-12.718Zm-31.549,58.229c11.055,-2.942 22.418,3.644 25.36,14.699c2.942,11.054 -3.644,22.418 -14.698,25.36c-11.055,2.942 -22.418,-3.644 -25.36,-14.699c-2.942,-11.054 3.644,-22.418 14.698,-25.36Zm58.863,-15.666c11.055,-2.942 22.418,3.644 25.36,14.699c2.942,11.054 -3.644,22.417 -14.698,25.36c-11.055,2.942 -22.418,-3.645 -25.36,-14.699c-2.942,-11.054 3.644,-22.418 14.698,-25.36Zm131.635,-55.888c10.917,-15.561 7.147,-37.057 -8.414,-47.975l-56.388,-39.561c-15.561,-10.918 -37.058,-7.148 -47.975,8.413l-39.562,56.389c-10.917,15.561 -7.147,37.058 8.414,47.975l56.388,39.562c15.561,10.917 37.058,7.147 47.975,-8.414l39.562,-56.389Zm-72.02,-40.639c16.156,2.289 27.413,17.265 25.123,33.421c-2.29,16.156 -17.265,27.414 -33.421,25.124c-16.156,-2.29 -27.414,-17.266 -25.124,-33.422c2.29,-16.156 17.265,-27.413 33.422,-25.123Z"
-                  style={{fill: "#303030"}}/>
-        </svg>
-    )
 
-    const resetSVG = (
-        <svg width="100%"
-             height="100%"
-             viewBox="0 0 246 228"
-             style={{fillRule:"evenodd",clipRule:"evenodd",strokeLinejoin:"round",strokeMiterlimit:2}}>
-            <path d="M146.542,187.72l13.482,30.539c-27.652,12.208 -59.022,12.931 -87.208,2.01c-58.655,-22.727 -87.824,-88.798 -65.098,-147.453c22.727,-58.655 88.798,-87.824 147.453,-65.098c27.434,10.63 49.664,31.442 62.089,58.045l28.286,-13.261l-8.281,96.032l-79.117,-55.057l28.886,-13.543c-8.78,-18.831 -24.509,-33.566 -43.923,-41.088c-41.476,-16.071 -88.195,4.555 -104.265,46.03c-16.071,41.476 4.555,88.195 46.03,104.266c19.931,7.722 42.113,7.211 61.666,-1.422Z"
-                  style={{fill: "#303030"}}/>
-        </svg>
-    )
+    const resetIcon = {
+        viewBox: "0 0 246 228",
+        path: "M146.542,187.72l13.482,30.539c-27.652,12.208 -59.022,12.931 -87.208,2.01c-58.655,-22.727 -87.824,-88.798 -65.098,-147.453c22.727,-58.655 88.798,-87.824 147.453,-65.098c27.434,10.63 49.664,31.442 62.089,58.045l28.286,-13.261l-8.281,96.032l-79.117,-55.057l28.886,-13.543c-8.78,-18.831 -24.509,-33.566 -43.923,-41.088c-41.476,-16.071 -88.195,4.555 -104.265,46.03c-16.071,41.476 4.555,88.195 46.03,104.266c19.931,7.722 42.113,7.211 61.666,-1.422Z"
+    }
+
+    const randomIcon = {
+        viewBox: "0 0 239 255",
+        path: "M73.375,107.105c2.59,5.317 6.526,10.072 11.708,13.708l58.64,41.141l8.289,31.143c4.889,18.369 -6.056,37.252 -24.425,42.141l-66.565,17.716c-18.369,4.889 -37.252,-6.056 -42.141,-24.425l-17.716,-66.565c-4.889,-18.369 6.056,-37.252 24.425,-42.141l47.785,-12.718Zm-31.549,58.229c11.055,-2.942 22.418,3.644 25.36,14.699c2.942,11.054 -3.644,22.418 -14.698,25.36c-11.055,2.942 -22.418,-3.644 -25.36,-14.699c-2.942,-11.054 3.644,-22.418 14.698,-25.36Zm58.863,-15.666c11.055,-2.942 22.418,3.644 25.36,14.699c2.942,11.054 -3.644,22.417 -14.698,25.36c-11.055,2.942 -22.418,-3.645 -25.36,-14.699c-2.942,-11.054 3.644,-22.418 14.698,-25.36Zm131.635,-55.888c10.917,-15.561 7.147,-37.057 -8.414,-47.975l-56.388,-39.561c-15.561,-10.918 -37.058,-7.148 -47.975,8.413l-39.562,56.389c-10.917,15.561 -7.147,37.058 8.414,47.975l56.388,39.562c15.561,10.917 37.058,7.147 47.975,-8.414l39.562,-56.389Zm-72.02,-40.639c16.156,2.289 27.413,17.265 25.123,33.421c-2.29,16.156 -17.265,27.414 -33.421,25.124c-16.156,-2.29 -27.414,-17.266 -25.124,-33.422c2.29,-16.156 17.265,-27.413 33.422,-25.123Z"
+    }
 
     const inverseSVG = (
         <svg width="100%"
@@ -104,20 +96,28 @@ const ControlStageChooseColor = () => {
                     <div className={'container pb-3'} style={{
                         backgroundColor:controlCardBG,
                         borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
-                        <div style={{display:'inline-block', marginBottom:".5rem"}}>
-                            <button
-                                onClick={() => inverseFont()}
-                                style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
-                                    // border:`1px solid ${controlCardBG}`,
-                                    marginRight:'10px', borderRadius:'8px'}}>{inverseSVG}</button>
-                            <button
+                        <div style={{display:'inline-block', marginBottom:"1rem"}}>
+                            <IconButton
+                                title="Inverse text color"
+                                background={controlCardBG}
+                                isSVGinChildren={true}
+                                onClick={() => inverseFont()}>
+                                {inverseSVG}
+                            </IconButton>
+                            <IconButton
+                                title={"Generate random color"}
                                 onClick={generateRandom}
-                                style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
-                                    marginRight:'10px', borderRadius:'8px'}}>{dicesSVG}</button>
-                            <button
+                                background={controlCardBG}
+                                path={randomIcon.path}
+                                viewBox={randomIcon.viewBox}
+                            />
+                            <IconButton
+                                title={"Reset to default color"}
                                 onClick={resetTheme}
-                                style={{width:'38px',height:'38px', backgroundColor:controlCardBG,
-                                    marginRight:'10px', borderRadius:'8px'}}>{resetSVG}</button>
+                                background={controlCardBG}
+                                path={resetIcon.path}
+                                viewBox={resetIcon.viewBox}
+                            />
                         </div>
                         <div className={'row'}>
                             <div className={'mb-3 col-md-4'}>

@@ -96,7 +96,7 @@ const ControlStageChooseColor = () => {
                     <div className={'container pb-3'} style={{
                         backgroundColor:controlCardBG,
                         borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
-                        <div style={{display:'inline-block', marginBottom:".5rem"}}>
+                        <div style={{display:'inline-block', marginBottom:"1rem"}}>
                             <IconButton
                                 title="Inverse text color"
                                 background={controlCardBG}

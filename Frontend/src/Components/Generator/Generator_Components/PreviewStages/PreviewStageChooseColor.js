@@ -11,10 +11,7 @@ const PreviewStageChooseColor = () => {
     const darkShadowColor = `rgb(${shadows.darkerShadowArray[0]},${shadows.darkerShadowArray[1]},${shadows.darkerShadowArray[2]})`
 
     return (
-        <Card style={{
-            gridRow:'2/3',
-            gridColumn:'2/3',
-        }}>
+        <Card style={{height:'100%'}}>
             <Badge background={darkShadowColor}>Preview</Badge>
         </Card>
     )

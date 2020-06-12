@@ -1,4 +1,4 @@
- import React, {Fragment} from "react";
+ import React from "react";
 import ControlStagesWrapper from "./ControlStages/ControlStagesWrapper";
  import OptionBar from "./OptionBar/OptionBar";
 
@@ -6,10 +6,15 @@ import ControlStagesWrapper from "./ControlStages/ControlStagesWrapper";
 const SoftUIControl = () => {
 
     return (
-        <Fragment>
+        <div style={{
+            height:"100%",
+            paddingRight:'1rem',
+            paddingTop:'1rem',
+            paddingLeft:'1rem',
+            backgroundColor: '#F0F0F0'}}>
             <ControlStagesWrapper/>
             <OptionBar/>
-        </Fragment>
+        </div>
     )
 }
 

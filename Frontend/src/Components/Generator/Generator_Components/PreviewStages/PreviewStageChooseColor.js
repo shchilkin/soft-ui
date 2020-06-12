@@ -6,34 +6,17 @@ import Badge from "../../../Badge/Badge.component";
 
 const PreviewStageChooseColor = () => {
 
-    const {colorRGB, shadows}  = useContext(ThemeContext);
-
-    const {Red, Green, Blue} = colorRGB;
-
+    const {shadows}  = useContext(ThemeContext);
 
     const darkShadowColor = `rgb(${shadows.darkerShadowArray[0]},${shadows.darkerShadowArray[1]},${shadows.darkerShadowArray[2]})`
 
     return (
-        <div>
-            <div className={"row mb-3"}>
-                <div style={{
-                    minHeight:'300px',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    borderRadius:24,
-                    paddingTop:'1rem',
-                    paddingBottom:'1rem',
-                    background:`rgb(${Red},${Green},${Blue})`}}
-                    className={"col"}>
-                    <Card style={{
-                        width:'90%',
-                        height: '90%'}}>
-                        <Badge background={darkShadowColor}>Preview</Badge>
-                    </Card>
-                </div>
-            </div>
-        </div>
+        <Card style={{
+            gridRow:'2/3',
+            gridColumn:'2/3',
+        }}>
+            <Badge background={darkShadowColor}>Preview</Badge>
+        </Card>
     )
 }
 

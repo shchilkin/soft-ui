@@ -21,14 +21,15 @@ import SoftUIControl from "./Generator_Components/SoftUIControl";
 
 const Generator = () => {
     //  Full link | https://www.softui.io/generator
-    let href = window.location.href;
+    const href = window.location.href;
     //  Link without pathname | https://www.softui.io
-    let origin = window.location.origin;
+    const origin = window.location.origin;
     //  Pathname | /generator
-    let pathname = window.location.pathname;
+    const pathname = window.location.pathname;
     //  colorFromURL will contain hexadecimal color code without #
-    let colorFromURL = href.replace(origin,"").replace(pathname,"").replace("#","")
+    const colorFromURL = href.replace(origin,"").replace(pathname,"").replace("#","")
 
+    const viewPortHeight =  window.innerHeight;
     const {changeColor} = useContext(ThemeContext);
 
     //  If hex color code is valid, change color to one is in the URL | only on mount
@@ -39,21 +40,22 @@ const Generator = () => {
     }, [colorFromURL]);
 
     return (
-      <div style={{
-          marginTop:'2rem',
-          alignItems:"center",
-          justifyContent:"center",}}>
+      <div
+          id={'Generator Grid'}
+          style={{
+              height:`${viewPortHeight-60}px`,
+              gridTemplateColumns:'1fr 1fr',
+              display: "grid"
+          }}>
           <div style={{
-              paddingBottom:'1rem',
-              paddingTop:'1rem'}} className={"container mb-5"}>
-                  <div className='row' style={{ marginRight: "0px", marginLeft: "0px" }}>
-                      <div className={"col-md-6"}>
-                          <SoftUIPreview/>
-                      </div>
-                      <div className={"col-md-6"}>
-                          <SoftUIControl/>
-                      </div>
-                  </div>
+              height:'100%',
+              gridColumn:'1/2'}}>
+              <SoftUIPreview/>
+          </div>
+          <div style={{
+              height:'100%',
+              gridColumn:'2/2'}}>
+              <SoftUIControl/>
           </div>
       </div>
   );

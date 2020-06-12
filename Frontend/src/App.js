@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Generator from "./Components/Generator/Generator";
-import PageCover from "./Components/Generator/Generator_Components/Layout/PageCover";
 import ThemeState from "./contexts/theme/ThemeState";
 import NavigationBar from "./Components/Navbar/NavigationBar.component";
 import StagesState from "./contexts/Stages/StagesState";
@@ -17,14 +16,12 @@ function App() {
           <StagesState>
               <ShowcaseState>
                   <Router>
-                      <PageCover>
-                         <NavigationBar />
-                         <switch>
-                             <Route exact path={'/generator'} component={Generator}/>
-                             <Route exact path={'/test'} component={Test}/>
-                             <Route exact path={'/'} component={Home}/>
-                         </switch>
-                      </PageCover>
+                     <NavigationBar />
+                     <Switch>
+                         <Route exact path={'/generator'} component={Generator}/>
+                         <Route exact path={'/test'} component={Test}/>
+                         <Route exact path={'/'} component={Home}/>
+                     </Switch>
                   </Router>
               </ShowcaseState>
           </StagesState>

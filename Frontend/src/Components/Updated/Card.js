@@ -17,7 +17,7 @@ const Card = ({
                   shadowBlur = 20
               }) => {
 
-    const componentShadows = new ComponentShadows()
+    const componentShadows = new ComponentShadows();
 
     const setCardType = (type, borderRadius) => {
         switch (type) {

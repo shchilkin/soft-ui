@@ -18,7 +18,7 @@ const SoftUIControl = () => {
             display:'grid',
             gridGap:'1rem',
             gridTemplateRows:'1fr 2fr 1fr',
-            gridTemplateColumns:'4rem 1fr 4rem',
+            gridTemplateColumns:'4rem minmax(284px, 498px) 4rem',
             backgroundColor: '#F0F0F0'}}>
             <div
                 style={{
@@ -29,6 +29,7 @@ const SoftUIControl = () => {
                 <Card
                     backgroundColor={controlCardBG}
                     sameColorShadow = {true}
+                    style={{width:'minmax(0px, 498px'}}
                 >
                     <ControlStagesWrapper/>
                     <div style={{marginTop:'1rem'}}>

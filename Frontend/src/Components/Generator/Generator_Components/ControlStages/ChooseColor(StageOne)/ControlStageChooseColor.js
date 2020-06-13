@@ -9,6 +9,7 @@ import RGBinput from "./RGBinput";
 import TextInput from "../../../../Updated/TextInput";
 import IconButton from "./IconButton";
 import Card from "../../../../Updated/Card";
+import ColorButton from "../../../../Updated/ColorButton";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
@@ -82,6 +83,16 @@ const ControlStageChooseColor = () => {
         </svg>
     )
 
+    const colors = [
+        '#DCFE4B','#8BD173','#33D2D0',
+        '#56CAF4','#04A883','#ADC009',
+        '#FBA50E','#E63387','#F0E3D6',
+        '#530522','#03FA74','#ED2939',
+        "#303030","#303030","#303030",
+        "#303030","#303030","#303030",
+        "#303030","#303030",
+    ];
+
     return (
         <div style={{
             display:'grid',
@@ -134,6 +145,7 @@ const ControlStageChooseColor = () => {
             </div>
             <Button
                 sameShadowColor={true}
+                shadowBlur={15}
                 background={controlCardBG}
                 color={controlCardFont}
                 style={{
@@ -148,7 +160,21 @@ const ControlStageChooseColor = () => {
                 backgroundColor={"#F0F0F0"}
                 sameColorShadow={true}
                 isInsetShadow={true}
-                style={{ gridColumn:'1/6', gridRow:'3/3'}}/>
+                style={{ gridColumn:'1/6', gridRow:'3/3'}}>
+                <div
+                    id={'ColorPicker Grid'}
+                    style={{
+                        display:'flex',
+                        flexWrap:'wrap',
+                    }}
+                >
+                    {
+                        colors.map(
+                            color => <ColorButton onClick={() => changeColor("Hex",color)} color={color} />
+                        )
+                    }
+                </div>
+            </Card>
         </div>
     )
 }

@@ -12,14 +12,14 @@ const Button = ({
                     background = "#FFF",
                     color,
                     lightShadow,
-                    darkShadow
+                    darkShadow,
+                    shadowBlur = 30
                 }) => {
 
     const themeContext = useContext(ThemeContext);
     const {
         font,
         colorRGB,
-        shadowBlur,
         shadowLength,
         borderRadius,
     } = themeContext;

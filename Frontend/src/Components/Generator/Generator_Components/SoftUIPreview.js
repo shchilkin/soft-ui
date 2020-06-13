@@ -7,7 +7,9 @@ const SoftUIPreview = () => {
     const {colorHEX} = useContext(ThemeContext);
 
     return (
-        <div style={{
+        <div
+            id={'Preview Panel'}
+            style={{
             height:"100%",
             display:'grid',
             gridGap:'1rem',

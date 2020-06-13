@@ -1,4 +1,4 @@
-import React, {Fragment, useContext} from "react";
+import React, {useContext} from "react";
 import Input from "../../Layout/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
@@ -29,32 +29,34 @@ const RGBinput = () => {
     };
 
     return(
-        <Fragment>
-                   <Input
-                       type={"number"}
-                       style={{width:"33%", maxHeight:'32px', border: "0px", borderRadius:'6px',
-                           borderTopRightRadius:'0', borderBottomRightRadius:'0',textAlign:'center',marginBottom:'0'}}
-                       onChange={(event) => onChangeColor(event, "Red")}
-                       value={colorRGB.Red}
-                       props={componentProps}
-                   />
-                   <Input
-                       type={"number"}
-                       style={{width:"33%", maxHeight:'32px',border: "0px",borderRadius:'0',
-                           marginBottom:'0',textAlign:'center'}}
-                       onChange={(event) => onChangeColor(event, "Green")}
-                       value={colorRGB.Green}
-                       props={componentProps}
-                   />
-                   <Input
-                       type={"number"}
-                       style={{width:"33%", maxHeight:'32px', border: "0px",marginBottom:'0',textAlign:'center',
-                           borderRadius:'6px',borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}}
-                       onChange={(event) => onChangeColor(event, "Blue")}
-                       value={colorRGB.Blue}
-                       props={componentProps}
-                   />
-        </Fragment>
+        <div style={{
+            display:'grid',
+            gridTemplateColumns:'1fr 1fr 1fr',
+        }}>
+            <Input
+               type={"number"}
+               style={{height:'38px', border: "0px", borderRadius:'6px',
+                   borderTopRightRadius:'0', borderBottomRightRadius:'0',textAlign:'center',marginBottom:'0'}}
+               onChange={(event) => onChangeColor(event, "Red")}
+               value={colorRGB.Red}
+               props={componentProps}
+           />
+           <Input
+               type={"number"}
+               style={{height:'38px',border: "0px",borderRadius:'0', marginBottom:'0',textAlign:'center'}}
+               onChange={(event) => onChangeColor(event, "Green")}
+               value={colorRGB.Green}
+               props={componentProps}
+           />
+           <Input
+               type={"number"}
+               style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',
+                   borderRadius:'6px',borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}}
+               onChange={(event) => onChangeColor(event, "Blue")}
+               value={colorRGB.Blue}
+               props={componentProps}
+           />
+        </div>
    )
 };
 

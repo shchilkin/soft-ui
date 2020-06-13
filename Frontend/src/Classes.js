@@ -1,4 +1,4 @@
-import {calculateTintAndShades, hexToRGB} from "../../Functions";
+import {calculateTintAndShades, hexToRGB} from "./Functions";
 
 export class ComponentShadows {
 

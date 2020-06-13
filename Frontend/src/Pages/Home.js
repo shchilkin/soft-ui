@@ -69,9 +69,8 @@ const Home = () => {
                         </div>
                         <div className={'col-md-4 mb-3'}>
                             <Card
-                                background={darkModeBackground}
-                                lightShadow={showcaseLightShadow}
-                                darkShadow={showcaseDarkShadow}
+                                backgroundColor={darkModeBackground}
+                                shadowColorBase={backgroundColor}
                                 style={{height:'100%', display:'flex'}}>
                                 <DarkModeShowcaseFragment />
                             </Card>

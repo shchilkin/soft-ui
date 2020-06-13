@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {ComponentShadows} from "./Classes";
+import {ComponentShadows} from "../../Classes";
 
 
 const Card = ({

@@ -37,10 +37,9 @@ const ColorShowcaseFragment = () => {
     return(
         <Fragment>
             <Card
-                background={backgroundColor}
-                color={font}
-                lightShadow={lightShadow}
-                darkShadow={darkShadow}
+                backgroundColor={backgroundColor}
+                fontColor={font}
+                sameColorShadow={true}
             >
                 <h6 style={{fontSize:'1.05rem'}}>
                     Works with every color!
@@ -63,10 +62,9 @@ const ColorShowcaseFragment = () => {
                        style={{marginTop:'1.2rem',height:'35px',borderRadius:'6px',maxWidth:'110px'}}
                 />
                 <Card
-                    background={backgroundColor}
+                    backgroundColor={backgroundColor}
                     color={font}
-                    lightShadow={lightShadow}
-                    darkShadow={darkShadow}
+                    sameColorShadow={true}
                     style={{boxShadow:`${darkShadow} 5px 5px 30px 0px inset, ${lightShadow} -5px -5px 30px 0px inset`}}
                 >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>

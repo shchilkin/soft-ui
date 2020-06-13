@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import {calculateTintAndShades, hexToRGB} from "../../Functions";
 import ThemeContext from "../../contexts/theme/ThemeContext";
-import { ComponentShadows } from './Classes'
+import { ComponentShadows } from '../../Classes'
 
 
 const TextInput = ({

@@ -23,10 +23,9 @@ const DarkModeShowcaseFragment = () => {
 
     const DarkModeCard = (
             <Card
-                background={darkModeBackground}
-                darkShadow={darkModeBackgroundDarkShadow}
-                lightShadow={darkModeBackgroundLightShadow}
-                color={darkModeFont}
+                backgroundColor={darkModeBackground}
+                sameColorShadow={true}
+                fontColor={darkModeFont}
             >
                 <h6 style={{fontSize:'1.05rem'}}>Automatic{" "}
                     {isDarkModeMoreThan100(darkModeFactor) ? 'darkmode' : 'lightmode'} generation.

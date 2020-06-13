@@ -140,12 +140,14 @@ const ControlStageChooseColor = () => {
                     height:'38px',
                     gridColumn:'4/6',
                     gridRow:'2/3',
+                    borderRadius:'6px'
                 }}
                 onClick={() =>setColorInputMode(!colorInputMode)}
                 children={ colorInputMode ? "Hex" :'RGB'}/>
             <Card
                 backgroundColor={"#F0F0F0"}
                 sameColorShadow={true}
+                isInsetShadow={true}
                 style={{ gridColumn:'1/6', gridRow:'3/3'}}/>
         </div>
     )

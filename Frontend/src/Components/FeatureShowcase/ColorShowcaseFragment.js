@@ -65,7 +65,7 @@ const ColorShowcaseFragment = () => {
                     backgroundColor={backgroundColor}
                     color={font}
                     sameColorShadow={true}
-                    style={{boxShadow:`${darkShadow} 5px 5px 30px 0px inset, ${lightShadow} -5px -5px 30px 0px inset`}}
+                    isInsetShadow={true}
                 >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>
                         <ColorButton

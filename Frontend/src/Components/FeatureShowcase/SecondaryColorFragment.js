@@ -67,9 +67,9 @@ const SecondaryColorFragment = () => {
                 >Generate complementary color, or shades and tints of the main color</span><br/>
                 <Card
                     backgroundColor={secondaryColor}
+                    sameColorShadow={true}
                     fontColor={font}
-                    style={{marginTop:'1rem',
-                        boxShadow:`${secondaryColorDarkShadow} 5px 5px 30px 0px inset,${secondaryColorLightShadow} -5px -5px 30px 0px inset`}}
+                    isInsetShadow={true}
                 >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>
                         <ColorButton

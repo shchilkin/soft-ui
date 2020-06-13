@@ -9,11 +9,11 @@ const Card = ({
                   type='default',
                   backgroundColor,
                   fontColor,
-                  sameColorShadow = false,
-                  insetShadow = false,
+                  sameColorShadow: isSameColorShadow = false,
+                  isInsetShadow = false,
                   shadowColorBase,
                   borderRadius = 12,
-                  shadowLength = 10,
+                  shadowLength = 5,
                   shadowBlur = 20
               }) => {
 
@@ -66,7 +66,7 @@ const Card = ({
         }
     }
 
-    const {dark, light} = componentShadows.getShadows(backgroundColor, sameColorShadow, shadowColorBase)
+    const {dark, light} = componentShadows.getShadows(backgroundColor, isSameColorShadow, shadowColorBase)
 
     const {topLeft, topRight, bottomLeft, bottomRight} = setCardType(type, borderRadius)
 
@@ -87,6 +87,7 @@ const Card = ({
             shadowLength={shadowLength}
             shadowBlur={shadowBlur}
             style={{...style}}
+            isInsetShadow={isInsetShadow}
         >
             {children}
         </StyledCard>
@@ -110,6 +111,15 @@ export const StyledCard = styled.div`
     border-top-right-radius: ${props => props.borderRadiusTopRight}px;
     border-bottom-left-radius: ${props => props.borderRadiusBottomLeft}px;
     border-bottom-right-radius: ${props => props.borderRadiusBottomRight}px;
-    box-shadow: ${props => props.shadowLength}px ${props => props.shadowLength}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
-    -${props => props.shadowLength}px -${props => props.shadowLength}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
+    box-shadow: ${ props => props.isInsetShadow ?
+    `inset ${props.shadowLength}px ${props.shadowLength}px ${props.shadowBlur}px 0 ${props.darkerShadow},
+     inset -${props.shadowLength}px -${props.shadowLength}px ${props.shadowBlur}px 0 ${props.lighterShadow}`
+    :
+    `${props.shadowLength}px ${props.shadowLength}px ${props.shadowBlur}px 0 ${props.darkerShadow},
+    -${props.shadowLength}px -${props.shadowLength}px ${props.shadowBlur}px 0 ${props.lighterShadow}`
+};
 `;
+
+
+
+

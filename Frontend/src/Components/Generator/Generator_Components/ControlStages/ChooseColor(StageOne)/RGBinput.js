@@ -1,12 +1,11 @@
 import React, {useContext} from "react";
-import Input from "../../Layout/Input/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
-import TextInput from "../../Layout/Input/TextInput";
+import TextInput from "../../../../Updated/TextInput";
 
 
 const RGBinput = () => {
 
-    const {colorRGB, colorHEX, changeColor} = useContext(ThemeContext);
+    const {colorRGB, font, colorHEX, changeColor} = useContext(ThemeContext);
 
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
 
@@ -17,6 +16,7 @@ const RGBinput = () => {
         }}>
             <TextInput
                type={"number"}
+               fontColor={font}
                backgroundColor={`#${colorHEX}`}
                shadowColorBase={"#F0F0F0"}
                style={{height:'38px', border: "0px", borderRadius:'6px',
@@ -26,6 +26,7 @@ const RGBinput = () => {
            />
            <TextInput
                type={"number"}
+               fontColor={font}
                backgroundColor={`#${colorHEX}`}
                shadowColorBase={"#F0F0F0"}
                style={{height:'38px',border: "0px",borderRadius:'0', marginBottom:'0',textAlign:'center'}}
@@ -34,6 +35,7 @@ const RGBinput = () => {
            />
            <TextInput
                type={"number"}
+               fontColor={font}
                shadowColorBase={"#F0F0F0"}
                backgroundColor={`#${colorHEX}`}
                style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',

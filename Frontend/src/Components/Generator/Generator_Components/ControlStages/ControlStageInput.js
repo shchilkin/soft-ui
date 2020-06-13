@@ -45,16 +45,6 @@ const ControlStageInput = () => {
 
     return (
         <div
-            style={{
-                minHeight: "100px",
-                showcaseColor: mainColor,
-                color: font,
-                mixBlendMode: "normal",
-                boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                                 -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-                border: `1px solid ${mainColor}`,
-                borderRadius: `${borderRadius}px`,
-            }}
             className={"pt-3 pb-3 pl-3 pr-3"}
         >
             <div className={"row"}>

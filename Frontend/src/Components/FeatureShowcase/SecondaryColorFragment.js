@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {calculateTintAndShades, hexToRGB, fontColor, calculateColors, fontColorHex} from "../../Functions";
 import ColorButton from "../Generator/Generator_Components/Layout/ColorButton";
-import Card from "../Generator/Generator_Components/Layout/Card";
+import Card from "../Updated/Card";
 import ThemeContext from '../../contexts/theme/ThemeContext'
 import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'
 
@@ -10,7 +10,7 @@ const SecondaryColorFragment = () => {
     const {shadowBlur, shadowLength} = themeContext;
 
     const colorShowcaseContext = useContext(ShowcaseContext)
-    const {backgroundColor,showcaseDarkShadow,showcaseLightShadow, secondaryColor,
+    const {backgroundColor, secondaryColor,
         secondaryColorDarkShadow, secondaryColorLightShadow,
         changeSecondaryColor} = colorShowcaseContext;
 
@@ -51,10 +51,9 @@ const SecondaryColorFragment = () => {
     return(
         <div style={{height:'100%', display:'flex'}}>
             <Card
-                background={secondaryColor}
-                color={font}
-                lightShadow={showcaseLightShadow}
-                darkShadow={showcaseDarkShadow}
+                backgroundColor={secondaryColor}
+                fontColor={font}
+                shadowColorBase={backgroundColor}
             >
                 <h6 style={{fontSize:'1.05rem'}}>
                     Generate a secondary color!
@@ -67,12 +66,10 @@ const SecondaryColorFragment = () => {
                     marginBottom:'1.2rem'}}
                 >Generate complementary color, or shades and tints of the main color</span><br/>
                 <Card
-                    background={secondaryColor}
-                    color={font}
-                    lightShadow={secondaryColorLightShadow}
-                    darkShadow={secondaryColorDarkShadow}
-                    style={{marginTop:'1rem',
-                        boxShadow:`${secondaryColorDarkShadow} 5px 5px 30px 0px inset,${secondaryColorLightShadow} -5px -5px 30px 0px inset`}}
+                    backgroundColor={secondaryColor}
+                    sameColorShadow={true}
+                    fontColor={font}
+                    isInsetShadow={true}
                 >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>
                         <ColorButton
@@ -261,7 +258,6 @@ const SecondaryColorFragment = () => {
                                 mainDarkShadow)}
                         />
                     </div>
-
                 </Card>
             </Card>
         </div>

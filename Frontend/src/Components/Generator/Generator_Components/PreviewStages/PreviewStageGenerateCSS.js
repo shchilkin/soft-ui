@@ -1,7 +1,7 @@
 import React, {Fragment, useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades, toHex} from "../../../../Functions";
-import Card from "../Layout/Card";
+import Card from "../../../Updated/Card";
 import StagesContext from "../../../../contexts/Stages/StagesContext";
 
 const PreviewStageGenerateCSS = () => {

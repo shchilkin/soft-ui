@@ -171,6 +171,7 @@ export default (state, action) => {
                         )
                     }
                 case "Hex":
+                case "HEX":
                     let hexString = (action.payload.colorValue).replace(/#/, '')
                     if (isHexValid(hexString)){
                         return {

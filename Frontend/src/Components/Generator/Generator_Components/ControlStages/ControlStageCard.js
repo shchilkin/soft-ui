@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {Fragment, useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import Badge from "../../../Badge/Badge.component";
 import Input from "../Layout/Input/Input";
@@ -44,19 +44,7 @@ const ControlStageCard = () => {
 
 
     return (
-        <div
-            style={{
-                minHeight: "100px",
-                showcaseColor: mainColor,
-                color: font,
-                mixBlendMode: "normal",
-                boxShadow: `${shadowLength}px ${shadowLength}px ${shadowBlur}px 0 ${darkerShadow},
-                                 -${shadowLength}px -${shadowLength}px ${shadowBlur}px 0 ${lighterShadow}`,
-                border: `1px solid ${mainColor}`,
-                borderRadius: `${borderRadius}px`,
-            }}
-            className={"pt-3 pb-3 pl-3 pr-3"}
-        >
+        <Fragment>
             <div className={"row"}>
                 <div className={"col-md-4"}>
                     <h6><Badge style={{ backgroundColor: darkerShadow, color:font}}>Blur</Badge></h6>
@@ -109,7 +97,7 @@ const ControlStageCard = () => {
                     />
                 </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

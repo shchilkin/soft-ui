@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Button from "../Components/Generator/Generator_Components/Layout/Button";
 import {Link} from "react-router-dom";
-import Card from "../Components/Generator/Generator_Components/Layout/Card";
+import Card from "../Components/Updated/Card";
 import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFragment";
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import ThemeContext from "../contexts/theme/ThemeContext";
@@ -69,9 +69,8 @@ const Home = () => {
                         </div>
                         <div className={'col-md-4 mb-3'}>
                             <Card
-                                background={darkModeBackground}
-                                lightShadow={showcaseLightShadow}
-                                darkShadow={showcaseDarkShadow}
+                                backgroundColor={darkModeBackground}
+                                shadowColorBase={backgroundColor}
                                 style={{height:'100%', display:'flex'}}>
                                 <DarkModeShowcaseFragment />
                             </Card>

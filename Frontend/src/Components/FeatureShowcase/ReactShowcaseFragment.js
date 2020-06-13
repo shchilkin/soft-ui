@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import Card from "../Generator/Generator_Components/Layout/Card";
+import Card from "../Updated/Card";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import ShowcaseContext from "../../contexts/showcase/ShowcaseContext";
 import ReactLogo from '../../Assets/React-icon.svg'

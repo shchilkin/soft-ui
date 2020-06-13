@@ -1,5 +1,5 @@
 import React, {Fragment, useContext} from "react";
-import Card from "../Generator/Generator_Components/Layout/Card";
+import Card from "../Updated/Card";
 import Input from "../Generator/Generator_Components/Layout/Input/Input";
 import ShowcaseContext from "../../contexts/showcase/ShowcaseContext";
 
@@ -23,10 +23,9 @@ const DarkModeShowcaseFragment = () => {
 
     const DarkModeCard = (
             <Card
-                background={darkModeBackground}
-                darkShadow={darkModeBackgroundDarkShadow}
-                lightShadow={darkModeBackgroundLightShadow}
-                color={darkModeFont}
+                backgroundColor={darkModeBackground}
+                sameColorShadow={true}
+                fontColor={darkModeFont}
             >
                 <h6 style={{fontSize:'1.05rem'}}>Automatic{" "}
                     {isDarkModeMoreThan100(darkModeFactor) ? 'darkmode' : 'lightmode'} generation.

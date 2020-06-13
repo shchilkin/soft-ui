@@ -19,6 +19,8 @@ import SoftUIControl from "./Generator_Components/SoftUIControl";
 //#F0E3D6 orange-ish white
 //#530522 dark cherry red
 
+//#03FA74 Cool green 
+
 const Generator = () => {
     //  Full link | https://www.softui.io/generator
     const href = window.location.href;

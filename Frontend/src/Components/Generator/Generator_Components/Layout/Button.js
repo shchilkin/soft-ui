@@ -4,14 +4,16 @@ import ThemeContext from '../../../../contexts/theme/ThemeContext'
 import {calculateTintAndShades, hexToRGB} from '../../../../Functions'
 
 
-const Button = ({children,
+const Button = ({
+                    children,
                     sameShadowColor = false,
                     onClick,
                     style,
                     background = "#FFF",
                     color,
                     lightShadow,
-                    darkShadow}) => {
+                    darkShadow
+                }) => {
 
     const themeContext = useContext(ThemeContext);
     const {

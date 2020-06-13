@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 
-const IconButton = ({title,onClick,background,viewBox,path,children, isSVGinChildren = false}) => {
-
-
-    console.log(styled.button)
+const IconButton = ({title, style, onClick, background, viewBox, path, children, isSVGinChildren = false}) => {
 
     return(
         <StyledIconButton
+            style={style}
             background={background}
             title={title}
-            onClick={onClick}>{isSVGinChildren ? children : svgWrapper(viewBox, path)}</StyledIconButton>
+            onClick={onClick}>
+            {isSVGinChildren ? children : svgWrapper(viewBox, path)}
+        </StyledIconButton>
     )
 }
 
@@ -32,7 +32,6 @@ const svgWrapper = (viewBox, path) => {
 const StyledIconButton = styled.button`
     width: 38px;
     height: 38px;
-    margin-right: 10px;
     background-color:${props => props.background};
     border: 1px solid ${props => props.background};
     transition: background-color .5s, color .5s;       

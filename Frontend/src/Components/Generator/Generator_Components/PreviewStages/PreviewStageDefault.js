@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import Button from "../Layout/Button";
-import Input from "../Layout/Input";
+import Input from "../Layout/Input/Input";
 
 const PreviewStageDefault = () => {
 

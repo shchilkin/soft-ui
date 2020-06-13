@@ -3,7 +3,7 @@ import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import {getRandomInt, toHex} from "../../../../Functions";
 import Badge from "../../../Badge/Badge.component";
 import Button from "../Layout/Button";
-import Input from "../Layout/Input";
+import Input from "../Layout/Input/Input";
 import ColorPickerSketch from "../ColorPickers/colorPickerSketch";
 
 const ControlStageDefault = () => {

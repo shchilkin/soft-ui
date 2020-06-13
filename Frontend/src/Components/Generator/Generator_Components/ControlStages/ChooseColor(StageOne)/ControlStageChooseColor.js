@@ -1,34 +1,28 @@
-import React, {Fragment, useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 import {
-    calculateTintAndShades,
     fontColorHex,
     getRandomInt
 } from "../../../../../Functions";
 import Button from "../../Layout/Button";
-import Card from "../../Layout/Card";
 import RGBinput from "./RGBinput";
-import Input from "../../Layout/Input";
-import Badge from "../../../../Badge/Badge.component";
+import TextInput from "../../Layout/Input/TextInput";
 import IconButton from "./IconButton";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
     const {
         colorHEX,
+        font,
         changeColor,
-        shadowBlur,
-        shadowLength,
         resetTheme,
         inverseFont,} = themeContext;
 
     const controlCardBG = "#F0F0F0";
-    const font = fontColorHex(controlCardBG);
-    const darkShadow = calculateTintAndShades(240,240,240,85)
-    const lightShadow = calculateTintAndShades(240,240,240,105)
+    const controlCardFont = fontColorHex(controlCardBG);
 
     // True for Hex and False for RGB
-    const [colorInputMode, setColorInputMode] = useState(false);
+    const [colorInputMode, setColorInputMode] = useState(true);
 
     const generateRandom = () => {
         let rgbObject = {
@@ -42,12 +36,15 @@ const ControlStageChooseColor = () => {
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
 
     const hexInput = (
-        <Input
-        onChange={(event) => onChangeColor(event, "Hex")}
-        value={colorHEX}
-        style={{maxHeight:'32px', border: "0px",marginBottom:'0',textAlign:'center',
-            borderRadius:'6px'}}
-        placeholder={"#000000"}
+        <TextInput
+            shadowColorBase={"#F0F0F0"}
+            onChange={(event) => onChangeColor(event, "Hex")}
+            value={colorHEX}
+            backgroundColor={`#${colorHEX}`}
+            fontColor={font}
+            style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',
+                borderRadius:'6px'}}
+            placeholder={"#000000"}
     />
     )
 
@@ -85,67 +82,64 @@ const ControlStageChooseColor = () => {
     )
 
     return (
-        <Fragment>
-            <div className={'mb-3'}>
-                <Card
-                    background={controlCardBG}
-                    darkShadow={darkShadow}
-                    lightShadow={lightShadow}
-                >
-                    <h5 style={{marginLeft:'15px',color:font}}>Pick a color</h5>
-                    <div className={'container pb-3'} style={{
-                        backgroundColor:controlCardBG,
-                        borderBottomRightRadius:'8px',borderBottomLeftRadius:'8px'}}>
-                        <div style={{display:'inline-block', marginBottom:"1rem"}}>
-                            <IconButton
-                                title="Inverse text color"
-                                background={controlCardBG}
-                                isSVGinChildren={true}
-                                onClick={() => inverseFont()}>
-                                {inverseSVG}
-                            </IconButton>
-                            <IconButton
-                                title={"Generate random color"}
-                                onClick={generateRandom}
-                                background={controlCardBG}
-                                path={randomIcon.path}
-                                viewBox={randomIcon.viewBox}
-                            />
-                            <IconButton
-                                title={"Reset to default color"}
-                                onClick={resetTheme}
-                                background={controlCardBG}
-                                path={resetIcon.path}
-                                viewBox={resetIcon.viewBox}
-                            />
-                        </div>
-                        <div className={'row'}>
-                            <div className={'mb-3 col-md-4'}>
-                                <Button
-                                    sameShadowColor={true}
-                                    background={controlCardBG}
-                                    color={font}
-                                    style={{height:'50px'}}
-                                    onClick={() =>setColorInputMode(!colorInputMode)}
-                                    children={ colorInputMode ? "Hex" :'RGB'}/>
-                            </div>
-                            <div className={'col-md-8'}>
-                                <div style={{borderRadius:'12px',
-                                    boxShadow:`5px 5px 30px 0 
-                                    ${calculateTintAndShades(240,240,240,85)},
-                                     -5px -5px 30px 0 ${calculateTintAndShades(240,240,240,105)}`,}}>
-                                    <div style={{padding:'9px',borderRadius:'12px',
-                                        borderTopLeftRadius:'0',borderBottomLeftRadius:'0'
-                                    }}>
-                                        {colorInputMode ? hexInput : <RGBinput/>}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Card>
+        <div style={{
+            display:'grid',
+            gridTemplateRows:'1fr 1fr',
+            gridGap:'10px',
+            gridTemplateColumns:"5fr 1fr repeat(3, 40px)"
+
+        }}>
+            <h4 style={{color:controlCardFont}}>Pick a color</h4>
+            <IconButton
+                style={{
+                    gridColumn:'3/4',
+                    gridRow:'1/2',
+                }}
+                title="Inverse text color"
+                background={controlCardBG}
+                isSVGinChildren={true}
+                onClick={() => inverseFont()}>
+                {inverseSVG}
+            </IconButton>
+            <IconButton
+                style={{
+                    gridColumn:'4/5',
+                    gridRow:'1/2',
+                }}
+                title={"Generate random color"}
+                onClick={generateRandom}
+                background={controlCardBG}
+                path={randomIcon.path}
+                viewBox={randomIcon.viewBox}
+            />
+            <IconButton
+                style={{
+                    gridColumn:'5/5',
+                    gridRow:'1/2',
+                }}
+                title={"Reset to default color"}
+                onClick={resetTheme}
+                background={controlCardBG}
+                path={resetIcon.path}
+                viewBox={resetIcon.viewBox}
+            />
+            <div style={{borderRadius:'12px',
+                gridColumn:'1/4',
+                gridRow:'2/3',}}>
+                {colorInputMode ? hexInput : <RGBinput/>}
             </div>
-        </Fragment>
+            <Button
+                sameShadowColor={true}
+                background={controlCardBG}
+                color={controlCardFont}
+                style={{
+                    height:'38px',
+                    gridColumn:'4/6',
+                    gridRow:'2/3',
+                }}
+                onClick={() =>setColorInputMode(!colorInputMode)}
+                children={ colorInputMode ? "Hex" :'RGB'}/>
+        </div>
     )
 }
 

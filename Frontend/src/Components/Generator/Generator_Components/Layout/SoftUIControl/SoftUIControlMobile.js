@@ -1,6 +1,6 @@
 import ColorPickerSketch from "../../ColorPickers/colorPickerSketch";
 import Button from "../Button";
-import Input from "../Input";
+import Input from "../Input/Input";
 import {getRandomInt, toHex} from "../../../../../Functions";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";

@@ -5,13 +5,12 @@ import styled from "styled-components";
 import {calculateTintAndShades, toHex} from "../../Functions";
 import {Link} from "react-router-dom";
 const NavigationBar = () => {
-    const themeContext =  useContext(ThemeContext);
     const {
         font,
         colorRGB,
         shadows,
         borderRadius
-    } = themeContext;
+    }=  useContext(ThemeContext);
 
     const {Red, Green, Blue} = colorRGB;
 

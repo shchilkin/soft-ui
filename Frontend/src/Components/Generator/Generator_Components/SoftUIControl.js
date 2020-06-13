@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import ControlStagesWrapper from "./ControlStages/ControlStagesWrapper";
 import OptionBar from "./OptionBar/OptionBar";
-import Card from "./Layout/Card";
+import Card from "../../Updated/Card";
 import {calculateTintAndShades, fontColorHex} from "../../../Functions";
 
 
@@ -27,9 +27,8 @@ const SoftUIControl = () => {
                 }}
             >
                 <Card
-                    background={controlCardBG}
-                    darkShadow={darkShadow}
-                    lightShadow={lightShadow}
+                    backgroundColor={controlCardBG}
+                    sameColorShadow = {true}
                 >
                     <ControlStagesWrapper/>
                     <div style={{marginTop:'1rem'}}>

@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
-import {calculateTintAndShades, hexToRGB} from "../../../../../Functions";
-import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import {calculateTintAndShades, hexToRGB} from "../../Functions";
+import ThemeContext from "../../contexts/theme/ThemeContext";
+import { ComponentShadows } from './Classes'
 
 
 const TextInput = ({
@@ -12,6 +13,8 @@ const TextInput = ({
                        shadowColorBase,
                        onChange, value, style, placeholder}) => {
 
+    const componentShadows = new ComponentShadows()
+
     const { colorRGB } = useContext(ThemeContext);
 
     const {Red,Green,Blue} = colorRGB
@@ -21,30 +24,7 @@ const TextInput = ({
         light: calculateTintAndShades(Red, Green, Blue,105)
     }
 
-    const getShadows = () => {
-        console.log('Get Shadows function', sameColorShadow, shadowColorBase)
-        if (sameColorShadow){
-            return {
-                dark: mainColorShadows.dark,
-                light: mainColorShadows.light,
-            }
-        }
-        else if (shadowColorBase !== undefined) {
-            let {Red:red, Green: green, Blue: blue} = hexToRGB(shadowColorBase)
-            return {
-                dark: calculateTintAndShades(red, green, blue),
-                light: calculateTintAndShades(red, green, blue,105)
-            }
-        }
-        else return {
-                dark: calculateTintAndShades(255,255,255),
-                light: calculateTintAndShades(255, 255, 255,105)
-            }
-    }
-
-    const {dark, light} = getShadows();
-
-    console.log("shadows from getShadows", dark,light)
+    const {dark, light} = componentShadows.getShadows(backgroundColor, sameColorShadow, shadowColorBase)
 
     return (
         <StyledInput

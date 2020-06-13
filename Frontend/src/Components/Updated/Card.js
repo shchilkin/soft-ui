@@ -1,19 +1,25 @@
-import React, {useContext} from "react";
-import {StyledCard} from "../../../../StyledComponents";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import React from "react";
+import styled from "styled-components";
+import {ComponentShadows} from "./Classes";
 
 
 const Card = ({
                   children,
                   style,
                   type='default',
-                  background,
-                  color,
-                  lightShadow,
-                  darkShadow
+                  backgroundColor,
+                  fontColor,
+                  sameColorShadow = false,
+                  insetShadow = false,
+                  shadowColorBase,
+                  borderRadius = 12,
+                  shadowLength = 10,
+                  shadowBlur = 20
               }) => {
 
-    const setCardType = (type) => {
+    const componentShadows = new ComponentShadows()
+
+    const setCardType = (type, borderRadius) => {
         switch (type) {
             case "top":
                 return {
@@ -60,30 +66,16 @@ const Card = ({
         }
     }
 
-    const themeContext = useContext(ThemeContext);
-    const {
-        font,
-        colorRGB,
-        shadows,
-        shadowBlur,
-        shadowLength,
-        borderRadius,
-    } = themeContext;
+    const {dark, light} = componentShadows.getShadows(backgroundColor, sameColorShadow, shadowColorBase)
 
-    const {topLeft, topRight, bottomLeft, bottomRight} = setCardType(type)
-
-    const lighterShadows = shadows.ligherShadowArray;
-    const darkerShadows = shadows.darkerShadowArray;
-    const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
+    const {topLeft, topRight, bottomLeft, bottomRight} = setCardType(type, borderRadius)
 
     return (
         <StyledCard
-            background={background || mainColor}
-            lighterShadow={lightShadow || lighterShadow}
-            darkerShadow={darkShadow || darkerShadow}
-            color={color || font}
+            background={backgroundColor}
+            lighterShadow={light}
+            darkerShadow={dark}
+            color={fontColor}
             paddingTop={'1rem'}
             paddingBottom={'1rem'}
             paddingLeft={'1rem'}
@@ -92,10 +84,7 @@ const Card = ({
             borderRadiusTopRight={topRight}
             borderRadiusBottomRight={bottomRight}
             borderRadiusBottomLeft={bottomLeft}
-            shadowLengthBottomX={shadowLength}
-            shadowLengthBottomY={shadowLength}
-            shadowLengthTopX={shadowLength}
-            shadowLengthTopY={shadowLength}
+            shadowLength={shadowLength}
             shadowBlur={shadowBlur}
             style={{...style}}
         >
@@ -105,3 +94,22 @@ const Card = ({
 }
 
 export default Card;
+
+export const StyledCard = styled.div`
+    width: 100%;
+    min-height: 50px;
+    background-color: ${props => props.background};
+    padding-top: ${props => props.paddingTop};
+    padding-bottom: ${props => props.paddingBottom};
+    padding-left: ${props => props.paddingLeft};
+    padding-right: ${props => props.paddingRight};
+    color: ${props => props.color};
+    mix-blend-mode: normal;
+    border: 1px solid ${props => props.background};
+    border-top-left-radius: ${props => props.borderRadiusTopLeft}px;
+    border-top-right-radius: ${props => props.borderRadiusTopRight}px;
+    border-bottom-left-radius: ${props => props.borderRadiusBottomLeft}px;
+    border-bottom-right-radius: ${props => props.borderRadiusBottomRight}px;
+    box-shadow: ${props => props.shadowLength}px ${props => props.shadowLength}px ${props => props.shadowBlur}px 0 ${props => props.darkerShadow},
+    -${props => props.shadowLength}px -${props => props.shadowLength}px ${props => props.shadowBlur}px 0 ${props => props.lighterShadow};
+`;

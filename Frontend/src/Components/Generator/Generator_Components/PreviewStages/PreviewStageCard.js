@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades, generateTintAndShades, toHex} from "../../../../Functions";
-import Card from "../Layout/Card";
+import Card from "../../../Updated/Card";
 import Button from "../Layout/Button";
 
 const PreviewStageCard = () => {

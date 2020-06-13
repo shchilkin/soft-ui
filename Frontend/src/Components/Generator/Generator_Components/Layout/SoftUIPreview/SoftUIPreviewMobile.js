@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import Button from "../Button";
-import Input from "../Input";
+import Input from "../Input/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 const SoftUIPreviewMobile = () => {

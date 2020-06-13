@@ -1,7 +1,7 @@
 import React, {Fragment, useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import Badge from "../../../Badge/Badge.component";
-import Input from "../Layout/Input";
+import Input from "../Layout/Input/Input";
 
 const ControlStageButton = () => {
     const themeContext = useContext(ThemeContext);

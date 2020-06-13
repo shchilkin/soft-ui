@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from 'styled-components'
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 
 // excess height to improve interactive area / accessibility
 const height = "18px";

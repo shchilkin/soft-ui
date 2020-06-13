@@ -2,7 +2,7 @@ import React, {Fragment, useContext, useState} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 import Card from "../../Layout/Card";
 import {calculateTintAndShades, hexToRGB, fontColor} from "../../../../../Functions";
-import Input from "../../Layout/Input";
+import Input from "../../Layout/Input/Input";
 import ColorShowcaseCard from "./ColorShowcaseCard";
 import ReactCard from "./ReactCard";
 import ColorButton from "../../Layout/ColorButton";

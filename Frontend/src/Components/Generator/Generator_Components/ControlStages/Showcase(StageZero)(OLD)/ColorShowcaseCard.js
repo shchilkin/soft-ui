@@ -4,7 +4,7 @@ import React, {useContext} from "react";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../../../../Functions";
 import ShowcaseContext from "../../../../../contexts/showcase/ShowcaseContext";
-import Input from "../../Layout/Input";
+import Input from "../../Layout/Input/Input";
 
 const ColorShowcaseCard = () => {
     const themeContext = useContext(ThemeContext);

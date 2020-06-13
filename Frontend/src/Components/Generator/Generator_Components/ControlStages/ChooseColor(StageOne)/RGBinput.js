@@ -1,60 +1,45 @@
 import React, {useContext} from "react";
-import Input from "../../Layout/Input";
+import Input from "../../Layout/Input/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import TextInput from "../../Layout/Input/TextInput";
 
 
 const RGBinput = () => {
 
-    const themeContext = useContext(ThemeContext);
-    const {font, colorRGB, shadows, shadowBlur, shadowLength, changeColor} = themeContext;
+    const {colorRGB, colorHEX, changeColor} = useContext(ThemeContext);
 
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
-
-    const {Red, Green, Blue} = colorRGB;
-
-    const lighterShadows = shadows.ligherShadowArray;
-    const darkerShadows = shadows.darkerShadowArray;
-    const mainColor = `rgb(${Red}, ${Green}, ${Blue})`;
-    const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
-    const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`;
-
-
-    const componentProps = {
-        mainColor: mainColor,
-        font: font,
-        Blur: shadowBlur,
-        shadowLength: shadowLength,
-        darkerShadow: darkerShadow,
-        lighterShadow: lighterShadow,
-    };
 
     return(
         <div style={{
             display:'grid',
             gridTemplateColumns:'1fr 1fr 1fr',
         }}>
-            <Input
+            <TextInput
                type={"number"}
+               backgroundColor={`#${colorHEX}`}
+               shadowColorBase={"#F0F0F0"}
                style={{height:'38px', border: "0px", borderRadius:'6px',
                    borderTopRightRadius:'0', borderBottomRightRadius:'0',textAlign:'center',marginBottom:'0'}}
                onChange={(event) => onChangeColor(event, "Red")}
                value={colorRGB.Red}
-               props={componentProps}
            />
-           <Input
+           <TextInput
                type={"number"}
+               backgroundColor={`#${colorHEX}`}
+               shadowColorBase={"#F0F0F0"}
                style={{height:'38px',border: "0px",borderRadius:'0', marginBottom:'0',textAlign:'center'}}
                onChange={(event) => onChangeColor(event, "Green")}
                value={colorRGB.Green}
-               props={componentProps}
            />
-           <Input
+           <TextInput
                type={"number"}
+               shadowColorBase={"#F0F0F0"}
+               backgroundColor={`#${colorHEX}`}
                style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',
                    borderRadius:'6px',borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}}
                onChange={(event) => onChangeColor(event, "Blue")}
                value={colorRGB.Blue}
-               props={componentProps}
            />
         </div>
    )

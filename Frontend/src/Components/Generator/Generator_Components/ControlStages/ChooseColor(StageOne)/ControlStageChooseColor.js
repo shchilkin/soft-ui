@@ -6,22 +6,23 @@ import {
 } from "../../../../../Functions";
 import Button from "../../Layout/Button";
 import RGBinput from "./RGBinput";
-import Input from "../../Layout/Input";
+import TextInput from "../../Layout/Input/TextInput";
 import IconButton from "./IconButton";
 
 const ControlStageChooseColor = () => {
     const themeContext = useContext(ThemeContext);
     const {
         colorHEX,
+        font,
         changeColor,
         resetTheme,
         inverseFont,} = themeContext;
 
     const controlCardBG = "#F0F0F0";
-    const font = fontColorHex(controlCardBG);
+    const controlCardFont = fontColorHex(controlCardBG);
 
     // True for Hex and False for RGB
-    const [colorInputMode, setColorInputMode] = useState(false);
+    const [colorInputMode, setColorInputMode] = useState(true);
 
     const generateRandom = () => {
         let rgbObject = {
@@ -35,12 +36,15 @@ const ControlStageChooseColor = () => {
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
 
     const hexInput = (
-        <Input
-        onChange={(event) => onChangeColor(event, "Hex")}
-        value={colorHEX}
-        style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',
-            borderRadius:'6px'}}
-        placeholder={"#000000"}
+        <TextInput
+            shadowColorBase={"#F0F0F0"}
+            onChange={(event) => onChangeColor(event, "Hex")}
+            value={colorHEX}
+            backgroundColor={`#${colorHEX}`}
+            fontColor={font}
+            style={{height:'38px', border: "0px",marginBottom:'0',textAlign:'center',
+                borderRadius:'6px'}}
+            placeholder={"#000000"}
     />
     )
 
@@ -85,7 +89,7 @@ const ControlStageChooseColor = () => {
             gridTemplateColumns:"5fr 1fr repeat(3, 40px)"
 
         }}>
-            <h4 style={{color:font}}>Pick a color</h4>
+            <h4 style={{color:controlCardFont}}>Pick a color</h4>
             <IconButton
                 style={{
                     gridColumn:'3/4',
@@ -127,7 +131,7 @@ const ControlStageChooseColor = () => {
             <Button
                 sameShadowColor={true}
                 background={controlCardBG}
-                color={font}
+                color={controlCardFont}
                 style={{
                     height:'38px',
                     gridColumn:'4/6',

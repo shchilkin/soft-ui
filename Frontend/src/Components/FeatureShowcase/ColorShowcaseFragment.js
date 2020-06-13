@@ -2,7 +2,7 @@ import React, {Fragment, useContext} from "react";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../Functions";
 import ColorButton from "../Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Generator/Generator_Components/Layout/Card";
-import Input from "../Generator/Generator_Components/Layout/Input";
+import Input from "../Generator/Generator_Components/Layout/Input/Input";
 import ThemeContext from '../../contexts/theme/ThemeContext'
 import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'
 

@@ -13,7 +13,7 @@ const TextInput = ({
                        shadowColorBase,
                        onChange, value, style, placeholder}) => {
 
-    const componentShadows = new ComponentShadows()
+    const componentShadows = new ComponentShadows(backgroundColor, sameColorShadow, shadowColorBase)
 
     const { colorRGB } = useContext(ThemeContext);
 
@@ -24,7 +24,7 @@ const TextInput = ({
         light: calculateTintAndShades(Red, Green, Blue,105)
     }
 
-    const {dark, light} = componentShadows.getShadows(backgroundColor, sameColorShadow, shadowColorBase)
+    const {dark, light} = componentShadows.getShadows()
 
     return (
         <StyledInput

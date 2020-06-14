@@ -39,7 +39,7 @@ const Generator = () => {
         if (isHexValid(colorFromURL)){
             changeColor("Hex", colorFromURL)
         }
-    }, [colorFromURL,viewPortHeight]);
+    }, [colorFromURL, viewPortHeight, changeColor]);
 
     return (
       <div

@@ -13,7 +13,7 @@ const PreviewStageChooseColor = () => {
     return (
         <Card
             backgroundColor={`#${colorHEX}`}
-            sameColorShadow={true}
+            isSameColorShadow={true}
             fontColor={font}
             style={{height:'100%'}}>
             <Badge background={darkShadowColor}>Preview</Badge>

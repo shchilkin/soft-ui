@@ -1,23 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import {ComponentShadows} from "../../Classes";
+import PropTypes, {bool, node, number, object, oneOfType, string} from 'prop-types';
 
 
 const Card = ({
                   children,
                   style,
-                  type='default',
+                  type,
                   backgroundColor,
                   fontColor,
-                  sameColorShadow: isSameColorShadow = false,
-                  isInsetShadow = false,
+                  isSameColorShadow,
+                  isInsetShadow,
                   shadowColorBase,
-                  borderRadius = 12,
-                  shadowLength = 5,
-                  shadowBlur = 20
+                  borderRadius,
+                  shadowLength,
+                  shadowBlur
               }) => {
 
-    const componentShadows = new ComponentShadows();
+    const componentShadows = new ComponentShadows(backgroundColor, isSameColorShadow, shadowColorBase);
 
     const setCardType = (type, borderRadius) => {
         switch (type) {
@@ -66,7 +67,7 @@ const Card = ({
         }
     }
 
-    const {dark, light} = componentShadows.getShadows(backgroundColor, isSameColorShadow, shadowColorBase)
+    const {dark, light} = componentShadows.getShadows()
 
     const {topLeft, topRight, bottomLeft, bottomRight} = setCardType(type, borderRadius)
 
@@ -93,6 +94,34 @@ const Card = ({
         </StyledCard>
     )
 }
+
+Card.propTypes = {
+    children: node,
+    style: oneOfType([string, object]),
+    type: string,
+    backgroundColor: string,
+    fontColor: string,
+    isSameColorShadow: bool,
+    isInsetShadow: bool,
+    shadowColorBase: string,
+    borderRadius: PropTypes.oneOfType([string, number]),
+    shadowLength: PropTypes.oneOfType([string, number]),
+    shadowBlur: PropTypes.oneOfType([string, number])
+};
+
+Card.defaultProps = {
+    children: null,
+    style: null,
+    type: 'default',
+    backgroundColor:"#F0F0F0",
+    fontColor: "#000",
+    isSameColorShadow: false,
+    isInsetShadow: false,
+    shadowColorBase: undefined,
+    borderRadius: 12,
+    shadowLength: 5,
+    shadowBlur: 20
+};
 
 export default Card;
 

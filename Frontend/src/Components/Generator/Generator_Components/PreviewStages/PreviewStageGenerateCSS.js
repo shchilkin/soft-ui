@@ -30,7 +30,10 @@ const PreviewStageGenerateCSS = () => {
     console.log('darkModeFactor',darkModeFactor)
 
     return (
-        <Card>
+        <Card
+            backgroundColor={`#${colorHEX}`}
+            isSameColorShadow={true}
+        >
             <pre
                 className={"pt-3 pb-3 pr-1 pl-3"}
                 style={{showcaseColor: codeBackgroundColor, borderRadius: "12px",

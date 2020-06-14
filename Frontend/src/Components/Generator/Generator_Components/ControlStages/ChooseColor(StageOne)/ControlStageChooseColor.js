@@ -84,13 +84,11 @@ const ControlStageChooseColor = () => {
     )
 
     const colors = [
-        '#DCFE4B','#8BD173','#33D2D0',
-        '#56CAF4','#04A883','#ADC009',
-        '#FBA50E','#E63387','#F0E3D6',
-        '#530522','#03FA74','#ED2939',
-        "#303030","#303030","#303030",
-        "#303030","#303030","#303030",
-        "#303030","#303030",
+        '#B32E42','#ED2939','#FDE74C','#DCFE4B',
+        '#8BD173','#04A883','#ADC009','#03FA74',
+        '#57E2E5','#33D2D0','#56CAF4','#1337FE',
+        '#FBA50E','#E7CFCD','#FCB5B5','#E8E9EB',
+        '#F0E3D6','#bfb0b7','#E63387','#530522',
     ];
 
     return (
@@ -100,7 +98,6 @@ const ControlStageChooseColor = () => {
             gridColumnGap:'10px',
             gridRowGap:'15px',
             gridTemplateColumns:"5fr 1fr repeat(3, 40px)"
-
         }}>
             <h4 style={{color:controlCardFont}}>Pick a color</h4>
             <Fragment>
@@ -160,19 +157,15 @@ const ControlStageChooseColor = () => {
                 backgroundColor={"#F0F0F0"}
                 sameColorShadow={true}
                 isInsetShadow={true}
-                style={{ gridColumn:'1/6', gridRow:'3/3'}}>
+                style={{ gridColumn:'1/7', gridRow:'3/3'}}>
                 <div
                     id={'ColorPicker Grid'}
                     style={{
                         display:'flex',
-                        flexWrap:'wrap',
+                        flexWrap:'wrap'
                     }}
                 >
-                    {
-                        colors.map(
-                            color => <ColorButton onClick={() => changeColor("Hex",color)} color={color} />
-                        )
-                    }
+                    {colors.map(color => <ColorButton onClick={() => changeColor("Hex",color)} color={color} />)}
                 </div>
             </Card>
         </div>

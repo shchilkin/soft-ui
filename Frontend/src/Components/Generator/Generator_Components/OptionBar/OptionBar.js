@@ -4,7 +4,7 @@ import {calculateTintAndShades, calculateShadows, calculateColor, toHex, fontCol
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import Badge_OB from "./Badge_OB";
 import StagesContext from "../../../../contexts/Stages/StagesContext";
-import Button from "../Layout/Button";
+import Button from "../../../Updated/Button";
 
 const OptionBar = () => {
     const themeContext = useContext(ThemeContext);

@@ -1,6 +1,6 @@
 import React, {useContext, Fragment} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
-import Button from "../Layout/Button";
+import Button from "../../../Updated/Button";
 import PreviewButtonRegular from "../PreviewButtons/PreviewButtonRegular";
 
 

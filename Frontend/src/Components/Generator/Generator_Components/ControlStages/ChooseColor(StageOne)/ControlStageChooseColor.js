@@ -4,7 +4,7 @@ import {
     fontColorHex,
     getRandomInt
 } from "../../../../../Functions";
-import Button from "../../Layout/Button";
+import Button from "../../../../Updated/Button";
 import RGBinput from "./RGBinput";
 import TextInput from "../../../../Updated/TextInput";
 import IconButton from "./IconButton";
@@ -49,7 +49,6 @@ const ControlStageChooseColor = () => {
             placeholder={"#000000"}
     />
     )
-
 
     const resetIcon = {
         viewBox: "0 0 246 228",
@@ -156,18 +155,29 @@ const ControlStageChooseColor = () => {
             <Card
                 backgroundColor={"#F0F0F0"}
                 sameColorShadow={true}
+                borderRadius={6}
                 isInsetShadow={true}
-                style={{ gridColumn:'1/7', gridRow:'3/3'}}>
+                style={{
+                    display:'grid',
+                    justifyContent:'center', alignItems: 'center',
+                    gridColumn:'1/7', gridRow:'3/3'}}>
                 <div
-                    id={'ColorPicker Grid'}
                     style={{
                         display:'flex',
-                        flexWrap:'wrap'
+                        flexWrap:'wrap',
+                        marginLeft:'-7px',
+                        justifyContent:'center', alignItems: 'center',
                     }}
                 >
                     {colors.map(color => <ColorButton onClick={() => changeColor("Hex",color)} color={color} />)}
                 </div>
             </Card>
+            <Card
+                backgroundColor={'#606060'}
+                fontColor={'#F0F0F0'}
+                borderRadius={6}
+                style={{ gridColumn:'1/7', gridRow:'4/4'}}
+            >Dark mode</Card>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import Button from "../Components/Generator/Generator_Components/Layout/Button";
+import Button from "../Components/Updated/Button";
 import {Link} from "react-router-dom";
 import Card from "../Components/Updated/Card";
 import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFragment";
@@ -49,10 +49,10 @@ const Home = () => {
                     <Link to={'/generator'}>
                         <Button
                             style={{width:'200px',height:'65px'}}
-                            background={mainColor}
-                            color={fontColor}
-                            darkShadow={darkShadow}
-                            lightShadow={lightShadow}>
+                            backgroundColor={mainColor}
+                            fontColor={fontColor}
+                            isSameShadowColor={true}
+                        >
                             Get started
                         </Button>
                     </Link>

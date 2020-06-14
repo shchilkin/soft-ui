@@ -24,7 +24,7 @@ const DarkModeShowcaseFragment = () => {
     const DarkModeCard = (
             <Card
                 backgroundColor={darkModeBackground}
-                sameColorShadow={true}
+                isSameColorShadow={true}
                 fontColor={darkModeFont}
             >
                 <h6 style={{fontSize:'1.05rem'}}>Automatic{" "}

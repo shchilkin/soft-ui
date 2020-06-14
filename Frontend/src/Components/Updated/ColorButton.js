@@ -30,11 +30,11 @@ export default ColorButton;
 const StyledColorButton = styled.button`
     border-radius: 6px;
     border: 1px solid ${props => props.color};
-    margin-right: 5px;
-    margin-bottom: 5px;
     background-color: ${props => props.color};
-    width: 38px;
-    height: 38px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    width: 35px;
+    height: 35px;
     cursor: ${props => props.isActive ? 'default' : 'pointer'};
     box-shadow: ${props => props.isActive ? `inset 3px 3px 4px 0 ${props.dark},
                  inset -3px -3px 5px 0  ${props.light};` : '3px 3px 4px 0 #D9D9D9, -3px -3px 5px 0  #FFF;'}           

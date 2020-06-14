@@ -39,7 +39,7 @@ const ColorShowcaseFragment = () => {
             <Card
                 backgroundColor={backgroundColor}
                 fontColor={font}
-                sameColorShadow={true}
+                isSameColorShadow={true}
             >
                 <h6 style={{fontSize:'1.05rem'}}>
                     Works with every color!
@@ -64,7 +64,7 @@ const ColorShowcaseFragment = () => {
                 <Card
                     backgroundColor={backgroundColor}
                     color={font}
-                    sameColorShadow={true}
+                    isSameColorShadow={true}
                     isInsetShadow={true}
                 >
                     <div style={{display:'flex',justifyContent:'center', alignItems:'center', marginBottom:'1rem'}}>

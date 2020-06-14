@@ -1,18 +1,25 @@
 import {calculateTintAndShades, hexToRGB} from "./Functions";
 
 export class ComponentShadows {
-    constructor(backgroundColor, sameColorShadow, shadowColorBase) {
+    constructor(
+        backgroundColor,
+        sameColorShadow,
+        shadowColorBase,
+        darkShadowFactor,
+        lightShadowFactor) {
         this.backgroundColor = backgroundColor;
         this.sameColorShadow = sameColorShadow;
         this.shadowColorBase =  shadowColorBase;
+        this.darkShadowFactor = darkShadowFactor || 85;
+        this.lightShadowFactor = lightShadowFactor || 105;
     }
 
     getShadows() {
         const { Red,Green,Blue } = hexToRGB(this.backgroundColor)
 
         const mainColorShadows = {
-            dark: calculateTintAndShades(Red, Green, Blue),
-            light: calculateTintAndShades(Red, Green, Blue,105)
+            dark: calculateTintAndShades(Red, Green, Blue, this.darkShadowFactor),
+            light: calculateTintAndShades(Red, Green, Blue, this.lightShadowFactor)
         }
 
         if (this.sameColorShadow){

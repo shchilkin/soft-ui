@@ -229,11 +229,12 @@ const ControlStageChooseColor = () => {
                     {colors.map(color => <ColorButton onClick={() => changeColor("Hex", color)} color={color}/>)}
                 </div>
             </Card>}
-            {
-                isDarkModeSectionSelected && <Card
-                    isInsetShadow={true}
-                    backgroundColor={'#606060'}
-                    isSameColorShadow={true}
+            {isDarkModeSectionSelected &&
+            <Card
+                shadowLength={10}
+                isInsetShadow={true}
+                backgroundColor={'#606060'}
+                isSameColorShadow={true}
                 fontColor={'#F0F0F0'}
                 borderRadius={6}
                 style={{ gridColumn:'1/8', gridRow:'4/4'}}>
@@ -243,10 +244,7 @@ const ControlStageChooseColor = () => {
                         <input type={'range'}/>
                         <input type={'range'}/>
                     </div>
-
-                </Card>
-            }
-
+            </Card>}
         </div>
     )
 }

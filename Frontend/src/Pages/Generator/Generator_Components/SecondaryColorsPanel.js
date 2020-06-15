@@ -2,7 +2,7 @@ import ColorButton from "./Layout/ColorButton";
 import React, {Fragment, useContext} from "react";
 import {calculateTintAndShades, calculateColors} from "../../../Functions";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
-import Badge from "../../Badge/Badge.component";
+import Badge from "../../../Components/Badge/Badge.component";
 
 
 const SecondaryColorsPanel = () => {

@@ -1,16 +1,16 @@
 import React, {Fragment, useContext, useState} from "react";
-import ThemeContext from "../../../../../contexts/theme/ThemeContext";
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import {
     fontColorHex,
     getRandomInt
-} from "../../../../../Functions";
-import Button from "../../../../Updated/Button";
+} from "../../../../Functions";
+import Button from "../../../../Components/Updated/Button";
 import RGBinput from "./RGBinput";
-import TextInput from "../../../../Updated/TextInput";
+import TextInput from "../../../../Components/Updated/TextInput";
 import IconButton from "./IconButton";
-import Card from "../../../../Updated/Card";
-import ColorButton from "../../../../Updated/ColorButton";
-import Input from "../../Layout/Input/Input";
+import Card from "../../../../Components/Updated/Card";
+import ColorButton from "../../../../Components/Updated/ColorButton";
+import Input from "../Layout/Input/Input";
 
 const ControlStageChooseColor = () => {
     const {colorHEX, font, changeColor, resetTheme, inverseFont}  = useContext(ThemeContext);

@@ -1,4 +1,4 @@
-import Badge from "../../../../../Badge/Badge.component";
+import Badge from "../../../../../../Components/Badge/Badge.component";
 import Input from "../../Input/Input";
 import React, {useContext} from "react";
 import ThemeContext from "../../../../../../contexts/theme/ThemeContext";

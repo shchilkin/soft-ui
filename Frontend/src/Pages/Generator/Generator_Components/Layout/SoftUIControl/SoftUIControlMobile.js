@@ -1,5 +1,5 @@
 import ColorPickerSketch from "../../ColorPickers/colorPickerSketch";
-import Button from "../../../../Updated/Button";
+import Button from "../../../../../Components/Updated/Button";
 import Input from "../Input/Input";
 import {getRandomInt, toHex} from "../../../../../Functions";
 import React, {useContext} from "react";

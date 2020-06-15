@@ -1,10 +1,10 @@
 import Card from "../../Updated/Card";
-import ColorButton from "../../Generator/Generator_Components/Layout/ColorButton";
+import ColorButton from "../../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import React, {useContext} from "react";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 import {calculateTintAndShades,hexToRGB, fontColor} from "../../../Functions";
 import ShowcaseContext from "../../../contexts/showcase/ShowcaseContext";
-import Input from "../../Generator/Generator_Components/Layout/Input/Input";
+import Input from "../../../Pages/Generator/Generator_Components/Layout/Input/Input";
 
 const ColorShowcaseCard = () => {
     const themeContext = useContext(ThemeContext);

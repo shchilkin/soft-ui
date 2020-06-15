@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&family=Raleway&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&family=Raleway&family=Varela+Round&display=swap');
-
 :root{
     --bg-color-light: #f0f0f0;
     --bg-color-light-darker-shadow: rgba(0, 0, 0, 0.15);
@@ -34,13 +30,6 @@
     --denim-blue: #165DC0;
     --denim-blue-darkmode: #739ed9;
 
-}
-
-
-body{
-    /*font-family: 'MuseoModerno', cursive;*/
-    /*font-family: 'Raleway', sans-serif;*/
-    font-family: 'Varela Round', sans-serif;
 }
 
 /* Navbar component related css */

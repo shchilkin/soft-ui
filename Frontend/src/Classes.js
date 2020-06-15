@@ -30,14 +30,14 @@ export class ComponentShadows {
         else if (this.shadowColorBase !== undefined) {
             let {Red:red, Green: green, Blue: blue} = hexToRGB(this.shadowColorBase)
             return {
-                dark: calculateTintAndShades(red, green, blue),
-                light: calculateTintAndShades(red, green, blue,105)
+                dark: calculateTintAndShades(red, green, blue,this.darkShadowFactor),
+                light: calculateTintAndShades(red, green, blue,this.lightShadowFactor)
             }
         }
 
         else return {
-                dark: calculateTintAndShades(255,255,255),
-                light: calculateTintAndShades(255, 255, 255,105)
+                dark: calculateTintAndShades(255,255,255,this.darkShadowFactor),
+                light: calculateTintAndShades(255, 255, 255,this.lightShadowFactor)
             }
     }
 }

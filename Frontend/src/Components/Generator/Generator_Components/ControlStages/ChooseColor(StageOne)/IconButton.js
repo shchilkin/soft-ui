@@ -2,10 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 
-const IconButton = ({title, style, onClick, background, viewBox, path, children, isSVGinChildren = false}) => {
+const IconButton = ({
+                        title,
+                        style,
+                        onClick,
+                        background,
+                        viewBox,
+                        path,
+                        children,
+                        isActive = false,
+                        isSVGinChildren = false}) => {
 
     return(
         <StyledIconButton
+            isActive={isActive}
             style={style}
             background={background}
             title={title}
@@ -36,7 +46,9 @@ const StyledIconButton = styled.button`
     border: 1px solid ${props => props.background};
     transition: background-color .5s, color .5s;       
     border-radius: 8px;
-    box-shadow: 5px 5px 15px 0 #D9D9D9, -5px -5px 15px 0 #FFF;           
+    box-shadow: ${props => props.isActive
+    ? ' inset 10px 10px 15px 0 #D9D9D9, inset -10px -10px 15px 0 #FFF;' 
+    : '5px 5px 15px 0 #D9D9D9, -5px -5px 15px 0 #FFF'};           
     :hover {
        background-color: #f9f9f9;
         border: 1px solid #f9f9f9;

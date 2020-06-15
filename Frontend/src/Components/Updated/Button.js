@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, {bool, func, node, number, object, oneOfType, string} from 'prop-types';
+import {bool, func, node, number, object, oneOfType, string} from 'prop-types';
 import styled from "styled-components";
 import {ComponentShadows} from "../../Classes";
 
@@ -27,8 +27,6 @@ const Button = ({
 
     const {dark: mainDark, light: mainLight } = componentMainColorShadows.getShadows()
 
-    console.log('Background color in Button', backgroundColor, dark, light)
-
     return (
         <StyledButton
             backgroundColor={backgroundColor}
@@ -54,7 +52,6 @@ Button.propTypes = {
     onClick: func,
     backgroundColor: string,
     fontColor: string,
-    isInsetShadow: bool,
     shadowColorBase: string,
     borderRadius: oneOfType([string, number]),
     shadowLength: oneOfType([string, number]),

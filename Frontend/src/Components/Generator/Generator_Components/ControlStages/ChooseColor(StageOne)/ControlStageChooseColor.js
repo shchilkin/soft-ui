@@ -10,21 +10,18 @@ import TextInput from "../../../../Updated/TextInput";
 import IconButton from "./IconButton";
 import Card from "../../../../Updated/Card";
 import ColorButton from "../../../../Updated/ColorButton";
+import Input from "../../Layout/Input/Input";
 
 const ControlStageChooseColor = () => {
-    const themeContext = useContext(ThemeContext);
-    const {
-        colorHEX,
-        font,
-        changeColor,
-        resetTheme,
-        inverseFont,} = themeContext;
-
-    const controlCardBG = "#F0F0F0";
-    const controlCardFont = fontColorHex(controlCardBG);
+    const {colorHEX, font, changeColor, resetTheme, inverseFont}  = useContext(ThemeContext);
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
+    const [isDarkModeSectionSelected, setIsDarkModeSectionSelected] = useState(false);
+    const [isAdditionalColorSectionSelected, setIsAdditionalColorSectionSelected] = useState(false);
+
+    const controlCardBG = "#F0F0F0";
+    const controlCardFont = fontColorHex(controlCardBG);
 
     const generateRandom = () => {
         let rgbObject = {
@@ -82,6 +79,41 @@ const ControlStageChooseColor = () => {
         </svg>
     )
 
+    const darkModeIcon = (
+        <svg width="100%"
+             height="100%"
+             viewBox="0 0 752 752"
+             style={{fillRule:"evenodd",clipRule:"evenodd",strokeLinejoin:"round",strokeMiterlimit:2}}>
+            <g>
+                <path d="M375.758,0c-207.387,0 -375.758,168.371 -375.758,375.758c0,207.386 168.371,375.757 375.758,375.757c-80.502,-76.632 -145.86,-218.623 -145.86,-375.757c0,-157.135 65.358,-299.125 145.86,-375.758Z"
+                      style={{fill: '#303030'}}/>
+                <circle cx="565.37" cy="208.234" r="55.164" style={{fill: '#303030'}}/>
+                <circle cx="436.511" cy="390.946" r="40.097" style={{fill: '#303030'}}/>
+                <circle cx="639.972" cy="558.349" r="40.097" style={{fill: '#303030'}}/>
+            </g>
+        </svg>
+    )
+
+    const colorPanelIcon = (
+        <svg width="100%"
+             height="100%"
+             viewBox="0 0 1284 1284"
+             style={{fillRule:"evenodd",clipRule:"evenodd",strokeLinejoin:"round",strokeMiterlimit:2}}>
+            <g>
+                <path d="M1283.38,320.845c0,-177.079 -143.766,-320.845 -320.846,-320.845l-641.69,0c-177.079,0 -320.845,143.766 -320.845,320.845l0,641.69c0,177.08 143.766,320.846 320.845,320.846l641.69,0c177.08,0 320.846,-143.766 320.846,-320.846l0,-641.69Zm-173.398,-30.374c0,-64.615 -52.459,-117.073 -117.073,-117.073l-702.439,0c-64.615,0 -117.073,52.458 -117.073,117.073l0,702.439c0,64.614 52.458,117.073 117.073,117.073l702.439,0c64.614,0 117.073,-52.459 117.073,-117.073l0,-702.439Z"
+                      style={{fill: "#303030"}}/>
+                      <path d="M612.448,381.611c0,-42.467 -34.478,-76.945 -76.946,-76.945l-153.891,0c-42.467,0 -76.945,34.478 -76.945,76.945l0,153.891c0,42.468 34.478,76.946 76.945,76.946l153.891,0c42.468,0 76.946,-34.478 76.946,-76.946l0,-153.891Z"
+                            style={{fill: "#fa4545"}}/>
+                            <path d="M978.715,381.611c0,-42.467 -34.478,-76.945 -76.946,-76.945l-153.891,0c-42.467,0 -76.945,34.478 -76.945,76.945l0,153.891c0,42.468 34.478,76.946 76.945,76.946l153.891,0c42.468,0 76.946,-34.478 76.946,-76.946l0,-153.891Z"
+                                  style={{fill: "#fae247"}}/>
+                                  <path d="M612.448,747.878c0,-42.467 -34.478,-76.945 -76.946,-76.945l-153.891,0c-42.467,0 -76.945,34.478 -76.945,76.945l0,153.891c0,42.468 34.478,76.946 76.945,76.946l153.891,0c42.468,0 76.946,-34.478 76.946,-76.946l0,-153.891Z"
+                                        style={{fill: "#476bfa"}}/>
+                                        <path d="M978.715,747.878c0,-42.467 -34.478,-76.945 -76.946,-76.945l-153.891,0c-42.467,0 -76.945,34.478 -76.945,76.945l0,153.891c0,42.468 34.478,76.946 76.945,76.946l153.891,0c42.468,0 76.946,-34.478 76.946,-76.946l0,-153.891Z"
+                                              style={{fill: "#47fa98"}}/>
+            </g>
+        </svg>
+    )
+
     const colors = [
         '#B32E42','#ED2939','#FDE74C','#DCFE4B',
         '#8BD173','#04A883','#ADC009','#03FA74',
@@ -96,14 +128,14 @@ const ControlStageChooseColor = () => {
             gridTemplateRows:'1fr 1fr',
             gridColumnGap:'10px',
             gridRowGap:'15px',
-            gridTemplateColumns:"5fr 1fr repeat(3, 40px)"
+            gridTemplateColumns:"5fr 1fr repeat(5, 40px)"
         }}>
             <h4 style={{color:controlCardFont}}>Pick a color</h4>
             <Fragment>
                 <IconButton
                     style={{
                         gridColumn:'3/4',
-                        gridRow:'1/2',
+                        gridRow:'2/3',
                     }}
                     title="Inverse text color"
                     background={controlCardBG}
@@ -114,7 +146,7 @@ const ControlStageChooseColor = () => {
                 <IconButton
                     style={{
                         gridColumn:'4/5',
-                        gridRow:'1/2',
+                        gridRow:'2/3',
                     }}
                     title={"Generate random color"}
                     onClick={generateRandom}
@@ -124,8 +156,8 @@ const ControlStageChooseColor = () => {
                 />
                 <IconButton
                     style={{
-                        gridColumn:'5/5',
-                        gridRow:'1/2',
+                        gridColumn:'7/7',
+                        gridRow:'2/3',
                     }}
                     title={"Reset to default color"}
                     onClick={resetTheme}
@@ -133,9 +165,32 @@ const ControlStageChooseColor = () => {
                     path={resetIcon.path}
                     viewBox={resetIcon.viewBox}
                 />
+                <IconButton
+                    isActive={isDarkModeSectionSelected}
+                    style={{
+                        gridColumn:'5/5',
+                        gridRow:'2/3',
+                    }}
+                    title={isDarkModeSectionSelected ? "Collapse dark mode section": "Show dark mode section"}
+                    onClick={() => setIsDarkModeSectionSelected(!isDarkModeSectionSelected)}
+                    background={controlCardBG}
+                    isSVGinChildren={true}
+                >{darkModeIcon}</IconButton>
+                <IconButton
+                    isActive={isAdditionalColorSectionSelected}
+                    style={{
+                        gridColumn:'6/6',
+                        gridRow:'2/3',
+                    }}
+                    title={isAdditionalColorSectionSelected ? "Collapse additional color section"
+                        : "Show additional color section"}
+                    onClick={() => setIsAdditionalColorSectionSelected(!isAdditionalColorSectionSelected)}
+                    background={controlCardBG}
+                    isSVGinChildren={true}
+                >{colorPanelIcon}</IconButton>
             </Fragment>
             <div style={{borderRadius:'12px',
-                gridColumn:'1/4',
+                gridColumn:'1/2',
                 gridRow:'2/3',}}>
                 {colorInputMode ? hexInput : <RGBinput/>}
             </div>
@@ -146,38 +201,52 @@ const ControlStageChooseColor = () => {
                 color={controlCardFont}
                 style={{
                     height:'38px',
-                    gridColumn:'4/6',
+                    gridColumn:'2/3',
                     gridRow:'2/3',
                     borderRadius:'6px'
                 }}
                 onClick={() =>setColorInputMode(!colorInputMode)}
                 children={ colorInputMode ? "Hex" :'RGB'}/>
-            <Card
+            {
+                isAdditionalColorSectionSelected && <Card
                 backgroundColor={"#F0F0F0"}
                 sameColorShadow={true}
+                lightShadowFactor={95}
                 borderRadius={6}
                 isInsetShadow={true}
                 style={{
-                    display:'grid',
-                    justifyContent:'center', alignItems: 'center',
-                    gridColumn:'1/7', gridRow:'3/3'}}>
+                    display: 'grid',
+                    justifyContent: 'center', alignItems: 'center',
+                    gridColumn: '1/8', gridRow: '3/3'
+                }}>
                 <div
                     style={{
-                        display:'flex',
-                        flexWrap:'wrap',
-                        marginLeft:'-7px',
-                        justifyContent:'center', alignItems: 'center',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center', alignItems: 'center',
                     }}
                 >
-                    {colors.map(color => <ColorButton onClick={() => changeColor("Hex",color)} color={color} />)}
+                    {colors.map(color => <ColorButton onClick={() => changeColor("Hex", color)} color={color}/>)}
                 </div>
-            </Card>
-            <Card
-                backgroundColor={'#606060'}
+            </Card>}
+            {
+                isDarkModeSectionSelected && <Card
+                    isInsetShadow={true}
+                    backgroundColor={'#606060'}
+                    isSameColorShadow={true}
                 fontColor={'#F0F0F0'}
                 borderRadius={6}
-                style={{ gridColumn:'1/7', gridRow:'4/4'}}
-            >Dark mode</Card>
+                style={{ gridColumn:'1/8', gridRow:'4/4'}}>
+                    <div style={{display:"grid",gridTemplateRows:'1fr 1fr 1fr 1fr'}}>
+                        <p>Dark mode section</p>
+                        <input type={'range'}/>
+                        <input type={'range'}/>
+                        <input type={'range'}/>
+                    </div>
+
+                </Card>
+            }
+
         </div>
     )
 }

@@ -31,8 +31,7 @@ const StyledColorButton = styled.button`
     border-radius: 6px;
     border: 1px solid ${props => props.color};
     background-color: ${props => props.color};
-    margin-bottom: 7px;
-    margin-left: 7px;
+    margin: 3px;
     width: 35px;
     height: 35px;
     cursor: ${props => props.isActive ? 'default' : 'pointer'};

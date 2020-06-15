@@ -17,7 +17,7 @@ const SoftUIControl = () => {
             height:"100%",
             display:'grid',
             gridGap:'1rem',
-            gridTemplateRows:'1fr 2fr 1fr',
+            gridTemplateRows:'minmax(0px, 50px) 1fr minmax(0px, 50px)',
             gridTemplateColumns:'4rem minmax(284px, 498px) 4rem',
             backgroundColor: '#F0F0F0'}}>
             <div
@@ -32,9 +32,12 @@ const SoftUIControl = () => {
                     style={{width:'minmax(0px, 498px'}}
                 >
                     <ControlStagesWrapper/>
-                    <div style={{marginTop:'1rem'}}>
-                        <OptionBar/>
-                    </div>
+                </Card>
+                <Card
+                    style={{marginTop:'1rem'}}
+                    backgroundColor={controlCardBG}
+                    sameColorShadow = {true}>
+                    <OptionBar/>
                 </Card>
             </div>
         </div>

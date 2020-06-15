@@ -15,10 +15,16 @@ const Card = ({
                   shadowColorBase,
                   borderRadius,
                   shadowLength,
-                  shadowBlur
+                  shadowBlur,
+                  id,
+                  darkShadowFactor,
+                  lightShadowFactor
               }) => {
 
-    const componentShadows = new ComponentShadows(backgroundColor, isSameColorShadow, shadowColorBase);
+    console.log('Shadow Factors',lightShadowFactor, darkShadowFactor)
+
+    const componentShadows = new ComponentShadows(backgroundColor, isSameColorShadow, shadowColorBase,
+        darkShadowFactor, lightShadowFactor);
 
     const setCardType = (type, borderRadius) => {
         switch (type) {
@@ -69,10 +75,13 @@ const Card = ({
 
     const {dark, light} = componentShadows.getShadows()
 
+    console.log('Dark, light Shadows',dark, light)
+
     const {topLeft, topRight, bottomLeft, bottomRight} = setCardType(type, borderRadius)
 
     return (
         <StyledCard
+            id={id}
             background={backgroundColor}
             lighterShadow={light}
             darkerShadow={dark}
@@ -120,7 +129,9 @@ Card.defaultProps = {
     shadowColorBase: undefined,
     borderRadius: 12,
     shadowLength: 5,
-    shadowBlur: 20
+    shadowBlur: 20,
+    lightShadowFactor: 105,
+    darkShadowFactor: 85,
 };
 
 export default Card;

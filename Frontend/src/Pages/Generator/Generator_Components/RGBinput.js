@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
-import TextInput from "../../../../Components/Updated/TextInput";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
+import TextInput from "../../../Components/Updated/TextInput";
 
 
 const RGBinput = () => {

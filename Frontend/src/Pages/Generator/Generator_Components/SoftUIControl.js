@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../Components/Updated/Card";
-import ControlStageChooseColor from "./ChooseColor(StageOne)/ControlStageChooseColor";
+import ControlStageChooseColor from "./ControlStageChooseColor";
 
 
 const SoftUIControl = () => {
@@ -23,6 +23,7 @@ const SoftUIControl = () => {
                 }}
             >
                 <Card
+                    lightShadowFactor={95}
                     backgroundColor={controlCardBG}
                     sameColorShadow = {true}
                     style={{width:'minmax(0px, 498px'}}

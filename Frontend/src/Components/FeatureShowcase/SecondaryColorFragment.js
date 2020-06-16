@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {calculateTintAndShades, hexToRGB, fontColor, calculateColors, fontColorHex} from "../../Functions";
-import ColorButton from "../Generator/Generator_Components/Layout/ColorButton";
+import ColorButton from "../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Updated/Card";
 import ThemeContext from '../../contexts/theme/ThemeContext'
 import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'

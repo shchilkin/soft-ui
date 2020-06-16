@@ -1,15 +1,11 @@
-import React, {Fragment} from "react";
-import ControlStagesWrapper from "./ControlStages/ControlStagesWrapper";
-import OptionBar from "./OptionBar/OptionBar";
-import Card from "../../Updated/Card";
-import {calculateTintAndShades, fontColorHex} from "../../../Functions";
+import React from "react";
+import Card from "../../../Components/Updated/Card";
+import ControlStageChooseColor from "./ChooseColor(StageOne)/ControlStageChooseColor";
 
 
 const SoftUIControl = () => {
 
     const controlCardBG = "#F0F0F0";
-    const darkShadow = calculateTintAndShades(240,240,240,85)
-    const lightShadow = calculateTintAndShades(240,240,240,105)
 
     return (
         <div id={'Control Panel'}
@@ -31,13 +27,7 @@ const SoftUIControl = () => {
                     sameColorShadow = {true}
                     style={{width:'minmax(0px, 498px'}}
                 >
-                    <ControlStagesWrapper/>
-                </Card>
-                <Card
-                    style={{marginTop:'1rem'}}
-                    backgroundColor={controlCardBG}
-                    sameColorShadow = {true}>
-                    <OptionBar/>
+                    <ControlStageChooseColor />
                 </Card>
             </div>
         </div>

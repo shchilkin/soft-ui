@@ -1,6 +1,6 @@
 import React, {Fragment, useContext} from "react";
 import Card from "../Updated/Card";
-import Input from "../Generator/Generator_Components/Layout/Input/Input";
+import Input from "../../Pages/Generator/Generator_Components/Layout/Input/Input";
 import ShowcaseContext from "../../contexts/showcase/ShowcaseContext";
 
 

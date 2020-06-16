@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Generator from "./Components/Generator/Generator";
+import Generator from "./Pages/Generator/Generator";
 import ThemeState from "./contexts/theme/ThemeState";
 import NavigationBar from "./Components/Navbar/NavigationBar.component";
 import StagesState from "./contexts/Stages/StagesState";

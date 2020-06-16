@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import PreviewStagesWrapper from "./PreviewStages/PreviewStagesWrapper";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
+import PreviewStageChooseColor from "./PreviewStageChooseColor";
 
 const SoftUIPreview = () => {
 
@@ -22,7 +22,7 @@ const SoftUIPreview = () => {
                     gridColumn:'2/3',
                 }}
             >
-                <PreviewStagesWrapper/>
+                <PreviewStageChooseColor/>
             </div>
         </div>
     )

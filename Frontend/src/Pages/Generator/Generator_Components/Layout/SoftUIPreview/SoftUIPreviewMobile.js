@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import Button from "../../../../Updated/Button";
+import Button from "../../../../../Components/Updated/Button";
 import Input from "../Input/Input";
 import ThemeContext from "../../../../../contexts/theme/ThemeContext";
 

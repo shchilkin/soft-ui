@@ -3,7 +3,8 @@ import {
     CHANGE_SECONDARY_COLOR,
     CHANGE_DARK_MODE_SHOWCASE_COLOR
 } from "../types";
-import {calculateColors, calculateTintAndShades, fontColor, hexToRGB, isHexValid} from "../../Functions";
+import { calculateColors } from "../../Functions";
+import { getFontColor, hexToRGB, isHexColorValid, getTintsAndShades } from 'color-processing-library';
 
 export default (state, action) => {
     let darkModeFactor = (factor) => {
@@ -16,27 +17,27 @@ export default (state, action) => {
         const {Red, Green, Blue} = hexToRGB(color)
         let darkModeDarkShadowFactor = Math.round(darkModeFactor(state.darkModeFactor) * .75);
         let darkModeLightShadowFactor = Math.round(darkModeFactor(state.darkModeFactor) * .9);
-        let darkModeBackground = calculateTintAndShades(Red, Green, Blue,
+        let darkModeBackground = getTintsAndShades(Red, Green, Blue,
             darkModeFactor(state.darkModeFactor));
-        let darkModeDarkShadow = calculateTintAndShades(
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Red,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Green,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Blue,
+        let darkModeDarkShadow = getTintsAndShades(
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Red,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Green,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeFactor(state.darkModeFactor))).Blue,
             85)
-        let darkModeLightShadow = calculateTintAndShades(
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Red,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Green,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Blue,
+        let darkModeLightShadow = getTintsAndShades(
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Red,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Green,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeLightShadowFactor)).Blue,
             105
         )
-        let darkModeFont = fontColor(
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Red,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Green,
-            hexToRGB(calculateTintAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Blue
+        let darkModeFont = getFontColor(
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Red,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Green,
+            hexToRGB(getTintsAndShades(Red, Green, Blue, darkModeDarkShadowFactor)).Blue
         )
 
-        const darkShadow = calculateTintAndShades(Red, Green, Blue, 85)
-        const lightShadow = calculateTintAndShades(Red, Green, Blue, 105)
+        const darkShadow = getTintsAndShades(Red, Green, Blue, 85)
+        const lightShadow = getTintsAndShades(Red, Green, Blue, 105)
         return {
             showcaseDarkShadow: darkShadow,
             showcaseLightShadow: lightShadow,
@@ -50,7 +51,7 @@ export default (state, action) => {
     switch (action.type){
         case CHANGE_SHOWCASE_COLOR:
             let hexWithoutHash = action.payload.newColor.replace('#','')
-            if(isHexValid(hexWithoutHash)){
+            if(isHexColorValid(hexWithoutHash)){
                 const {
                     showcaseDarkShadow,
                     showcaseLightShadow,
@@ -63,8 +64,8 @@ export default (state, action) => {
                 const secondaryColor = calculateColors(`#${hexWithoutHash}`);
                 const {Red, Green, Blue} = hexToRGB(secondaryColor)
 
-                const secondaryColorDarkShadow = calculateTintAndShades(Red,Green,Blue, 85);
-                const secondaryColorLightShadow = calculateTintAndShades(Red,Green,Blue, 105);
+                const secondaryColorDarkShadow = getTintsAndShades(Red,Green,Blue, 85);
+                const secondaryColorLightShadow = getTintsAndShades(Red,Green,Blue, 105);
 
                 return {
                     ...state,
@@ -100,26 +101,26 @@ export default (state, action) => {
             //  TODO refactor to one object
             let darkmodeDarkShadowFactor = Math.round(darkModeFactor(action.payload.newFactor) * .75);
             let darkmodeLightShadowFactor = Math.round(darkModeFactor(action.payload.newFactor) * .9);
-            let darkModeBackground = calculateTintAndShades(Red, Green, Blue,
+            let darkModeBackground = getTintsAndShades(Red, Green, Blue,
                 darkModeFactor(action.payload.newFactor));
-            let darkModeDarkShadow = calculateTintAndShades(
-                hexToRGB(calculateTintAndShades(Red, Green, Blue,
+            let darkModeDarkShadow = getTintsAndShades(
+                hexToRGB(getTintsAndShades(Red, Green, Blue,
                     darkModeFactor(action.payload.newFactor))).Red,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue,
+                hexToRGB(getTintsAndShades(Red, Green, Blue,
                     darkModeFactor(action.payload.newFactor))).Green,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue,
+                hexToRGB(getTintsAndShades(Red, Green, Blue,
                     darkModeFactor(action.payload.newFactor))).Blue,
                 85)
-            let darkModeLightShadow = calculateTintAndShades(
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Red,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Green,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Blue,
+            let darkModeLightShadow = getTintsAndShades(
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Red,
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Green,
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeLightShadowFactor)).Blue,
                 105
             )
-            let darkModeFont = fontColor(
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Red,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Green,
-                hexToRGB(calculateTintAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Blue
+            let darkModeFont = getFontColor(
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Red,
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Green,
+                hexToRGB(getTintsAndShades(Red, Green, Blue, darkmodeDarkShadowFactor)).Blue
             )
             return {
                 ...state,

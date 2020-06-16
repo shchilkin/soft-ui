@@ -14,14 +14,16 @@ import {
     CHANGE_DARK_MODE_DARK_SHADOW_FACTOR,
     CHANGE_DARK_MODE_LIGHT_SHADOW_FACTOR
 } from '../types';
-import {calculateColors, calculateTintAndShades, invertFont} from "../../Functions";
-
 import {
-    calculateShadows,
-    fontColor,
+    getTintsAndShades,
+    getFontColor,
     toHex,
-    isHexValid,
-    hexToRGB,
+    isHexColorValid,
+    hexToRGB
+} from 'color-processing-library';
+import {
+    calculateColors, invertFont,
+    calculateShadows,
     numberRangeCheck,
     calculateShadowFactor
 }from '../../Functions';
@@ -65,12 +67,12 @@ export default (state, action) => {
                             state.Blue,
                             state.lightShadowFactor,
                             state.darkShadowFactor).darkerShadowArray[2]})`,
-                        font: fontColor(
+                        font: getFontColor(
                             numberRangeCheck(action.payload.colorValue),
                             state.Green,
                             state.Blue
                         ),
-                        codeFontColor: fontColor(
+                        codeFontColor: getFontColor(
                             numberRangeCheck(action.payload.colorValue),
                             state.Green,
                             state.Blue
@@ -109,12 +111,12 @@ export default (state, action) => {
                             state.Blue,
                             state.lightShadowFactor,
                             state.darkShadowFactor).darkerShadowArray[2]})`,
-                        font: fontColor(
+                        font: getFontColor(
                             state.Red,
                             numberRangeCheck(action.payload.colorValue),
                             state.Blue
                         ),
-                        codeFontColor: fontColor(
+                        codeFontColor: getFontColor(
                             state.Red,
                             numberRangeCheck(action.payload.colorValue),
                             state.Blue
@@ -135,12 +137,12 @@ export default (state, action) => {
                             numberRangeCheck(action.payload.colorValue),
                             state.lightShadowFactor,
                             state.darkShadowFactor),
-                        font: fontColor(
+                        font: getFontColor(
                             state.Red,
                             state.Green,
                             numberRangeCheck(action.payload.colorValue),
                         ),
-                        codeFontColor: fontColor(
+                        codeFontColor: getFontColor(
                             state.Red,
                             state.Green,
                             numberRangeCheck(action.payload.colorValue),
@@ -173,7 +175,7 @@ export default (state, action) => {
                 case "Hex":
                 case "HEX":
                     let hexString = (action.payload.colorValue).replace(/#/, '')
-                    if (isHexValid(hexString)){
+                    if (isHexColorValid(hexString)){
                         return {
                             ...state,
                             hexColor: hexString,
@@ -205,12 +207,12 @@ export default (state, action) => {
                                 hexToRGB(hexString).Blue,
                                 state.lightShadowFactor,
                                 state.darkShadowFactor).darkerShadowArray[2]})`,
-                            font: fontColor(
+                            font: getFontColor(
                                 hexToRGB(hexString).Red,
                                 hexToRGB(hexString).Green,
                                 hexToRGB(hexString).Blue,
                             ),
-                            codeFontColor: fontColor(
+                            codeFontColor: getFontColor(
                                 hexToRGB(hexString).Red,
                                 hexToRGB(hexString).Green,
                                 hexToRGB(hexString).Blue,
@@ -231,33 +233,33 @@ export default (state, action) => {
                     const {red: r, green: g, blue: b} = calculateColors(rgbArray)
                     console.log('RED GREEN BLUE', r, g, b)
                     const colors = {
-                        'complementary-60': calculateTintAndShades(r,g,b,60),
-                        'complementary-70': calculateTintAndShades(r,g,b,70),
-                        'complementary-80':calculateTintAndShades(r,g,b,80),
-                        'complementary-90': calculateTintAndShades(r,g,b,90),
-                        'complementary-100': calculateTintAndShades(r,g,b,100),
-                        'complementary-110': calculateTintAndShades(r,g,b,110),
-                        'complementary-120': calculateTintAndShades(r,g,b,120),
-                        'complementary-130': calculateTintAndShades(r,g,b,130),
-                        'complementary-140': calculateTintAndShades(r,g,b,140),
-                        'main-10': calculateTintAndShades(red,green,blue,10),
-                        'main-20': calculateTintAndShades(red,green,blue,20),
-                        'main-30': calculateTintAndShades(red,green,blue,30),
-                        'main-40': calculateTintAndShades(red,green,blue,40),
-                        'main-50': calculateTintAndShades(red,green,blue,50),
-                        'main-60': calculateTintAndShades(red,green,blue,60),
-                        'main-70': calculateTintAndShades(red,green,blue,70),
-                        'main-80': calculateTintAndShades(red,green,blue,80),
-                        'main-90': calculateTintAndShades(red,green,blue,90),
-                        'main-110': calculateTintAndShades(red,green,blue,110),
-                        'main-120': calculateTintAndShades(red,green,blue,120),
-                        'main-130': calculateTintAndShades(red,green,blue,130),
-                        'main-140': calculateTintAndShades(red,green,blue,140),
-                        'main-150': calculateTintAndShades(red,green,blue,150),
-                        'main-160': calculateTintAndShades(red,green,blue,160),
-                        'main-170': calculateTintAndShades(red,green,blue,170),
-                        'main-180': calculateTintAndShades(red,green,blue,180),
-                        'main-190': calculateTintAndShades(red,green,blue,190)
+                        'complementary-60': getTintsAndShades(r,g,b,60),
+                        'complementary-70': getTintsAndShades(r,g,b,70),
+                        'complementary-80':getTintsAndShades(r,g,b,80),
+                        'complementary-90': getTintsAndShades(r,g,b,90),
+                        'complementary-100': getTintsAndShades(r,g,b,100),
+                        'complementary-110': getTintsAndShades(r,g,b,110),
+                        'complementary-120': getTintsAndShades(r,g,b,120),
+                        'complementary-130': getTintsAndShades(r,g,b,130),
+                        'complementary-140': getTintsAndShades(r,g,b,140),
+                        'main-10': getTintsAndShades(red,green,blue,10),
+                        'main-20': getTintsAndShades(red,green,blue,20),
+                        'main-30': getTintsAndShades(red,green,blue,30),
+                        'main-40': getTintsAndShades(red,green,blue,40),
+                        'main-50': getTintsAndShades(red,green,blue,50),
+                        'main-60': getTintsAndShades(red,green,blue,60),
+                        'main-70': getTintsAndShades(red,green,blue,70),
+                        'main-80': getTintsAndShades(red,green,blue,80),
+                        'main-90': getTintsAndShades(red,green,blue,90),
+                        'main-110': getTintsAndShades(red,green,blue,110),
+                        'main-120': getTintsAndShades(red,green,blue,120),
+                        'main-130': getTintsAndShades(red,green,blue,130),
+                        'main-140': getTintsAndShades(red,green,blue,140),
+                        'main-150': getTintsAndShades(red,green,blue,150),
+                        'main-160': getTintsAndShades(red,green,blue,160),
+                        'main-170': getTintsAndShades(red,green,blue,170),
+                        'main-180': getTintsAndShades(red,green,blue,180),
+                        'main-190': getTintsAndShades(red,green,blue,190)
                     }
 
                     console.log('colors[state.secondaryColor]',colors[state.secondaryColor], state.secondaryColor)
@@ -272,12 +274,12 @@ export default (state, action) => {
                             action.payload.colorValue.Blue,
                             state.lightShadowFactor,
                             state.darkShadowFactor),
-                        font: fontColor(
+                        font: getFontColor(
                             action.payload.colorValue.Red,
                             action.payload.colorValue.Green,
                             action.payload.colorValue.Blue,
                         ),
-                        codeFontColor: fontColor(
+                        codeFontColor: getFontColor(
                             action.payload.colorValue.Red,
                             action.payload.colorValue.Green,
                             action.payload.colorValue.Blue,
@@ -397,8 +399,8 @@ export default (state, action) => {
                 darkShadowFactor: 0.85,
                 lightShadowFactor: 1.05,
                 hexColor: (toHex(red) + toHex(green) + toHex(blue)),
-                font: fontColor(red, green, blue),
-                codeFontColor: fontColor(red, green,blue ),
+                font: getFontColor(red, green, blue),
+                codeFontColor: getFontColor(red, green,blue ),
                 shadows: calculateShadows(red,green,blue,1.05,0.85),
                 codeBackgroundColor: "#125B37",
             }

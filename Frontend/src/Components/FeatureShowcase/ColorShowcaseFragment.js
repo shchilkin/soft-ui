@@ -1,5 +1,5 @@
 import React, {Fragment, useContext} from "react";
-import {calculateTintAndShades,hexToRGB, fontColor} from "../../Functions";
+import {getFontColor,hexToRGB, getTintsAndShades } from 'color-processing-library';
 import ColorButton from "../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Updated/Card";
 import Input from "../../Pages/Generator/Generator_Components/Layout/Input/Input";
@@ -18,15 +18,15 @@ const ColorShowcaseFragment = () => {
     const Green = primaryBackgroundRGB.Green || 0;
     const Blue = primaryBackgroundRGB.Blue || 0;
 
-    const font = fontColor(Red, Green, Blue)
+    const font = getFontColor(Red, Green, Blue)
 
-    const darkShadow = calculateTintAndShades(
+    const darkShadow = getTintsAndShades(
         primaryBackgroundRGB.Red,
         primaryBackgroundRGB.Green,
         primaryBackgroundRGB.Blue,
         85)
 
-    const lightShadow = calculateTintAndShades(
+    const lightShadow = getTintsAndShades(
         primaryBackgroundRGB.Red,
         primaryBackgroundRGB.Green,
         primaryBackgroundRGB.Blue,

@@ -6,7 +6,7 @@ import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFr
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import ThemeContext from "../contexts/theme/ThemeContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
-import {fontColorHex} from "../Functions";
+import { getFontColorHex } from 'color-processing-library'
 import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColorFragment";
 
 
@@ -23,7 +23,7 @@ const Home = () => {
     let mainColor = `#${colorHEX}`;
     let lightShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`;
 
-    let fontColor = fontColorHex(mainColor);
+    let fontColor = getFontColorHex(mainColor);
     console.log('COLOR HEX', colorHEX)
 
     console.log('shadows',showcaseDarkShadow, showcaseLightShadow)

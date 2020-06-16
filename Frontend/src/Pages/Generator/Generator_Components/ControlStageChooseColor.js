@@ -1,27 +1,29 @@
-import React, {Fragment, useContext, useState} from "react";
-import ThemeContext from "../../../../contexts/theme/ThemeContext";
+import React, { Fragment, useContext, useState } from "react";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 import {
-    fontColorHex,
     getRandomInt
-} from "../../../../Functions";
-import Button from "../../../../Components/Updated/Button";
+} from "../../../Functions";
+import { getFontColorHex } from 'color-processing-library'
+import Button from "../../../Components/Updated/Button";
 import RGBinput from "./RGBinput";
-import TextInput from "../../../../Components/Updated/TextInput";
+import TextInput from "../../../Components/Updated/TextInput";
 import IconButton from "./IconButton";
-import Card from "../../../../Components/Updated/Card";
-import ColorButton from "../../../../Components/Updated/ColorButton";
-import Input from "../Layout/Input/Input";
+import Card from "../../../Components/Updated/Card";
+import ColorButton from "../../../Components/Updated/ColorButton";
+import SoftUIShadowsLogo from "./SoftUIShadowsLogo";
+
 
 const ControlStageChooseColor = () => {
     const {colorHEX, font, changeColor, resetTheme, inverseFont}  = useContext(ThemeContext);
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-    const [isDarkModeSectionSelected, setIsDarkModeSectionSelected] = useState(false);
+    const [isDarkModeSectionSelected, setIsDarkModeSectionSelected] = useState(!false);
     const [isAdditionalColorSectionSelected, setIsAdditionalColorSectionSelected] = useState(false);
 
     const controlCardBG = "#F0F0F0";
-    const controlCardFont = fontColorHex(controlCardBG);
+    const controlCardFont = getFontColorHex(controlCardBG);
+
 
     const generateRandom = () => {
         let rgbObject = {
@@ -238,11 +240,42 @@ const ControlStageChooseColor = () => {
                 fontColor={'#F0F0F0'}
                 borderRadius={6}
                 style={{ gridColumn:'1/8', gridRow:'4/4'}}>
-                    <div style={{display:"grid",gridTemplateRows:'1fr 1fr 1fr 1fr'}}>
-                        <p>Dark mode section</p>
-                        <input type={'range'}/>
-                        <input type={'range'}/>
-                        <input type={'range'}/>
+                    <div style={{
+                        display:"grid",
+                        gridGap:"10px",
+                        gridTemplateRows:'1fr 1fr 1fr 1fr',
+                        gridTemplateColumns:'50px 2fr'
+                    }}>
+                        <div style={{gridRow:'1/2',gridColumn:'1/3'}}>
+                            <SoftUIShadowsLogo
+                                height={'35px'}
+                                width={'35px'}
+                                mainColor={'#606060'} darkShadow={"#525252"} lightShadow={'#656565'}/>
+                        </div>
+                        <div style={{gridRow:'1/2',gridColumn:'2/3'}}>
+                            <h5>Dark mode settings</h5>
+                        </div>
+                        <div style={{gridRow:'2/3',gridColumn:'1/2'}}>
+                            <SoftUIShadowsLogo
+                                height={'35px'}
+                                width={'35px'}
+                                darkShadow={`#${colorHEX}`} mainColor={"#606060"} lightShadow={'#656565'}/>
+                        </div>
+                        <input style={{gridRow:'2/3',gridColumn:'2/3'}} type={'range'}/>
+                        <div style={{gridRow:'3/4',gridColumn:'1/2'}}>
+                            <SoftUIShadowsLogo
+                                height={'35px'}
+                                width={'35px'}
+                                darkShadow={'#525252'} mainColor={`#${colorHEX}`}  lightShadow={'#656565'}/>
+                        </div>
+                        <input style={{gridRow:'3/4',gridColumn:'2/3'}} type={'range'}/>
+                        <div style={{gridRow:'4/5',gridColumn:'1/2'}}>
+                            <SoftUIShadowsLogo
+                                height={'35px'}
+                                width={'35px'}
+                                mainColor={'#606060'} darkShadow={"#525252"} lightShadow={`#${colorHEX}`} />
+                        </div>
+                        <input style={{gridRow:'4/5',gridColumn:'2/3'}} type={'range'}/>
                     </div>
             </Card>}
         </div>

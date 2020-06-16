@@ -1,4 +1,4 @@
-import {calculateTintAndShades, hexToRGB} from "./Functions";
+import { getTintsAndShades, hexToRGB } from 'color-processing-library';
 
 export class ComponentShadows {
     constructor(
@@ -18,8 +18,8 @@ export class ComponentShadows {
         const { Red,Green,Blue } = hexToRGB(this.backgroundColor)
 
         const mainColorShadows = {
-            dark: calculateTintAndShades(Red, Green, Blue, this.darkShadowFactor),
-            light: calculateTintAndShades(Red, Green, Blue, this.lightShadowFactor)
+            dark: getTintsAndShades(Red, Green, Blue, this.darkShadowFactor),
+            light: getTintsAndShades(Red, Green, Blue, this.lightShadowFactor)
         }
 
         if (this.sameColorShadow){
@@ -30,14 +30,14 @@ export class ComponentShadows {
         else if (this.shadowColorBase !== undefined) {
             let {Red:red, Green: green, Blue: blue} = hexToRGB(this.shadowColorBase)
             return {
-                dark: calculateTintAndShades(red, green, blue,this.darkShadowFactor),
-                light: calculateTintAndShades(red, green, blue,this.lightShadowFactor)
+                dark: getTintsAndShades(red, green, blue,this.darkShadowFactor),
+                light: getTintsAndShades(red, green, blue,this.lightShadowFactor)
             }
         }
 
         else return {
-                dark: calculateTintAndShades(255,255,255,this.darkShadowFactor),
-                light: calculateTintAndShades(255, 255, 255,this.lightShadowFactor)
+                dark: getTintsAndShades(255,255,255,this.darkShadowFactor),
+                light: getTintsAndShades(255, 255, 255,this.lightShadowFactor)
             }
     }
 }

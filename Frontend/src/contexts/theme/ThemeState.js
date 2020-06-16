@@ -19,9 +19,8 @@ import {
 } from "../types";
 import {
   calculateShadows,
-  fontColor,
-  toHex,
 } from "../../Functions";
+import {getFontColor, toHex} from 'color-processing-library';
 
 const ThemeState = (props) => {
   //Darkmode related code
@@ -95,13 +94,13 @@ const ThemeState = (props) => {
     toHex(initialState.Blue);
 
   //  Calculate contrast font color for background
-  initialState.font = fontColor(
+  initialState.font = getFontColor(
     initialState.Red,
     initialState.Green,
     initialState.Blue
   );
 
-  initialState.codeFontColor = fontColor(
+  initialState.codeFontColor = getFontColor(
     initialState.Red,
     initialState.Green,
     initialState.Blue

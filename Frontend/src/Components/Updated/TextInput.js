@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
-import {calculateTintAndShades, hexToRGB} from "../../Functions";
+import { getTintsAndShades } from 'color-processing-library'
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import { ComponentShadows } from '../../Classes'
 
@@ -20,8 +20,8 @@ const TextInput = ({
     const {Red,Green,Blue} = colorRGB
 
     const mainColorShadows = {
-        dark: calculateTintAndShades(Red, Green, Blue),
-        light: calculateTintAndShades(Red, Green, Blue,105)
+        dark: getTintsAndShades(Red, Green, Blue),
+        light: getTintsAndShades(Red, Green, Blue,105)
     }
 
     const {dark, light} = componentShadows.getShadows()

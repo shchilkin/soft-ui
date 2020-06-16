@@ -3,9 +3,10 @@ import ShowcaseContext from "./ShowcaseContext";
 import ShowcaseReducer from "./ShowcaseReducer";
 import {
     CHANGE_SHOWCASE_COLOR,
-    CHANGE_DARK_MODE_SHOWCASE_COLOR, CHANGE_SECONDARY_COLOR
-} from "../types";
-import {calculateColors, calculateTintAndShades, hexToRGB} from "../../Functions";
+    CHANGE_DARK_MODE_SHOWCASE_COLOR,
+    CHANGE_SECONDARY_COLOR } from "../types";
+import { calculateColors } from "../../Functions";
+import { getTintsAndShades, hexToRGB } from 'color-processing-library';
 
 
 const ShowcaseState = (props) => {
@@ -27,8 +28,8 @@ const ShowcaseState = (props) => {
 
     const {Red, Green, Blue} = hexToRGB(initialState.secondaryColor)
 
-    initialState.secondaryColorDarkShadow = calculateTintAndShades(Red,Green,Blue, 85);
-    initialState.secondaryColorLightShadow = calculateTintAndShades(Red,Green,Blue, 105);
+    initialState.secondaryColorDarkShadow = getTintsAndShades(Red,Green,Blue, 85);
+    initialState.secondaryColorLightShadow = getTintsAndShades(Red,Green,Blue, 105);
 
     initialState.inputValue = initialState.backgroundColor;
 

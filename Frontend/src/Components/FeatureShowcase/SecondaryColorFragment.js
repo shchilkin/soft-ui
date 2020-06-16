@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import {calculateTintAndShades, hexToRGB, fontColor, calculateColors, fontColorHex} from "../../Functions";
 import ColorButton from "../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Updated/Card";
+import {getFontColorHex, hexToRGB, getTintsAndShades} from 'color-processing-library'
 import ThemeContext from '../../contexts/theme/ThemeContext'
 import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'
 
@@ -11,41 +11,40 @@ const SecondaryColorFragment = () => {
 
     const colorShowcaseContext = useContext(ShowcaseContext)
     const {backgroundColor, secondaryColor,
-        secondaryColorDarkShadow, secondaryColorLightShadow,
         changeSecondaryColor} = colorShowcaseContext;
 
-    const font = fontColorHex(secondaryColor);
+    const font = getFontColorHex(secondaryColor);
 
     const {Red, Green, Blue} = hexToRGB(secondaryColor);
     const {Red: mainRed, Green: mainGreen, Blue: mainBlue} = hexToRGB(backgroundColor);
 
-    const complementaryDarkShadow = calculateTintAndShades(Red,Green,Blue, 85);
-    const complementaryLightShadow = calculateTintAndShades(Red,Green,Blue, 105);
+    const complementaryDarkShadow = getTintsAndShades(Red,Green,Blue, 85);
+    const complementaryLightShadow = getTintsAndShades(Red,Green,Blue, 105);
 
-    const mainDarkShadow = calculateTintAndShades(mainRed, mainGreen, mainBlue, 85);
-    const mainLightShadow = calculateTintAndShades(mainRed, mainGreen, mainBlue, 105);
+    const mainDarkShadow = getTintsAndShades(mainRed, mainGreen, mainBlue, 85);
+    const mainLightShadow = getTintsAndShades(mainRed, mainGreen, mainBlue, 105);
 
     const complementaryColors = {
-        60: calculateTintAndShades(Red,Green,Blue, 60),
-        80: calculateTintAndShades(Red,Green,Blue, 80),
-        120: calculateTintAndShades(Red,Green,Blue, 120),
-        140: calculateTintAndShades(Red,Green,Blue, 140),
+        60: getTintsAndShades(Red,Green,Blue, 60),
+        80: getTintsAndShades(Red,Green,Blue, 80),
+        120: getTintsAndShades(Red,Green,Blue, 120),
+        140: getTintsAndShades(Red,Green,Blue, 140),
     };
 
     const mainColorShades = {
-        50: calculateTintAndShades(mainRed, mainGreen, mainBlue,50),
-        60: calculateTintAndShades(mainRed, mainGreen, mainBlue,60),
-        70: calculateTintAndShades(mainRed, mainGreen, mainBlue,70),
-        80: calculateTintAndShades(mainRed, mainGreen, mainBlue, 80),
-        90: calculateTintAndShades(mainRed, mainGreen, mainBlue,90),
+        50: getTintsAndShades(mainRed, mainGreen, mainBlue,50),
+        60: getTintsAndShades(mainRed, mainGreen, mainBlue,60),
+        70: getTintsAndShades(mainRed, mainGreen, mainBlue,70),
+        80: getTintsAndShades(mainRed, mainGreen, mainBlue, 80),
+        90: getTintsAndShades(mainRed, mainGreen, mainBlue,90),
     };
 
     const mainColorTints = {
-        110: calculateTintAndShades(mainRed, mainGreen, mainBlue,110),
-        120: calculateTintAndShades(mainRed, mainGreen, mainBlue,120),
-        130: calculateTintAndShades(mainRed, mainGreen, mainBlue,130),
-        140: calculateTintAndShades(mainRed, mainGreen, mainBlue, 140),
-        150: calculateTintAndShades(mainRed, mainGreen, mainBlue,150),
+        110: getTintsAndShades(mainRed, mainGreen, mainBlue,110),
+        120: getTintsAndShades(mainRed, mainGreen, mainBlue,120),
+        130: getTintsAndShades(mainRed, mainGreen, mainBlue,130),
+        140: getTintsAndShades(mainRed, mainGreen, mainBlue, 140),
+        150: getTintsAndShades(mainRed, mainGreen, mainBlue,150),
     };
 
     return(

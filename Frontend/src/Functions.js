@@ -1,3 +1,5 @@
+import { toHex, hexToRGB } from 'color-processing-library';
+
 export function calculateColor(color, factor){
     let _color = color * factor;
     if(_color > 255) {
@@ -21,71 +23,7 @@ export function calculateShadows(Red, Green, Blue, LightShadowFactor, DarkShadow
         ]
     }
 }
-// TODO refactor calculateShadows because calculateShadows and calculateTintAndShades have similar functionality
-export function calculateTintAndShades(red, green, blue, factor = 85,outputMode = 'hex') {
-    let _factor = factor / 100;
-    switch (outputMode) {
-        case "rgb":
-            return `rgb(${calculateColor(red, _factor)},
-            ${calculateColor(green, _factor)},
-            ${calculateColor(blue, _factor)}`
-        default:
-        case "hex":
-            let hexRed = toHex(calculateColor(red, _factor));
-            let hexGreen = toHex(calculateColor(green, _factor));
-            let hexBlue = toHex(calculateColor(blue, _factor))
-            return `#${hexRed}${hexGreen}${hexBlue}`
-    }
-}
-export function fontColor(red, green, blue) {
-    let luminance = ((0.299 * red) + (0.587 * green) + (0.114 * blue))/255;
-
-    if (luminance > 0.5) {
-        return "#000"
-    } else {
-        return "#FFF"
-    }
-}
-export function fontColorHex(Hex) {
-    const {Red, Green, Blue} = hexToRGB(Hex);
-
-    let luminance = ((0.299 * Red) + (0.587 * Green) + (0.114 * Blue))/255;
-
-    if (luminance > 0.5) {
-        return "#000"
-    } else {
-        return "#FFF"
-    }
-}
-export function toHex(colorValue){
-    let color
-    if (colorValue <= 15) {
-        color = `0${Number(colorValue).toString(16).toUpperCase()}`
-    } else {
-        color = `${Number(colorValue).toString(16).toUpperCase()}`
-    }
-    return color;
-}
-export function hexToRGB(hexColor) {
-    let hexWithoutHash = hexColor.replace('#','')
-    if (hexWithoutHash.length === 3) {
-        return {
-            Red: parseInt(`${hexWithoutHash.slice(0, 1)}${hexWithoutHash.slice(0, 1)}`, 16),
-            Green: parseInt(`${hexWithoutHash.slice(1, 2)}${hexWithoutHash.slice(1, 2)}`, 16),
-            Blue: parseInt(`${hexWithoutHash.slice(2, 3)}${hexWithoutHash.slice(2, 3)}`, 16)
-        }
-    }
-    if (hexWithoutHash.length === 6){
-        return {
-            Red: parseInt(`${hexWithoutHash.slice(0, 2)}`, 16),
-            Green: parseInt(`${hexWithoutHash.slice(2, 4)}`, 16),
-            Blue: parseInt(`${hexWithoutHash.slice(4, 6)}`, 16)
-        }
-    }
-
-    else return "Invalid Hex code value"
-}
-export function isHexValid(hex, checkWithHash = false) {
+export function isHexColorValid(hex, checkWithHash = false) {
     // TODO Check hex only with hash
 
     let hexRegExp = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;

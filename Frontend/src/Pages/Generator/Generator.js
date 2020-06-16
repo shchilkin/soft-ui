@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import ThemeContext from "../../contexts/theme/ThemeContext";
-import {isHexValid} from "../../Functions";
+import {isHexColorValid} from "../../Functions";
 import SoftUIPreview from "./Generator_Components/SoftUIPreview";
 import SoftUIControl from "./Generator_Components/SoftUIControl";
 
@@ -36,7 +36,7 @@ const Generator = () => {
 
     //  If hex color code is valid, change color to one is in the URL | only on mount
     useEffect(() => {
-        if (isHexValid(colorFromURL)){
+        if (isHexColorValid(colorFromURL)){
             changeColor("Hex", colorFromURL)
         }
     }, [colorFromURL, viewPortHeight, changeColor]);

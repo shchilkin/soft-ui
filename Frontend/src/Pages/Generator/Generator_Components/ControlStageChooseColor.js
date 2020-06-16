@@ -1,9 +1,9 @@
-import React, {Fragment, useContext, useState} from "react";
+import React, { Fragment, useContext, useState } from "react";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 import {
-    fontColorHex,
     getRandomInt
 } from "../../../Functions";
+import { getFontColorHex } from 'color-processing-library'
 import Button from "../../../Components/Updated/Button";
 import RGBinput from "./RGBinput";
 import TextInput from "../../../Components/Updated/TextInput";
@@ -22,7 +22,8 @@ const ControlStageChooseColor = () => {
     const [isAdditionalColorSectionSelected, setIsAdditionalColorSectionSelected] = useState(false);
 
     const controlCardBG = "#F0F0F0";
-    const controlCardFont = fontColorHex(controlCardBG);
+    const controlCardFont = getFontColorHex(controlCardBG);
+
 
     const generateRandom = () => {
         let rgbObject = {

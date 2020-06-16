@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Navbar from "react-bootstrap/cjs/Navbar";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import styled from "styled-components";
-import {calculateTintAndShades, toHex} from "../../Functions";
+import {toHex, getTintsAndShades} from 'color-processing-library';
 import {Link} from "react-router-dom";
 const NavigationBar = () => {
     const {
@@ -20,7 +20,7 @@ const NavigationBar = () => {
     const HEX = `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`;
     const lightShadowForSVG =() => {
         if (HEX === "FFFFFF"){
-            return calculateTintAndShades(Red,Green,Blue,95)
+            return getTintsAndShades(Red,Green,Blue,95)
         }
         else {
             return `#${toHex(lighterShadows[0])}${toHex(lighterShadows[1])}${toHex(lighterShadows[2])}`;
@@ -30,7 +30,7 @@ const NavigationBar = () => {
     // TODO move badge to the separate file and import if needed (Usage of the same badge in multiple files)
     const Badge = styled.span`
      padding: 5px 4px;
-     background-color: ${calculateTintAndShades(Red, Green, Blue, 85,"hex")};
+     background-color: ${getTintsAndShades(Red, Green, Blue, 85,"hex")};
      border-radius:${Math.round(borderRadius/2)}px;
      vertical-align: bottom;
      color: ${font};

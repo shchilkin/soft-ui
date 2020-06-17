@@ -20,7 +20,7 @@ import {
     toHex,
     isHexColorValid,
     hexToRGB
-} from 'color-processing-library';
+} from '@soft-ui-generator/color-processing-library'
 import {
     calculateColors, invertFont,
     calculateShadows,

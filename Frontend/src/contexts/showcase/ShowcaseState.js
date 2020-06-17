@@ -6,7 +6,7 @@ import {
     CHANGE_DARK_MODE_SHOWCASE_COLOR,
     CHANGE_SECONDARY_COLOR } from "../types";
 import { calculateColors } from "../../Functions";
-import { getTintsAndShades, hexToRGB } from 'color-processing-library';
+import { getTintsAndShades, hexToRGB } from '@soft-ui-generator/color-processing-library';
 
 
 const ShowcaseState = (props) => {

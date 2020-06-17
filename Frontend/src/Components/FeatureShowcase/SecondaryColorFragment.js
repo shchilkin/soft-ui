@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ColorButton from "../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Updated/Card";
-import {getFontColorHex, hexToRGB, getTintsAndShades} from 'color-processing-library'
+import {getFontColorHex, hexToRGB, getTintsAndShades} from '@soft-ui-generator/color-processing-library';
 import ThemeContext from '../../contexts/theme/ThemeContext'
 import ShowcaseContext from '../../contexts/showcase/ShowcaseContext'
 

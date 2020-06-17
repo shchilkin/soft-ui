@@ -1,4 +1,4 @@
-import { getTintsAndShades, hexToRGB } from 'color-processing-library';
+import { getTintsAndShades, hexToRGB } from '@soft-ui-generator/color-processing-library';
 
 export class ComponentShadows {
     constructor(

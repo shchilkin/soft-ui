@@ -1,5 +1,5 @@
 import React, {Fragment, useContext} from "react";
-import {getFontColor,hexToRGB, getTintsAndShades } from 'color-processing-library';
+import {getFontColor,hexToRGB, getTintsAndShades } from '@soft-ui-generator/color-processing-library';
 import ColorButton from "../../Pages/Generator/Generator_Components/Layout/ColorButton";
 import Card from "../Updated/Card";
 import Input from "../../Pages/Generator/Generator_Components/Layout/Input/Input";

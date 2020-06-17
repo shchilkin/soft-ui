@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Navbar from "react-bootstrap/cjs/Navbar";
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import styled from "styled-components";
-import {toHex, getTintsAndShades} from 'color-processing-library';
+import {toHex, getTintsAndShades} from '@soft-ui-generator/color-processing-library';
 import {Link} from "react-router-dom";
 const NavigationBar = () => {
     const {

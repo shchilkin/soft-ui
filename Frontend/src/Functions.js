@@ -1,4 +1,4 @@
-import { toHex, hexToRGB } from 'color-processing-library';
+import { toHex, hexToRGB } from '@soft-ui-generator/color-processing-library';
 
 export function calculateColor(color, factor){
     let _color = color * factor;

@@ -3,7 +3,7 @@ import ThemeContext from "../../../contexts/theme/ThemeContext";
 import {
     getRandomInt
 } from "../../../Functions";
-import { getFontColorHex } from 'color-processing-library'
+import { getFontColorHex } from '@soft-ui-generator/color-processing-library';
 import Button from "../../../Components/Updated/Button";
 import RGBinput from "./RGBinput";
 import TextInput from "../../../Components/Updated/TextInput";

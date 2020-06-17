@@ -6,7 +6,7 @@ import ColorShowcaseFragment from "../Components/FeatureShowcase/ColorShowcaseFr
 import ShowcaseContext from "../contexts/showcase/ShowcaseContext";
 import ThemeContext from "../contexts/theme/ThemeContext";
 import DarkModeShowcaseFragment from "../Components/FeatureShowcase/DarkModeShowcaseFragment";
-import { getFontColorHex } from 'color-processing-library'
+import { getFontColorHex } from '@soft-ui-generator/color-processing-library';
 import SecondaryColorFragment from "../Components/FeatureShowcase/SecondaryColorFragment";
 
 

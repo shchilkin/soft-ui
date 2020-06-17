@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
-import { getTintsAndShades } from 'color-processing-library'
+import { getTintsAndShades } from '@soft-ui-generator/color-processing-library';
 import ThemeContext from "../../contexts/theme/ThemeContext";
 import { ComponentShadows } from '../../Classes'
 

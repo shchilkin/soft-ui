@@ -20,7 +20,7 @@ import {
     toHex,
     isHexColorValid,
     hexToRGB
-} from 'color-processing-library';
+} from 'color-processing-library'
 import {
     calculateColors, invertFont,
     calculateShadows,

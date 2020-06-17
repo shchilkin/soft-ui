@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "animate.css": "^4.1.0",
     "bootstrap": "^4.4.1",
-    "color-processing-library": "^1.0.0",
+    "color-processing-library": "^1.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",

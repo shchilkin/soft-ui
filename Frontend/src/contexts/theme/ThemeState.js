@@ -20,7 +20,7 @@ import {
 import {
   calculateShadows,
 } from "../../Functions";
-import {getFontColor, toHex} from '@soft-ui-generator/color-processing-library';
+import {getFontColor, toHex} from 'color-processing-library';
 
 const ThemeState = (props) => {
   //Darkmode related code

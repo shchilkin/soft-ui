@@ -4,7 +4,7 @@ import {
     CHANGE_DARK_MODE_SHOWCASE_COLOR
 } from "../types";
 import { calculateColors } from "../../Functions";
-import { getFontColor, hexToRGB, isHexColorValid, getTintsAndShades } from '@soft-ui-generator/color-processing-library';
+import { getFontColor, hexToRGB, isHexColorValid, getTintsAndShades } from 'color-processing-library';
 
 export default (state, action) => {
     let darkModeFactor = (factor) => {

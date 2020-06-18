@@ -11,6 +11,7 @@ import IconButton from "./IconButton";
 import Card from "../../../Components/Updated/Card";
 import ColorButton from "../../../Components/Updated/ColorButton";
 import SoftUIShadowsLogo from "./SoftUIShadowsLogo";
+import RangeInput from "../../../Components/Updated/RangeInput";
 
 
 const ControlStageChooseColor = () => {
@@ -18,7 +19,7 @@ const ControlStageChooseColor = () => {
 
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-    const [isDarkModeSectionSelected, setIsDarkModeSectionSelected] = useState(!false);
+    const [isDarkModeSectionSelected, setIsDarkModeSectionSelected] = useState(true);
     const [isAdditionalColorSectionSelected, setIsAdditionalColorSectionSelected] = useState(false);
 
     const controlCardBG = "#F0F0F0";
@@ -242,6 +243,7 @@ const ControlStageChooseColor = () => {
                 style={{ gridColumn:'1/8', gridRow:'4/4'}}>
                     <div style={{
                         display:"grid",
+                        alignItems:"center",
                         gridGap:"10px",
                         gridTemplateRows:'1fr 1fr 1fr 1fr',
                         gridTemplateColumns:'50px 2fr'
@@ -261,21 +263,42 @@ const ControlStageChooseColor = () => {
                                 width={'35px'}
                                 darkShadow={`#${colorHEX}`} mainColor={"#606060"} lightShadow={'#656565'}/>
                         </div>
-                        <input style={{gridRow:'2/3',gridColumn:'2/3'}} type={'range'}/>
+                        <RangeInput
+                            backgroundColor={'#606060'}
+                            thumbHoverColor={`#${colorHEX}`}
+                            height={16}
+                            thumbHeight={12}
+                            shadowBlur={10}
+                            style={{gridRow:'2/3',gridColumn:'2/3'}}
+                        />
                         <div style={{gridRow:'3/4',gridColumn:'1/2'}}>
                             <SoftUIShadowsLogo
                                 height={'35px'}
                                 width={'35px'}
                                 darkShadow={'#525252'} mainColor={`#${colorHEX}`}  lightShadow={'#656565'}/>
                         </div>
-                        <input style={{gridRow:'3/4',gridColumn:'2/3'}} type={'range'}/>
+                        <RangeInput
+                            backgroundColor={'#606060'}
+                            thumbHoverColor={`#${colorHEX}`}
+                            height={16}
+                            thumbHeight={12}
+                            shadowBlur={10}
+                            style={{gridRow:'3/4',gridColumn:'2/3'}}
+                        />
                         <div style={{gridRow:'4/5',gridColumn:'1/2'}}>
                             <SoftUIShadowsLogo
                                 height={'35px'}
                                 width={'35px'}
                                 mainColor={'#606060'} darkShadow={"#525252"} lightShadow={`#${colorHEX}`} />
                         </div>
-                        <input style={{gridRow:'4/5',gridColumn:'2/3'}} type={'range'}/>
+                        <RangeInput
+                            backgroundColor={'#606060'}
+                            thumbHoverColor={`#${colorHEX}`}
+                            height={16}
+                            thumbHeight={12}
+                            shadowBlur={10}
+                            style={{gridRow:'4/5',gridColumn:'2/3'}}
+                        />
                     </div>
             </Card>}
         </div>

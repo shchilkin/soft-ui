@@ -4,7 +4,7 @@ import {
     getRandomInt
 } from "../../../Functions";
 import { getFontColorHex } from 'color-processing-library';
-import Button from "../../../Components/Updated/Button";
+import Button from '../../../Components/Updated/Button';
 import RGBinput from "./RGBinput";
 import TextInput from "../../../Components/Updated/TextInput";
 import IconButton from "./IconButton";
@@ -13,7 +13,7 @@ import ColorButton from "../../../Components/Updated/ColorButton";
 import SoftUIShadowsLogo from "./SoftUIShadowsLogo";
 import RangeInput from "../../../Components/Updated/RangeInput";
 
-
+console.log('soft-ui-react-components');
 const ControlStageChooseColor = () => {
     const {colorHEX, font, changeColor, resetTheme, inverseFont}  = useContext(ThemeContext);
 
@@ -240,7 +240,7 @@ const ControlStageChooseColor = () => {
                 isSameColorShadow={true}
                 fontColor={'#F0F0F0'}
                 borderRadius={6}
-                style={{ gridColumn:'1/8', gridRow:'4/4'}}>
+                style={{ gridColumn:'1/8', gridRow:'4/4',boxSizing:'border-box'}}>
                     <div style={{
                         display:"grid",
                         alignItems:"center",

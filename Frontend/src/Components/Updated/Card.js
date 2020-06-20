@@ -137,6 +137,7 @@ Card.defaultProps = {
 export default Card;
 
 export const StyledCard = styled.div`
+    box-sizing: border-box;
     width: 100%;
     min-height: 50px;
     background-color: ${props => props.background};

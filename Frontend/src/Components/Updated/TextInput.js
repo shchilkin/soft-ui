@@ -47,6 +47,7 @@ export default TextInput;
 
 
 const StyledInput = styled.input`
+        box-sizing: border-box;
         width: 100%;
         height: 50px;
         color: ${props => props.color};

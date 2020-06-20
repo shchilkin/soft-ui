@@ -44,19 +44,11 @@ const Generator = () => {
     return (
       <div
           id={'Generator Grid'}
-          style={{
-              height:`${viewPortHeight-60}px`,
-              gridTemplateColumns:'1fr 1fr',
-              display: "grid"
-          }}>
-          <div style={{
-              height:'100%',
-              gridColumn:'1/2'}}>
+          className={'generatorGrid'}>
+          <div className={'previewItem'}>
               <SoftUIPreview/>
           </div>
-          <div style={{
-              height:'100%',
-              gridColumn:'2/2'}}>
+          <div className={'controlItem'}>
               <SoftUIControl/>
           </div>
       </div>

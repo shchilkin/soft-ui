@@ -1,4 +1,4 @@
 # soft-ui
 
 Soft UI (Neumorphic) generator.
-version 1.0
+version 2.0

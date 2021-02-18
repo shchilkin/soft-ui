@@ -1,0 +1,14 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ed2939;
+  color: white;
+}
+
+.softui-preview {
+  background-color: #ed2939;
+  width: 300px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: rgb(201, 35, 48) 5px 5px 20px 0px,
+    rgb(249, 43, 60) -5px -5px 20px 0px;
+}

@@ -1,12 +1,13 @@
-import Head from 'next/head';
+import React from 'react';
 
-export default function Home() {
+const Home = () => {
   return (
-    <>
-     <Head>
-        <title>Soft UI</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </>
+    <div>
+     <h1>Soft UI</h1>
+     <h2>Open source design tool</h2>
+     <div className='softui-preview'/>
+    </div>
   )
 }
+
+export default Home;

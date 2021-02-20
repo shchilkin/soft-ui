@@ -1,14 +1,47 @@
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #ed2939;
-  color: white;
+ font-family: 'Poppins', sans-serif;
+ font-size: 8pt;
+ background-color: #ed2939;
+ color: white;
 }
 
 .softui-preview {
-  background-color: #ed2939;
-  width: 300px;
-  height: 400px;
-  border-radius: 12px;
-  box-shadow: rgb(201, 35, 48) 5px 5px 20px 0px,
-    rgb(249, 43, 60) -5px -5px 20px 0px;
+ grid-column-start: 2;
+ grid-column-end: five;
+ grid-row-start: row1-start;
+ grid-row-end: 3;
+
+ background-color: #ed2939;
+ width: 300px;
+ height: 300px;
+ border-radius: 12px;
+ box-shadow: rgb(201, 35, 48) 5px 5px 20px 0px,
+  rgb(249, 43, 60) -5px -5px 20px 0px;
+}
+
+.generator-grid {
+ display: grid;
+ grid-template-columns: 40px 50px auto 50px 40px;
+ grid-template-rows: 25% 100px auto;
+}
+
+.header {
+ display: inline-block;
+ margin: 0;
+ padding: 0;
+}
+
+.bold {
+ font-weight: 600;
+}
+
+.regular {
+ font-weight: 400;
+}
+
+#logo {
+ padding: 16px;
+ display: inline-block;
+ max-width: 48px;
+ max-height: 48px;
 }

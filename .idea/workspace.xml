@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/utils/rust/soft-ui-utils/Cargo.toml" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="" />
+    <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Code refactor">
+      <change afterPath="$PROJECT_DIR$/shared/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/types/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/soft-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/soft-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/version_2.0.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/version_2.0.code-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/logo/logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Aleksandr Shchilkin &lt;crazyredkitten@icloud.com&gt;" />
+        <option value="A," />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="vyw5nkz5" />
   </component>
   <component name="ProjectId" id="1pI94LgbPMZ06w5WgJD9qe5qyqd" />
   <component name="ProjectViewState">
@@ -30,9 +61,16 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="language.rust" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/store/types/theme" />
+      <recent name="$PROJECT_DIR$/store" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -51,6 +89,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,10 +101,22 @@
       <option name="presentableId" value="Default" />
       <updated>1614859544621</updated>
       <workItem from="1614859546198" duration="2954000" />
+      <workItem from="1614880356029" duration="3573000" />
+      <workItem from="1614884068910" duration="365000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

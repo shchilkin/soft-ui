@@ -1,24 +1,25 @@
 {
- "folders": [
-   {
-     "path": "../"
-   },
- ],
- "settings": {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-  "files.exclude": {
-   "**/.git": true,
-   "**/.svn": true,
-   "**/.hg": true,
-   "**/CVS": true,
-   "**/.DS_Store": true,
-   "**/node_modules": true,
-   "**/.next": true,
-   "**/OLD | version-1.0": true
-  },
-  "typescript.tsdk": "node_modules/typescript/lib"
- }
+  "folders": [
+    {
+      "path": "../"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/OLD | version-1.0": true,
+      "**/.idea": true
+    },
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
 }

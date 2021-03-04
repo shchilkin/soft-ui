@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStore } from 'redux';
-import rootReducer from '../reducers/index';
+import rootReducer from '../store/reducers/index';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import '../styles/styles.css';

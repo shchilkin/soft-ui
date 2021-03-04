@@ -1,42 +1,14 @@
-import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
-
-export type themeAction = AnyAction;
-
-// export type hexColor = `#${string}`;
-export type hexColor = string;
-
-export interface themeState {
-  mainColor: hexColor;
-  fontColor: hexColor;
-  lightShadow: hexColor;
-  darkShadow: hexColor;
-}
-
-export enum themeActionType {
-  UPDATE_MAIN_COLOR = 'UPDATE_MAIN_COLOR',
-  UPDATE_FONT_COLOR = 'UPDATE_FONT_COLOR',
-  UPDATE_LIGHT_SHADOW = 'UPDATE_LIGHT_SHADOW',
-  UPDATE_DARK_SHADOW = 'UPDATE_DARK_SHADOW',
-}
+import { ApplicationState } from './index';
+import { hexColor } from '../../shared';
+import { Theme, themeAction, themeActionType, themeState } from '../types/theme';
 
 const initialState: themeState = {
-  mainColor: '#ed2939',
-  fontColor: '#fff',
-  lightShadow: '#f92b3c',
-  darkShadow: '#c92330',
+  mainColor: '#E7CFCD',
+  fontColor: '#000',
+  lightShadow: '#f3d9d7',
+  darkShadow: '#c4b0ae'
 };
-
-export interface Theme {
-  mainColor: hexColor;
-  fontColor: hexColor;
-  lightShadow: hexColor;
-  darkShadow: hexColor;
-  updateMainColor: (data: Partial<themeState>) => void;
-  updateFontColor: (data: Partial<themeState>) => void;
-  updateLightShadow: (data: Partial<themeState>) => void;
-  updateDarkShadow: (data: Partial<themeState>) => void;
-}
 
 /**
  * ### useTheme Hook
@@ -44,40 +16,40 @@ export interface Theme {
  * Contains all data related to the theme:
  * Colors and color handlers
  *
+ * @return {string} - mainColor, fontColor, lightShadow, darkShadow and their handlers
  * */
 export const useTheme = (): Theme => {
   const dispatch = useDispatch();
 
-  // TODO: change any to ApplicationState -- useSelector<ApplicationState, boolean>
-  const mainColor = useSelector<any, hexColor>((state) => state.themeReducer.mainColor);
+  const mainColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.mainColor);
   const updateMainColor = (data: Partial<themeState>) => {
     dispatch({
       type: themeActionType.UPDATE_MAIN_COLOR,
-      payload: data,
+      payload: data
     });
   };
 
-  const fontColor = useSelector<any, hexColor>((state) => state.themeReducer.fontColor);
+  const fontColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.fontColor);
   const updateFontColor = (data: Partial<themeState>) => {
     dispatch({
       type: themeActionType.UPDATE_FONT_COLOR,
-      payload: data,
+      payload: data
     });
   };
 
-  const lightShadow = useSelector<any, hexColor>((state) => state.themeReducer.lightShadow);
+  const lightShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.lightShadow);
   const updateLightShadow = (data: Partial<themeState>) => {
     dispatch({
       type: themeActionType.UPDATE_LIGHT_SHADOW,
-      payload: data,
+      payload: data
     });
   };
 
-  const darkShadow = useSelector<any, hexColor>((state) => state.themeReducer.darkShadow);
+  const darkShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.darkShadow);
   const updateDarkShadow = (data: Partial<themeState>) => {
     dispatch({
       type: themeActionType.UPDATE_DARK_SHADOW,
-      payload: data,
+      payload: data
     });
   };
 

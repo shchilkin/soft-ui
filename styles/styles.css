@@ -1,6 +1,12 @@
-body {
+:root {
+  --main-margin: 16px;
+}
+
+html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 8pt;
+  height: 100%;
+  overflow: hidden;
 }
 
 .softui-preview {
@@ -39,4 +45,9 @@ body {
   display: inline-block;
   max-width: 48px;
   max-height: 48px;
+}
+
+#page {
+  width: calc(100vw - var(--main-margin));
+  height: calc(100vh - var(--main-margin));
 }

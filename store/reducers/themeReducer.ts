@@ -22,7 +22,7 @@ export const useTheme = (): Theme => {
   const dispatch = useDispatch();
 
   const mainColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.mainColor);
-  const updateMainColor = (data: Partial<themeState>) => {
+  const updateMainColor = (data: hexColor) => {
     dispatch({
       type: themeActionType.UPDATE_MAIN_COLOR,
       payload: data
@@ -30,7 +30,7 @@ export const useTheme = (): Theme => {
   };
 
   const fontColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.fontColor);
-  const updateFontColor = (data: Partial<themeState>) => {
+  const updateFontColor = (data: hexColor) => {
     dispatch({
       type: themeActionType.UPDATE_FONT_COLOR,
       payload: data
@@ -38,7 +38,7 @@ export const useTheme = (): Theme => {
   };
 
   const lightShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.lightShadow);
-  const updateLightShadow = (data: Partial<themeState>) => {
+  const updateLightShadow = (data: hexColor) => {
     dispatch({
       type: themeActionType.UPDATE_LIGHT_SHADOW,
       payload: data
@@ -46,7 +46,7 @@ export const useTheme = (): Theme => {
   };
 
   const darkShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.darkShadow);
-  const updateDarkShadow = (data: Partial<themeState>) => {
+  const updateDarkShadow = (data: hexColor) => {
     dispatch({
       type: themeActionType.UPDATE_DARK_SHADOW,
       payload: data

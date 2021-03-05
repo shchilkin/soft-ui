@@ -4,17 +4,19 @@
     <cargoProject FILE="$PROJECT_DIR$/utils/rust/soft-ui-utils/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Code refactor">
-      <change afterPath="$PROJECT_DIR$/shared/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/types/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/soft-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/soft-ui.iml" afterDir="false" />
+    <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
+      <change afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Header/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Input/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Preview/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/version_2.0.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/version_2.0.code-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/logo/logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/routes/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/OLD | version-1.0/routes/Colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/logo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/types/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/types/theme/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -37,6 +40,14 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="vyw5nkz5" />
@@ -91,6 +102,7 @@
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,16 +114,38 @@
       <updated>1614859544621</updated>
       <workItem from="1614859546198" duration="2954000" />
       <workItem from="1614880356029" duration="3573000" />
-      <workItem from="1614884068910" duration="365000" />
+      <workItem from="1614884068910" duration="983000" />
+      <workItem from="1614933755423" duration="13911000" />
     </task>
+    <task id="LOCAL-00001" summary="Code refactor">
+      <created>1614884507038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614884507038</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
+    <MESSAGE value="Updated layout, Added function for managing color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated layout, Added function for managing color" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

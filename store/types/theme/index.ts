@@ -45,8 +45,8 @@ export interface Theme {
   fontColor: hexColor;
   lightShadow: hexColor;
   darkShadow: hexColor;
-  updateMainColor: (data: Partial<themeState>) => void;
-  updateFontColor: (data: Partial<themeState>) => void;
-  updateLightShadow: (data: Partial<themeState>) => void;
-  updateDarkShadow: (data: Partial<themeState>) => void;
+  updateMainColor: (data: hexColor) => void;
+  updateFontColor: (data: hexColor) => void;
+  updateLightShadow: (data: hexColor) => void;
+  updateDarkShadow: (data: hexColor) => void;
 }

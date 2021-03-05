@@ -5,25 +5,12 @@
 html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 8pt;
-  height: 100%;
-  overflow: hidden;
+  margin: 0;
+  height: 100vh;
 }
 
-.softui-preview {
-  grid-column-start: 2;
-  grid-column-end: five;
-  grid-row-start: row1-start;
-  grid-row-end: 3;
-
-  width: 300px;
-  height: 300px;
-  border-radius: 12px;
-}
-
-.generator-grid {
-  display: grid;
-  grid-template-columns: 40px 50px auto 50px 40px;
-  grid-template-rows: 25% 100px auto;
+body {
+  justify-content: center;
 }
 
 .header {
@@ -47,7 +34,13 @@ html, body {
   max-height: 48px;
 }
 
-#page {
-  width: calc(100vw - var(--main-margin));
-  height: calc(100vh - var(--main-margin));
+.grid-container {
+  display: grid;
+  grid-template-rows: 50px repeat(2, 1fr);
+  box-shadow: #c4b0ae 5px 5px 20px 0, #f3d9d7 -5px -5px 20px 0;
+}
+
+.flex-test {
+  flex-direction: column;
+  align-items: center;
 }

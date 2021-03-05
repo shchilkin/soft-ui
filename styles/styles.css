@@ -30,8 +30,8 @@ body {
 #logo {
   padding: 16px;
   display: inline-block;
-  max-width: 48px;
-  max-height: 48px;
+  max-height: 80px;
+  max-width: 80px;
 }
 
 .grid-container {

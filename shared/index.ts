@@ -8,7 +8,7 @@ export type hexColor = string;
 export const sixDigitHexRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 
 //TODO: Add documentation
-export const threeDigitHexRegex = /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i;
+export const threeDigitHexRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
 //TODO: Add documentation
 export type rgbValue = number;
@@ -18,4 +18,10 @@ export interface rgbColor {
   red: rgbValue,
   green: rgbValue,
   blue: rgbValue,
+}
+
+//TODO: Add documentation
+export interface shadowColors {
+  lightShadow: hexColor,
+  darkShadow: hexColor,
 }

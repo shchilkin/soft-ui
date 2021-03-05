@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Input/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Preview/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jest.setup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.jest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/routes/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/OLD | version-1.0/routes/Colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Input/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/types/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/types/theme/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +84,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="language.rust" />
@@ -79,11 +93,25 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/store/types/theme" />
       <recent name="$PROJECT_DIR$/store" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.getFontColor outputs correct font colors.">
+    <configuration name="getFontColor outputs correct font colors." type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/utils/ECMAScript/getFontColor.test.ts" />
+      <test-names>
+        <test-name value="getFontColor outputs correct font colors." />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -96,6 +124,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.getFontColor outputs correct font colors." />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -115,7 +144,8 @@
       <workItem from="1614859546198" duration="2954000" />
       <workItem from="1614880356029" duration="3573000" />
       <workItem from="1614884068910" duration="983000" />
-      <workItem from="1614933755423" duration="13911000" />
+      <workItem from="1614933755423" duration="14016000" />
+      <workItem from="1614958969828" duration="7585000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>
@@ -124,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614884507038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated layout, Added function for managing color">
+      <created>1614951766382</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614951766382</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

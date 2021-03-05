@@ -3,7 +3,7 @@ import { useTheme } from '../../store/reducers/themeReducer';
 
 interface InputProps {
   value: number | string
-  onChange: (event: any) => void
+  onChange: (event) => void
 }
 
 /**

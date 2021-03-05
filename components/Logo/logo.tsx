@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../../store/reducers/themeReducer';
 
 /**
- * Soft UI Vector logo
+ * Soft UI Vector Logo
  */
 const Logo = (): JSX.Element => {
   const { mainColor, darkShadow, lightShadow } = useTheme();

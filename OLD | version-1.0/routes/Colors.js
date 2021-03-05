@@ -15,9 +15,9 @@ async function getColorsFromColorMind(red, green, blue){
 
     try {
         return await fetch(url, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data) // body data type must match "Content-Type" header
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data) // body data type must match "Content-Type" Header
         });
     }
     catch (error) {

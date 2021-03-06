@@ -6,7 +6,6 @@ import { useTheme } from '../../store/reducers/themeReducer';
  */
 const Logo = (): JSX.Element => {
   const { mainColor, darkShadow, lightShadow } = useTheme();
-  console.log("MAIN, dark, light", mainColor, darkShadow, lightShadow)
 
   return (
     <div id='logo'>

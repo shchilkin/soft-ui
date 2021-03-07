@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/components/Button/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Inputs/RangeInput/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/reducers/softUIPropertiesReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/types/softUIProperties/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Input/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.jest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb/hexToRgb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits/isHexSixDigits.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor/isValidHexColor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex/rgbToHex.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit/threeDigitHexToSixDigit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Inputs/TextInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Preview/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Preview/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -85,11 +79,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/handleThemeChange" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript" />
+      <recent name="$PROJECT_DIR$/components/Inputs" />
       <recent name="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit" />
       <recent name="$PROJECT_DIR$/utils/ECMAScript/rgbToHex" />
-      <recent name="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor" />
-      <recent name="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits" />
-      <recent name="$PROJECT_DIR$/utils/ECMAScript/hexToRgb" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -169,7 +163,7 @@
       <workItem from="1614884068910" duration="983000" />
       <workItem from="1614933755423" duration="14016000" />
       <workItem from="1614958969828" duration="11491000" />
-      <workItem from="1615101338059" duration="4693000" />
+      <workItem from="1615101338059" duration="15164000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

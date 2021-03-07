@@ -1,5 +1,5 @@
 import React, { ReactElement, CSSProperties } from 'react';
-import { useTheme } from '../../store/reducers/themeReducer';
+import { useTheme } from '../../../store/reducers/themeReducer';
 
 interface InputProps {
   value: number | string
@@ -13,6 +13,7 @@ const Input = (props: InputProps): ReactElement => {
   const { mainColor, fontColor } = useTheme();
   const { value, onChange } = props;
 
+  //TODO Change to styled components css
   const inputStyle: CSSProperties = {
     color: fontColor,
     fontWeight: 600,

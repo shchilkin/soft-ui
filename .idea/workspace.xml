@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jest.tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/enzyme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Input/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.jest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb/hexToRgb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits/isHexSixDigits.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor/isValidHexColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex/rgbToHex.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit/threeDigitHexToSixDigit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -77,12 +85,27 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/store/types/theme" />
-      <recent name="$PROJECT_DIR$/store" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/rgbToHex" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits" />
+      <recent name="$PROJECT_DIR$/utils/ECMAScript/hexToRgb" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.getFontColor outputs correct font colors.">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="getFontColor outputs correct font colors. (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" />
+      <test-names>
+        <test-name value="getFontColor outputs correct font colors." />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="getFontColor outputs correct font colors." type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -93,6 +116,20 @@
       <test-file value="$PROJECT_DIR$/utils/ECMAScript/getFontColor.test.ts" />
       <test-names>
         <test-name value="getFontColor outputs correct font colors." />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="getFontColor outputs correct font colors..Throws error if color is invalid" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" />
+      <test-names>
+        <test-name value="getFontColor outputs correct font colors." />
+        <test-name value="Throws error if color is invalid" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -108,8 +145,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.getFontColor outputs correct font colors." />
         <item itemvalue="npm.dev" />
+        <item itemvalue="Jest.getFontColor outputs correct font colors. (1)" />
+        <item itemvalue="Jest.getFontColor outputs correct font colors..Throws error if color is invalid" />
+        <item itemvalue="Jest.getFontColor outputs correct font colors." />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +168,8 @@
       <workItem from="1614880356029" duration="3573000" />
       <workItem from="1614884068910" duration="983000" />
       <workItem from="1614933755423" duration="14016000" />
-      <workItem from="1614958969828" duration="9150000" />
+      <workItem from="1614958969828" duration="11491000" />
+      <workItem from="1615101338059" duration="4693000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

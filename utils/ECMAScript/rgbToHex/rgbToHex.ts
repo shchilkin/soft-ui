@@ -1,4 +1,4 @@
-import { hexColor, rgbValue } from '../../shared';
+import { hexColor, rgbValue } from '../../../shared';
 
 //TODO: Add documentation
 export default function rgbToHex(red: rgbValue, green:rgbValue, blue:rgbValue): hexColor {

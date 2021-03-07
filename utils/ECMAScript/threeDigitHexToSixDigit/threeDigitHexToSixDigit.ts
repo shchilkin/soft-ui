@@ -1,4 +1,4 @@
-import { hexColor, threeDigitHexRegex } from '../../shared';
+import { hexColor, threeDigitHexRegex } from '../../../shared';
 
 //TODO: Add documentation
 export default function threeDigitHexToSixDigit(color: hexColor): hexColor {

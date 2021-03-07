@@ -6,7 +6,7 @@ html, body {
   font-family: 'Poppins', sans-serif;
   font-size: 8pt;
   margin: 0;
-  height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -43,4 +43,7 @@ body {
 .flex-test {
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  justify-content: flex-start;
+  align-content: stretch;
 }

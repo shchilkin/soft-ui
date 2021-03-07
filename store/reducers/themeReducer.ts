@@ -10,6 +10,7 @@ const initialState: themeState = {
   darkShadow: '#c4b0ae'
 };
 
+//TODO: Rename to color reducer
 /**
  * ### useTheme Hook
  *

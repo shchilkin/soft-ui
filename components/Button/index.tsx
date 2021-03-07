@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { useTheme } from '../../store/reducers/themeReducer';
 import styled from 'styled-components';
 
@@ -17,10 +17,12 @@ const StyledButton = styled.button`
   font-weight: 600;
   font-size: 12pt;
   margin-left: 10px;
+
   &:hover {
     background-color: ${props => props.fontColor};
     color: ${props => props.mainColor};
   }
+
   &:active {
     background-color: ${props => props.mainColor};
     color: ${props => props.fontColor};

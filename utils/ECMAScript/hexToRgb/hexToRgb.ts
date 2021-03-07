@@ -1,6 +1,6 @@
-import { hexColor, rgbColor, sixDigitHexRegex } from '../../shared';
-import threeDigitHexToSixDigit from './threeDigitHexToSixDigit';
-import isHexSixDigits from './isHexSixDigits';
+import { hexColor, rgbColor, sixDigitHexRegex } from '../../../shared';
+import threeDigitHexToSixDigit from '../threeDigitHexToSixDigit/threeDigitHexToSixDigit';
+import isHexSixDigits from '../isHexSixDigits/isHexSixDigits';
 
 //TODO: Add documentation
 export default function hexToRGB(color: hexColor): rgbColor {

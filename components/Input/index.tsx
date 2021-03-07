@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, CSSProperties } from 'react';
 import { useTheme } from '../../store/reducers/themeReducer';
 
 interface InputProps {
@@ -12,20 +12,24 @@ interface InputProps {
 const Input = (props: InputProps): ReactElement => {
   const { mainColor, fontColor } = useTheme();
   const { value, onChange } = props;
+
+  const inputStyle: CSSProperties = {
+    color: fontColor,
+    fontWeight: 600,
+    fontSize: '12pt',
+    textTransform: 'uppercase',
+    width: '100%',
+    padding: '15px',
+    borderRadius: '12px',
+    backgroundColor: mainColor,
+    border: `${fontColor} solid 3px`,
+    boxSizing: 'border-box',
+  };
+
   return <input
     value={value}
     onChange={onChange}
-    style={{
-      fontWeight: 600,
-      color: fontColor,
-      textTransform: 'uppercase',
-      width: '100%',
-      padding: '15px',
-      borderRadius: '12px',
-      backgroundColor: mainColor,
-      border: `${fontColor} solid 3px`,
-      boxSizing: 'border-box'
-    }} />;
+    style={inputStyle} />;
 };
 
 export default Input;

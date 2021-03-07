@@ -1,6 +1,6 @@
-import { hexColor, rgbColor, rgbValue, shadowColors } from '../../shared';
-import hexToRGB from './hexToRgb';
-import rgbToHex from './rgbToHex';
+import { hexColor, rgbColor, rgbValue, shadowColors } from '../../../shared';
+import hexToRGB from '../hexToRgb/hexToRgb';
+import rgbToHex from '../rgbToHex/rgbToHex';
 
 //TODO: Add documentation
 export default function getShadowColor(color: hexColor, factor = 15): shadowColors {

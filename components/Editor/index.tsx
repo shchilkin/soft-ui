@@ -16,8 +16,6 @@ const Editor = (): ReactElement => {
   const { shadowBlur, shadowFactor, updateShadowBlur, updateShadowFactor } = useSoftUIProperties();
   //TODO: Refactor to shorter names
   const [mainColorInputState, setMainColorInputState] = useState<hexColor>(mainColor);
-  const [shadowBlurInputState, setShadowBlurInputState] = useState<number>(shadowBlur);
-  const [shadowFactorInputState, setFactorInputState] = useState<number>(shadowFactor);
 
   // updates input text if color updated from other source
   useEffect(() => {
@@ -36,7 +34,7 @@ const Editor = (): ReactElement => {
     // Update state if color is valid
     if (isValidHexColor(color)) {
       handleThemeChange(color);
-      window.history.replaceState('','',`/${color}`)
+      window.history.replaceState('', '', `/${color}`);
     }
   };
 
@@ -50,15 +48,13 @@ const Editor = (): ReactElement => {
   const handleShadowFactor = (event) => {
     const value = event.target.value;
     updateShadowFactor(value);
-    setFactorInputState(value);
-    updateLightShadow(getShadowColor(mainColor, shadowFactor).lightShadow);
-    updateDarkShadow(getShadowColor(mainColor, shadowFactor).darkShadow);
+    updateLightShadow(getShadowColor(mainColor, value).lightShadow);
+    updateDarkShadow(getShadowColor(mainColor, value).darkShadow);
   };
 
   const handleShadowBlur = (event) => {
     const value = event.target.value;
     updateShadowBlur(value);
-    setShadowBlurInputState(value);
   };
 
   // TODO: Add color picker
@@ -72,14 +68,12 @@ const Editor = (): ReactElement => {
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {/*TODO: make h2 font regular, value bold*/}
         <h2>Shadow intensity {shadowFactor}%</h2>
-        {/*TODO: synchronize input with data, currently it 1 step behind*/}
-        <RangeInput onChange={handleShadowFactor} value={shadowFactorInputState} min={0} max={100} />
+        <RangeInput onChange={handleShadowFactor} value={shadowFactor} min={0} max={100} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {/*TODO: make h2 font regular, value bold*/}
         <h2>Shadow blur <span>{shadowBlur}px</span></h2>
-        {/*TODO: synchronize input with data, currently it 1 step behind*/}
-        <RangeInput onChange={handleShadowBlur} value={shadowBlurInputState} min={0} max={100} />
+        <RangeInput onChange={handleShadowBlur} value={shadowBlur} min={0} max={100} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {/*TODO: make h2 font regular, value bold*/}

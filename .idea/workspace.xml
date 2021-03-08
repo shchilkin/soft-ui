@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/components/Inputs/RangeInput/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/reducers/softUIPropertiesReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/types/softUIProperties/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/soft-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/soft-ui.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Button/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Input/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Inputs/TextInput/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Preview/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Preview/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Inputs/TextInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Inputs/TextInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/themeReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/softUIPropertiesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducers/softUIPropertiesReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/types/softUIProperties/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/types/softUIProperties/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +162,9 @@
       <workItem from="1614884068910" duration="983000" />
       <workItem from="1614933755423" duration="14016000" />
       <workItem from="1614958969828" duration="11491000" />
-      <workItem from="1615101338059" duration="15164000" />
+      <workItem from="1615101338059" duration="15488000" />
+      <workItem from="1615142710535" duration="1517000" />
+      <workItem from="1615196209377" duration="2963000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

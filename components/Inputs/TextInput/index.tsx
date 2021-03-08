@@ -25,6 +25,7 @@ const Input = (props: InputProps): ReactElement => {
     backgroundColor: mainColor,
     border: `${fontColor} solid 3px`,
     boxSizing: 'border-box',
+    outline: 'none',
   };
 
   return <input

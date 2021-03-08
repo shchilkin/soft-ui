@@ -20,6 +20,7 @@ export interface UpdateShadowFactorAction {
 }
 
 export interface SoftUIPropertiesState {
+  //TODO: Custom types with documentation
   shadowBlur: number,
   shadowLength: number,
   shadowFactor: number,

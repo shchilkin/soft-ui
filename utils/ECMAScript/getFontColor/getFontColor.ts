@@ -2,7 +2,15 @@ import { hexColor } from '../../../shared';
 import hexToRGB from '../hexToRgb/hexToRgb';
 import isValidHexColor from '../isValidHexColor/isValidHexColor';
 
-//TODO: Add documentation
+// TODO: Return true or false instead of color => will help to apply darker/lighter version of the main color
+//  in the future
+
+/**
+ * Returns a number in range between lower and upper bounds including the bounds numbers
+ *
+ * @param  {[string]} color A hexadecimal triplet
+ * @return {[string]}         Black or White hexadecimal triplet
+ */
 export default function getFontColor(color: hexColor): hexColor {
 
   const rgb = hexToRGB(color);

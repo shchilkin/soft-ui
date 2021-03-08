@@ -10,7 +10,7 @@ import {
 const initialState: SoftUIPropertiesState = {
   shadowBlur: 20,
   shadowFactor: 15,
-  shadowLength: 5
+  shadowLength: 5,
 };
 
 //TODO: Add documentation

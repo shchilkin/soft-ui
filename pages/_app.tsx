@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { createStore } from 'redux';
 import rootReducer from '../store/reducers/index';
 import type { AppProps } from 'next/app';
@@ -7,7 +7,7 @@ import '../styles/styles.css';
 
 // https://medium.com/@waelkdouh/how-to-detect-unsupported-browsers-under-a-blazor-webassembly-application-bc11ab0ee015
 
-const MyApp = ({ Component, pageProps }: AppProps): unknown => {
+const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
   const store = createStore(rootReducer);
 
   return (

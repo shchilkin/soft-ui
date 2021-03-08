@@ -9,6 +9,7 @@ import Button from '../Button';
 import rgbToHex from '../../utils/ECMAScript/rgbToHex/rgbToHex';
 import RangeInput from '../Inputs/RangeInput';
 import { useSoftUIProperties } from '../../store/reducers/softUIPropertiesReducer';
+import { generateRandomNumber } from '../../utils/ECMAScript/generateRandomNumber/generateRandomNumber';
 
 const Editor = (): ReactElement => {
   const { mainColor, updateMainColor, updateFontColor, updateDarkShadow, updateLightShadow } = useTheme();
@@ -18,50 +19,43 @@ const Editor = (): ReactElement => {
   const [shadowBlurInputState, setShadowBlurInputState] = useState<number>(shadowBlur);
   const [shadowFactorInputState, setFactorInputState] = useState<number>(shadowFactor);
 
-  // update input text if color updated from other source
+  // updates input text if color updated from other source
   useEffect(() => {
     setMainColorInputState(mainColor);
   }, [mainColor]);
 
-  //TODO: Update hex color also in URL
+  const handleRandomColor = (): void => {
+    const randomColor: hexColor = rgbToHex(generateRandomNumber(), generateRandomNumber(), generateRandomNumber());
+    handleThemeChange(randomColor);
+  };
+
   const handleMainColorChange = (event) => {
     const color = event.target.value;
-
     setMainColorInputState(color);
 
     // Update state if color is valid
     if (isValidHexColor(color)) {
       handleThemeChange(color);
+      window.history.replaceState('','',`/${color}`)
     }
   };
 
   const handleThemeChange = (color: hexColor) => {
     updateMainColor(color);
     updateFontColor(getFontColor(color));
-    updateLightShadow(getShadowColor(color).lightShadow);
-    updateDarkShadow(getShadowColor(color).darkShadow);
+    updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
+    updateDarkShadow(getShadowColor(color, shadowFactor).darkShadow);
   };
 
-  //TODO: Write documentation
-  function generateRandomNumber(minimum = 0, maximum = 255): number {
-    return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
-  }
-
-  const generateRandomColor = (): void => {
-
-    const randomColor: hexColor = rgbToHex(generateRandomNumber(), generateRandomNumber(), generateRandomNumber());
-
-    handleThemeChange(randomColor);
-
-  };
-
-  const shadowFactorHandler = (event) => {
+  const handleShadowFactor = (event) => {
     const value = event.target.value;
     updateShadowFactor(value);
     setFactorInputState(value);
+    updateLightShadow(getShadowColor(mainColor, shadowFactor).lightShadow);
+    updateDarkShadow(getShadowColor(mainColor, shadowFactor).darkShadow);
   };
 
-  const shadowBlurHandler = (event) => {
+  const handleShadowBlur = (event) => {
     const value = event.target.value;
     updateShadowBlur(value);
     setShadowBlurInputState(value);
@@ -73,17 +67,19 @@ const Editor = (): ReactElement => {
       <h2>Pick a color:</h2>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Input value={mainColorInputState} onChange={handleMainColorChange} />
-        <Button onClick={generateRandomColor}>Random</Button>
+        <Button onClick={handleRandomColor}>Random</Button>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {/*TODO: make h2 font regular, value bold*/}
-        <h2>TODO Shadow factor / intensity {shadowFactor}%</h2>
-        <RangeInput onChange={shadowFactorHandler} value={shadowFactorInputState} min={0} max={100} />
+        <h2>Shadow intensity {shadowFactor}%</h2>
+        {/*TODO: synchronize input with data, currently it 1 step behind*/}
+        <RangeInput onChange={handleShadowFactor} value={shadowFactorInputState} min={0} max={100} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {/*TODO: make h2 font regular, value bold*/}
-        <h2>TODO Shadow blur {shadowBlur}px</h2>
-        <RangeInput onChange={shadowBlurHandler} value={shadowBlurInputState} min={0} max={100} />
+        <h2>Shadow blur <span>{shadowBlur}px</span></h2>
+        {/*TODO: synchronize input with data, currently it 1 step behind*/}
+        <RangeInput onChange={handleShadowBlur} value={shadowBlurInputState} min={0} max={100} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {/*TODO: make h2 font regular, value bold*/}

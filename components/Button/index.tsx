@@ -17,6 +17,7 @@ const StyledButton = styled.button`
   font-weight: 600;
   font-size: 12pt;
   margin-left: 10px;
+  outline: none;
 
   &:hover {
     background-color: ${props => props.fontColor};

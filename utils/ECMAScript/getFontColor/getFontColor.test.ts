@@ -10,15 +10,11 @@ describe('getFontColor outputs correct font colors.', () => {
     expect(getFontColor('#000')).toBe('#FFFFFF');
   });
 
-  //TODO: Test error
-
-  // test('Throws error if color is invalid', () => {
-  //   const invalidColor = 'invalid color';
-  //   try {
-  //     getFontColor('invalid Color');
-  //   } catch (error) {
-  //     expect(error.message).toBe(`Invalid hex color. Got: ${invalidColor}`)
-  //   }
-  // });
+  test('Throws error if color is invalid', () => {
+    const invalidColor = 'invalid color';
+    expect(() => {
+      getFontColor('invalid Color');
+    }).toThrow(`Invalid hex color. Got: ${invalidColor.toUpperCase()}. Pass a valid hex triplet`);
+  });
 
 });

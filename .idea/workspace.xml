@@ -5,7 +5,137 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/version-2.0/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/version-2.0/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/version-2.0/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/soft-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/soft-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/version_1.0.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.vscode/version_1.0.code-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/version_2.0.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/.vscode/version_2.0.code-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/.github/FUNDING.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/.github/ISSUE_TEMPLATE/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/.github/ISSUE_TEMPLATE/FUNDING.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/.github/ISSUE_TEMPLATE/feature_request.md" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Assets/React-icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Assets/React-icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Classes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Badge/Badge.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Badge/Badge.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/FeatureShowcase/ColorShowcaseFragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/FeatureShowcase/ColorShowcaseFragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/FeatureShowcase/DarkModeShowcaseFragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/FeatureShowcase/DarkModeShowcaseFragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/FeatureShowcase/SecondaryColorFragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/FeatureShowcase/SecondaryColorFragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Navbar/NavigationBar.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Navbar/NavigationBar.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Updated/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Updated/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Updated/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Updated/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Updated/ColorButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Updated/ColorButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Updated/RangeInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Updated/RangeInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Components/Updated/TextInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Components/Updated/TextInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/ColorPickers/colorPickerCircle.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/ColorPickers/colorPickerCircle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/ColorPickers/colorPickerSketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/ColorPickers/colorPickerSketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/ControlStageChooseColor.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/ControlStageChooseColor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/IconButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/IconButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/Checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/Checkbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/ColorButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/ColorButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/Input/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIControl/SoftUIControlMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIControl/SoftUIControlMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIControl/SoftUIControl_Components/HexInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIControl/SoftUIControl_Components/HexInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIPreview/SoftUIPreviewMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/Layout/SoftUIPreview/SoftUIPreviewMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewButtons/PreviewButtonFlat.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewButtons/PreviewButtonFlat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewButtons/PreviewButtonRegular.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewButtons/PreviewButtonRegular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewStageChooseColor.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/PreviewStageChooseColor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/RGBinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/RGBinput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIPreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIShadowsLogo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Generator/Generator_Components/SoftUIShadowsLogo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/Pages/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/Pages/Test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/StyledComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/StyledComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/Stages/StagesContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/Stages/StagesContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/Stages/StagesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/Stages/StagesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/Stages/StagesState.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/Stages/StagesState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/showcase/ShowcaseContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/showcase/ShowcaseContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/showcase/ShowcaseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/showcase/ShowcaseReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/showcase/ShowcaseState.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/showcase/ShowcaseState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/theme/ThemeContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/theme/ThemeContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/theme/ThemeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/theme/ThemeReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/theme/ThemeState.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/theme/ThemeState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/contexts/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/contexts/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/custom-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/custom-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/Frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/routes/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/routes/Colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLD | version-1.0/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-1.0/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action_types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/action_types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/actions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Button/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Editor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Inputs/RangeInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Inputs/RangeInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Inputs/TextInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Inputs/TextInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Logo/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Logo/logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Preview/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/components/Preview/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enzyme.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/enzyme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/jest.tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/next-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/public/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/shared/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/store/reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/softUIPropertiesReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/store/reducers/softUIPropertiesReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/reducers/themeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/store/reducers/themeReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/types/softUIProperties/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/store/types/softUIProperties/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/types/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/store/types/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/generateRandomNumber/generateRandomNumber.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/generateRandomNumber/generateRandomNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/getFontColor/getFontColor.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/getFontColor/getFontColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/getShadowColor/getShadowColor.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/getShadowColor/getShadowColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/hexToRgb/hexToRgb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/hexToRgb/hexToRgb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isHexSixDigits/isHexSixDigits.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/isHexSixDigits/isHexSixDigits.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/isValidHexColor/isValidHexColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/isValidHexColor/isValidHexColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/rgbToHex/rgbToHex.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/rgbToHex/rgbToHex.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit/threeDigitHexToSixDigit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/utils/threeDigitHexToSixDigit/threeDigitHexToSixDigit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/.appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/.appveyor.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/LICENSE_APACHE" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/LICENSE_APACHE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/LICENSE_MIT" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/LICENSE_MIT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/src/utils.rs" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/src/utils.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/rust/soft-ui-utils/tests/web.rs" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/rust/soft-ui-utils/tests/web.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +202,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/version-2.0" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/utils/ECMAScript/handleThemeChange" />
       <recent name="$PROJECT_DIR$/utils/ECMAScript" />
-      <recent name="$PROJECT_DIR$/components/Inputs" />
-      <recent name="$PROJECT_DIR$/utils/ECMAScript/threeDigitHexToSixDigit" />
-      <recent name="$PROJECT_DIR$/utils/ECMAScript/rgbToHex" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.generateRandomNumber function outputs number in the correct range..Function works correctly with default arguments: 0/255">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="generateRandomNumber function outputs number in the correct range." type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -147,11 +280,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="Jest.generateRandomNumber function outputs number in the correct range..Function works correctly with default arguments: 0/255" />
         <item itemvalue="Jest.generateRandomNumber function outputs number in the correct range." />
         <item itemvalue="Jest.getFontColor outputs correct font colors..Throws error if color is invalid" />
         <item itemvalue="Jest.getFontColor outputs correct font colors. (1)" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +311,8 @@
       <workItem from="1615228416458" duration="991000" />
       <workItem from="1615365124381" duration="19000" />
       <workItem from="1615365158607" duration="3233000" />
-      <workItem from="1615369250301" duration="907000" />
+      <workItem from="1615369250301" duration="3239000" />
+      <workItem from="1615386889173" duration="466000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

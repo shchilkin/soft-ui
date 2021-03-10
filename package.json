@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build-rust":"cd utils/rust/soft-ui-utils && wasm-pack build",
-    "build": "yarn build-rust && yarn test && next build",
+    "build": "yarn test && next build",
     "start": "next start",
     "test": "jest"
   },

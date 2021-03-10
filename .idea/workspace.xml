@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/version-2.0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/version-2.0/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="language.rust" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/version-2.0/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -141,7 +140,7 @@
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+      <package-json value="$PROJECT_DIR$/version-2.0/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
@@ -184,7 +183,8 @@
       <workItem from="1615365124381" duration="19000" />
       <workItem from="1615365158607" duration="3233000" />
       <workItem from="1615369250301" duration="3239000" />
-      <workItem from="1615386889173" duration="933000" />
+      <workItem from="1615386889173" duration="1324000" />
+      <workItem from="1615404698251" duration="349000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

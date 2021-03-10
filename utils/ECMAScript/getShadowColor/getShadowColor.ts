@@ -2,7 +2,12 @@ import { hexColor, rgbColor, rgbValue, shadowColors } from '../../../shared';
 import hexToRGB from '../hexToRgb/hexToRgb';
 import rgbToHex from '../rgbToHex/rgbToHex';
 
-//TODO: Add documentation
+/**
+ * Calculates dark and bright shadows for a given color
+ * @param  {[hexColor]} color A hexadecimal color triplet
+ * @param  {[number]} factor percentage how much darker / lighter the shadows will be
+ * @return {[shadowColors]}      Object contain hexadecimal values of light and dark shadows
+ */
 export default function getShadowColor(color: hexColor, factor = 15): shadowColors {
 
   const { red, green, blue } = hexToRGB(color);

@@ -1,0 +1,15 @@
+{
+  "name": "soft-ui-utils",
+  "collaborators": [
+    "Aleksandr Shchilkin <crazyredkitten@icloud.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "soft_ui_utils_bg.wasm",
+    "soft_ui_utils.js",
+    "soft_ui_utils.d.ts"
+  ],
+  "module": "soft_ui_utils.js",
+  "types": "soft_ui_utils.d.ts",
+  "sideEffects": false
+}

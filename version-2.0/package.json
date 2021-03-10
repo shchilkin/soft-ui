@@ -1,0 +1,54 @@
+{
+  "name": "soft-ui",
+  "version": "2.0.0",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "../node_modules/.bin/next dev",
+    "build": "yarn test && ../node_modules/.bin/next build",
+    "start": "../node_modules/.bin/next start",
+    "test": "../node_modules/.bin/jest"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "next": "10.0.7",
+    "next-redux-wrapper": "^6.0.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.28",
+    "@types/react": "^17.0.2",
+    "@types/react-redux": "^7.1.16",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-styled-components": "^1.12.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
+    "redux-devtools": "^3.7.0",
+    "redux-devtools-extension": "^2.13.8",
+    "ts-jest": "^26.5.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    }
+  }
+}

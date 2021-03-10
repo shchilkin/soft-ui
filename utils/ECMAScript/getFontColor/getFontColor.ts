@@ -3,7 +3,7 @@ import hexToRGB from '../hexToRgb/hexToRgb';
 import isValidHexColor from '../isValidHexColor/isValidHexColor';
 
 // TODO: Return true or false instead of color => will help to apply darker/lighter version of the main color
-//  in the future
+//  in the future or return dark / light variation directly
 
 /**
  * Returns a number in range between lower and upper bounds including the bounds numbers

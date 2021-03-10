@@ -10,11 +10,25 @@ import rgbToHex from '../../utils/ECMAScript/rgbToHex/rgbToHex';
 import RangeInput from '../Inputs/RangeInput';
 import { useSoftUIProperties } from '../../store/reducers/softUIPropertiesReducer';
 import { generateRandomNumber } from '../../utils/ECMAScript/generateRandomNumber/generateRandomNumber';
+import styled from 'styled-components';
+
+const BoldText = styled.span`
+  font-weight: 600;
+`;
+
+const RegularText = styled.h2`
+  font-weight: 400;
+`;
+
+const FlexboxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Editor = (): ReactElement => {
   const { mainColor, updateMainColor, updateFontColor, updateDarkShadow, updateLightShadow } = useTheme();
   const { shadowBlur, shadowFactor, updateShadowBlur, updateShadowFactor } = useSoftUIProperties();
-  //TODO: Refactor to shorter names
+
   const [mainColorInputState, setMainColorInputState] = useState<hexColor>(mainColor);
 
   // updates input text if color updated from other source
@@ -39,6 +53,7 @@ const Editor = (): ReactElement => {
   };
 
   const handleThemeChange = (color: hexColor) => {
+    window.history.replaceState('', '', `/${color.toUpperCase()}`);
     updateMainColor(color);
     updateFontColor(getFontColor(color));
     updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
@@ -60,29 +75,25 @@ const Editor = (): ReactElement => {
   // TODO: Add color picker
   return (
     <div id={'Editor'} style={{ padding: '20px' }}>
-      <h2>Pick a color:</h2>
+      <RegularText>Pick a color:</RegularText>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Input value={mainColorInputState} onChange={handleMainColorChange} />
         <Button onClick={handleRandomColor}>Random</Button>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {/*TODO: make h2 font regular, value bold*/}
-        <h2>Shadow intensity {shadowFactor}%</h2>
+      <FlexboxContainer>
+        <RegularText>Shadow intensity: <BoldText>{shadowFactor}%</BoldText></RegularText>
         <RangeInput onChange={handleShadowFactor} value={shadowFactor} min={0} max={100} />
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {/*TODO: make h2 font regular, value bold*/}
-        <h2>Shadow blur <span>{shadowBlur}px</span></h2>
+      </FlexboxContainer>
+      <FlexboxContainer>
+        <RegularText>Shadow blur: <BoldText>{shadowBlur}px</BoldText></RegularText>
         <RangeInput onChange={handleShadowBlur} value={shadowBlur} min={0} max={100} />
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        {/*TODO: make h2 font regular, value bold*/}
-        <h2>TODO Additional color list</h2>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        {/*TODO: make h2 font regular, value bold*/}
-        <h2>TODO css/token output</h2>
-      </div>
+      </FlexboxContainer>
+      <FlexboxContainer>
+        <RegularText>TODO Additional color list</RegularText>
+      </FlexboxContainer>
+      <FlexboxContainer>
+        <RegularText>TODO css/token output</RegularText>
+      </FlexboxContainer>
     </div>
   );
 };

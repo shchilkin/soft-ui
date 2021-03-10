@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Editor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Editor/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/generateRandomNumber/generateRandomNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <recent name="$PROJECT_DIR$/utils/ECMAScript/rgbToHex" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.generateRandomNumber function outputs number in the correct range.">
+  <component name="RunManager" selected="Jest.getFontColor outputs correct font colors..Throws error if color is invalid">
     <configuration name="generateRandomNumber function outputs number in the correct range." type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -144,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.generateRandomNumber function outputs number in the correct range." />
-        <item itemvalue="npm.dev" />
-        <item itemvalue="Jest.getFontColor outputs correct font colors. (1)" />
         <item itemvalue="Jest.getFontColor outputs correct font colors..Throws error if color is invalid" />
+        <item itemvalue="Jest.getFontColor outputs correct font colors. (1)" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="Jest.getFontColor outputs correct font colors." />
+        <item itemvalue="Jest.generateRandomNumber function outputs number in the correct range." />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +170,10 @@
       <workItem from="1614958969828" duration="11491000" />
       <workItem from="1615101338059" duration="15488000" />
       <workItem from="1615142710535" duration="1517000" />
-      <workItem from="1615196209377" duration="6719000" />
+      <workItem from="1615196209377" duration="8908000" />
+      <workItem from="1615228416458" duration="991000" />
+      <workItem from="1615365124381" duration="19000" />
+      <workItem from="1615365158607" duration="1417000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

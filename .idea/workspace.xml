@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0cafc4a-ceb5-4853-acfb-7c902bcde20d" name="Default Changelist" comment="Updated layout, Added function for managing color">
-      <change afterPath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getFontColor/getFontColor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ECMAScript/getShadowColor/getShadowColor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,11 @@
         <option value="Aleksandr Shchilkin &lt;crazyredkitten@icloud.com&gt;" />
         <option value="A," />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="deploy" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -175,7 +179,8 @@
       <workItem from="1615196209377" duration="8908000" />
       <workItem from="1615228416458" duration="991000" />
       <workItem from="1615365124381" duration="19000" />
-      <workItem from="1615365158607" duration="2790000" />
+      <workItem from="1615365158607" duration="3233000" />
+      <workItem from="1615369250301" duration="795000" />
     </task>
     <task id="LOCAL-00001" summary="Code refactor">
       <created>1614884507038</created>

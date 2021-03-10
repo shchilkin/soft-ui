@@ -19,7 +19,6 @@
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "soft-ui-utils": "file:./utils/rust/soft-ui-utils/pkg",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

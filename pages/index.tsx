@@ -8,10 +8,11 @@ import getFontColor from '../utils/ECMAScript/getFontColor/getFontColor';
 import getShadowColor from '../utils/ECMAScript/getShadowColor/getShadowColor';
 
 const Home = (): unknown => {
-  import('../utils/rust/soft-ui-utils/pkg').then((module) => {
-    console.log(module);
-    // module.greet(module.to_hex(10).toString());
-  });
+  //TODO: Add rust WASM module later
+  // import('../utils/rust/soft-ui-utils/pkg').then((module) => {
+  //   console.log(module);
+  //   // module.greet(module.to_hex(10).toString());
+  // });
 
   const { mainColor, fontColor, updateLightShadow, updateDarkShadow, updateFontColor, updateMainColor } = useTheme();
 

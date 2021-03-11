@@ -1,24 +1,23 @@
 import { hexColor, rgbColor, sixDigitHexRegex } from '../../shared';
 import threeDigitHexToSixDigit from '../threeDigitHexToSixDigit/threeDigitHexToSixDigit';
 import isHexSixDigits from '../isHexSixDigits/isHexSixDigits';
+import isValidHexColor from '../isValidHexColor/isValidHexColor';
 
-//TODO: Add documentation
+/**
+ * Converts hexadecimal triplet to RGB Object
+ * @param  {[hexColor]} color A hexadecimal color triplet
+ * @return {[rgbColor]}      An object, containing red, green and blue values
+ */
 export default function hexToRGB(color: hexColor): rgbColor {
-  //TODO: Refactor
+  if (isValidHexColor(color)) {
+    const hexColorArray = sixDigitHexRegex.exec(isHexSixDigits(color) ? color : threeDigitHexToSixDigit(color));
 
-  if (isHexSixDigits(color)) {
-    const hexColorArray = sixDigitHexRegex.exec(color);
     return {
       red: parseInt(hexColorArray[1], 16),
       green: parseInt(hexColorArray[2], 16),
       blue: parseInt(hexColorArray[3], 16)
     };
   } else {
-    const hexColorArray = sixDigitHexRegex.exec(threeDigitHexToSixDigit(color));
-    return {
-      red: parseInt(hexColorArray[1], 16),
-      green: parseInt(hexColorArray[2], 16),
-      blue: parseInt(hexColorArray[3], 16)
-    };
+    throw new Error(`Invalid hexadecimal color! Got: ${color}.  Pass a valid hex triplet.`)
   }
 }

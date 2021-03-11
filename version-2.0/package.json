@@ -1,11 +1,12 @@
 {
   "name": "soft-ui",
   "version": "2.0.0",
+  "author": "Aleksandr Shchilkin",
   "private": false,
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "yarn test && ../node_modules/.bin/next build",
+    "build": "yarn test && next build",
     "start": "next start",
     "test": "jest"
   },

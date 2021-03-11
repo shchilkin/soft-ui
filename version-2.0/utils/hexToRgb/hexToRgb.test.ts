@@ -23,14 +23,17 @@ describe('hexToRgb function outputs correct rgb color.', () => {
   });
 
   test('Correclty works with input color without #(hash)', () => {
-    expect(hexToRGB('343434')).toStrictEqual({ red: 52, green: 52, blue: 52 });
+    const color = '343434';
+    expect(() => {
+      hexToRGB(color);
+    }).toThrow(`Invalid hexadecimal color! Got: ${color}.  Pass a valid hex triplet.`);
   });
 
-  test('Throws error if color is not valud', () => {
+  test('Throws error if color is not valid', () => {
     const color = 'invalid color';
 
     expect(() => {
-      hexToRGB('invalid color');
+      hexToRGB(color);
     }).toThrow(`Invalid hexadecimal color! Got: ${color}.  Pass a valid hex triplet.`);
   });
 });

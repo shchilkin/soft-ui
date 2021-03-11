@@ -11,6 +11,9 @@ import RangeInput from '../Inputs/RangeInput';
 import { useSoftUIProperties } from '../../store/reducers/softUIPropertiesReducer';
 import { generateRandomNumber } from '../../utils/generateRandomNumber/generateRandomNumber';
 import styled from 'styled-components';
+import FlatIcon from '../Icons/Flat';
+import InsetIcon from '../Icons/Inset';
+import { PreviewState } from '../../store/types/softUIProperties';
 
 const BoldText = styled.span`
   font-weight: 600;
@@ -26,8 +29,15 @@ const FlexboxContainer = styled.div`
 `;
 
 const Editor = (): ReactElement => {
-  const { mainColor, updateMainColor, updateFontColor, updateDarkShadow, updateLightShadow } = useTheme();
-  const { shadowBlur, shadowFactor, updateShadowBlur, updateShadowFactor } = useSoftUIProperties();
+  const { mainColor, fontColor, updateMainColor, updateFontColor, updateDarkShadow, updateLightShadow } = useTheme();
+  const {
+    shadowBlur,
+    shadowFactor,
+    previewState,
+    updateShadowBlur,
+    updatePreviewState,
+    updateShadowFactor
+  } = useSoftUIProperties();
 
   const [mainColorInputState, setMainColorInputState] = useState<hexColor>(mainColor);
 
@@ -72,13 +82,33 @@ const Editor = (): ReactElement => {
     updateShadowBlur(value);
   };
 
+  const handleFlatButton = () => {
+    updatePreviewState(PreviewState.Flat);
+  };
+
+  const handleInsetButton = () => {
+    updatePreviewState(PreviewState.Inset);
+  };
+
   // TODO: Add color picker
   return (
     <div id={'Editor'} style={{ padding: '20px' }}>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <Button
+          isActive={PreviewState.Flat === previewState}
+          style={{ marginLeft: 0 }}
+          fullWidth onClick={handleFlatButton}><><FlatIcon fillColor={fontColor} />Flat</>
+        </Button>
+        <Button
+          isActive={PreviewState.Inset === previewState}
+          fullWidth onClick={handleInsetButton
+        }><><InsetIcon fillColor={fontColor} />Inset</>
+        </Button>
+      </div>
       <RegularText>Pick a color:</RegularText>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Input value={mainColorInputState} onChange={handleMainColorChange} />
-        <Button onClick={handleRandomColor}>Random</Button>
+        <Button fullWidth={false} onClick={handleRandomColor}>Random</Button>
       </div>
       <FlexboxContainer>
         <RegularText>Shadow intensity: <BoldText>{shadowFactor}%</BoldText></RegularText>

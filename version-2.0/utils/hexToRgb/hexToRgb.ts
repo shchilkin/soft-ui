@@ -18,6 +18,6 @@ export default function hexToRGB(color: hexColor): rgbColor {
       blue: parseInt(hexColorArray[3], 16)
     };
   } else {
-    throw new Error(`Invalid hexadecimal color! Got: ${color}.  Pass a valid hex triplet.`)
+    throw new Error(`Invalid hexadecimal color! Got: ${color}.  Pass a valid hex triplet.`);
   }
 }

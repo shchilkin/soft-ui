@@ -10,10 +10,18 @@ export const sixDigitHexRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 //TODO: Add documentation
 export const threeDigitHexRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-//TODO: Add documentation
+/**
+ * Number in range 0 - 255
+ * @example 135
+ * */
 export type rgbValue = number;
 
-//TODO: Add documentation
+/**
+ * Object, which contain color information in  RGB format
+ * @property {rgbValue} red   -  Red value
+ * @property {rgbValue} green -  Green value
+ * @property {rgbValue} blue  -  Blue value
+ * */
 export interface rgbColor {
   red: rgbValue,
   green: rgbValue,

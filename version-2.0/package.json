@@ -4,10 +4,10 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "../node_modules/.bin/next dev",
+    "dev": "next dev",
     "build": "yarn test && ../node_modules/.bin/next build",
-    "start": "../node_modules/.bin/next start",
-    "test": "../node_modules/.bin/jest"
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",

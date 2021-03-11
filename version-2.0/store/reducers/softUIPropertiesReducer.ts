@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationState } from './index';
 import {
+  PreviewState,
   SoftUIProperties,
   softUIPropertiesAction,
   softUIPropertiesActionType,
@@ -11,6 +12,7 @@ const initialState: SoftUIPropertiesState = {
   shadowBlur: 20,
   shadowFactor: 15,
   shadowLength: 5,
+  previewState: PreviewState.Flat
 };
 
 //TODO: Add documentation
@@ -21,6 +23,14 @@ export const useSoftUIProperties = (): SoftUIProperties => {
   const updateShadowBlur = (data: number) => {
     dispatch({
       type: softUIPropertiesActionType.UPDATE_SHADOW_BLUR,
+      payload: data
+    });
+  };
+
+  const previewState = useSelector<ApplicationState, PreviewState>(state => state.softUIPropertiesReducer.previewState);
+  const updatePreviewState = (data: PreviewState) => {
+    dispatch({
+      type: softUIPropertiesActionType.UPDATE_PREVIEW_STATE,
       payload: data
     });
   };
@@ -45,14 +55,21 @@ export const useSoftUIProperties = (): SoftUIProperties => {
     shadowBlur,
     shadowFactor,
     shadowLength,
+    previewState,
     updateShadowBlur,
     updateShadowFactor,
-    updateShadowLength
+    updateShadowLength,
+    updatePreviewState
   };
 };
 
 const softUIPropertiesReducer = (state = initialState, action: softUIPropertiesAction): SoftUIPropertiesState => {
   switch (action.type) {
+    case softUIPropertiesActionType.UPDATE_PREVIEW_STATE:
+      return {
+        ...state,
+        previewState: action.payload
+      };
     case softUIPropertiesActionType.UPDATE_SHADOW_BLUR:
       return {
         ...state,

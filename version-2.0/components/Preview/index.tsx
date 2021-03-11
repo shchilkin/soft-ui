@@ -11,7 +11,7 @@ const PreviewContainer = styled.div`
   border-radius: 12px;
   color: ${props => props.fontColor};
   box-shadow: ${props => props.isFlat ? '' : 'inset'} ${props => props.darkShadow} ${props => props.shadowLength}px ${props => props.shadowLength}px ${props => props.shadowBlur}px 0,
-  ${props => props.lightShadow} -${props => props.shadowLength}px -${props => props.shadowLength}px ${props => props.shadowBlur}px 0;
+  ${props => props.isFlat ? '' : 'inset'} ${props => props.lightShadow} -${props => props.shadowLength}px -${props => props.shadowLength}px ${props => props.shadowBlur}px 0;
 `;
 
 const Preview = (): ReactElement => {

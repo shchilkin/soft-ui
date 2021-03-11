@@ -10,6 +10,6 @@
 - Rust (Main utils logic) (WebAssembly target) - **TODO**
 
 ## License
-Licensed under the MIT License, Copyright © 2021 - present Aleksandr Shchilkin
+Licensed under the MIT License, Copyright © 2021 - present Aleksandr Shchilkin.
 
 See [LICENSE](./LICENSE) for more information.

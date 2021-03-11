@@ -118,9 +118,9 @@ const Editor = (): ReactElement => {
         <RegularText>Shadow blur: <BoldText>{shadowBlur}px</BoldText></RegularText>
         <RangeInput onChange={handleShadowBlur} value={shadowBlur} min={0} max={100} />
       </FlexboxContainer>
-      <FlexboxContainer>
-        <RegularText>TODO Additional color list</RegularText>
-      </FlexboxContainer>
+      {/*<FlexboxContainer>*/}
+      {/*  <RegularText>TODO Additional color list</RegularText>*/}
+      {/*</FlexboxContainer>*/}
       <FlexboxContainer>
         <RegularText>TODO css/token output</RegularText>
       </FlexboxContainer>

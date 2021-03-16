@@ -16,6 +16,7 @@ class MyDocument extends Document {
           <link rel='stylesheet' href='https://use.typekit.net/eqx2cgo.css' />
           <meta name='keywords' content='CSS, Design, Soft-UI, UI, Neumorphism' />
           <meta name='author' content='Aleksandr Shchilkin' />
+          <title>Soft UI</title>
         </Head>
         <body>
         <Main />

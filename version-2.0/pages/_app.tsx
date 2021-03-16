@@ -12,7 +12,6 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
 
   return (
     <Provider store={store}>
-      <title>Soft UI</title>
       <Component {...pageProps} />
     </Provider>
   );

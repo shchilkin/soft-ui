@@ -7,6 +7,7 @@ import isValidHexColor from '../utils/isValidHexColor/isValidHexColor';
 import getFontColor from '../utils/getFontColor/getFontColor';
 import getShadowColor from '../utils/getShadowColor/getShadowColor';
 import Footer from '../components/Footer';
+import Output from '../components/Output';
 
 const Home = (): unknown => {
   //TODO: Add rust WASM module later
@@ -42,6 +43,7 @@ const Home = (): unknown => {
       <Header />
       <Preview />
       <Editor />
+      <Output />
       <Footer />
     </div>
   );

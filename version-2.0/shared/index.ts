@@ -1,3 +1,5 @@
+import { CSSProperties, ReactElement } from 'react';
+
 /**
  * Hexadecimal color with either 6 or 3 digits
  * @example \#ED2939 or #FBA
@@ -32,4 +34,12 @@ export interface rgbColor {
 export interface shadowColors {
   lightShadow: hexColor,
   darkShadow: hexColor,
+}
+
+/**
+ * Generic DOM Element
+ * */
+export interface Element {
+  children: ReactElement | string
+  style: CSSProperties,
 }

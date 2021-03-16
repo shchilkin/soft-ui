@@ -19,7 +19,7 @@ const BoldText = styled.span`
   font-weight: 600;
 `;
 
-const RegularText = styled.h2`
+export const RegularText = styled.h2`
   font-weight: 400;
 `;
 
@@ -122,9 +122,6 @@ const Editor = (): ReactElement => {
       {/*<FlexboxContainer>*/}
       {/*  <RegularText>TODO Additional color list</RegularText>*/}
       {/*</FlexboxContainer>*/}
-      <FlexboxContainer>
-        <RegularText>TODO css/token output</RegularText>
-      </FlexboxContainer>
     </div>
   );
 };

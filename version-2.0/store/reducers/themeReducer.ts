@@ -4,10 +4,10 @@ import { hexColor } from '../../shared';
 import { Theme, themeAction, themeActionType, themeState } from '../types/theme';
 
 const initialState: themeState = {
-  mainColor: '#E7CFCD',
+  mainColor: '#FAFAFA',
   fontColor: '#000',
-  lightShadow: '#f3d9d7',
-  darkShadow: '#c4b0ae'
+  lightShadow: '#FFFFFF',
+  darkShadow: '#DADADA'
 };
 
 //TODO: Rename to color reducer
@@ -62,7 +62,7 @@ export const useTheme = (): Theme => {
     updateMainColor,
     updateFontColor,
     updateLightShadow,
-    updateDarkShadow,
+    updateDarkShadow
   };
 };
 
@@ -71,25 +71,25 @@ const themeReducer = (state = initialState, action: themeAction): themeState => 
     case themeActionType.UPDATE_MAIN_COLOR:
       return {
         ...state,
-        mainColor: action.payload,
+        mainColor: action.payload
       };
 
     case themeActionType.UPDATE_FONT_COLOR:
       return {
         ...state,
-        fontColor: action.payload,
+        fontColor: action.payload
       };
 
     case themeActionType.UPDATE_LIGHT_SHADOW:
       return {
         ...state,
-        lightShadow: action.payload,
+        lightShadow: action.payload
       };
 
     case themeActionType.UPDATE_DARK_SHADOW:
       return {
         ...state,
-        darkShadow: action.payload,
+        darkShadow: action.payload
       };
 
     default:

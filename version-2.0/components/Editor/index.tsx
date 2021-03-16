@@ -100,6 +100,7 @@ const Editor = (): ReactElement => {
           fullWidth onClick={handleFlatButton}><><FlatIcon fillColor={fontColor} />Flat</>
         </Button>
         <Button
+          style={{ marginLeft: 10 }}
           isActive={PreviewState.Inset === previewState}
           fullWidth onClick={handleInsetButton
         }><><InsetIcon fillColor={fontColor} />Inset</>
@@ -108,7 +109,7 @@ const Editor = (): ReactElement => {
       <RegularText>Pick a color:</RegularText>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Input value={mainColorInputState} onChange={handleMainColorChange} />
-        <Button fullWidth={false} onClick={handleRandomColor}>Random</Button>
+        <Button style={{ marginLeft: 10 }} fullWidth={false} onClick={handleRandomColor}>Random</Button>
       </div>
       <FlexboxContainer>
         <RegularText>Shadow intensity: <BoldText>{shadowFactor}%</BoldText></RegularText>

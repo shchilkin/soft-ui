@@ -1,49 +1,48 @@
 :root {
-  --main-margin: 16px;
+    --main-margin: 16px;
 }
 
 html, body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 8pt;
-  margin: 0;
-  min-height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 8pt;
+    margin: 0;
+    height: 100%;
 }
 
 body {
-  justify-content: center;
+    justify-content: center;
 }
 
 .header {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
 .bold {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .regular {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 #logo {
-  padding: 16px;
-  display: inline-block;
-  max-height: 80px;
-  max-width: 80px;
+    padding: 16px;
+    display: inline-block;
+    max-height: 80px;
+    max-width: 80px;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-rows: 50px repeat(2, 1fr);
-  box-shadow: #c4b0ae 5px 5px 20px 0, #f3d9d7 -5px -5px 20px 0;
+    display: grid;
+    grid-template-rows: 50px repeat(2, 1fr);
+    box-shadow: #c4b0ae 5px 5px 20px 0, #f3d9d7 -5px -5px 20px 0;
 }
 
 .flex-test {
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  justify-content: flex-start;
-  align-content: stretch;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: stretch;
 }

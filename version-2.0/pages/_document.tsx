@@ -18,9 +18,8 @@ class MyDocument extends Document {
           <meta name='author' content='Aleksandr Shchilkin' />
         </Head>
         <body>
-          <Main />
-          <NextScript />
-          <script async defer src="https://buttons.github.io/buttons.js"/>
+        <Main />
+        <NextScript />
         </body>
       </Html>
     );

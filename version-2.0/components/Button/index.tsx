@@ -20,7 +20,6 @@ const StyledButton = styled.button`
   border-radius: 12px;
   font-weight: 600;
   font-size: 12pt;
-  margin-left: 10px;
   outline: none;
   width: ${props => props.fullWidth ? '100%' : null};
   background-color: ${props => props.mainColor};

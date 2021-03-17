@@ -24,7 +24,8 @@ const Footer = (): ReactElement => {
         </Button>
       </a>
     </div>
-  </div>;
+  </div>
+    ;
 
 };
 

@@ -19,7 +19,7 @@ const BoldText = styled.span`
   font-weight: 600;
 `;
 
-export const RegularText = styled.h2`
+const RegularText = styled.h2`
   font-weight: 400;
 `;
 
@@ -33,7 +33,9 @@ const Editor = (): ReactElement => {
   const {
     shadowBlur,
     shadowFactor,
+    shadowLength,
     previewState,
+    updateShadowLength,
     updateShadowBlur,
     updatePreviewState,
     updateShadowFactor
@@ -55,7 +57,7 @@ const Editor = (): ReactElement => {
     const color = event.target.value;
     setMainColorInputState(color);
 
-    // Update state if color is valid
+    // Updates state only if color is valid
     if (isValidHexColor(color)) {
       handleThemeChange(color);
       window.history.replaceState('', '', `/${color}`);
@@ -80,6 +82,11 @@ const Editor = (): ReactElement => {
   const handleShadowBlur = (event) => {
     const value = event.target.value;
     updateShadowBlur(value);
+  };
+
+  const handleShadowLength = (event) => {
+    const value = event.target.value;
+    updateShadowLength(value);
   };
 
   const handleFlatButton = () => {
@@ -118,6 +125,10 @@ const Editor = (): ReactElement => {
       <FlexboxContainer>
         <RegularText>Shadow blur: <BoldText>{shadowBlur}px</BoldText></RegularText>
         <RangeInput onChange={handleShadowBlur} value={shadowBlur} min={0} max={100} />
+      </FlexboxContainer>
+      <FlexboxContainer>
+        <RegularText>Shadow length: <BoldText>{shadowLength}px</BoldText></RegularText>
+        <RangeInput onChange={handleShadowLength} value={shadowLength} min={0} max={100} />
       </FlexboxContainer>
       {/*<FlexboxContainer>*/}
       {/*  <RegularText>TODO Additional color list</RegularText>*/}

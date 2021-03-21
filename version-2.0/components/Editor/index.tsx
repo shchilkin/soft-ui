@@ -3,7 +3,6 @@ import { useTheme } from '../../store/reducers/themeReducer';
 import Input from '../Inputs/TextInput';
 import { HexColor } from '../../shared';
 import isValidHexColor from '../../utils/isValidHexColor/isValidHexColor';
-import getFontColor from '../../utils/getFontColor/getFontColor';
 import getShadowColor from '../../utils/getShadowColor/getShadowColor';
 import Button from '../Button';
 import rgbToHex from '../../utils/rgbToHex/rgbToHex';
@@ -14,9 +13,9 @@ import styled from 'styled-components';
 import FlatIcon from '../Icons/Flat';
 import InsetIcon from '../Icons/Inset';
 import { PreviewState } from '../../store/types/softUIProperties';
-import getColorTint from '../../utils/colorTint/getColorTint';
-import getColorShade from '../../utils/colorShade/getColorShade';
 import isFontColorDark from '../../utils/IsFontColorDark/isFontColorDark';
+import getColorTintHex from '../../utils/colorTint/getColorTintHex';
+import getColorShadeHex from '../../utils/colorShade/getColorShadeHex';
 
 const BoldText = styled.span`
   font-weight: 600;
@@ -71,7 +70,13 @@ const Editor = (): ReactElement => {
     window.history.replaceState('', '', `/${color.toUpperCase()}`);
     updateMainColor(color);
     //TODO: Return dark/light color variation or black/white font color depending on user input
-    updateFontColor(isFontColorDark(color) ? getColorShade(color, 10) : getColorTint(color, 90));
+    //TODO: Create wrapper function for hex input for getColorShade and getColorTint
+    updateFontColor(
+      isFontColorDark(color)
+      ?
+      getColorShadeHex(color, 10)
+      :
+      getColorTintHex(color, 90));
     updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
     updateDarkShadow(getShadowColor(color, shadowFactor).darkShadow);
   };

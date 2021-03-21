@@ -1,4 +1,4 @@
-import { hexColor } from '../../../shared';
+import { HexColor } from '../../../shared';
 
 export enum themeActionType {
   UPDATE_MAIN_COLOR = 'UPDATE_MAIN_COLOR',
@@ -9,29 +9,29 @@ export enum themeActionType {
 
 export interface UpdateFontColorAction {
   type: typeof themeActionType.UPDATE_FONT_COLOR
-  payload: hexColor,
+  payload: HexColor,
 }
 
 export interface UpdateMainColorAction {
   type: typeof themeActionType.UPDATE_MAIN_COLOR
-  payload: hexColor,
+  payload: HexColor,
 }
 
 export interface UpdateDarkShadowAction {
   type: typeof themeActionType.UPDATE_DARK_SHADOW
-  payload: hexColor,
+  payload: HexColor,
 }
 
 export interface UpdateLightShadowAction {
   type: typeof themeActionType.UPDATE_LIGHT_SHADOW
-  payload: hexColor,
+  payload: HexColor,
 }
 
 export interface themeState {
-  mainColor: hexColor;
-  fontColor: hexColor;
-  lightShadow: hexColor;
-  darkShadow: hexColor;
+  mainColor: HexColor;
+  fontColor: HexColor;
+  lightShadow: HexColor;
+  darkShadow: HexColor;
 }
 
 export type themeAction =
@@ -41,12 +41,12 @@ export type themeAction =
   | UpdateLightShadowAction;
 
 export interface Theme {
-  mainColor: hexColor;
-  fontColor: hexColor;
-  lightShadow: hexColor;
-  darkShadow: hexColor;
-  updateMainColor: (data: hexColor) => void;
-  updateFontColor: (data: hexColor) => void;
-  updateLightShadow: (data: hexColor) => void;
-  updateDarkShadow: (data: hexColor) => void;
+  mainColor: HexColor;
+  fontColor: HexColor;
+  lightShadow: HexColor;
+  darkShadow: HexColor;
+  updateMainColor: (data: HexColor) => void;
+  updateFontColor: (data: HexColor) => void;
+  updateLightShadow: (data: HexColor) => void;
+  updateDarkShadow: (data: HexColor) => void;
 }

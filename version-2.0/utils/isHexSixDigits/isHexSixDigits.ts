@@ -1,6 +1,6 @@
 //TODO: Add documentation
-import { hexColor, sixDigitHexRegex } from '../../shared';
+import { HexColor, sixDigitHexRegex } from '../../shared';
 
-export default function isHexSixDigits(color: hexColor): boolean {
+export default function isHexSixDigits(color: HexColor): boolean {
   return sixDigitHexRegex.test(color);
 }

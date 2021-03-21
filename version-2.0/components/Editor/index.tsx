@@ -72,11 +72,7 @@ const Editor = (): ReactElement => {
     //TODO: Return dark/light color variation or black/white font color depending on user input
     //TODO: Create wrapper function for hex input for getColorShade and getColorTint
     updateFontColor(
-      isFontColorDark(color)
-      ?
-      getColorShadeHex(color, 10)
-      :
-      getColorTintHex(color, 90));
+      isFontColorDark(color) ? getColorShadeHex(color, 10) : getColorTintHex(color, 90));
     updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
     updateDarkShadow(getShadowColor(color, shadowFactor).darkShadow);
   };

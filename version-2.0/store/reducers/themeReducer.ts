@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationState } from './index';
-import { hexColor } from '../../shared';
+import { HexColor } from '../../shared';
 import { Theme, themeAction, themeActionType, themeState } from '../types/theme';
 
 const initialState: themeState = {
@@ -22,32 +22,32 @@ const initialState: themeState = {
 export const useTheme = (): Theme => {
   const dispatch = useDispatch();
 
-  const mainColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.mainColor);
-  const updateMainColor = (data: hexColor) => {
+  const mainColor = useSelector<ApplicationState, HexColor>((state) => state.themeReducer.mainColor);
+  const updateMainColor = (data: HexColor) => {
     dispatch({
       type: themeActionType.UPDATE_MAIN_COLOR,
       payload: data
     });
   };
 
-  const fontColor = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.fontColor);
-  const updateFontColor = (data: hexColor) => {
+  const fontColor = useSelector<ApplicationState, HexColor>((state) => state.themeReducer.fontColor);
+  const updateFontColor = (data: HexColor) => {
     dispatch({
       type: themeActionType.UPDATE_FONT_COLOR,
       payload: data
     });
   };
 
-  const lightShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.lightShadow);
-  const updateLightShadow = (data: hexColor) => {
+  const lightShadow = useSelector<ApplicationState, HexColor>((state) => state.themeReducer.lightShadow);
+  const updateLightShadow = (data: HexColor) => {
     dispatch({
       type: themeActionType.UPDATE_LIGHT_SHADOW,
       payload: data
     });
   };
 
-  const darkShadow = useSelector<ApplicationState, hexColor>((state) => state.themeReducer.darkShadow);
-  const updateDarkShadow = (data: hexColor) => {
+  const darkShadow = useSelector<ApplicationState, HexColor>((state) => state.themeReducer.darkShadow);
+  const updateDarkShadow = (data: HexColor) => {
     dispatch({
       type: themeActionType.UPDATE_DARK_SHADOW,
       payload: data

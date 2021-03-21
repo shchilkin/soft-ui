@@ -1,14 +1,14 @@
-import { hexColor, rgbColor, sixDigitHexRegex } from '../../shared';
+import { HexColor, RgbColor, sixDigitHexRegex } from '../../shared';
 import threeDigitHexToSixDigit from '../threeDigitHexToSixDigit/threeDigitHexToSixDigit';
 import isHexSixDigits from '../isHexSixDigits/isHexSixDigits';
 import isValidHexColor from '../isValidHexColor/isValidHexColor';
 
 /**
  * Converts hexadecimal triplet to RGB Object
- * @param  {[hexColor]} color A hexadecimal color triplet
- * @return {[rgbColor]}      An object, containing red, green and blue values
+ * @param  {[HexColor]} color A hexadecimal color triplet
+ * @return {[RgbColor]}      An object, containing red, green and blue values
  */
-export default function hexToRGB(color: hexColor): rgbColor {
+export default function hexToRGB(color: HexColor): RgbColor {
   if (isValidHexColor(color)) {
     const hexColorArray = sixDigitHexRegex.exec(isHexSixDigits(color) ? color : threeDigitHexToSixDigit(color));
 

@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useTheme } from '../../store/reducers/themeReducer';
 import Input from '../Inputs/TextInput';
-import { hexColor } from '../../shared';
+import { HexColor } from '../../shared';
 import isValidHexColor from '../../utils/isValidHexColor/isValidHexColor';
 import getFontColor from '../../utils/getFontColor/getFontColor';
 import getShadowColor from '../../utils/getShadowColor/getShadowColor';
@@ -14,6 +14,9 @@ import styled from 'styled-components';
 import FlatIcon from '../Icons/Flat';
 import InsetIcon from '../Icons/Inset';
 import { PreviewState } from '../../store/types/softUIProperties';
+import getColorTint from '../../utils/colorTint/getColorTint';
+import getColorShade from '../../utils/colorShade/getColorShade';
+import isFontColorDark from '../../utils/IsFontColorDark/isFontColorDark';
 
 const BoldText = styled.span`
   font-weight: 600;
@@ -41,7 +44,7 @@ const Editor = (): ReactElement => {
     updateShadowFactor
   } = useSoftUIProperties();
 
-  const [mainColorInputState, setMainColorInputState] = useState<hexColor>(mainColor);
+  const [mainColorInputState, setMainColorInputState] = useState<HexColor>(mainColor);
 
   // updates input text if color updated from other source
   useEffect(() => {
@@ -49,7 +52,7 @@ const Editor = (): ReactElement => {
   }, [mainColor]);
 
   const handleRandomColor = (): void => {
-    const randomColor: hexColor = rgbToHex(generateRandomNumber(), generateRandomNumber(), generateRandomNumber());
+    const randomColor: HexColor = rgbToHex(generateRandomNumber(), generateRandomNumber(), generateRandomNumber());
     handleThemeChange(randomColor);
   };
 
@@ -64,10 +67,11 @@ const Editor = (): ReactElement => {
     }
   };
 
-  const handleThemeChange = (color: hexColor) => {
+  const handleThemeChange = (color: HexColor) => {
     window.history.replaceState('', '', `/${color.toUpperCase()}`);
     updateMainColor(color);
-    updateFontColor(getFontColor(color));
+    //TODO: Return dark/light color variation or black/white font color depending on user input
+    updateFontColor(isFontColorDark(color) ? getColorShade(color, 10) : getColorTint(color, 90));
     updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
     updateDarkShadow(getShadowColor(color, shadowFactor).darkShadow);
   };
@@ -96,6 +100,7 @@ const Editor = (): ReactElement => {
   const handleInsetButton = () => {
     updatePreviewState(PreviewState.Inset);
   };
+
 
   // TODO: Add color picker
   return (

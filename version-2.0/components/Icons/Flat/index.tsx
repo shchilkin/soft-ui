@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import { hexColor } from '../../../shared';
+import { HexColor } from '../../../shared';
 
 export interface IconProps {
-  fillColor: hexColor
+  fillColor: HexColor
 }
 
 const FlatIcon = (props: IconProps): ReactElement => {

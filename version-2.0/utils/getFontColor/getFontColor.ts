@@ -1,4 +1,4 @@
-import { hexColor } from '../../shared';
+import { HexColor } from '../../shared';
 import hexToRGB from '../hexToRgb/hexToRgb';
 import isValidHexColor from '../isValidHexColor/isValidHexColor';
 
@@ -11,7 +11,7 @@ import isValidHexColor from '../isValidHexColor/isValidHexColor';
  * @param  {[string]} color A hexadecimal triplet
  * @return {[string]}         Black or White hexadecimal triplet
  */
-export default function getFontColor(color: hexColor): hexColor {
+export default function getFontColor(color: HexColor): HexColor {
 
   // TODO: Return bright or dark variant of Main color instead of pure black / white
   if (isValidHexColor(color)) {

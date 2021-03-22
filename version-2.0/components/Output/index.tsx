@@ -5,7 +5,7 @@ import SoftContainer from '../SoftContainer';
 
 const Output = (): ReactElement => {
   const { mainColor, fontColor, lightShadow, darkShadow } = useTheme();
-  return <div style={{ padding: 20 }}>
+  return <div className={'Output'} style={{ padding: 20 }}>
     <h2 style={{ fontSize: '12pt', fontWeight: 400 }}> CSS / TOKEN Output</h2>
     <SoftContainer inset={true} style={{ padding: 10, fontSize: '12pt' }}>
       {/*<pre>*/}

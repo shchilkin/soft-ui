@@ -2,6 +2,10 @@ import Logo from '../Logo/logo';
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
+const TextHeader = styled.h1`
+  margin: 0;
+`;
+
 const SubHeader = styled.h2`
   margin: 0;
   font-size: 11pt;
@@ -11,12 +15,12 @@ const SubHeader = styled.h2`
 
 const Header = (): ReactElement => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', height: '100px', paddingTop: '10px' }}>
+    <div className={'header'} style={{ display: 'flex', alignItems: 'center' }}>
       <Logo />
       <div style={{ alignSelf: 'center' }}>
-        <h1 className={'header'}>
+        <TextHeader>
           <span className={'bold'}>Soft UI</span>
-        </h1>
+        </TextHeader>
         <SubHeader>An open-source design tool</SubHeader>
       </div>
     </div>

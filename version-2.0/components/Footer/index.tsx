@@ -5,7 +5,7 @@ import { useTheme } from '../../store/reducers/themeReducer';
 const Footer = (): ReactElement => {
   const { fontColor } = useTheme();
 
-  return <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'right', alignItems: 'flex-end' }}>
+  return <div  className={'footer'} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'right', alignItems: 'flex-end' }}>
     <div style={{ padding: '20px' }}>
       <a aria-label='Star crazyredkitten/soft-ui on GitHub'
          style={{ textDecoration: 'none' }}

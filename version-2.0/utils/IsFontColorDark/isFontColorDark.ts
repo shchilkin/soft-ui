@@ -1,17 +1,13 @@
 import { HexColor } from '../../shared';
-import isValidHexColor from '../isValidHexColor/isValidHexColor';
+import getLuminance from '../getLuminance/getLuminance';
 import hexToRGB from '../hexToRgb/hexToRgb';
 
-export default function isFontColorDark(color: HexColor):boolean{
-  if (isValidHexColor(color)) {
-    const rgb = hexToRGB(color);
-
-    const { red, green, blue } = rgb;
-
-    const luminance = ((0.299 * red) + (0.587 * green) + (0.114 * blue)) / 255;
-
-    return luminance > 0.5;
-  } else {
-    throw new Error(`Invalid hex color. Got: ${color.toUpperCase()}. Pass a valid hex triplet`);
-  }
+/**
+ * Returns true is color is light, otherwise returns false
+ *
+ * @param {[HexColor]} color Hexadecimal Color Triplet
+ * @returns {[boolean]} - Result is font should be dark
+ * */
+export default function isFontColorDark(color: HexColor): boolean {
+  return getLuminance(hexToRGB(color)) > 0.5;
 }

@@ -7,6 +7,7 @@ import { PreviewState } from '../../store/types/softUIProperties';
 const PreviewContainer = styled.div`
   margin: 10px;
   min-height: 150px;
+  height: 100%;
   background-color: ${props => props.mainColor};
   border-radius: 12px;
   color: ${props => props.fontColor};
@@ -19,7 +20,7 @@ const Preview = (): ReactElement => {
   const { shadowBlur, shadowLength, previewState } = useSoftUIProperties();
 
   return (
-    <div id={'Preview'} style={{ padding: '20px' }}>
+    <div className={'preview'} style={{ padding: '20px' }}>
       <PreviewContainer
         isFlat={PreviewState.Flat === previewState}
         mainColor={mainColor}

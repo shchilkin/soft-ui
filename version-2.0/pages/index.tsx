@@ -9,6 +9,7 @@ import getShadowColor from '../utils/getShadowColor/getShadowColor';
 import Footer from '../components/Footer';
 import Output from '../components/Output';
 
+
 const Home = (): unknown => {
   //TODO: Add rust WASM module later
   // import('../utils/rust/soft-ui-utils/pkg').then((module) => {
@@ -39,11 +40,13 @@ const Home = (): unknown => {
 
   return (
     //TODO: change to styled components css
-    <div className={'flex-test'} style={{ background: mainColor, color: fontColor }}>
+    <div className={'app'} style={{ background: mainColor, color: fontColor }}>
       <Header />
       <Preview />
-      <Editor />
-      <Output />
+      <div className={'editor'}>
+        <Editor />
+        <Output />
+      </div>
       <Footer />
     </div>
   );

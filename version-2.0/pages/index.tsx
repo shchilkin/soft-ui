@@ -26,7 +26,7 @@ const Home = (): unknown => {
     // Update app's color scheme if there are valid hex triplet in URL
     if (isValidHexColor(hexFromURL)) {
       updateMainColor(hexFromURL);
-      updateFontColor(getFontColor(hexFromURL));
+      updateFontColor(getFontColor(hexFromURL, true));
       updateLightShadow(getShadowColor(hexFromURL).lightShadow);
       updateDarkShadow(getShadowColor(hexFromURL).darkShadow);
     }

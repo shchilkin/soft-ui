@@ -12,10 +12,8 @@ import { generateRandomNumber } from '../../utils/generateRandomNumber/generateR
 import styled from 'styled-components';
 import FlatIcon from '../Icons/Flat';
 import InsetIcon from '../Icons/Inset';
-import { PreviewState } from '../../store/types/softUIProperties';
-import isFontColorDark from '../../utils/IsFontColorDark/isFontColorDark';
-import getColorTintHex from '../../utils/colorTint/getColorTintHex';
-import getColorShadeHex from '../../utils/colorShade/getColorShadeHex';
+import { FontColorTypeState, PreviewState } from '../../store/types/softUIProperties';
+import getFontColor from '../../utils/getFontColor/getFontColor';
 
 const BoldText = styled.span`
   font-weight: 600;
@@ -35,12 +33,14 @@ const Editor = (): ReactElement => {
   const {
     shadowBlur,
     shadowFactor,
+    fontColorTypeState,
     shadowLength,
     previewState,
     updateShadowLength,
     updateShadowBlur,
     updatePreviewState,
-    updateShadowFactor
+    updateShadowFactor,
+    updateFontColorTypeState
   } = useSoftUIProperties();
 
   const [mainColorInputState, setMainColorInputState] = useState<HexColor>(mainColor);
@@ -70,9 +70,7 @@ const Editor = (): ReactElement => {
     window.history.replaceState('', '', `/${color.toUpperCase()}`);
     updateMainColor(color);
     //TODO: Return dark/light color variation or black/white font color depending on user input
-    //TODO: Create wrapper function for hex input for getColorShade and getColorTint
-    updateFontColor(
-      isFontColorDark(color) ? getColorShadeHex(color, 10) : getColorTintHex(color, 90));
+    updateFontColor(getFontColor(color, fontColorTypeState === FontColorTypeState.TintOrShadeOfMainColor));
     updateLightShadow(getShadowColor(color, shadowFactor).lightShadow);
     updateDarkShadow(getShadowColor(color, shadowFactor).darkShadow);
   };
@@ -102,6 +100,15 @@ const Editor = (): ReactElement => {
     updatePreviewState(PreviewState.Inset);
   };
 
+  const handleBandWFontButton = () => {
+    updateFontColorTypeState(FontColorTypeState.PureBlackOrWhite);
+    updateFontColor(getFontColor(mainColor, false));
+  };
+
+  const handleShadeOrTintFontButton = () => {
+    updateFontColorTypeState(FontColorTypeState.TintOrShadeOfMainColor);
+    updateFontColor(getFontColor(mainColor, true));
+  };
 
   // TODO: Add color picker
   return (
@@ -123,6 +130,15 @@ const Editor = (): ReactElement => {
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Input value={mainColorInputState} onChange={handleMainColorChange} />
         <Button style={{ marginLeft: 10 }} fullWidth={false} onClick={handleRandomColor}>Random</Button>
+      </div>
+      <RegularText>Font color settings:</RegularText>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <Button
+          isActive={FontColorTypeState.TintOrShadeOfMainColor === fontColorTypeState}
+          onClick={handleShadeOrTintFontButton}>Darker shade of main color</Button>
+        <Button
+          isActive={FontColorTypeState.PureBlackOrWhite === fontColorTypeState}
+          style={{ marginLeft: 10 }} onClick={handleBandWFontButton}>Pure black / white</Button>
       </div>
       <FlexboxContainer>
         <RegularText>Shadow intensity: <BoldText>{shadowFactor}%</BoldText></RegularText>

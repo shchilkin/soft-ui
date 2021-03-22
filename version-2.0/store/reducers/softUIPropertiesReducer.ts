@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationState } from './index';
 import {
+  FontColorTypeState,
   PreviewState,
   SoftUIProperties,
   softUIPropertiesAction,
@@ -12,7 +13,8 @@ const initialState: SoftUIPropertiesState = {
   shadowBlur: 20,
   shadowFactor: 15,
   shadowLength: 5,
-  previewState: PreviewState.Flat
+  previewState: PreviewState.Flat,
+  fontColorTypeState: FontColorTypeState.TintOrShadeOfMainColor
 };
 
 //TODO: Add documentation
@@ -51,15 +53,25 @@ export const useSoftUIProperties = (): SoftUIProperties => {
     });
   };
 
+  const fontColorTypeState = useSelector<ApplicationState, FontColorTypeState>(state => state.softUIPropertiesReducer.fontColorTypeState);
+  const updateFontColorTypeState = (data: FontColorTypeState) => {
+    dispatch({
+      type: softUIPropertiesActionType.UPDATE_FONT_COLOR_TYPE,
+      payload: data
+    });
+  };
+
   return {
     shadowBlur,
     shadowFactor,
     shadowLength,
     previewState,
+    fontColorTypeState,
     updateShadowBlur,
     updateShadowFactor,
     updateShadowLength,
-    updatePreviewState
+    updatePreviewState,
+    updateFontColorTypeState
   };
 };
 
@@ -84,6 +96,11 @@ const softUIPropertiesReducer = (state = initialState, action: softUIPropertiesA
       return {
         ...state,
         shadowLength: action.payload
+      };
+    case softUIPropertiesActionType.UPDATE_FONT_COLOR_TYPE:
+      return {
+        ...state,
+        fontColorTypeState: action.payload
       };
     default:
       return state;

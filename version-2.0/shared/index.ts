@@ -58,6 +58,6 @@ export interface Element {
 /**
  * Check is color an rgb object or a hex color triplet string
  * */
-export function isRGb(color: RgbColor | HexColor): color is RgbColor {
+export function isRGB(color: RgbColor | HexColor): color is RgbColor {
   return (color as RgbColor).red !== undefined;
 }

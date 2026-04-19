@@ -1,0 +1,14 @@
+yarn run v1.22.22
+$ next dev
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling /generator ...
+ ✓ Compiled /generator in 2.5s (562 modules)
+ GET /generator 200 in 3061ms
+ ✓ Compiled in 488ms (275 modules)
+error Command failed with signal "SIGTERM".
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+[?25h

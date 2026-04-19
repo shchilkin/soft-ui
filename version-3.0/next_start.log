@@ -1,0 +1,9 @@
+yarn run v1.22.22
+$ next start -p 3000
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 437ms
+error Command failed with signal "SIGTERM".
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
